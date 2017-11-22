@@ -1,0 +1,21 @@
+.intro {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.intro .intro-body {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.intro .intro-body .brand-heading {
+  font-size: 36px;
+}
+
+.intro .intro-body .intro-text {
+  font-size: 18px;
+}

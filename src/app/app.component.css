@@ -1,0 +1,34 @@
+#grid {
+  display: grid;
+  height: 100px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100px;
+}
+
+#footer-toolbar {
+  position: fixed;
+  bottom: .25em;
+  width: 99%;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.background-image {
+  color: black;
+  background: url('../assets/images/intro-bg.jpg') no-repeat bottom center scroll;
+  background-color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  opacity: 1;
+  z-index: -1;
+}
+
+.container {
+  height: 40em;
+  z-index: 1;
+
+}
