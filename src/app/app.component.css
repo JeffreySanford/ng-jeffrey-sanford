@@ -5,10 +5,25 @@
   grid-template-rows: 100px;
 }
 
+#header-toolbar {
+  position: fixed;
+  background: rgba(255,255,255,0);
+  color: white;
+
+}
+#header-toolbar:on-top {
+  position: relative;
+}
+
 #footer-toolbar {
   position: fixed;
-  bottom: .25em;
-  width: 99%;
+  bottom: 0;
+  background: rgba(255,255,255,0);
+  color: black;
+}
+
+#footer-toolbar:on-top {
+  position: relative;
 }
 
 .fill-space {
@@ -27,8 +42,16 @@
   z-index: -1;
 }
 
-.container {
-  height: 40em;
+.page-container {
+  top: 5em;
+  height: 42.5em;
   z-index: 1;
+  border: 1px solid black;
+}
 
+.view-container {
+  margin-top: 4em;
+  opacity: .8;
+  height: 87%;
+  font-size: 1em;
 }

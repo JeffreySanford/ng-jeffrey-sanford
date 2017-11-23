@@ -1,0 +1,21 @@
+.top-items {
+    text-align: center;
+}
+
+.top-items mat-card {
+  display: inline-block;
+  height: 5em;
+  width: 5em;
+  font-size: 75%;
+  border: 1px solid green;
+  border-radius: 50%;
+}
+
+.top-items mat-icon {
+  margin-top: -1.5em;
+}
+
+.top-items p {
+  margin-top: 0em;
+  color: blue;
+}

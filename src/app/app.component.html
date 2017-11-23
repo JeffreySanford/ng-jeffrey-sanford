@@ -1,14 +1,14 @@
-<div class="container background-image">
-  <mat-toolbar>
-    <app-brand></app-brand>
-    <app-social-icons style="margin-left: 2em;"></app-social-icons>
-    <app-navigation style="position:absolute; right: 1em; top: 1em"></app-navigation>
+<div class="page-container background-image">
+  <mat-toolbar id="header-toolbar">
+    <app-brand class="on-top"></app-brand>
+    <app-social-icons style="margin-left: 2em;" class="on-top"></app-social-icons>
+    <app-navigation class="on-top" style="position:absolute; right: 1em; top: 1em;"></app-navigation>
   </mat-toolbar>
-  <div class="">
+  <div class="view-container" style="opacity: .8;font-size: 1.2em;">
     <router-outlet></router-outlet>
   </div>
   <mat-toolbar id="footer-toolbar">
     <app-footer></app-footer>
-    <app-social-icons style="position: absolute; right: 2em;"></app-social-icons>
+    <app-social-icons style="color: white;position: absolute; right: 2em;" class="on-top"></app-social-icons>
   </mat-toolbar>
 </div>

@@ -1,0 +1,15 @@
+ P {
+   font-size: 1.2em;
+ }
+
+ .banner-social-buttons {
+   border: 1px solid red;
+   margin: 0 2em;
+ }
+
+ .banner-social-buttons li {
+   list-style: none;
+   display: inline-block;
+ }
+
+
