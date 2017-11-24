@@ -1,80 +1,60 @@
-<mat-grid-list class="view" cols="1" rowHeight="4:1" style="margin: 1em;position: relative;">
-  <mat-grid-tile style="background-color: pink; opacity: .7;">
-    <mat-grid-tile-header style="background-color: lightred;color:black;opacity:1;font-size: 1.5em;">
-      <span style="margin: 0 auto;">Featured Sites</span>
-    </mat-grid-tile-header>
-
-    <mat-grid-list cols="3" rowHeight="4:2" class="top-items" style="display: inline-block;">
-        <p style="margin: 1em;">Here are design projects and samples in HTML5, CSS3 and some Bootstrap examples.</p>
-
-        <mat-grid-tile>
-          <mat-card>
-            <mat-icon>home</mat-icon>
-            <p>Imagine Create Thrive</p>
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-card>
-            <mat-icon>home</mat-icon>
-            <p>Gracious Girls</p>
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-card style="">
-            <mat-icon>home</mat-icon>
-            <p>BS Native Girl</p>
-          </mat-card>
-        </mat-grid-tile>
-
-
-    </mat-grid-list>
-    <mat-grid-tile-footer  style="background-color: lightRed;color:black;opacity: 1;">Footer</mat-grid-tile-footer>
-  </mat-grid-tile>
-</mat-grid-list>
-<mat-grid-list cols="2" rowHeight="16em;" style="margin: 0em 1em 0 1em;height:16em;">
-  <mat-grid-tile style="height: 14em;background-color: pink; opacity: .7;">
-    <mat-grid-tile-header style="background-color: lightred;color:black;opacity:1;font-size: 1.5em;">
-      <span style="margin: 0 auto;">Featured Sites</span>
-    </mat-grid-tile-header>
-
-    <mat-grid-list cols="3" rowHeight="4:1" class="top-items fill-space" style="float: left;display: inline-block;">
-      <p style="margin-top: 1em;">Here are design projects and samples in HTML5, CSS3 and some Bootstrap examples.</p>
-      <mat-card style="position: absolute; bottom: 3m; left:21%;">
+<mat-card class="projects" style="">
+  <div class="header" >
+    <span>Featured Sites</span>
+  </div>
+  <div class="top-projects">
+    <p class="intro">Here are design projects and samples in HTML5, CSS3 and some Bootstrap examples.</p>
+    <div *ngFor="let project of projects.featured">
+      <button mat-button class="top-projects-buttons">
         <mat-icon>home</mat-icon>
-        <p>Imagine Create Thrive</p>
-      </mat-card>
-      <mat-card style="position: absolute; bottom: 3m;left:42%;">
-        <mat-icon>home</mat-icon>
-        <p>Gracious Girls</p>
-      </mat-card>
-      <mat-card style="position: absolute; bottom: 3m;left:63%;">
-        <mat-icon>home</mat-icon>
-        <p>BS Native Girl</p>
-      </mat-card>
-    </mat-grid-list>
-    <mat-grid-tile-footer  style="background-color: lightRed;color:black;opacity: 1;">Footer</mat-grid-tile-footer>
-  </mat-grid-tile>
+        <p>{{ project.title }}</p>
+      </button>
+    </div>
+  </div>
+  <div class="footer" style="">
+  <!-- <span style="float:right;margin-top: -1em;">Show All<i class="zmdi zmdi-triangle-down"></i></span> -->
+  <span style="float:right;margin-top: -1em;">Footer</span>
 
-  <mat-grid-tile style="height: 14em;background-color: pink; opacity: .7;">
-    <mat-grid-tile-header style="background-color: lightred;color:black;opacity:1;font-size: 1.5em;">
-      <span style="margin: 0 auto;">Featured Sites</span>
-    </mat-grid-tile-header>
+  </div>
+</mat-card>
 
-    <mat-grid-list cols="3" rowHeight="4:1" class="top-items fill-space" style="float: left;display: inline-block;">
-        <p style="margin-top: 1em;">Here are design projects and samples in HTML5, CSS3 and some Bootstrap examples.</p>
-      <mat-card style="position: absolute; bottom: 3m; left:21%;">
-        <mat-icon>home</mat-icon>
-        <p>Imagine Create Thrive</p>
-      </mat-card>
-      <mat-card style="position: absolute; bottom: 3m;left:42%;">
-        <mat-icon>home</mat-icon>
-        <p>Gracious Girls</p>
-      </mat-card>
-      <mat-card style="position: absolute; bottom: 3m;left:63%;">
-        <mat-icon>home</mat-icon>
-        <p>BS Native Girl</p>
-      </mat-card>
-    </mat-grid-list>
-    <mat-grid-tile-footer  style="background-color: lightRed;color:black;opacity: 1;">Footer</mat-grid-tile-footer>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="two-columns" style="">
+  <mat-card class="projects" style="float:left;margin: 1em 1em 0;">
+    <div class="header" >
+      <span>Design Examples</span>
+    </div>
+    <div class="top-projects">
+      <p class="intro">Here are design projects and samples in HTML5, CSS3 and some Bootstrap examples.</p>
+      <div *ngFor="let project of projects.featured">
+        <button mat-button class="top-projects-buttons">
+          <mat-icon>home</mat-icon>
+          <p>{{ project.title }}</p>
+        </button>
+      </div>
+    </div>
+    <div class="footer" style="">
+    <!-- <span style="float:right;margin-top: -1em;">Show All<i class="zmdi zmdi-triangle-down"></i></span> -->
+    </div>
+  </mat-card>
+
+  <mat-card class="projects" style="float:right;margin: 1em 1em 0;">
+    <div class="header" >
+      <span>Development Examples</span>
+    </div>
+    <div class="top-projects">
+      <p class="intro">Here are design projects and samples in HTML5, CSS3 and some Bootstrap examples.</p>
+
+      <div *ngFor="let project of projects.featured">
+        <button mat-button class="top-projects-buttons">
+          <mat-icon>home</mat-icon>
+          <p>{{ project.title }}</p>
+        </button>
+      </div>
+    </div>
+    <div class="footer" style="">
+    <!-- <span style="float:right;margin-top: -1em;">Show All<i class="zmdi zmdi-triangle-down"></i></span> -->
+    </div>
+  </mat-card>
+</div>
+
+
