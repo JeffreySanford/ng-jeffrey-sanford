@@ -72,6 +72,7 @@ export class ProjectsComponent implements OnInit {
         "git": "https://github.com/JeffreySanford/development/tree/master/assessments/sort-functions",
         "url": "../samples/jquery/basic/",
         "samples": "javascript",
+	B
         "imageURL": "img/html5css3-logo.png"
       }
     ],
@@ -116,6 +117,7 @@ export class ProjectsComponent implements OnInit {
         "title": "Angular Hero",
         "description": "Angular front-end ideas",
         "teaser": "Angular/Material design creates a front-end app that involves the user in the navigation process.",
+	B
         "url": "../development/projects/ng-hero-app/",
         "samples": "angular",
         "git": "github:JeffreySanford",
@@ -163,6 +165,10 @@ export class ProjectsComponent implements OnInit {
 
   constructor() {
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fabf8579bbc6bb3c7cfc42a712135cc6c5059d6a
   ngOnInit() {
   }
 
