@@ -73,6 +73,7 @@ export class ProjectsComponent implements OnInit {
         "git": "https://github.com/JeffreySanford/development/tree/master/assessments/sort-functions",
         "url": "../samples/jquery/basic/",
         "samples": "javascript",
+	B
         "imageURL": "img/html5css3-logo.png"
       }
     ],
@@ -117,6 +118,7 @@ export class ProjectsComponent implements OnInit {
         "title": "Angular Hero",
         "description": "Angular front-end ideas",
         "teaser": "Angular/Material design creates a front-end app that involves the user in the navigation process.",
+	B
         "url": "../development/projects/ng-hero-app/",
         "samples": "angular",
         "git": "github:JeffreySanford",
@@ -162,22 +164,9 @@ export class ProjectsComponent implements OnInit {
   }
 
 
-  constructor(private http: Http) {
-    console.log('User accessed API.');
-    // this.getContacts();
-    // this.getData();
+  constructor() {
   }
 
-  getData() {
-    return this.http.get(this.apiUrl)
-      .map((res: Response) => res.json())
-  }
-  getContacts() {
-    this.getData().subscribe(data => {
-      console.log(data);
-      this.data = data;
-    })
-  }
   ngOnInit() {
   }
 
