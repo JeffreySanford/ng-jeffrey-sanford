@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
-
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -159,24 +158,10 @@ export class ProjectsComponent implements OnInit {
         "imageURL": "img/html5css3-logo.png"
       }
     ]
-  }
+  };
 
 
-  constructor(private http: Http) {
-    console.log('User accessed API.');
-    this.getContacts();
-    this.getData();
-  }
-
-  getData() {
-    return this.http.get(this.apiUrl)
-      .map((res: Response) => res.json())
-  }
-  getContacts() {
-    this.getData().subscribe(data => {
-      console.log(data);
-      this.data = data;
-    })
+  constructor() {
   }
   ngOnInit() {
   }

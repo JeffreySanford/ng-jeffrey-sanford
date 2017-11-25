@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpModule } from '@angular/http';
+
 
 // Material Design and Styling
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,14 +25,10 @@ import { ProjectsComponent } from './views/projects/projects.component';
 
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 
-import 'rxjs/Rx';
-
 // Directives
 import { Directive, TemplateRef, ViewContainerRef } from '@angular/core';
 import { ngIfMediaQuery } from './ng-if-media-query.directive';
 import { SocialIconsComponent } from './page/social-icons/social-icons.component';
-
-
 
 const appRoutes: Routes = [
   { path: 'landing', component: LandingComponent },
@@ -61,7 +57,6 @@ const appRoutes: Routes = [
     SocialIconsComponent
   ],
   imports: [
-    HttpModule,
     MatButtonModule,
     MatMenuModule,
     MatToolbarModule,

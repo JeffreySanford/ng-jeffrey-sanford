@@ -43,7 +43,6 @@ button {
   height: 6em;
   width: 5em;
   border-radius: 50%;
-  border: 1px solid red;
 }
 
 button mat-icon {
