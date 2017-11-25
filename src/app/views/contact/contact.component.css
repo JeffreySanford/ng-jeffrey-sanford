@@ -1,15 +1,26 @@
  P {
-   font-size: 1.2em;
+   font-size: 1.5em;
+   color: white;
+ }
+
+ a {
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
+
  }
 
  .banner-social-buttons {
-   border: 1px solid red;
-   margin: 0 2em;
+   margin: 3em 2em;
+
  }
 
- .banner-social-buttons li {
-   list-style: none;
-   display: inline-block;
+ ul {
+  text-decoration: none;
  }
+.banner-social-buttons li {
+  list-style: none;
+  display: inline-block;
+}
 
 
