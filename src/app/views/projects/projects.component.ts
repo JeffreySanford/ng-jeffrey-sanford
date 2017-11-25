@@ -164,8 +164,8 @@ export class ProjectsComponent implements OnInit {
 
   constructor(private http: Http) {
     console.log('User accessed API.');
-    this.getContacts();
-    this.getData();
+    // this.getContacts();
+    // this.getData();
   }
 
   getData() {
