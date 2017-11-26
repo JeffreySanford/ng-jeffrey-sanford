@@ -15,20 +15,24 @@ export class ProjectsComponent implements OnInit {
       {
         "title": "Imagine Create Thrive",
         "location": "http://imaginecreatethrive.com",
-        "description": "This is a small botique agency that can create mockups, designs, and web applciations."
+        "description": "This is a small botique agency that can create mockups, designs, and web applciations.",
+        "rank": 1
+
       },
       {
         "title": "Gracious Girls",
         "location": "http://imaginecreatethrive.com:4200",
-        "description": "This is a cute organization and cleaning oritented business."
+        "description": "This is a cute organization and cleaning oritented business.",
+        "rank": 2
       },
       {
         "title": "BS Native Girl",
         "location": "http://imaginecreatethrive.com:4201",
-        "description": "Landing site presenting Native American are from an artist in the Pacific Northwest."
+        "description": "Landing site presenting Native American are from an artist in the Pacific Northwest.",
+        "rank": 3
       }
     ],
-    "designProjects" : [
+    "design" : [
       {
         "title": "Space Video",
         "description": "HTML5 audio and video",
@@ -72,11 +76,10 @@ export class ProjectsComponent implements OnInit {
         "git": "https://github.com/JeffreySanford/development/tree/master/assessments/sort-functions",
         "url": "../samples/jquery/basic/",
         "samples": "javascript",
-	B
         "imageURL": "img/html5css3-logo.png"
       }
     ],
-    "developmentProjects": [
+    "development": [
       {
         "title": "Artist Site",
         "description": "Mockup for an idea for an artist site.",
@@ -117,7 +120,6 @@ export class ProjectsComponent implements OnInit {
         "title": "Angular Hero",
         "description": "Angular front-end ideas",
         "teaser": "Angular/Material design creates a front-end app that involves the user in the navigation process.",
-	B
         "url": "../development/projects/ng-hero-app/",
         "samples": "angular",
         "git": "github:JeffreySanford",
@@ -162,13 +164,9 @@ export class ProjectsComponent implements OnInit {
     ]
   };
 
-
   constructor() {
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> fabf8579bbc6bb3c7cfc42a712135cc6c5059d6a
   ngOnInit() {
   }
 

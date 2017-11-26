@@ -1,48 +1,24 @@
 .projects {
   display: relative;
-  background-color: pink;
-  opacity: .8;
+  background-color: rgba(153, 255, 153, 0.3);
+  opacity: 1;
   width: 40%;
-  margin: 1em auto;
+  margin: 0 auto;
   border-radius: 5px;
   padding: .25em;
-}
-
-.projects .header {
-  text-align: center;
-  margin: 0 auto;
-  color:black;
-  text-align: center;
-  font-size: 1.5em;
-}
-.projects .footer {
-  margin: 0 auto;
-  background-color: lightRed;
-  color:black;
-  text-align: center;
-}
-
-.top-projects {
-  display: inline-block;
-}
-
-.top-projects-buttons {
-  text-align: center;
-  margin: 0 0 2em 5em;
-}
-
-.top-projects .intro {
-  font-size: .7em;
-  font-style: italic;
 }
 
 button {
   background-color: lime;
   float: left;
-  margin: 0 .5em;
+  margin: 0 2em 1em;
   height: 6em;
   width: 5em;
   border-radius: 50%;
+}
+
+mat-expansion-indicator {
+  height: 100%;
 }
 
 button mat-icon {
@@ -53,12 +29,11 @@ button mat-icon {
 }
 
 button p {
-  position: absolute;
   font-style: normal;
   position: relative;
   text-align: center;
   white-space: normal;
-  font-size: 1em;
+  font-size: .8em;
   line-height: 1.1;
   margin-top: 2.25em;
 }

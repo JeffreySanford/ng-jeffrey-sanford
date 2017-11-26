@@ -16,7 +16,7 @@
       "description": "Landing site presenting Native American are from an artist in the Pacific Northwest."
     }
   ],
-  "designProjects" : [
+  "design" : [
     {
       "title": "Space Video",
       "description": "HTML5 audio and video",
@@ -56,14 +56,14 @@
     {
       "title": "Layouts",
       "description": "Basic Layout using HTML5 and Jquery",
-      "teaser": "These are some "samples in Jquery",
+      "teaser": "These are some samples in Jquery",
       "git": "https://github.com/JeffreySanford/development/tree/master/assessments/sort-functions",
       "url": "../samples/jquery/basic/",
       "samples": "javascript",
       "imageURL": "img/html5css3-logo.png"
     }
   ],
-  "developmentProjects": [
+  "development": [
     {
       "title": "Artist Site",
       "description": "Mockup for an idea for an artist site.",

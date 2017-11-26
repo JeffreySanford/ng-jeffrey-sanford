@@ -1,4 +1,4 @@
 button {
-  opacity: .7;
-  background-color: "blue";
+  background-color: rgb(178, 26, 102);
+  border-radius: 3px;
 }

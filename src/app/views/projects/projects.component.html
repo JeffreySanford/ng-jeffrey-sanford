@@ -1,60 +1,60 @@
-<mat-card class="projects" style="">
-  <div class="header" >
-    <span>Featured Sites</span>
+<mat-expansion-panel class="projects" style="margin: 2em auto 1em;">
+  <div *ngFor="let project of projects.featured |  slice:3:12; let i=index">
+    <button mat-button>
+      <mat-icon>home</mat-icon>
+      <p>{{ project.title }}</p>
+    </button>
   </div>
-  <div class="top-projects">
-    <p class="intro">Here are design projects and samples in HTML5, CSS3 and some Bootstrap examples.</p>
-    <div *ngFor="let project of projects.featured">
-      <button mat-button class="top-projects-buttons">
+  <mat-expansion-panel-header style="margin: 3em auto 2.5em;">
+    <div *ngFor="let project of projects.featured |  slice:0:3; let i=index">
+      <button mat-button>
         <mat-icon>home</mat-icon>
         <p>{{ project.title }}</p>
       </button>
     </div>
-  </div>
-  <div class="footer" style="">
-  <!-- <span style="float:right;margin-top: -1em;">Show All<i class="zmdi zmdi-triangle-down"></i></span> -->
-  <span style="float:right;margin-top: -1em;">Footer</span>
+  </mat-expansion-panel-header>
 
-  </div>
-</mat-card>
+</mat-expansion-panel>
+
+
 
 <div class="two-columns" style="">
-  <mat-card class="projects" style="float:left;margin: 1em 1em 0;">
-    <div class="header" >
-      <span>Design Examples</span>
+  <mat-expansion-panel class="projects" style="float:left;margin: 0em 0 0 2em;">
+    <div *ngFor="let project of projects.design |  slice:3:12; let i=index">
+      <button mat-button>
+        <mat-icon>home</mat-icon>
+        <p>{{ project.title }}</p>
+      </button>
     </div>
-    <div class="top-projects">
-      <p class="intro">Here are design projects and samples in HTML5, CSS3 and some Bootstrap examples.</p>
-      <div *ngFor="let project of projects.designProjects">
-        <button mat-button class="top-projects-buttons">
+    <mat-expansion-panel-header style="margin: 3em auto 2.5em;">
+      <div *ngFor="let project of projects.design |  slice:0:3; let i=index">
+        <button mat-button>
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
         </button>
       </div>
-    </div>
-    <div class="footer" style="">
-    <!-- <span style="float:right;margin-top: -1em;">Show All<i class="zmdi zmdi-triangle-down"></i></span> -->
-    </div>
-  </mat-card>
+    </mat-expansion-panel-header>
 
-  <mat-card class="projects" style="float:right;margin: 1em 1em 0;">
-    <div class="header" >
-      <span>Development Examples</span>
-    </div>
-    <div class="top-projects">
-      <p class="intro">Here are design projects and samples in HTML5, CSS3 and some Bootstrap examples.</p>
+  </mat-expansion-panel>
 
-      <div *ngFor="let project of projects.developmentProjects">
-        <button mat-button class="top-projects-buttons">
+    <mat-expansion-panel class="projects" style="float:right;margin: 0 2em 0 1.5em;">
+      <div *ngFor="let project of projects.development |  slice:3:12; let i=index">
+        <button mat-button>
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
         </button>
       </div>
-    </div>
-    <div class="footer" style="">
-    <!-- <span style="float:right;margin-top: -1em;">Show All<i class="zmdi zmdi-triangle-down"></i></span> -->
-    </div>
-  </mat-card>
+      <mat-expansion-panel-header style="margin: 3em auto 2.5em;">
+        <div *ngFor="let project of projects.development |  slice:0:3; let i=index">
+          <button mat-button>
+            <mat-icon>home</mat-icon>
+            <p>{{ project.title }}</p>
+          </button>
+        </div>
+      </mat-expansion-panel-header>
+
+    </mat-expansion-panel>
+
 </div>
 
 
