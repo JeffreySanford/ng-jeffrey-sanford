@@ -1,6 +1,7 @@
 p {
   font-size: .7em;
-  color: rgb(0, 102, 255);
+  color: rgb(0, 255, 255);
+  top: 2em;
 }
 
 .tooltip {
@@ -17,6 +18,7 @@ p {
   text-align: center;
   padding: 5px 0;
   margin-left: 2em;
+  bottom: 2em;
   border-radius: 6px;
 
   /* Position the tooltip text - see examples below! */

@@ -11,9 +11,7 @@
   color: white;
 
 }
-#header-toolbar:on-top {
-  position: relative;
-}
+
 
 #footer-toolbar {
   position: fixed;
@@ -21,7 +19,6 @@
   left: .4em;
   background: rgba(255,255,255,0);
   z-index: 1;
-  color: white;
   width: 98.8%;
 
 }
