@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
+
 import { Http, Response } from '@angular/http';
 
 @Component({
@@ -47,7 +49,7 @@ export class ProjectsComponent implements OnInit {
         "description": "Displays Reddit articles",
         "teaser": "RESTful data from the angular2 reddit section.",
         "git": "https://github.com/JeffreySanford/development/tree/master/assessments/reddit",
-        "url": "../development/projects/reddit",
+        "url": "assets/projects/reddit",
         "samples": "html",
         "imageURL": "img/html5css3-logo.png"
       },
@@ -56,7 +58,7 @@ export class ProjectsComponent implements OnInit {
         "description": "Table Modification",
         "teaser": "HTML5 design using JQuery.",
         "git": "https://github.com/JeffreySanford/samples/tree/master/jquery/table-modification",
-        "url": "../samples/jquery/table-modification/",
+        "url": "assets/samples/jquery/table-modification/",
         "samples": "bootstrap",
         "imageURL": "img/bootstrap-logo.png"
       },
@@ -65,7 +67,7 @@ export class ProjectsComponent implements OnInit {
         "description": "CS Sort Algorithms",
         "teaser": "Using bootstrap, display some higher level search engine algorithms results.",
         "git": "https://github.com/JeffreySanford/development/tree/master/assessments/sort-functions",
-        "url": "../development/projects/sort-functions/",
+        "url": "assets/projects/sort-functions/",
         "samples": "bootstrap",
         "imageURL": "img/bootstrap-logo.png"
       },
@@ -74,7 +76,7 @@ export class ProjectsComponent implements OnInit {
         "description": "Basic Layout using HTML5 and Jquery",
         "teaser": "These are some samples in Jquery",
         "git": "https://github.com/JeffreySanford/development/tree/master/assessments/sort-functions",
-        "url": "../samples/jquery/basic/",
+        "url": "assets/samples/jquery/basic/",
         "samples": "javascript",
         "imageURL": "img/html5css3-logo.png"
       }
@@ -103,7 +105,7 @@ export class ProjectsComponent implements OnInit {
         "description": "Artist Site",
         "teaser": "This is a angular mockup application for a business idea that a start-up had.",
         "git": "https://github.com/JeffreySanford/development/tree/master/projects/car-connection/app",
-        "url": "../development/projects/car-connection",
+        "url": "assets/projects/car-connection",
         "samples": "angular",
         "imageURL": "img/angularjs-logo.png"
       },
@@ -111,7 +113,7 @@ export class ProjectsComponent implements OnInit {
         "title": "D3JS",
         "description": "Data Visualizations",
         "teaser": "Represents your data on the front-end with engaging animations, transitions and methods.",
-        "url": "../development/projects/D3JS",
+        "url": "assets/projects/D3JS",
         "samples: ": "angular",
         "git": "https://github.com/JeffreySanford/development/tree/master/projects/D3JS",
         "imageURL": "img/angularjs-logo.png"
@@ -120,7 +122,7 @@ export class ProjectsComponent implements OnInit {
         "title": "Angular Hero",
         "description": "Angular front-end ideas",
         "teaser": "Angular/Material design creates a front-end app that involves the user in the navigation process.",
-        "url": "../development/projects/ng-hero-app/",
+        "url": "assets/projects/ng-hero-app/",
         "samples": "angular",
         "git": "github:JeffreySanford",
         "imageURL": "img/angularjs-logo.png"
@@ -129,7 +131,7 @@ export class ProjectsComponent implements OnInit {
         "title": "Native Girl",
         "description": "Angular artist portfolio",
         "teaser": "This will give an artist the ability to cycle through their portfolio work in different catagories.",
-        "url": "../development/projects/native-girl/",
+        "url": "assets/projects/native-girl/",
         "samples": "angular",
         "git": "github:JeffreySanford",
         "imageURL": "img/angularjs-logo.png"
@@ -139,7 +141,7 @@ export class ProjectsComponent implements OnInit {
         "description": "Recipe Articles",
         "teaser": "These are some samples development projects done in ExpressJS and Angular.",
         "git": "https://github.com/JeffreySanford/development/tree/master/projects/kitchen-table",
-        "url": "../development/projects/kitchen-table",
+        "url": "assets/projects/kitchen-table",
         "samples": "angular",
         "imageURL": "img/angularjs-logo.png"
       },
@@ -148,7 +150,7 @@ export class ProjectsComponent implements OnInit {
         "description": "Proof of Concept",
         "teaser": "A site for a front end e-commerence package that will charge to Swipe and Paypal APIs.",
         "git": "https://github.com/JeffreySanford/subscription-project",
-        "url": "../development/projects/rest-express",
+        "url": "assets/projects/rest-express",
         "samples": "angular",
         "imageURL": "img/angularjs-logo.png"
       },
@@ -157,14 +159,19 @@ export class ProjectsComponent implements OnInit {
         "description": "Display weather statistics",
         "teaser": "Using restful services and external API's pull weather data about a specified city.",
         "git": "https://github.com/JeffreySanford/development/tree/master/assessments/async-weather-reverserisk",
-        "url": "../development/projects/async-weather/",
+        "url": "assets/projects/async-weather/",
         "samples": "javascript",
         "imageURL": "img/html5css3-logo.png"
       }
     ]
   };
+  url: String = "";
 
-  constructor() {
+  constructor(@Inject(DOCUMENT) private document: any){}
+
+
+  goToExternalUrl(url): void {
+    this.document.location.href = url;
   }
 
   ngOnInit() {

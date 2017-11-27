@@ -28,7 +28,7 @@
     </div>
     <mat-expansion-panel-header style="margin: 3em auto 2.5em;">
       <div *ngFor="let project of projects.design |  slice:0:3; let i=index">
-        <button mat-button>
+        <button mat-button ng-href="project.url">
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
         </button>
@@ -39,17 +39,21 @@
 
     <mat-expansion-panel class="projects" style="float:right;margin: 0 2em 0 1.5em;">
       <div *ngFor="let project of projects.development |  slice:3:12; let i=index">
-        <button mat-button>
-          <mat-icon>home</mat-icon>
-          <p>{{ project.title }}</p>
-        </button>
-      </div>
-      <mat-expansion-panel-header style="margin: 3em auto 2.5em;">
-        <div *ngFor="let project of projects.development |  slice:0:3; let i=index">
+        <a (click)="goToExternalUrl(project.url)">
           <button mat-button>
             <mat-icon>home</mat-icon>
             <p>{{ project.title }}</p>
           </button>
+        </a>
+      </div>
+      <mat-expansion-panel-header style="margin: 3em auto 2.5em;height: 6em;">
+        <div *ngFor="let project of projects.development |  slice:0:3; let i=index">
+          <a (click)="goToExternalUrl(project.url)">
+              <button mat-button  style="z-index: 5;">
+              <mat-icon>home</mat-icon>
+              <p>{{ project.title }}</p>
+            </button>
+          </a>
         </div>
       </mat-expansion-panel-header>
 
