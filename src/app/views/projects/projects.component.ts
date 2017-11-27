@@ -18,7 +18,8 @@ export class ProjectsComponent implements OnInit {
         "title": "Imagine Create Thrive",
         "location": "http://imaginecreatethrive.com",
         "description": "This is a small botique agency that can create mockups, designs, and web applciations.",
-        "rank": 1
+        "rank": 1,
+        "url": "http://imaginecreatethrive.com/",
 
       },
       {
