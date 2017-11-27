@@ -4,11 +4,11 @@
   <button mat-button  style="margin: 0 .5em;" routerLink="/about" routerLinkActive="active">About </button>
   <button mat-button style="margin: 0 .5em;" routerLink="/contact" routerLinkActive="active">Contact </button>
 </div>
-<button mat-raised-button [mat-menu-trigger-for]="rootMenu" fxHide="false" fxHide.gt-sm>
+<button style="top: 1.75em;" mat-raised-button [mat-menu-trigger-for]="rootMenu" fxHide="false" fxHide.gt-sm>
   <mat-icon>menu</mat-icon>
 </button>
 
-<mat-menu x-position="before" #rootMenu="matMenu">
+<mat-menu x-position="before" #rootMenu="matMenu" >
   <button mat-menu-item routerLink="/landing" routerLinkActive="active">Home </button>
   <button mat-menu-item [matMenuTriggerFor]="subMenu" routerLink="/projects" routerLinkActive="active">Projects </button>
   <button mat-menu-item routerLink="/about" routerLinkActive="about">About </button>

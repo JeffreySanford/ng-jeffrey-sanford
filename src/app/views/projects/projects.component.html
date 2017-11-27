@@ -1,5 +1,5 @@
-<mat-expansion-panel class="projects" style="margin: 0 auto 0;">
-  <div *ngFor="let project of projects.featured |  slice:3:12; let i=index">
+<mat-expansion-panel class="projects featured">
+  <div class="" *ngFor="let project of projects.featured |  slice:3:12; let i=index">
     <a (click)="goToExternalUrl(project.url)">
     <button mat-button>
     <mat-icon>home</mat-icon>
@@ -7,8 +7,8 @@
     </button>
     </a>
   </div>
-  <mat-expansion-panel-header style="margin: 3em auto 2.5em;height: 6em;">
-    <div *ngFor="let project of projects.featured |  slice:0:3; let i=index">
+  <mat-expansion-panel-header  class="top-projects">
+    <div class="" *ngFor="let project of projects.featured |  slice:0:3; let i=index">
       <a (click)="goToExternalUrl(project.url)">
         <button mat-button  style="z-index: 5;">
           <mat-icon>home</mat-icon>
@@ -19,9 +19,9 @@
   </mat-expansion-panel-header>
 </mat-expansion-panel>
 
-<div class="two-columns" style="margin-top: 2em;">
-  <mat-expansion-panel class="projects" style="float:left;margin: 0 1.5em 0 2em;">
-    <div *ngFor="let project of projects.design |  slice:3:12; let i=index">
+<div class="two-columns">
+  <mat-expansion-panel class="projects design">
+    <div class="" *ngFor="let project of projects.design |  slice:3:12; let i=index">
       <a (click)="goToExternalUrl(project.url)">
         <button mat-button>
           <mat-icon>home</mat-icon>
@@ -29,8 +29,8 @@
         </button>
       </a>
     </div>
-    <mat-expansion-panel-header style="margin: 3em auto 2.5em;height: 6em;">
-      <div *ngFor="let project of projects.design |  slice:0:3; let i=index">
+    <mat-expansion-panel-header class="top-projects">
+      <div class="" *ngFor="let project of projects.design |  slice:0:3; let i=index">
         <a (click)="goToExternalUrl(project.url)">
         <button mat-button  style="z-index: 5;">
         <mat-icon>home</mat-icon>
@@ -41,8 +41,8 @@
     </mat-expansion-panel-header>
   </mat-expansion-panel>
 
-  <mat-expansion-panel class="projects" style="float:right;margin: 0 2em 0 1.5em;">
-    <div *ngFor="let project of projects.development |  slice:3:12; let i=index">
+  <mat-expansion-panel class="projects development">
+    <div class="" *ngFor="let project of projects.development |  slice:3:12; let i=index">
       <a (click)="goToExternalUrl(project.url)">
         <button mat-button>
           <mat-icon>home</mat-icon>
@@ -50,8 +50,8 @@
         </button>
       </a>
     </div>
-    <mat-expansion-panel-header style="margin: 3em auto 2.5em;height: 6em;">
-      <div *ngFor="let project of projects.development |  slice:0:3; let i=index">
+    <mat-expansion-panel-header class="top-projects">
+      <div class="top" *ngFor="let project of projects.development |  slice:0:3; let i=index">
         <a (click)="goToExternalUrl(project.url)">
           <button mat-button  style="z-index: 5;">
             <mat-icon>home</mat-icon>

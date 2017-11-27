@@ -2,23 +2,63 @@
   display: relative;
   background-color: rgba(153, 255, 153, 0.3);
   opacity: 1;
-  width: 40%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 1em 0 1em;
   border-radius: 5px;
-  padding: .25em;
+}
+
+.top-projects {
+  opacity: 1;
+  width: 98%;
+  margin: 2em 0 1em;
+  border-radius: 5px;
+}
+
+.featured {
+  top: 0;
+  margin: 1em auto;
+  border: 1px solid purple;
+  width: 95%;
+}
+
+ .design {
+  margin: 2em auto;
+  width: 95%;
+}
+ .development {
+  margin: 1em auto;
+  width: 95%;
+}
+
+.mat-expansion-panel-header:not {
+  border: 2px solid blue;
+  background-color: blue;
+}
+.mat-expanded {
+  height: 10em;
+  background-color: yellow;
+}
+
+mat-expansion-panel {
+  height: 7em;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.items-view {
+  margin: 3em 0em 0em 0em;
+  border: 2px solid red;
+  display: inline-block;
+  width: 75%;
 }
 
 button {
-  background-color: lime;
   float: left;
-  margin: 0 2em 1em;
-  height: 6em;
-  width: 5em;
+  background-color: pink;
+  margin: 0em .5em .5em 0em;
   border-radius: 50%;
-}
-
-mat-expansion-indicator {
-  height: 100%;
+  width: 2em;
+  height: 5em;
 }
 
 button mat-icon {
@@ -35,4 +75,65 @@ button p {
   white-space: normal;
   font-size: .8em;
   line-height: 1.1;
+  margin-top: 2.5em;
+}
+
+@media screen and (min-width: 480px) {
+
+  .projects {
+    width: 100%;
+    margin: 1em 1em 1em 0;
+    border-radius: 5px;
+  }
+  .mat-expanded {
+    height: 15em;
+    background-color: yellow;
+  }
+
+  .top-projects {
+    margin-top: 3em;
+  }
+  .featured {
+    margin: 0 auto 2em;
+    border: 1px solid purple;
+    width: 40%;
+  }
+  .design {
+    position: relative;
+    float: left;
+    width: 40%;
+    left: 2em;
+  }
+   .development {
+    position: relative;
+    float: right;
+    width: 40%;
+    right: 4em;
+  }
+  button {
+    background-color: lime;
+    float: left;
+    height: 5em;
+    width: 5em;
+    font-size: 1.2em;
+    margin-right: .5em;
+    border-radius: 50%;
+  }
+
+  button mat-icon {
+    position: absolute;
+    margin-top: 0em;
+    top: .25em;
+    left: 1.25em;
+  }
+
+  button p {
+    font-style: normal;
+    position: relative;
+    text-align: center;
+    white-space: normal;
+    font-size: .8em;
+    line-height: 1.1;
+    margin-top: 2em;
+  }
 }
