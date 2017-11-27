@@ -39,8 +39,8 @@ const appRoutes: Routes = [
   { path: '',
     redirectTo: '/landing',
     pathMatch: 'full'
-  }
-  // { path: '**', component: PageNotFoundComponent }
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({
   declarations: [
