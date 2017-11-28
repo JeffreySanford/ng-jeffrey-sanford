@@ -35,7 +35,7 @@
   background-color: blue;
 }
 .mat-expanded {
-  height: 10em;
+  height: 15em;
   background-color: yellow;
 }
 
@@ -86,8 +86,12 @@ button p {
     border-radius: 5px;
   }
   .mat-expanded {
-    height: 15em;
-    background-color: yellow;
+    height: 20em;
+    background-color: blue;
+  }
+
+  .design .mat-expanded {
+    background-color: teal;
   }
 
   .top-projects {
@@ -108,7 +112,7 @@ button p {
     position: relative;
     float: right;
     width: 40%;
-    right: 4em;
+    right: 2em;
   }
   button {
     background-color: lime;

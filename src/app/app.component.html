@@ -1,14 +1,14 @@
-<div class="page-container background-image">
-  <mat-toolbar id="header-toolbar">
+<div class="block page-container background-image">
+  <mat-toolbar id="header-toolbar" class="block">
     <app-brand></app-brand>
-    <app-social-icons style="margin-left: 2em;"></app-social-icons>
+    <app-social-icons class="block" style="margin-left: 2em;"></app-social-icons>
     <app-navigation style="position:absolute; right: 1em; top: 1em;"></app-navigation>
   </mat-toolbar>
-  <div class="view-container">
+  <div class="view-container block">
     <router-outlet></router-outlet>
   </div>
-  <mat-toolbar id="footer-toolbar">
+  <mat-toolbar id="footer-toolbar" class="">
     <app-footer></app-footer>
-    <app-social-icons style="position: absolute; right: 2em;"></app-social-icons>
+    <app-social-icons class="block" style="position: absolute; right: 2em;"></app-social-icons>
   </mat-toolbar>
 </div>

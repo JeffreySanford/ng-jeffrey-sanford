@@ -31,17 +31,19 @@ import { ngIfMediaQuery } from './ng-if-media-query.directive';
 import { SocialIconsComponent } from './page/social-icons/social-icons.component';
 
 const appRoutes: Routes = [
-  { path: 'landing', component: LandingComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'projects/:id',      component: ProjectsComponent },
-  { path: '',
-    redirectTo: '/landing',
-    pathMatch: 'full'
-  },
+  { path: 'landing', component: LandingComponent, data: { state: 'landing' } },
+  { path: 'about', component: AboutComponent, data: { state: 'about' } },
+  { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
+  { path: 'projects', component: ProjectsComponent, data: { state: 'projects' } },
+  { path: 'projects/:id', component: ProjectsComponent, data: { state: 'project' } },
+  { path: '', redirectTo: '/landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
+
+export const AppRouting = RouterModule.forRoot(appRoutes, {
+  useHash: true
+});
+
 @NgModule({
   declarations: [
     AppComponent,
