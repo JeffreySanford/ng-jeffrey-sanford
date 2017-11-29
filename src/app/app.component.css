@@ -45,13 +45,13 @@
 
 .page-container {
   top: 5em;
-  height:98vh;
+  height:96vh;
   z-index: 1;
   border: 1px solid black;
 }
 
 .view-container {
   font-size: 1.1em;
-  height: 80vh;
+  height: 78vh;
   margin-top: 7em;
 }

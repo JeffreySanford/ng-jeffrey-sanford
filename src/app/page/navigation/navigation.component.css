@@ -1,7 +1,7 @@
 button {
-  background-color: rgb(178, 26, 102);
+  background-color: rgba(178, 26, 102, .6);
   border-radius: 3px;
 }
 mat-menu-panel {
-  background-color:rgb(178, 26, 102) !important;
+  background-color:rgba(178, 26, 102, .3) !important;
 }

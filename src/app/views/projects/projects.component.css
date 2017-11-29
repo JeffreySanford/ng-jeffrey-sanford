@@ -15,11 +15,17 @@
 }
 
 .featured {
-  border: 1px solid rgba(153, 255, 153, 0.3);
+  border: 1px solid  .design .mat-expanded {
+    background-color: teal;
+  }
 }
 
 .design {
   border: 1px solid rgba(153, 255, 153, 0.3);
+}
+
+.design .mat-expansion-panel {
+
 }
 
 .development {
@@ -80,13 +86,16 @@ button p {
     margin: 1em 1em 1em 0;
     border-radius: 5px;
   }
-  .mat-expanded {
-    height: 20em;
-    background-color: blue;
+
+  .mat-expansion-panel-header {
+    background-color: rgba(153, 255, 153, 0);
+    width: 85%;
+    margin-left: .5em;
   }
 
-  .design .mat-expanded {
-    background-color: teal;
+  .mat-expanded {
+    background-color: rgba(153, 255, 153, .3);
+    margin-left: .5em;
   }
 
   .top-projects {
@@ -101,12 +110,12 @@ button p {
   .design {
     float: left;
     width: 40%;
-    left: 2em;
+    margin-left: 3em;
   }
    .development {
     float: right;
     width: 40%;
-    right: 2em;
+    margin-right: 3em;
   }
 
   button {
@@ -115,7 +124,7 @@ button p {
     height: 5em;
     width: 5em;
     font-size: 1.2em;
-    margin-right: .5em;
+    margin-right: 1em;
     border-radius: 50%;
   }
 

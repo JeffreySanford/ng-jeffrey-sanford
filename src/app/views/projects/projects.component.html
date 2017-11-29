@@ -19,7 +19,7 @@
   </mat-expansion-panel-header>
 </mat-expansion-panel>
 
-<div class="two-columns">
+<div>
   <mat-expansion-panel class="block projects design">
     <div class="" *ngFor="let project of projects.design |  slice:3:12; let i=index">
       <a (click)="goToExternalUrl(project.url)">
@@ -41,7 +41,7 @@
     </mat-expansion-panel-header>
   </mat-expansion-panel>
 
-  <mat-expansion-panel class="block projects development">
+  <mat-expansion-panel  class="block projects development">
     <div class="" *ngFor="let project of projects.development |  slice:3:12; let i=index">
       <a (click)="goToExternalUrl(project.url)">
         <button mat-button>
