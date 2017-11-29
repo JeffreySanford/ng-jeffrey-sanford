@@ -15,21 +15,16 @@
 }
 
 .featured {
-  top: 0;
-  margin: 1em auto;
-  border: 1px solid purple;
-  width: 95%;
+  border: 1px solid rgba(153, 255, 153, 0.3);
 }
 
- .design {
-  margin: 2em auto;
-  width: 95%;
-}
- .development {
-  margin: 1em auto;
-  width: 95%;
+.design {
+  border: 1px solid rgba(153, 255, 153, 0.3);
 }
 
+.development {
+  border: 1px solid rgba(153, 255, 153, 0.3);
+}
 .mat-expansion-panel-header:not {
   border: 2px solid blue;
   background-color: blue;
@@ -97,23 +92,23 @@ button p {
   .top-projects {
     margin-top: 3em;
   }
+
   .featured {
     margin: 0 auto 2em;
     border: 1px solid purple;
     width: 40%;
   }
   .design {
-    position: relative;
     float: left;
     width: 40%;
     left: 2em;
   }
    .development {
-    position: relative;
     float: right;
     width: 40%;
     right: 2em;
   }
+
   button {
     background-color: lime;
     float: left;
