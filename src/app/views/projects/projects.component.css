@@ -9,41 +9,33 @@
 
 .top-projects {
   opacity: 1;
-  width: 98%;
-  margin: 2em 0 1em;
+  width: 95%;
+  margin: 2em .5em 1em;
   border-radius: 5px;
 }
 
 .featured {
-  border: 1px solid  .design .mat-expanded {
-    background-color: teal;
+  border: 1px solid;
   }
-}
 
 .design {
   border: 1px solid rgba(153, 255, 153, 0.3);
 }
 
-.design .mat-expansion-panel {
-
-}
-
 .development {
   border: 1px solid rgba(153, 255, 153, 0.3);
 }
-.mat-expansion-panel-header:not {
-  border: 2px solid blue;
-  background-color: blue;
-}
+
 .mat-expanded {
-  height: 15em;
-  background-color: yellow;
+  height: 19em;
+  background-color: rgba(153, 255, 153, 0.3);
 }
 
 mat-expansion-panel {
   height: 7em;
   width: 95%;
   margin: 0 auto;
+  margin-left: .5em;
 }
 
 .items-view {
@@ -55,7 +47,7 @@ mat-expansion-panel {
 
 button {
   float: left;
-  background-color: pink;
+  background-color: rgba(153, 255, 153, 0.6);
   margin: 0em .5em .5em 0em;
   border-radius: 50%;
   width: 2em;
