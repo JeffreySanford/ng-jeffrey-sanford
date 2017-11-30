@@ -36,21 +36,19 @@ export class ProjectsComponent implements OnInit {
     "featured": [
       {
         "title": "Imagine Create Thrive",
-        "location": "http://imaginecreatethrive.com",
+        "url": "http://imaginecreatethrive.com",
         "description": "This is a small botique agency that can create mockups, designs, and web applciations.",
-        "rank": 1,
-        "url": "http://imaginecreatethrive.com/",
-
+        "rank": 1
       },
       {
         "title": "Gracious Girls",
-        "location": "http://imaginecreatethrive.com:4200",
+        "url": "http://imaginecreatethrive.com:4200",
         "description": "This is a cute organization and cleaning oritented business.",
         "rank": 2
       },
       {
         "title": "BS Native Girl",
-        "location": "http://imaginecreatethrive.com:4201",
+        "url": "http://imaginecreatethrive.com:4201",
         "description": "Landing site presenting Native American are from an artist in the Pacific Northwest.",
         "rank": 3
       }
