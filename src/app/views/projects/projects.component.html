@@ -4,7 +4,7 @@
     <button mat-button>
     <mat-icon>home</mat-icon>
     <p>{{ project.title }}</p>
-    <a (click)="goToExternalUrl(project.git)">
+    <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
       <i class="zmdi zmdi-github"></i>
     </a>
     </button>
@@ -16,7 +16,7 @@
         <button mat-button  style="z-index: 5;">
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
-          <a (click)="goToExternalUrl(project.git)">
+          <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
             <i class="zmdi zmdi-github"></i>
           </a>
               </button>
@@ -32,7 +32,7 @@
         <button mat-button>
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
-          <a (click)="goToExternalUrl(project.git)">
+          <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
             <i class="zmdi zmdi-github"></i>
           </a>
         </button>
@@ -44,7 +44,7 @@
         <button mat-button  style="z-index: 5;">
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
-          <a (click)="goToExternalUrl(project.git)">
+          <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
             <i class="zmdi zmdi-github"></i>
           </a>
         </button>
@@ -71,7 +71,7 @@
           <button mat-button  style="z-index: 5;">
             <mat-icon>home</mat-icon>
             <p>{{ project.title }}</p>
-            <a (click)="goToExternalUrl(project.git)">
+            <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
               <i class="zmdi zmdi-github"></i>
             </a>
           </button>
