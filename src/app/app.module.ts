@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule } from '@angular/material';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {  MatExpansionModule } from '@angular/material';
+import { MatExpansionModule } from '@angular/material';
 import { MatButton, MatButtonToggleModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
