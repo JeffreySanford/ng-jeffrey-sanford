@@ -45,8 +45,8 @@
 
       function cityHeader() {
 
-          var headerContent = ['Name', 'ID', 'COD', 'Message', 'Longitutde', 'Latitude', 'Country', 'Population', 'SYS POP', 'CNT'];
-          var headerData = [oWeather.city.name, oWeather.city.id, oWeather.cod, oWeather.message, oWeather.city.coord.lon, oWeather.city.coord.lat, oWeather.city.country, oWeather.city.sys.population, oWeather.cnt];
+          var headerContent = ['Name', 'ID', 'COD', 'Message', 'Longitutde', 'Latitude', 'Country', 'CNT'];
+          var headerData = [oWeather.city.name, oWeather.city.id, oWeather.cod, oWeather.message, oWeather.city.coord.lon, oWeather.city.coord.lat, oWeather.city.country, oWeather.cnt];
           var table = document.createElement('table'),
               header = table.createTHead(),
               row,
