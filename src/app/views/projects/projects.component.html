@@ -4,6 +4,9 @@
     <button mat-button>
     <mat-icon>home</mat-icon>
     <p>{{ project.title }}</p>
+    <a (click)="goToExternalUrl(project.git)">
+      <i class="zmdi zmdi-github"></i>
+    </a>
     </button>
     </a>
   </div>
@@ -13,7 +16,10 @@
         <button mat-button  style="z-index: 5;">
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
-        </button>
+          <a (click)="goToExternalUrl(project.git)">
+            <i class="zmdi zmdi-github"></i>
+          </a>
+              </button>
       </a>
     </div>
   </mat-expansion-panel-header>
@@ -26,6 +32,9 @@
         <button mat-button>
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
+          <a (click)="goToExternalUrl(project.git)">
+            <i class="zmdi zmdi-github"></i>
+          </a>
         </button>
       </a>
     </div>
@@ -33,8 +42,11 @@
       <div class="" *ngFor="let project of projects.design |  slice:0:3; let i=index">
         <a (click)="goToExternalUrl(project.url)">
         <button mat-button  style="z-index: 5;">
-        <mat-icon>home</mat-icon>
-        <p>{{ project.title }}</p>
+          <mat-icon>home</mat-icon>
+          <p>{{ project.title }}</p>
+          <a (click)="goToExternalUrl(project.git)">
+            <i class="zmdi zmdi-github"></i>
+          </a>
         </button>
         </a>
       </div>
@@ -47,6 +59,9 @@
         <button mat-button>
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
+          <a (click)="goToExternalUrl(project.git)">
+            <i class="zmdi zmdi-github"></i>
+          </a>
         </button>
       </a>
     </div>
@@ -56,6 +71,9 @@
           <button mat-button  style="z-index: 5;">
             <mat-icon>home</mat-icon>
             <p>{{ project.title }}</p>
+            <a (click)="goToExternalUrl(project.git)">
+              <i class="zmdi zmdi-github"></i>
+            </a>
           </button>
         </a>
       </div>
