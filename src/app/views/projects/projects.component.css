@@ -122,23 +122,26 @@ button p {
 
   button mat-icon {
     position: absolute;
-    margin-top: 0em;
-    top: .25em;
-    left: 1.25em;
+    top: .15em;
+    left: 35%;
   }
 
   button p {
+    position: absolute;
     font-style: normal;
     position: relative;
     text-align: center;
     white-space: normal;
     font-size: .8em;
     line-height: 1.1;
-    margin-top: 2em;
+    margin-top: 1em;
   }
-
-  button a i {
+  button i {
     position: absolute;
-    bottom: .5;
+    bottom: .15em;
+    left: 41%;
+  }
+  button i:hover{
+    border: 1px solid lime;
   }
 }
