@@ -141,6 +141,7 @@ button p {
     bottom: -.25em;
     left: 41%;
   }
+
   button i:hover{
     border: 1px solid lime;
   }
