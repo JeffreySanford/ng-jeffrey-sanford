@@ -5,3 +5,8 @@ button {
 mat-menu-panel {
   background-color:rgba(178, 26, 102, .3) !important;
 }
+
+.nav-button-space {
+  margin: 0 .5em;
+}
+
