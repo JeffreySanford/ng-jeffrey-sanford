@@ -1,9 +1,8 @@
-*4`  QwaesxVDTHNIKJ,'
-]\<div fxLayout="row" fxShow="false" fxShow.gt-sm>
-  <button mat-button class"nav-button-space" routerLink="/landing" routerLinkActive="active">Landing </button>
-  <button mat-button class"nav-button-space" routerLink="/projects" routerLinkActive="active">Projects </button>
-  <button mat-button class"nav-button-space" routerLink="/about" routerLinkActive="active">About </button>
-  <button mat-button class"nav-button-space" routerLink="/contact" routerLinkActive="active">Contact </button>
+<div fxLayout="row" fxShow="false" fxShow.gt-sm>
+  <button mat-button routerLink="/landing" routerLinkActive="active">Landing</button>
+  <button mat-button routerLink="/projects" routerLinkActive="active">Projects</button>
+  <button mat-button routerLink="/about" routerLinkActive="active">About</button>
+  <button mat-button routerLink="/contact" routerLinkActive="active">Contact</button>
 </div>
 <button style="top: 1.75em;" mat-raised-button [mat-menu-trigger-for]="rootMenu" fxHide="false" fxHide.gt-sm>
   <mat-icon>menu</mat-icon>
@@ -12,8 +11,8 @@
 <mat-menu x-position="before" #rootMenu="matMenu" >
   <button mat-menu-item routerLink="/landing" routerLinkActive="active">Home </button>
   <button mat-menu-item [matMenuTriggerFor]="subMenu" routerLink="/projects" routerLinkActive="active">Projects </button>
-  <button mat-menu-item routerLink="/about" routerLinkActive="about">About </button>
-  <button mat-menu-item routerLink="/contact" routerLinkActive="contact">Contact </button>
+  <button mat-menu-item routerLink="/about" routerLinkActive="active">About </button>
+  <button mat-menu-item routerLink="/contact" routerLinkActive="active">Contact </button>
 </mat-menu>
 
 <mat-menu #subMenu="matMenu">
