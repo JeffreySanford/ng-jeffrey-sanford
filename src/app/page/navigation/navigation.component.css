@@ -2,11 +2,8 @@ button {
   background-color: rgba(178, 26, 102, .6);
   border-radius: 3px;
 }
-mat-menu-panel {
-  background-color:rgba(178, 26, 102, .3) !important;
-}
 
-.nav-button-space {
-  margin: 0 .5em;
-}
 
+.mat-menu-content {
+  background-color: rgba(178, 26, 102, .6);
+}

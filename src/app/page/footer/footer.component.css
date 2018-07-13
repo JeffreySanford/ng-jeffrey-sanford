@@ -14,15 +14,13 @@ p {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 40em;
-  color: rgb(0, 102, 255);
-  background-color: rgb(153, 194, 255);
+  color:black;
+  background-color: rgba(153, 194, 255, .6);
   text-align: center;
   padding: 5px 0;
   margin-top: 2em;
   bottom: 2em;
   border-radius: 6px;
-
-  /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
 }
