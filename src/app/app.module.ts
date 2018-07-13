@@ -37,6 +37,7 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
   { path: 'projects', component: ProjectsComponent, data: { state: 'projects' } },
   { path: 'projects/:id', component: ProjectsComponent, data: { state: 'project' } },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

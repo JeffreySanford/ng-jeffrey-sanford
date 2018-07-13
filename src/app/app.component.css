@@ -52,6 +52,9 @@
 
 .view-container {
   font-size: 1.1em;
-  height: 78vh;
+  height: 72vh;
   margin-top: 7em;
+}
+body {
+  margin: 0;
 }
