@@ -1,3 +1,15 @@
 p {
   text-align: justify;
 }
+
+@media (max-width: 1080px) {
+  p {
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 700px) {
+  p {
+    font-size: .6em;
+  }
+}
