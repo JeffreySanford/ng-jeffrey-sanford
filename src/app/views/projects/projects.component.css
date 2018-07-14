@@ -10,7 +10,7 @@
 .top-projects {
   opacity: 1;
   width: 95%;
-  margin: 2em .5em 1em;
+  margin: 2em auto 1em;
   border-radius: 5px;
 }
 
@@ -145,4 +145,12 @@ button p {
   button i:hover{
     border: 1px solid lime;
   }
+
+  .mat-menu-item-highlighted:not([disabled]), .mat-menu-item.cdk-keyboard-focused:not([disabled]), .mat-menu-item.cdk-program-focused:not([disabled]), .mat-menu-item:hover:not([disabled]) {
+    background: rgba(153, 255, 153, 0.6);
+  }
+  .mat-menu-content {
+    background-color:red;
+  }
+
 }

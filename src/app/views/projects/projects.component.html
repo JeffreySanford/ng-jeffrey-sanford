@@ -19,10 +19,11 @@
           <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
             <i class="zmdi zmdi-github"></i>
           </a>
-              </button>
+        </button>
       </a>
     </div>
   </mat-expansion-panel-header>
+  <span>Top Project</span>
 </mat-expansion-panel>
 
 <div>
@@ -37,6 +38,7 @@
           </a>
         </button>
       </a>
+      <span>Design</span>
     </div>
     <mat-expansion-panel-header class="top-projects">
       <div class="" *ngFor="let project of projects.design |  slice:0:3; let i=index">
@@ -51,6 +53,7 @@
         </a>
       </div>
     </mat-expansion-panel-header>
+    <span>Design</span>
   </mat-expansion-panel>
 
   <mat-expansion-panel  class="block projects development">
