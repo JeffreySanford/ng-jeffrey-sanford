@@ -7,7 +7,7 @@ adsense.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/', {
-        templateUrl: 'app/views/main.html',
+        templateUrl: 'kitchen-table/app/views/main.html',
         controller: 'MainController'
       }).
       when('/food', {

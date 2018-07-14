@@ -9,67 +9,67 @@
 			.when('/', {
             /*  Landing page */
 				controller: 'MainController',
-				templateUrl: 'views/partials/mainView.html',
+				templateUrl: 'car-connection/views/partials/mainView.html',
             })
             .when('/find', {
             /*  ADMIN:  Will list all the resource members */
                 controller: 'MainController',
-                templateUrl: 'views/partials/find.html'
+                templateUrl: 'car-connection/views/partials/find.html'
             })
             .when('/buyers', {
             /*  ADMIN:  Used as a main page for the buyers */
                 controller: 'BuyersController',
-                templateUrl: 'views/partials/buyers.html'
+                templateUrl: 'car-connection/views/partials/buyers.html'
             })
             .when('/buyer', {
             /*  USER:  Used as a main page for the individual buyer */
                 controller: 'BuyersController',
-                templateUrl: 'views/partials/buyer.html'
+                templateUrl: 'car-connection/views/partials/buyer.html'
             })
             .when('/buyer/:buyerID', {
             /*  USER:  Used as a main page for the individual buyer */
                 controller: 'BuyersController',
-                templateUrl: 'views/partials/buyer.html'
+                templateUrl: 'car-connection/views/partials/buyer.html'
             })
             .when('/sellers', {
             /*  ADMIN: Used for the sellers main page */
                 controller: 'SellersController',
-                templateUrl: 'views/partials/sellers.html'
+                templateUrl: 'car-connection/views/partials/sellers.html'
             })
             .when('/sellers/:sellerID', {
             /*  USER:  Used as a main page for the individual seller */
                 controller: 'SellersController',
-                templateUrl: 'views/partials/seller.html'
+                templateUrl: 'car-connection/views/partials/seller.html'
             })
             .when('/about', {
             /*  Will list all the resource members */
                 controller: 'MainController',
-                templateUrl: 'views/partials/about.html'
+                templateUrl: 'car-connection/views/partials/about.html'
             })
-			.otherwise({redirectTo: '/admin' });
+			.otherwise({redirectTo: 'car-connection//admin' });
             /*  Redirect all other queries to the admin section */
     });
 
     carConn.controller('MainController', function MainController($scope, $http) {
-        $http.get("js/json/owners.json")
+        $http.get("car-connection/js/json/owners.json")
             .success(function (responce) {
                 $scope.owners = responce;
             });
         });
 
     carConn.controller('BuyersController', function BuyersController($scope, $http) {
-        $http.get("js/json/buyers.json")
+        $http.get("car-connection/js/json/buyers.json")
             .success(function (responce) {
                 $scope.buyers = responce;
             });
-        $http.get("js/json/owners.json")
+        $http.get("car-connection/js/json/owners.json")
             .success(function (responce) {
                 $scope.owners = responce;
             });
         });
 
     carConn.controller('SellersController', function BuyersController($scope, $http) {
-        $http.get("js/json/sellers.json")
+        $http.get("car-connection/js/json/sellers.json")
             .success(function (responce) {
                 $scope.owners = responce;
             });

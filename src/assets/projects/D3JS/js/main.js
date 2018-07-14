@@ -22,7 +22,7 @@
 
         for (i = 1; i < 30; i += 1 ) {
             bardata.push(Math.round(Math.random() * 30));
-        }    
+        }
 /*
     bardata.sort(function compareNumbers(a,b){
         return a - b;
@@ -147,7 +147,7 @@
 
         var colors = d3.scale.category20();
 
-        /*  These are some great preset colors that are included in d3, 
+        /*  These are some great preset colors that are included in d3,
         reference the online information at:  (not at but interesting)
         http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d */
 
@@ -198,17 +198,17 @@
                     return a > 90 ? a - 180 : a;
             }
         }
-    
+
     function occupations(data) {
         /**
          * Implement these code changes to process the data files.  d3.sjon should be processsing datas and string
          * perfectly.  Refer tot he API doc on d3.json to process the variable data.  Have you tried pusing the exisitng
          * dataset?
          */
-  
+
         //$('#projectFourImage').fadeOutAndRemove(2000);
-        
-        // create the SVG        
+
+        // create the SVG
 
         //initPieChart(data);
         initBarChart(data);
@@ -251,7 +251,7 @@
           .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        d3.json("data/firstmonth.json", function(error, json) {
+        d3.json("D3JS/data/firstmonth.json", function(error, json) {
             if (error) {
                 return console.warn(error);
             }
@@ -322,14 +322,14 @@
 
         // Define the line
         var valueline = d3.svg.line()
-            .x(function(d) { 
-                return x(d.receive_date); 
+            .x(function(d) {
+                return x(d.receive_date);
             })
-            .y(function(d) { 
-                return y(d.reponses); 
+            .y(function(d) {
+                return y(d.reponses);
             }
         );
-            
+
         // Adds the svg canvas
         var svg = d3.select("#firstMonthChart")
             .append("svg")
@@ -340,7 +340,7 @@
                         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         // Get the data
-        d3.json("data/firstmonth.json", function(error, json) {
+        d3.json("D3JS/data/firstmonth.json", function(error, json) {
             if (error) {
                 return console.warn(error);
             }
@@ -384,7 +384,7 @@
     //  area chart : http://bl.ocks.org/mohamed-ali/ed4772df6dca7a48f678
 
         //$('#projectThreeImage').fadeOutAndRemove(2000);
-        
+
         initLineChart2(data);
 
     }
@@ -392,7 +392,7 @@
     function top5Counties(data) {
 
         //$('#projectTwoImage').fadeOutAndRemove(2000);
-        
+
         $.each(data, function(index, value) {
             $("#top5Table").append('<tr><td>' + data[index].country +' </td><td>' + data[index].responses + '</td></tr>');
         });
@@ -474,20 +474,20 @@
     }
 
     function init() {
-        
-        var data;   
-        
-        /* for this sample don't place the data object into the global name space.  It seemed 
-        to work fine, but the idea of four data objects crashing into each other is a terriffy 
-        prospect.  Better to pass it independently though the function, explicity defining the 
-        object.  On a normal basic with one one dataset, it seems to be good practive to allow 
+
+        var data;
+
+        /* for this sample don't place the data object into the global name space.  It seemed
+        to work fine, but the idea of four data objects crashing into each other is a terriffy
+        prospect.  Better to pass it independently though the function, explicity defining the
+        object.  On a normal basic with one one dataset, it seems to be good practive to allow
         it into the global namespace however.
         */
-        
+
         console.log("init fired");
         var index;
 
-        var links = ['data/count.json', 'data/top5.json', 'data/firstmonth.json', 'data/occupations.json'];
+        var links = ['D3JS/data/count.json', 'D3JS/data/top5.json', 'D3JS/data/firstmonth.json', 'D3JS/data/occupations.json'];
 
         $.each(links, function (index, value) {
             console.log(index + ": " + value);

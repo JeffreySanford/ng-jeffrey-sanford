@@ -1,6 +1,6 @@
-$.getJSON("data/pageinformation.json", function(json) {
+$.getJSON("html5-presentation/data/pageinformation.json", function(json) {
     var pageInformation = json;
-    
+
     var videoTemplate = Handlebars.compile( $("#handlebars-video-wrapper").html());
     var videoSource = videoTemplate(pageInformation);
     $('#video-wrapper').append(videoSource);

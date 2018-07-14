@@ -3,12 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>HTML5 Video Landing Page</title>
-        
-        <link rel="stylesheet" href="css/myers-reset.css">
-        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
+
+
     </head>
     <body>
+        <link rel="stylesheet" href="html5-presentation/css/myers-reset.css">
+        <link rel="stylesheet" href="html5-presentation/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="html5-presentation/css/style.css">
         <!--  video section -->
         <div id="video-container" class="video-content">
             <video id="video-wrapper" controls>
@@ -24,10 +25,7 @@
         </div>
         <!--  main page section -->
         <div id="mainpage-container" class="hidden">
-            <script id="handlebars-background-wrapper" type="text/x-handlebars-template">
-                <div id="page-template" style = "background: url({{ background }}) no-repeat center fixed"></div>
-            </script>
-            <script id="mainpage-content-wrapper" type="text/x-handlebars-template"> 
+            <script id="mainpage-content-wrapper" type="text/x-handlebars-template">
                 <div class="row">
                     <h2>{{ mainPageTitle }}</h2>
                 </div>
@@ -44,11 +42,11 @@
         </div><!--ends mainoage-container -->
         <div id="audio-container">
             <audio id="audio-wrapper" loop="loop">
-                <script id="handlebars-audio-wrapper" type="text/x-handlebars-template"> 
-                    <source src={{ audioOgg }} />  
+                <script id="handlebars-audio-wrapper" type="text/x-handlebars-template">
+                    <source src={{ audioOgg }} />
                     <source src={{ audioMp3 }} />
                 </script>
-            </audio> 
+            </audio>
         </div>
         <div id="navigation" class="row hidden">
             <div class="col-sm-6 col-md-6 col-lg-6 text-center">
@@ -67,12 +65,12 @@
                     <p>{{{modalContent}}}</p>
                 </div>
             </script>
-        </div> <!-- ends modal insert --> 
-        
-        <script src="js/vendor/jquery-2.2.0.min.js"></script>
-        <script src="js/vendor/handlebars-v4.0.5.js"></script>
+        </div> <!-- ends modal insert -->
+
+        <script src="html5-presentation/js/vendor/jquery-2.2.0.min.js"></script>
+        <script src="html5-presentation/js/vendor/handlebars-v4.0.5.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script src="js/handlebars-template.js"></script>
-        <script src="js/javascript.js"></script>
+        <script src="html5-presentation/js/handlebars-template.js"></script>
+        <script src="html5-presentation/js/javascript.js"></script>
     </body>
 </html>

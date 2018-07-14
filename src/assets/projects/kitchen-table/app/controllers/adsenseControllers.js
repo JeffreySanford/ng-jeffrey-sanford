@@ -1,7 +1,7 @@
 var adsenseControllers = angular.module('adsenseControllers', []);
 
 adsenseControllers.controller('MainController', ['$scope', '$http', function ($scope, $http){
-  $http.get('data/mainData.json').success(function(data) {
+  $http.get('kitchen-table/data/mainData.json').success(function(data) {
     $scope.mainData = data;
   });
   $scope.title ='Main Page Title';
@@ -10,7 +10,7 @@ adsenseControllers.controller('MainController', ['$scope', '$http', function ($s
 }]);
 
 adsenseControllers.controller('PeopleController', ['$scope', '$http', function ($scope, $http){
-  $http.get('data/peopleData.json').success(function(data) {
+  $http.get('kitchen-table/data/peopleData.json').success(function(data) {
     $scope.peopleData = data;
   });
   $scope.title ='People Page Title';
@@ -24,7 +24,7 @@ adsenseControllers.controller('PeopleDetailController', ['$scope', '$routeParams
   }]);
 
 adsenseControllers.controller('FoodController', ['$scope', '$http', function ($scope, $http){
-  $http.get('data/foodData.json').success(function(data) {
+  $http.get('kitchen-table/data/foodData.json').success(function(data) {
     $scope.foodData = data;
   });
   $scope.title ='Food Page Title';
@@ -38,7 +38,7 @@ adsenseControllers.controller('FoodDetailController', ['$scope', '$routeParams',
   }]);
 
 adsenseControllers.controller('RecipesController', ['$scope', '$http', function ($scope, $http){
-  $http.get('data/recipesData.json').success(function(data) {
+  $http.get('kitchen-table/data/recipesData.json').success(function(data) {
     $scope.json = data;
     /*console.log('Recipes' + data);*/
   });
@@ -52,7 +52,7 @@ adsenseControllers.controller('RecipesController', ['$scope', '$http', function 
 
 adsenseControllers.controller('RecipesDetailController',
   function ($scope, $routeParams, $http) {
-    $http.get('data/recipesData.json').success(function(data) {
+    $http.get('kitchen-table/data/recipesData.json').success(function(data) {
 /* console.log('Data from the recipesData.json file:' + data); */
 /*console.log('The entire recipe collection is called recipes:' + recipes);*/
       for(var i = 0; i < data.recipes.length; i++) {

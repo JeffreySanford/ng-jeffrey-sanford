@@ -1,7 +1,7 @@
 <html>
  <head>
    <title>PHP Test</title>
-   <link rel="stylesheet" href="css/cookie-style.css" />
+   <link rel="stylesheet" href="./css/cookie-style.css" />
   </head>
   <body>
     <div id="container">
