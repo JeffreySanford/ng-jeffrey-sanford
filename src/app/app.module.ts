@@ -41,7 +41,7 @@ const appRoutes: Routes = [
 ];
 
 export const AppRouting = RouterModule.forRoot(appRoutes, {
-  useHash: true
+  useHash: false
 });
 
 @NgModule({
