@@ -1,9 +1,17 @@
 button {
   background-color: rgba(178, 26, 102, .6);
   border-radius: 3px;
+  margin: 0 .5em;
 }
 
+@media (max-width: 958px) {
+  button {
+    margin: .5em 0;
+  }
 
-.mat-menu-content {
-  background-color: rgba(178, 26, 102, .6);
+  ::ng-deep .mat-menu-content{
+    background-color: rgba(178, 26, 102, 1);
+    padding: .5em;
+  }
+
 }
