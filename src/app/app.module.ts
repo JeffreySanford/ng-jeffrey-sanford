@@ -31,13 +31,12 @@ import { ngIfMediaQuery } from './ng-if-media-query.directive';
 import { SocialIconsComponent } from './page/social-icons/social-icons.component';
 
 const appRoutes: Routes = [
-  { path: '', component: LandingComponent, data: { state: 'landing' } },
   { path: 'landing', component: LandingComponent, data: { state: 'landing' } },
   { path: 'about', component: AboutComponent, data: { state: 'about' } },
   { path: 'contact', component: ContactComponent, data: { state: 'contact' } },
   { path: 'projects', component: ProjectsComponent, data: { state: 'projects' } },
   { path: 'projects/:id', component: ProjectsComponent, data: { state: 'project' } },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: '/landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
