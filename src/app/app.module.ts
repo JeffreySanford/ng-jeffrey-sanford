@@ -36,7 +36,7 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'projects', component: ProjectsComponent},
   { path: 'projects/:id', component: ProjectsComponent},
-  { path: 'landing', redirectTo: '/landing', pathMatch: 'full' },
+  // { path: 'landing', redirectTo: '/landing', pathMatch: 'full' },
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -44,6 +44,8 @@ const appRoutes: Routes = [
 export const AppRouting = RouterModule.forRoot(appRoutes, {
   useHash: false
 });
+
+{ initialNavigation : false }
 
 @NgModule({
   declarations: [
@@ -71,8 +73,10 @@ export const AppRouting = RouterModule.forRoot(appRoutes, {
     BrowserAnimationsModule,
     BrowserModule,
     RouterModule.forRoot(
-      appRoutes
-      // { enableTracing: true } // <-- debugging purposes only
+      appRoutes,
+      { enableTracing: true,  // <-- debugging purposes only
+        initialNavigation : false
+      }
     )
   ],
   exports: [
