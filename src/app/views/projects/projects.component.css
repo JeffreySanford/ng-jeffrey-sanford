@@ -2,9 +2,16 @@
   display: relative;
   background-color: rgba(153, 255, 153, 0.3);
   opacity: 1;
-  width: 90%;
-  margin: 1em 0 1em;
+  margin: 1em 0 2em;
   border-radius: 5px;
+  width: 40% !important;
+}
+
+.style-exp-panel {
+  margin: 0.5em auto 0.5em;
+  border-radius: 5px;
+  border: 1px solid purple;
+  color: purple;
 }
 
 .top-projects {
@@ -16,63 +23,70 @@
 
 .featured {
   border: 1px solid;
-  }
+  background-color: rgba(blue, .3)
+}
 
 .design {
   border: 1px solid rgba(153, 255, 153, 0.3);
+  background-color: rgba(red, .3)
 }
 
 .development {
   border: 1px solid rgba(153, 255, 153, 0.3);
+  background-color: rgba(green, .3)
 }
 
 .mat-expanded {
   height: 19em;
   background-color: rgba(153, 255, 153, 0.3);
 }
-
-mat-expansion-panel {
-  height: 7em;
-  width: 95%;
-  margin: 0 auto;
-  margin-left: .5em;
+.mat-menu-panel {
+  margin-right: 3em;
+  background-color: yellow;
 }
-
-.items-view {
-  margin: 3em 0em 0em 0em;
+.mat-menu-content {
+  margin: 1em 3em;
   border: 2px solid red;
-  display: inline-block;
-  width: 75%;
 }
 
 button {
+  background-color: lime;
   float: left;
-  background-color: rgba(153, 255, 153, 0.6);
-  margin: 0em .5em .5em 0em;
-  border-radius: 50%;
-  width: 2em;
   height: 5em;
+  width: 5em;
+  font-size: 1.2em;
+  margin-right: 1em;
+  margin-bottom: .5em;
+  border-radius: 50%;
 }
 
 button mat-icon {
   position: absolute;
-  margin-top: 0em;
-  top: .25em;
-  left: 1.25em;
+  top: 0.15em;
+  left: 35%;
 }
 
 button p {
+  position: absolute;
   font-style: normal;
   position: relative;
   text-align: center;
   white-space: normal;
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 1.1;
-  margin-top: 2.5em;
+  margin-top: 1em;
+}
+button a {
+  position: absolute;
+  bottom: -0.25em;
+  left: 41%;
+}
+
+button i:hover {
+  border: 1px solid lime;
 }
 
 @media screen and (min-width: 480px) {
-
   .projects {
     width: 100%;
     margin: 1em 1em 1em 0;
@@ -81,13 +95,14 @@ button p {
 
   .mat-expansion-panel-header {
     background-color: rgba(153, 255, 153, 0);
-    width: 85%;
-    margin-left: .5em;
+    /* width: 80%; */
+    margin-right: .5em;
+    margin-left: 0.5em;
   }
 
   .mat-expanded {
-    background-color: rgba(153, 255, 153, .3);
-    margin-left: .5em;
+    background-color: rgba(153, 255, 153, 0.3);
+    margin-left: 0.5em;
   }
 
   .top-projects {
@@ -104,45 +119,9 @@ button p {
     width: 40%;
     margin-left: 3em;
   }
-   .development {
+  .development {
     float: right;
     width: 40%;
     margin-right: 3em;
-  }
-
-  button {
-    background-color: lime;
-    float: left;
-    height: 5em;
-    width: 5em;
-    font-size: 1.2em;
-    margin-right: 1em;
-    border-radius: 50%;
-  }
-
-  button mat-icon {
-    position: absolute;
-    top: .15em;
-    left: 35%;
-  }
-
-  button p {
-    position: absolute;
-    font-style: normal;
-    position: relative;
-    text-align: center;
-    white-space: normal;
-    font-size: .8em;
-    line-height: 1.1;
-    margin-top: 1em;
-  }
- button a {
-    position: absolute;
-    bottom: -.25em;
-    left: 41%;
-  }
-
-  button i:hover{
-    border: 1px solid lime;
   }
 }

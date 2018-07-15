@@ -1,34 +1,10 @@
-<mat-expansion-panel class="block projects featured">
-  <div class="" *ngFor="let project of projects.featured |  slice:3:12; let i=index">
-    <a (click)="goToExternalUrl(project.url)">
-    <button mat-button>
-    <mat-icon>home</mat-icon>
-    <p>{{ project.title }}</p>
-    <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
-      <i class="zmdi zmdi-github"></i>
-    </a>
-    </button>
-    </a>
-  </div>
-  <mat-expansion-panel-header  class="top-projects">
-    <div class="" *ngFor="let project of projects.featured |  slice:0:3; let i=index">
-      <a (click)="goToExternalUrl(project.url)">
-        <button mat-button  style="z-index: 5;">
-          <mat-icon>home</mat-icon>
-          <p>{{ project.title }}</p>
-          <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
-            <i class="zmdi zmdi-github"></i>
-          </a>
-        </button>
-      </a>
-    </div>
-  </mat-expansion-panel-header>
-  <span>Top Project</span>
-</mat-expansion-panel>
+<mat-accordion displayMode="default" [multi]="true" [hideToggle]="false">
+  <mat-expansion-panel [hideToggle]="false" class="block projects featured">
+    <mat-expansion-panel-header layout="column" class="style-exp-panel">
+      <h3>Featured Projects</h3>
+    </mat-expansion-panel-header>
 
-<div>
-  <mat-expansion-panel class="block projects design">
-    <div class="" *ngFor="let project of projects.design |  slice:3:12; let i=index">
+    <div class="" *ngFor="let project of projects.featured; let i=index">
       <a (click)="goToExternalUrl(project.url)">
         <button mat-button>
           <mat-icon>home</mat-icon>
@@ -38,48 +14,46 @@
           </a>
         </button>
       </a>
-      <span>Design</span>
     </div>
-    <mat-expansion-panel-header class="top-projects">
-      <div class="" *ngFor="let project of projects.design |  slice:0:3; let i=index">
-        <a (click)="goToExternalUrl(project.url)">
-        <button mat-button  style="z-index: 5;">
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-accordion displayMode="default" [multi]="true" [hideToggle]="false">
+  <mat-expansion-panel [hideToggle]="false" class="block projects design">
+    <mat-expansion-panel-header layout="column" class="style-exp-panel">
+      <h3>Design Projects</h3>
+    </mat-expansion-panel-header>
+
+    <div class="" *ngFor="let project of projects.design; let i=index" style="margin-top: 1em;">
+      <a (click)="goToExternalUrl(project.url)">
+        <button mat-button>
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
           <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
             <i class="zmdi zmdi-github"></i>
           </a>
         </button>
-        </a>
-      </div>
-    </mat-expansion-panel-header>
-    <span>Design</span>
+      </a>
+    </div>
   </mat-expansion-panel>
+</mat-accordion>
 
-  <mat-expansion-panel  class="block projects development">
-    <div class="" *ngFor="let project of projects.development |  slice:3:12; let i=index">
+<mat-accordion displayMode="default" [multi]="true" [hideToggle]="false">
+  <mat-expansion-panel [hideToggle]="false" class="block projects development">
+    <mat-expansion-panel-header layout="column" class="style-exp-panel">
+      <h3>Development Projects</h3>
+    </mat-expansion-panel-header>
+
+    <div class="" *ngFor="let project of projects.development; let i=index" style="margin-top: 1em;">
       <a (click)="goToExternalUrl(project.url)">
         <button mat-button>
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
           <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
-            <i style="position: absolute; bottom: 1em;" class="zmdi zmdi-github"></i>
+            <i class="zmdi zmdi-github"></i>
           </a>
         </button>
       </a>
     </div>
-    <mat-expansion-panel-header class="top-projects">
-      <div class="top" *ngFor="let project of projects.development |  slice:0:3; let i=index">
-        <a (click)="goToExternalUrl(project.url)">
-          <button mat-button  style="z-index: 5;">
-            <mat-icon>home</mat-icon>
-            <p>{{ project.title }}</p>
-            <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
-              <i class="zmdi zmdi-github"></i>
-            </a>
-          </button>
-        </a>
-      </div>
-    </mat-expansion-panel-header>
   </mat-expansion-panel>
-</div>
+</mat-accordion>

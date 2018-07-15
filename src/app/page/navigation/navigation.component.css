@@ -1,17 +1,27 @@
 button {
-  background-color: rgba(178, 26, 102, .6);
+  background-color: rgba(178, 26, 102, 0.6);
   border-radius: 3px;
-  margin: 0 .5em;
+  margin: 0 0.5em;
 }
 
 @media (max-width: 958px) {
   button {
-    margin: .5em 0;
+    margin: 0.5em 0;
   }
 
-  ::ng-deep .mat-menu-content{
+  ::ng-deep .mat-menu-panel {
+    margin: 3em 0em 0em 0em;
+    border: 1px solid black;
+  }
+
+  ::ng-deep .mat-menu-content {
     background-color: rgba(178, 26, 102, 1);
-    padding: .5em;
+    padding: 0.5em;
   }
+  ::ng-deep #cdk-overlay-1 {
+    background-color: rgba(green, 1);
+    padding: 0.5em;
+    margin: -3.745em 1em 0 0;
 
+  }
 }

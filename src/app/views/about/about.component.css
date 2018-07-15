@@ -1,15 +1,16 @@
 p {
   text-align: justify;
+  font-size: 1.25em;
 }
 
 @media (max-width: 1080px) {
   p {
-    font-size: .8em;
+    font-size: 2em;
   }
 }
 
 @media (max-width: 700px) {
   p {
-    font-size: .6em;
+    font-size: .7em;
   }
 }
