@@ -36,7 +36,7 @@
 }
 
 .mat-expanded {
-  height: 19em;
+  height: 15em;
   background-color: rgba(153, 255, 153, 0.3);
 }
 .mat-menu-panel {
@@ -51,7 +51,7 @@ button {
   float: left;
   height: 5em;
   width: 5em;
-  margin: 0.5em 1em 0.5em 0;
+  margin: 0.25em .5em 0.25em 0;
   border-radius: 50%;
 }
 
