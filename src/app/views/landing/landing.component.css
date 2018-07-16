@@ -19,3 +19,8 @@
 .intro .intro-body .intro-text {
   font-size: 18px;
 }
+
+.center-info {
+  color: white;
+  margin:0 1em;
+}

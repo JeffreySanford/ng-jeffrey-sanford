@@ -38,3 +38,17 @@ ul {
   color: white;
   margin:0 1em;
 }
+
+.contact-card {
+  background-color: rgba(201, 76, 76, 0.3);
+  height:80%;
+  border-radius: 5px;
+  margin: 2em;
+  color: white;
+  font-size: 1.5em;
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}

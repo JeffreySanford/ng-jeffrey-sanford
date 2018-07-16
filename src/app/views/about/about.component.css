@@ -3,14 +3,22 @@ p {
   font-size: 1.1em;
 }
 
+.about-card {
+  overflow-y: auto;
+  background-color: rgba(128, 255, 255, 0.3);
+  height: 80%;
+  margin: 2em;
+  border-radius: 5px;
+}
+
 @media (max-width: 1080px) {
   p {
-    font-size: .9em;
+    font-size: 0.9em;
   }
 }
 
 @media (max-width: 700px) {
   p {
-    font-size: .7em;
+    font-size: 0.7em;
   }
 }
