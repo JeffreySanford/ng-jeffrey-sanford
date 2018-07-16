@@ -1,4 +1,4 @@
-<mat-accordion displayMode="default" [multi]="false">
+<mat-accordion id="featured-accordian" displayMode="default" [multi]="false">
   <mat-expansion-panel [hideToggle]="false" class="block projects featured" [expanded]="true">
     <mat-expansion-panel-header layout="column" class="style-exp-panel">
       <h3>Featured Projects</h3>
@@ -18,8 +18,8 @@
   </mat-expansion-panel>
 </mat-accordion>
 
-<mat-accordion displayMode="default" [multi]="false" >
-  <mat-expansion-panel [hideToggle]="false" class="block projects design">
+<mat-accordion id="design-accordian" displayMode="default" [multi]="false" >
+  <mat-expansion-panel (opened)="openGroup('design')" [hideToggle]="false" class="block projects design">
     <mat-expansion-panel-header layout="column" class="style-exp-panel">
       <h3>Design Projects</h3>
     </mat-expansion-panel-header>
@@ -38,8 +38,8 @@
   </mat-expansion-panel>
 </mat-accordion>
 
-<mat-accordion displayMode="default" [multi]="false">
-  <mat-expansion-panel [hideToggle]="false" class="block projects development">
+<mat-accordion id="development-accordian" displayMode="default" [multi]="false">
+  <mat-expansion-panel (opened)="openGroup('development')"  [hideToggle]="false" class="block projects development">
     <mat-expansion-panel-header layout="column" class="style-exp-panel">
       <h3>Development Projects</h3>
     </mat-expansion-panel-header>
