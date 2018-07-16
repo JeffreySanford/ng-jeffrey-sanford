@@ -72,8 +72,9 @@ export const AppRouting = RouterModule.forRoot(appRoutes, {
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true,  // <-- debugging purposes only
-        initialNavigation : false
+      {
+        // enableTracing: true,  // <-- debugging purposes only
+        initialNavigation : true
       }
     )
   ],

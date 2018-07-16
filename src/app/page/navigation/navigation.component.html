@@ -1,22 +1,22 @@
 <div fxLayout=" row" fxShow="false" fxShow.gt-sm>
-  <button mat-button routerLink="/" routerLinkActive="active" skipLocationChange>Home</button>
-  <button mat-button routerLink="/projects" routerLinkActive="active" skipLocationChange>Projects</button>
-  <button mat-button routerLink="/about" routerLinkActive="active" skipLocationChange>About</button>
-  <button mat-button routerLink="/contact" routerLinkActive="active" skipLocationChange>Contact</button>
+  <button mat-button routerLink="/" routerLinkActive="active">Home</button>
+  <button mat-button routerLink="/projects" routerLinkActive="active">Projects</button>
+  <button mat-button routerLink="/about" routerLinkActive="active">About</button>
+  <button mat-button routerLink="/contact" routerLinkActive="active">Contact</button>
 </div>
 <button style="top: 1.75em;" mat-raised-button [mat-menu-trigger-for]=" rootMenu" fxHide="false" fxHide.gt-sm>
   <mat-icon>menu</mat-icon>
 </button>
 
 <mat-menu x-position="before" #rootMenu="matMenu">
-  <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange>Home </button>
+  <button mat-menu-item routerLink="/" routerLinkActive="active">Home </button>
   <button mat-menu-item [matMenuTriggerFor]="subMenu">Projects </button>
-  <button mat-menu-item routerLink="/about" routerLinkActive="active" skipLocationChange>About </button>
-  <button mat-menu-item routerLink="/contact" routerLinkActive="active" skipLocationChange>Contact </button>
+  <button mat-menu-item routerLink="/about" routerLinkActive="active">About </button>
+  <button mat-menu-item routerLink="/contact" routerLinkActive="active">Contact </button>
 </mat-menu>
 
 <mat-menu #subMenu="matMenu">
-  <button routerLink="/projects" routerLinkActive="active" skipLocationChange mat-menu-item>Current Projects </button>
-  <button routerLink="/projects" routerLinkActive="active" skipLocationChange mat-menu-item>Design </button>
-  <button routerLink="/projects" routerLinkActive="active" skipLocationChange mat-menu-item>Development </button>
+  <button routerLink="/projects" routerLinkActive="active" mat-menu-item>Current Projects </button>
+  <button routerLink="/projects" routerLinkActive="active" mat-menu-item>Design </button>
+  <button routerLink="/projects" routerLinkActive="active" mat-menu-item>Development </button>
 </mat-menu>
