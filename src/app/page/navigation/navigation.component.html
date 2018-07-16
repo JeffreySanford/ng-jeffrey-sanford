@@ -10,7 +10,7 @@
 
 <mat-menu x-position="before" #rootMenu="matMenu">
   <button mat-menu-item routerLink="/" routerLinkActive="active" skipLocationChange>Home </button>
-  <button mat-menu-item [matMenuTriggerFor]="subMenu" routerLink="/projects" routerLinkActive="active" skipLocationChange>Projects </button>
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">Projects </button>
   <button mat-menu-item routerLink="/about" routerLinkActive="active" skipLocationChange>About </button>
   <button mat-menu-item routerLink="/contact" routerLinkActive="active" skipLocationChange>Contact </button>
 </mat-menu>
