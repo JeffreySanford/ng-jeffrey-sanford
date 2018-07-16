@@ -94,7 +94,7 @@ button i:hover {
   }
 
   .mat-expansion-panel-header {
-    background-color: rgba(153, 255, 153, 0);
+    background-color: rgba(153, 255, 153, .5);
     /* width: 80%; */
     margin-right: .5em;
     margin-left: 0.5em;
@@ -111,7 +111,6 @@ button i:hover {
 
   .featured {
     margin: 0 auto 2em;
-    border: 1px solid purple;
     width: 40%;
   }
   .design {
