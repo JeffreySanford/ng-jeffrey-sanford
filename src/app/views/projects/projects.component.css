@@ -10,7 +10,6 @@
 .style-exp-panel {
   margin: 0.5em auto 0.5em;
   border-radius: 5px;
-  border: 1px solid purple;
   color: purple;
 }
 
@@ -22,18 +21,18 @@
 }
 
 .featured {
-  border: 1px solid;
-  background-color: rgba(blue, .3)
+  width: 90% !important;
+  margin: 0 auto;
 }
 
 .design {
-  border: 1px solid rgba(153, 255, 153, 0.3);
-  background-color: rgba(red, .3)
+  width: 90% !important;
+  margin: 1em auto 1em;
 }
 
 .development {
-  border: 1px solid rgba(153, 255, 153, 0.3);
-  background-color: rgba(green, .3)
+  width: 90% !important;
+  margin: 0 auto;
 }
 
 .mat-expanded {
@@ -42,11 +41,9 @@
 }
 .mat-menu-panel {
   margin-right: 3em;
-  background-color: yellow;
 }
 .mat-menu-content {
   margin: 1em 3em;
-  border: 2px solid red;
 }
 
 button {
@@ -54,10 +51,13 @@ button {
   float: left;
   height: 5em;
   width: 5em;
-  font-size: 1.2em;
-  margin-right: 1em;
-  margin-bottom: .5em;
+  margin: 0.5em 1em 0.5em 0;
   border-radius: 50%;
+}
+
+.mat-elevation-z5 {
+  position: relative;
+  z-index: 2;
 }
 
 button mat-icon {
@@ -72,24 +72,21 @@ button p {
   position: relative;
   text-align: center;
   white-space: normal;
-  font-size: 0.8em;
-  line-height: 1.1;
-  margin-top: 1em;
+  font-size: 0.75em;
+  line-height: 1;
+  margin-top: 2em;
 }
 button a {
   position: absolute;
-  bottom: -0.25em;
+  bottom: -.75em;
   left: 41%;
 }
-button i {
-  margin-top: .25em;
-  margin-bottom: .5em;
-}
-button i:hover {
-  border: 1px solid lime;
+
+button:hover {
+  border: 1px solid darkgreen;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 700px) {
   .projects {
     width: 100%;
     margin: 1em 1em 1em 0;
@@ -97,9 +94,8 @@ button i:hover {
   }
 
   .mat-expansion-panel-header {
-    background-color: rgba(153, 255, 153, .5);
-    /* width: 80%; */
-    margin-right: .5em;
+    background-color: rgba(153, 255, 153, 0.5);
+    margin-right: 0.5em;
     margin-left: 0.5em;
   }
 
@@ -113,17 +109,17 @@ button i:hover {
   }
 
   .featured {
+    width: 75% !important;
     margin: 0 auto 2em;
-    width: 40%;
   }
   .design {
     float: left;
-    width: 40%;
-    margin-left: 3em;
+    width: 45% !important;
+    margin-left: 1em;
   }
   .development {
     float: right;
-    width: 40%;
-    margin-right: 3em;
+    width: 45% !important;
+    margin-right: 1em;
   }
 }

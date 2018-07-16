@@ -1,4 +1,4 @@
-<mat-accordion id="featured-accordian" displayMode="default" [multi]="false">
+<mat-accordion class="featured" id="featured-accordian" displayMode="default" [multi]="false">
   <mat-expansion-panel [hideToggle]="false" class="block projects featured" [expanded]="true">
     <mat-expansion-panel-header layout="column" class="style-exp-panel">
       <h3>Featured Projects</h3>
@@ -6,7 +6,7 @@
 
     <div class="" *ngFor="let project of projects.featured; let i=index">
       <a (click)="goToExternalUrl(project.url)">
-        <button mat-button>
+        <button mat-button class="mat-elevation-z5">
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
           <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
@@ -18,7 +18,7 @@
   </mat-expansion-panel>
 </mat-accordion>
 
-<mat-accordion id="design-accordian" displayMode="default" [multi]="false" >
+<mat-accordion id="design-accordian" displayMode="default" [multi]="false" style="width: 45%;">
   <mat-expansion-panel [hideToggle]="false" class="block projects design">
     <mat-expansion-panel-header layout="column" class="style-exp-panel">
       <h3>Design Projects</h3>
@@ -26,7 +26,7 @@
 
     <div class="" *ngFor="let project of projects.design; let i=index" style="margin-top: 1em;">
       <a (click)="goToExternalUrl(project.url)">
-        <button mat-button>
+        <button mat-button class="mat-elevation-z5">
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
           <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
@@ -38,7 +38,7 @@
   </mat-expansion-panel>
 </mat-accordion>
 
-<mat-accordion id="development-accordian" displayMode="default" [multi]="false">
+<mat-accordion id="development-accordian" displayMode="default" [multi]="false" style="width: 45%;">
   <mat-expansion-panel  [hideToggle]="false" class="block projects development">
     <mat-expansion-panel-header layout="column" class="style-exp-panel">
       <h3>Development Projects</h3>
@@ -46,7 +46,7 @@
 
     <div class="" *ngFor="let project of projects.development; let i=index" style="margin-top: 1em;">
       <a (click)="goToExternalUrl(project.url)">
-        <button mat-button>
+        <button mat-button class="mat-elevation-z5">
           <mat-icon>home</mat-icon>
           <p>{{ project.title }}</p>
           <a (click)="goToExternalUrl(project.git)" href="{{ project.git }}">
