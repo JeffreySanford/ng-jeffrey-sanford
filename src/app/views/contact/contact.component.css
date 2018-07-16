@@ -31,3 +31,10 @@ ul {
   list-style: none;
   display: inline-block;
 }
+
+.contact-button {
+  background-color: #B21A66;
+  border-radius: 5px;
+  color: white;
+  margin:0 1em;
+}
