@@ -228,18 +228,6 @@ export class ProjectsComponent implements OnInit {
 
   constructor(@Inject(DOCUMENT) private document: any) {}
 
-  // openGroup(isOpened) {
-  //   const groups = ['featured', 'design', 'development'];
-
-  //   for (let group of groups) {
-
-  //     if (isOpened === group) {
-  //       console.log(group);
-  //     }
-  //   }
-  // }
-
-
   goToExternalUrl(url): void {
     this.document.location.href = url;
   }
