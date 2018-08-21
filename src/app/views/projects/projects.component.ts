@@ -80,6 +80,18 @@ export class ProjectsComponent implements OnInit {
         url: '/assets/projects/kitchen-table',
         samples: 'angular',
         imageURL: 'img/angularjs-logo.png'
+      },
+      {
+        title: 'Bash',
+        description: 'A sharing teavel interest sit',
+        teaser:
+          'This is a travel sit that share experiences between users.',
+        git:
+          'https://github.com/JeffreySanford/bash',
+        rank: 1,
+        url: 'http://imaginecreatethrive.com:4200',
+        samples: 'angular',
+        imageURL: 'img/angularjs-logo.png'
       }
     ],
     design: [
