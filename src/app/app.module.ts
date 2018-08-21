@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 // Material Design and Styling
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -88,7 +89,8 @@ export const AppRouting = RouterModule.forRoot(appRoutes, {
     MatCardModule
   ],
   providers: [
-    ngIfMediaQuery
+    ngIfMediaQuery,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })
