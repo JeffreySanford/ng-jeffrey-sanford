@@ -357,7 +357,9 @@
                 return data.date;
             }));
             y.domain([0, d3.max(data, function(d) {
-                return parseInt(data.close);
+               let y = parseInt(data.close);
+               console.log(y);
+                return y;
             })]);
 
             // Add the valueline path.
