@@ -347,7 +347,7 @@
             var data = json.responses;
 
             data.forEach(function(d) {
-                d.receive_date = new Date(d.receive_date).getDay();
+                d.receive_date = new Date(d.receive_date).getDate();
             });
 
             console.log(data);
