@@ -347,14 +347,14 @@
             var data = json.responses;
 
             data.forEach(function(d) {
-                d.receive_date = new Date(d.receive_date);
+                d.receive_date = new Date(d.receive_date).getDay();
             });
 
             console.log(data);
 
             // Scale the range of the data
             x.domain(d3.extent(data, function(d) {
-                return data.date.getDay();
+                return data.date;
             }));
             y.domain([0, d3.max(data, function(d) {
                 return data.close;
