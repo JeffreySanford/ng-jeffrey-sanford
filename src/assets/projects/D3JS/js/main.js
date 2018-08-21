@@ -354,7 +354,7 @@
 
             // Scale the range of the data
             x.domain(d3.extent(data, function(d) {
-                return data.date;
+                return data.date.getDay();
             }));
             y.domain([0, d3.max(data, function(d) {
                 return data.close;
