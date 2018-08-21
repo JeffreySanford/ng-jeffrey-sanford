@@ -340,7 +340,7 @@
                         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         // Get the data
-        d3.json("../data/firstmonth.json", function(error, json) {
+        d3.json("./data/firstmonth.json", function(error, json) {
             if (error) {
                 return console.warn(error);
             }
