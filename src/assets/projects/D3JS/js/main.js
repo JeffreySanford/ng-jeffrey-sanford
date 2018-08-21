@@ -354,10 +354,10 @@
 
             // Scale the range of the data
             x.domain(d3.extent(data, function(d) {
-                return d.date;
+                return data.date;
             }));
             y.domain([0, d3.max(data, function(d) {
-                return d.close;
+                return data.close;
             })]);
 
             // Add the valueline path.
