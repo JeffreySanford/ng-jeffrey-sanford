@@ -348,7 +348,6 @@
 
             data.forEach(function(d) {
                 d.receive_date = new Date(d.receive_date);
-                d.responses = +d.responses;
             });
 
             console.log(data);
