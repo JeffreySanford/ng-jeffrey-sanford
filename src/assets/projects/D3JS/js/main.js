@@ -340,7 +340,7 @@
                         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         // Get the data
-        d3.json("D3JS/data/firstmonth.json", function(error, json) {
+        d3.json("../data/firstmonth.json", function(error, json) {
             if (error) {
                 return console.warn(error);
             }
@@ -384,7 +384,6 @@
     //  area chart : http://bl.ocks.org/mohamed-ali/ed4772df6dca7a48f678
 
         //$('#projectThreeImage').fadeOutAndRemove(2000);
-
         initLineChart2(data);
 
     }
