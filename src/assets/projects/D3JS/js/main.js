@@ -487,7 +487,7 @@
         console.log("init fired");
         var index;
 
-        var links = ['../data/count.json', '../data/top5.json', '../data/firstmonth.json', '../data/occupations.json'];
+        var links = ['./data/count.json', './data/top5.json', './data/firstmonth.json', './data/occupations.json'];
 
         $.each(links, function (index, value) {
             console.log(index + ": " + value);
