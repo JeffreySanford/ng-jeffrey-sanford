@@ -6,10 +6,15 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 // Material Design and Styling
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatExpansionModule } from '@angular/material';
-import { MatButton, MatButtonToggleModule } from '@angular/material';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButton } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Template
