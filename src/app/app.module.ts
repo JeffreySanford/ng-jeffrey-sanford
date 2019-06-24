@@ -33,7 +33,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 
 // Directives
 import { Directive, TemplateRef, ViewContainerRef } from '@angular/core';
-import { ngIfMediaQuery } from './ng-if-media-query.directive';
+// import { ngIfMediaQuery } from './ng-if-media-query.directive';
 import { SocialIconsComponent } from './page/social-icons/social-icons.component';
 
 const appRoutes: Routes = [
@@ -62,7 +62,6 @@ export const AppRouting = RouterModule.forRoot(appRoutes, {
     ContactComponent,
     ProjectsComponent,
     PageNotFoundComponent,
-    ngIfMediaQuery,
     SocialIconsComponent
   ],
   imports: [
@@ -94,7 +93,6 @@ export const AppRouting = RouterModule.forRoot(appRoutes, {
     MatCardModule
   ],
   providers: [
-    ngIfMediaQuery,
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
