@@ -1,13 +1,6 @@
-.flex {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
+.filler {
+  flex: 1 1 auto;
 }
-mat-toolbar {
-  flex: 0 0 auto;
-}
-app-sidenav {
-  flex: 1 1 0;
+.gap {
+  margin-right: 10px;
 }
