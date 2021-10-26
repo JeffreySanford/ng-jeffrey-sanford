@@ -1,0 +1,30 @@
+.brand-heading {
+  font-size: 2em;
+  color: #55185D;
+  margin: 1em auto;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5em;
+  justify-content: center;
+}
+
+.star {
+  padding: 0 0.25em;
+  margin-top: -0.1em;
+  color: #55185D;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(86vh);
+  align-content: top;
+  justify-content: center;
+  background-color: black;
+  color: #290849;
+  background: url("../../assets//images//intro-bg.jpg") no-repeat bottom center
+  scroll;
+}

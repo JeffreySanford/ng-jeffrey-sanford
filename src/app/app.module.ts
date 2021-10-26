@@ -7,14 +7,16 @@ import { AppToolbarComponent } from './app-toolbar/app-toolbar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MaterialModule } from './material/material.module';
-import { LandingComponent } from './landing/landing.component';
+import { LandingComponent } from './app-landing/landing.component';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactComponent } from './app-contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
     AppToolbarComponent,
-    LandingComponent
+    LandingComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  exports: [
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
