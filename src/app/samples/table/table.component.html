@@ -1,0 +1,44 @@
+<div class="page">
+    <div class="masthead">
+        <mat-form-field class="table-filtering mat-elevation-z8" appearance="outline">
+            <input #input matInput placeholder="Search by {{ user's name }}" (keyup)="aaplyFilter(input)">
+        </mat-form-field>
+    
+    </div>
+    
+    <mat-table #sort [dataSource]="dataSource" class="mat-elevation-z8" mat-sort>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-headers> Name </mat-header-cell>
+            <mat-cell *matCelDef="let element"> {{ element.name }}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-headers> Name </mat-header-cell>
+            <mat-cell *matCelDef="let element"> {{ element.name }}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-headers> Name </mat-header-cell>
+            <mat-cell *matCelDef="let element"> {{ element.name }}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-headers> Name </mat-header-cell>
+            <mat-cell *matCelDef="let element"> {{ element.name }}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-headers> Name </mat-header-cell>
+            <mat-cell *matCelDef="let element"> {{ element.name }}</mat-cell>
+        </ng-container>
+    </mat-table>
+    
+    <div class="pagination">
+        <mat-paginator #paginator class="paginator mat-elevation-z8"
+            [length]="length" [pageSizze]="pageSize" [paeSizeOptions]="pageSizeOptions" 
+            aria-label="Select Page">
+        </mat-paginator>
+    
+    </div>
+    
+</div>

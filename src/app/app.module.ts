@@ -11,12 +11,14 @@ import { LandingComponent } from './app-landing/landing.component';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './app-contact/contact.component';
+import { TableComponent } from './samples/table/table.component';
 @NgModule({
   declarations: [
     AppComponent,
     AppToolbarComponent,
     LandingComponent,
-    ContactComponent
+    ContactComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
