@@ -1,44 +1,26 @@
-<div class="page">
+<div class="page" [hidden]=!dataSource>
     <div class="masthead">
         <mat-form-field class="table-filtering mat-elevation-z8" appearance="outline">
-            <input #input matInput placeholder="Search by {{ user's name }}" (keyup)="aaplyFilter(input)">
+            <input #input matInput placeholder="Search by users name" (keyup)="applyFilter(input)">
         </mat-form-field>
-    
     </div>
-    
+
     <mat-table #sort [dataSource]="dataSource" class="mat-elevation-z8" mat-sort>
         <ng-container matColumnDef="name">
             <mat-header-cell *matHeaderCellDef mat-sort-headers> Name </mat-header-cell>
             <mat-cell *matCelDef="let element"> {{ element.name }}</mat-cell>
         </ng-container>
-    
-        <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef mat-sort-headers> Name </mat-header-cell>
-            <mat-cell *matCelDef="let element"> {{ element.name }}</mat-cell>
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-headers> E-Mail </mat-header-cell>
+            <mat-cell *matCelDef="let element"> {{ element.email }}</mat-cell>
         </ng-container>
-    
-        <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef mat-sort-headers> Name </mat-header-cell>
-            <mat-cell *matCelDef="let element"> {{ element.name }}</mat-cell>
-        </ng-container>
-    
-        <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef mat-sort-headers> Name </mat-header-cell>
-            <mat-cell *matCelDef="let element"> {{ element.name }}</mat-cell>
-        </ng-container>
-    
-        <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef mat-sort-headers> Name </mat-header-cell>
-            <mat-cell *matCelDef="let element"> {{ element.name }}</mat-cell>
-        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
-    
+
     <div class="pagination">
-        <mat-paginator #paginator class="paginator mat-elevation-z8"
-            [length]="length" [pageSizze]="pageSize" [paeSizeOptions]="pageSizeOptions" 
-            aria-label="Select Page">
+        <mat-paginator #paginator class="paginator mat-elevation-z8" [length]="length" [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions" aria-label="Select Page">
         </mat-paginator>
-    
     </div>
-    
 </div>

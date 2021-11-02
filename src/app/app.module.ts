@@ -10,8 +10,10 @@ import { MaterialModule } from './material/material.module';
 import { LandingComponent } from './app-landing/landing.component';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ContactComponent } from './app-contact/contact.component';
+import { ContactComponent } from './app-footer/contact.component';
 import { TableComponent } from './samples/table/table.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { TableComponent } from './samples/table/table.component';
     TableComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -30,6 +33,7 @@ import { TableComponent } from './samples/table/table.component';
     MatToolbarModule,
     FormsModule,
     ReactiveFormsModule
+
   ],
   exports: [
     MaterialModule
