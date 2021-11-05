@@ -13,5 +13,4 @@ export class AppComponent {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.router.navigate(['landing'], {relativeTo: this.activatedRoute})
   }
-
 }

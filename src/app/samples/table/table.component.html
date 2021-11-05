@@ -1,26 +1,31 @@
-<div class="page" [hidden]=!dataSource>
+<div class="page">
     <div class="masthead">
         <mat-form-field class="table-filtering mat-elevation-z8" appearance="outline">
             <input #input matInput placeholder="Search by users name" (keyup)="applyFilter(input)">
         </mat-form-field>
     </div>
 
-    <mat-table #sort [dataSource]="dataSource" class="mat-elevation-z8" mat-sort>
+    <mat-table #sort matSort [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef mat-sort-headers> Name </mat-header-cell>
-            <mat-cell *matCelDef="let element"> {{ element.name }}</mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="address">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Address </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.address.street }}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="email">
-            <mat-header-cell *matHeaderCellDef mat-sort-headers> E-Mail </mat-header-cell>
-            <mat-cell *matCelDef="let element"> {{ element.email }}</mat-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> E-Mail </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
         </ng-container>
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>>
     </mat-table>
 
     <div class="pagination">
-        <mat-paginator #paginator class="paginator mat-elevation-z8" [length]="length" [pageSize]="pageSize"
-            [pageSizeOptions]="pageSizeOptions" aria-label="Select Page">
-        </mat-paginator>
+        <mat-paginator #paginator 
+        class="paginator mat-elevation-z8" aria-label="Select Page"
+        [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+        ></mat-paginator>
     </div>
 </div>

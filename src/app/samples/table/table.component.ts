@@ -1,8 +1,9 @@
-import { AfterContentChecked, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, ChangeDetectorRef, Component, Input, OnChanges, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { ExtraOptions, Router } from '@angular/router';
 
 export interface Users {
   address?: { street: string, suite: string, city: string, zipcode: string, geo: any }
@@ -21,46 +22,44 @@ export interface Users {
 })
 
 export class TableComponent implements AfterContentChecked {
-  @ViewChild(MatSort) sort: MatSort = new MatSort;
+  @ViewChild(MatSort, { static: false }) sort: MatSort | undefined;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(HTMLInputElement) input: HTMLInputElement | undefined;
-  $users = this.http.get('https://jsonplaceholder.typicode.com/users');
 
   length = 0;
-  displayedColumns = ['name', 'email'];
+  displayedColumns?: string[];
   pageSize = 5;
   pageSizeOptions = [5, 10, 20, 50];
-  dataSource: any;
-  users: Users[] = [];
-
-  constructor(private http: HttpClient, private cd: ChangeDetectorRef) {
-    this.$users.subscribe((users: any) => {
-      this.displayedColumns = ['name', 'email'];
-      this.length = users.length;
-
-      this.dataSource = new MatTableDataSource<Users>(users);
-      this.dataSource = new MatSort();
-      this.dataSource.sort.active = 'name';
-      this.dataSource.sort.direction = 'asc';
-    });
+  dataSource!: MatTableDataSource<Users>;
+  resolved: boolean = false;
+  currentNavigation: any;
+  users: Users[] | undefined;
+  constructor(private cd: ChangeDetectorRef, private router: Router) {
+    this.currentNavigation = this.router.getCurrentNavigation()?.extras.state;
   }
 
   ngAfterContentChecked() {
-    if(this.length > 0) {
-
+    if (this.users && this.sort && this.paginator && !this.resolved) {
+      this.length = this.users.length;
+      this.dataSource = new MatTableDataSource<Users>(this.users);
       this.dataSource.filterPredicate = (data: any, filter: string) => {
-        return !filter || data.name === filter;
+        return !filter || data.name.includes(filter);
       }
 
-
-
+      this.sort.active = 'name';
+      this.sort.direction = 'asc';
       this.dataSource.sort = this.sort;
+
       this.dataSource.paginator = this.paginator;
-      this.cd.detectChanges();
+      this.paginator.length = this.length;
+      this.resolved = true;
     }
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.users = this.currentNavigation;
+    this.displayedColumns = ['name', 'address', 'email']
+  }
 
   applyFilter(filterValue: HTMLInputElement) {
     this.dataSource.filter = filterValue.value;

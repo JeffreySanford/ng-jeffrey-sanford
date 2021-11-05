@@ -58,6 +58,10 @@
               ],
               "outputHashing": "all"
             },
+            "strictProd": {
+              "tsConfig": "src/tsconfig.app.strict.json",
+              "aot": true
+           },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
