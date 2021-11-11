@@ -43,6 +43,7 @@ yarn-error.log
 
 # User specific ng-dev settings
 .ng-dev.user*
+.angular
 
 .notes.md
 baseline.json
