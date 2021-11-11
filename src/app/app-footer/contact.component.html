@@ -1,21 +1,23 @@
 <div class="social-buttons-container">
-    <button mat-raised-button (click)=" routeExternal('twitter', $event)">
-    <mat-icon><span class="iconify" data-icon="mdi:twitter"></span></mat-icon>
-    Twitter
-    </button>
+    <mat-label class="social-block" (click)="routeExternal('twitter', $event)" style="display: flex;flex-direction: row;">
+        <mat-icon class="twitter">
+            <span class="iconify" data-icon="mdi:twitter"></span>
+        </mat-icon>
+        <p style="margin-top: .25em;">Twitter</p>            
+    </mat-label>
 
-    <button mat-raised-button (click)="routeExternal('github', $event)">
+    <mat-label class="social-block" (click)="routeExternal('github', $event)" style="display: flex;flex-direction: row;">
         <mat-icon><span class="iconify" data-icon="mdi:github"></span></mat-icon>
-        Github
-    </button>
+        <p style="margin-top: .25em;">Github</p>            
+    </mat-label>
 
-    <button mat-raised-button (click)="routeExternal('google-plus', $event)">
+    <mat-label class="social-block" (click)="routeExternal('google-plus', $event)" style="display: flex;flex-direction: row;">
         <mat-icon><span class="iconify" data-icon="mdi:google-plus"></span></mat-icon>
-        Google Plus
-    </button>
+        <p style="margin-top: .25em;">Google+</p>            
+    </mat-label>
 
-    <button mat-raised-button (click)="routeExternal('linkedin', $event)">
+    <mat-label class="social-block" (click)="routeExternal('linkedin', $event)" style="display: flex;flex-direction: row;">
         <mat-icon><span class="iconify" data-icon="mdi:linkedin"></span></mat-icon>
-        LinkedIn
-    </button>
+        <p style="margin-top: .25em;">LinkedIn</p>            
+    </mat-label>
 </div>

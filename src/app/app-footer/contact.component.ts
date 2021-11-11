@@ -20,5 +20,4 @@ export class ContactComponent implements OnInit {
       this.router.navigate(['https://twitter.com/jeffrey_sanford'])
     }
   }
-
 }

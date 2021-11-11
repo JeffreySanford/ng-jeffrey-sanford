@@ -1,9 +1,22 @@
 .page {
-    height: 100%;
-    background-color: #ECB602;
-    color: darkmagenta;
-    overflow: hidden;
+  min-height: 100%;
+  color: darkmagenta;
+  overflow: hidden;
+  background-color: #ecb602;
+
+  .filter {
+    display: flex; flex-direction: row; justify-content: right;
+  }
+
+  .mat-table {
+    background-color: #ecb602;
+  }
+
+  .pagination {
+    margin-bottom: 20em;
+  }
 }
 
-.mathead {
+:host ::ng-deep .mat-paginator-container {
+  background-color: #ecb602 !important;
 }

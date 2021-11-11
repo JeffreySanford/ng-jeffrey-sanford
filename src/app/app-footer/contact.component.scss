@@ -1,16 +1,17 @@
-:host {
-  background-color: black;
+.social-buttons-container {
+  position: fixed;
+  display: flex;
+  justify-content: left;
+  width: 97%;
+  height: 3em;
+  padding: 2em 0 0.5em;
+  background-color: purple;
+  
+  .social-block {
+    margin-right: 1.5em;
 
-  .mat-raised-button
-  {
-    background-color: black;
-    color: purple;
-  }
-
-  .social-buttons-container {
-    display: flex;
-    justify-content: space-around;
-    width: 45%;
-    padding-bottom: 0.5em;
+    .twitter {
+      margin-left: 1em;
+    }
   }
 }
