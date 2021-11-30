@@ -1,15 +1,20 @@
 .page {
   min-height: 100%;
   color: darkmagenta;
+  font-size: 2em;
   overflow: hidden;
   background-color: #ecb602;
 
   .filter {
-    display: flex; flex-direction: row; justify-content: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    font-size: 1em;
   }
 
   .mat-table {
     background-color: #ecb602;
+    font-size: 2em;
   }
 
   .pagination {
@@ -19,4 +24,5 @@
 
 :host ::ng-deep .mat-paginator-container {
   background-color: #ecb602 !important;
+  font-size: 1em;
 }
