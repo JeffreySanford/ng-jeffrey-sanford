@@ -31,4 +31,8 @@ export class AppToolbarComponent implements OnInit {
       this.router.navigate(['../samples/sample-table'], {relativeTo: this.activatedRoute, state: users});
     });
   }
+
+  navigateHome() {
+    this.router.navigate(['landing']);
+  }
 }

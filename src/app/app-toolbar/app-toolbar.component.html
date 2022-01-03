@@ -1,13 +1,27 @@
 <mat-action-row color="primary" class="top-banner">
     <mat-toolbar-row>
-        <mat-icon>home</mat-icon>
-        <mat-icon (click)="resolveUsers()">
-            <span class="iconify" data-icon="mdi:material"></span>
-        </mat-icon>
-        <div class="user"
-            style="height: 2.8em;width: 2.8em;position: absolute; right: 1.25em;top: 0.9em;border: 1px solid blue;border-radius: 1.5em;">
-            <mat-icon style="margin: 0 0 0 .1em;" class="example-icon" aria-hidden="false"
-                aria-label="Example user verified icon">person_outline</mat-icon>
+        <mat-icon (click)="navigateHome()">home</mat-icon>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Design</span>
+            </button>
+            <button mat-menu-item disabled>
+                <mat-icon>voicemail</mat-icon>
+                <span>Development</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon>
+                <span>Architecture</span>
+            </button>
+        </mat-menu>
+
+        <div class="user">
+            <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">
+                person_outline</mat-icon>
         </div>
     </mat-toolbar-row>
 </mat-action-row>
