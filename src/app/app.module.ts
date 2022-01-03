@@ -13,6 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './app-footer/contact.component';
 import { TableComponent } from './samples/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DesignComponent } from './design/design.component';
+import { DevelopmentComponent } from './development/development.component';
+import { ArchitectureComponent } from './architecture/architecture.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppToolbarComponent,
     LandingComponent,
     ContactComponent,
-    TableComponent
+    TableComponent,
+    DesignComponent,
+    DevelopmentComponent,
+    ArchitectureComponent
   ],
   imports: [
     HttpClientModule,
