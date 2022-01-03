@@ -14,25 +14,18 @@ export class AppToolbarComponent implements OnInit {
   displayedColumns = ['name', 'email'];
   length: any;
   dataSource: any;
-  $users = this.http.get('https://jsonplaceholder.typicode.com/users');
+ 
 
-  constructor(private http: HttpClient, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  resolveUsers() {
-    this.$users.subscribe((users: any) => {
-      this.length = users.length;
-      this.dataSource = new MatTableDataSource<Users>(users);
-      this.dataSource.filterPredicate = (data: any, filter: string) => {
-        return !filter || data.name === filter;
-      }
-      this.router.navigate(['../samples/sample-table'], {relativeTo: this.activatedRoute, state: users});
-    });
-  }
-
   navigateHome() {
     this.router.navigate(['landing']);
+  }
+
+  navigateDesign() {
+    this.router.navigate(['design'])
   }
 }
