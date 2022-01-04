@@ -11,9 +11,17 @@
     margin-right: 1.5em;
     font-size: 0.8em;
     color: yellow;
-    
+
     .twitter {
       margin-left: 1em;
     }
   }
+}
+
+.development-statistics {
+  position: absolute;
+  right: .5em;
+  bottom: .5em;
+  border: yellow;
+  border: 1px solid brown;
 }

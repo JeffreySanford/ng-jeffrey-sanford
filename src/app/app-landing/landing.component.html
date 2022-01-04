@@ -1,10 +1,17 @@
 <section class="landing-page background">
     <p class="brand-heading">Jeffrey Sanford</p>
     <span class="intro-text">
-        <p changeDivSize>design</p>
+        <div [@changeDivSize]>
+            <p>design</p>
+        </div>
         <mat-icon class="star">star_border</mat-icon>
-        <p changeDivSize>development</p>
+        <div [@changeDivSize]>
+            <p [@changeDivSize]>development</p>
+        </div>
         <mat-icon class="star">star_border</mat-icon>
-        <p changeDivSize>architecture</p>
+        <div [@changeDivSize]>
+            <p [@changeDivSize]>architecture</p>
+        </div>
     </span>
 </section>
+<button (click)="changeState()">Change Size</button>

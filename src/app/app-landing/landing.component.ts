@@ -23,10 +23,17 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   ]
 })
 export class LandingComponent implements OnInit {
-
+  currentState = 'initial';
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  changeState() {
+    this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
+  }
+
+
+
 }
 
