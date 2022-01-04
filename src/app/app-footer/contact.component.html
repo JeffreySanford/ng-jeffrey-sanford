@@ -21,3 +21,16 @@
         <p style="margin-top: .25em;">LinkedIn</p>            
     </mat-label>
 </div>
+
+<section style="position: absolute; right: .5em;bottom: .5em; border: yellow;"(click)="displayDevelopmentPopup()">
+    <mat-icon (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+        loyalty
+    </mat-icon>
+     <ng-template style="border: 1px solid blue;" cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
+        <ul class="example-overlay">
+           <li>Item 1</li>
+           <li>Item 2</li>
+           <li>Item 3</li>
+        </ul>
+     </ng-template>
+</section>

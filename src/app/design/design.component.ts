@@ -13,18 +13,22 @@ export class DesignComponent implements OnInit {
   $users = this.http.get('https://jsonplaceholder.typicode.com/users');
   length: any;
   dataSource: MatTableDataSource<Users> | undefined;
+  users: any;
   constructor(private http: HttpClient, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.$users.subscribe(
         (data) => {
-          debugger
-          // const users: Array<Users> = data.propertyIsEnumerable;
+
+          const usersArray: Array<Users> = new Array(data.valueOf);
+          usersArray.map((user: any)=>{
+            this.users.push(user)
+          })
           this.length = data.valueOf.length;
-          // this.dataSource = new MatTableDataSource<Users>(users);
-          // this.dataSource.filterPredicate = (data: any, filter: string) => {
-            // return !filter || data.name === filter;
-          // }
+          this.dataSource = new MatTableDataSource<Users>(this.users);
+          this.dataSource.filterPredicate = (data: any, filter: string) => {
+            return !filter || data.name === filter;
+          }
         },
         (error) => this.handleError(error),
         () => {

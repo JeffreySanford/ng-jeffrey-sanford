@@ -8,7 +8,7 @@ import { ExtraOptions, Router } from '@angular/router';
 export interface Users {
   address?: { street: string, suite: string, city: string, zipcode: string, geo: any }
   company?: { name: string, catchPhrase: string, bs: 'harness real-time e-markets' }
-  email: string;
+  email?: string;
   id?: number;
   name: string;
   phone?: string;

@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DesignComponent } from './design/design.component';
 import { DevelopmentComponent } from './development/development.component';
 import { ArchitectureComponent } from './architecture/architecture.component';
+import { OverlayModule } from "@angular/cdk/overlay";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ArchitectureComponent } from './architecture/architecture.component';
     ArchitectureComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
@@ -38,7 +40,8 @@ import { ArchitectureComponent } from './architecture/architecture.component';
     MaterialModule,
     MatToolbarModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OverlayModule
 
   ],
   exports: [
