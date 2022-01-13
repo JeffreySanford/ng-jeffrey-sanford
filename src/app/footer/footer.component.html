@@ -1,0 +1,42 @@
+<div class="footer-row">
+    <div class="social-buttons-container">
+        <mat-label class="social-block" (click)="routeExternal('twitter', $event)"
+            style="display: flex;flex-direction: row;">
+            <mat-icon class="twitter">
+                <span class="iconify" data-icon="mdi:twitter"></span>
+            </mat-icon>
+            <p style="margin-top: .25em;">Twitter</p>
+        </mat-label>
+
+        <mat-label class="social-block" (click)="routeExternal('github', $event)"
+            style="display: flex;flex-direction: row;">
+            <mat-icon><span class="iconify" data-icon="mdi:github"></span></mat-icon>
+            <p style="margin-top: .25em;">Github</p>
+        </mat-label>
+
+        <mat-label class="social-block" (click)="routeExternal('google-plus', $event)"
+            style="display: flex;flex-direction: row;">
+            <mat-icon><span class="iconify" data-icon="mdi:google-plus"></span></mat-icon>
+            <p style="margin-top: .25em;">Google+</p>
+        </mat-label>
+
+        <mat-label class="social-block" (click)="routeExternal('linkedin', $event)"
+            style="display: flex;flex-direction: row;">
+            <mat-icon><span class="iconify" data-icon="mdi:linkedin"></span></mat-icon>
+            <p style="margin-top: .25em;">LinkedIn</p>
+        </mat-label>
+    </div>
+
+    <section class="development-statistics" (click)="displayDevelopmentPopup()">
+        <mat-icon class="development-tag" (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+            loyalty
+        </mat-icon>
+        <ng-template cdkConnectedOverlay
+            [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
+            <div class="overlay">
+                <p>Development Version: {{this.version}}</p>
+                <p>Angualr Version: {{this.angularVersion}}</p>
+            </div>
+        </ng-template>
+    </section>
+</div>

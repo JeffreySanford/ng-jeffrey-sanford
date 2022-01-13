@@ -3,40 +3,39 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppToolbarComponent } from './app-toolbar/app-toolbar.component';
+import { AppHeaderComponent } from './header/header.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MaterialModule } from './material/material.module';
-import { LandingComponent } from './app-landing/landing.component';
+import { LandingComponent } from './landing/landing.component';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ContactComponent } from './app-footer/contact.component';
-import { TableComponent } from './samples/table/table.component';
+import { AppFooterComponent } from './footer/footer.component';
+import { TableComponent } from './samples/design/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DesignComponent } from './design/design.component';
-import { DevelopmentComponent } from './development/development.component';
-import { ArchitectureComponent } from './architecture/architecture.component';
+import { DesignComponent } from './samples/design/design.component';
+import { DevelopmentComponent } from './samples/development/development.component';
+import { ArchitectureComponent } from './samples/architecture/architecture.component';
 import { OverlayModule } from "@angular/cdk/overlay";
 import { GridsterModule } from 'angular-gridster2';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppToolbarComponent,
+    AppHeaderComponent,
     LandingComponent,
-    ContactComponent,
+    AppFooterComponent,
     TableComponent,
     DesignComponent,
     DevelopmentComponent,
     ArchitectureComponent
   ],
   imports: [
+    BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    BrowserModule,
-    BrowserAnimationsModule,
     GridsterModule,
-    AppRoutingModule,
     MatSidenavModule,
     MatCheckboxModule,
     MaterialModule,

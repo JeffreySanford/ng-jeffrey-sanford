@@ -1,20 +1,28 @@
 .page {
-  min-height: 100%;
   color: darkmagenta;
-  font-size: 2em;
-  overflow: hidden;
   background-color: #ecb602;
+
+  h2 {
+    display: relative;
+    margin-left: 1em;
+  }
 
   .filter {
     display: flex;
     flex-direction: row;
     justify-content: right;
-    font-size: 1em;
+    max-height: 2em;
+    margin-bottom: -2em;
+
+    mat-form-field {
+      font-size: 1em;
+      color: purple;
+    }
   }
 
   .mat-table {
     background-color: #ecb602;
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .pagination {

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Users } from '../samples/table/table.component';
+import { Users } from './table/table.component';
 
 @Component({
   selector: 'app-design',

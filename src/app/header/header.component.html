@@ -4,19 +4,19 @@
             <mat-icon class="vertical-more">more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu" class="nav-menu">
-            <button mat-menu-item>
-                <mat-icon (click)="navigateDesign()">art_track</mat-icon>
+            <button (click)="navigateDesign('design-dashboard')" mat-menu-item>
+                <mat-icon>art_track</mat-icon>
                 <span>Design</span>
             </button>
-            <button mat-menu-item disabled>
+            <button (click)="navigateDesign('development-dashboard')" mat-menu-item>
                 <mat-icon>whatshot</mat-icon>
                 <span>Development</span>
             </button>
-            <button mat-menu-item>
-                <mat-icon (click)="navigateDesign('material-table')">table_chart</mat-icon>
+            <button mat-menu-item (click)="navigateDesign('samples/sample-table')">
+                <mat-icon>table_chart</mat-icon>
                 <span>Material Design Table</span>
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="navigateDesign('architecture-dashboard')">
                 <mat-icon>transfer_within_a_station</mat-icon>
                 <span>Architecture</span>
             </button>

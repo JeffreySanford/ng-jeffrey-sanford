@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppToolbarComponent } from './app-toolbar.component';
+import { AppToolbarComponent } from './header.component';
 
 describe('AppToolbarComponent', () => {
   let component: AppToolbarComponent;
