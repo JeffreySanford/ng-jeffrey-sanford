@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { ExtraOptions, Router } from '@angular/router';
+import { ExtraOptions, Navigation, Router } from '@angular/router';
+import { Observable, Subscriber } from 'rxjs';
 
 export interface Users {
   address?: { street: string, suite: string, city: string, zipcode: string, geo: any }
@@ -34,9 +35,9 @@ export class TableComponent implements AfterContentChecked {
   resolved: boolean = false;
   currentNavigation: any;
   users: Users[] | undefined;
-  constructor(private cd: ChangeDetectorRef, private router: Router) {
-    this.currentNavigation = this.router.getCurrentNavigation()?.extras.state;
-  }
+  private portfolioAPI = 'http://localhost:3000/users';
+
+  constructor(private cd: ChangeDetectorRef, private router: Router, private http: HttpClient) { }
 
   ngAfterContentChecked() {
     if (this.users && this.sort && this.paginator && !this.resolved) {
@@ -57,8 +58,11 @@ export class TableComponent implements AfterContentChecked {
   }
 
   ngOnInit(): void {
-    this.users = this.currentNavigation;
-    this.displayedColumns = ['name', 'address', 'email']
+
+    this.http.get<Users[]>(this.portfolioAPI).subscribe((data: any) => {
+      this.displayedColumns = ['name', 'address', 'email'];
+      this.users = data.users;
+    });
   }
 
   applyFilter(filterValue: HTMLInputElement) {

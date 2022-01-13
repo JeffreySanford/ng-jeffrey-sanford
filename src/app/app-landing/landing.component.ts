@@ -6,7 +6,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
   animations: [
-    trigger('changeDivSize', [
+    trigger('changeStarSize', [
       state('initial', style({
         backgroundColor: 'green',
         width: '100px',
@@ -29,7 +29,7 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeState() {
+  changeStarSize() {
     this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
   }
 

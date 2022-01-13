@@ -17,6 +17,7 @@ import { DesignComponent } from './design/design.component';
 import { DevelopmentComponent } from './development/development.component';
 import { ArchitectureComponent } from './architecture/architecture.component';
 import { OverlayModule } from "@angular/cdk/overlay";
+import { GridsterModule } from 'angular-gridster2';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { OverlayModule } from "@angular/cdk/overlay";
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+    GridsterModule,
     AppRoutingModule,
     MatSidenavModule,
     MatCheckboxModule,
