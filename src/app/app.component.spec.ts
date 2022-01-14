@@ -33,3 +33,7 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span')?.textContent).toContain('ng-jeffrey-sanford app is running!');
   });
 });
+function expect(app: AppComponent) {
+  throw new Error('Function not implemented.');
+}
+
