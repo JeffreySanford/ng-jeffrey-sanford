@@ -1,5 +1,19 @@
 .page {
-    color: darkmagenta;
-    background-color: #ecb602;
-    height: calc(89vh);
+  color: darkmagenta;
+  background-color: #ecb602;
+  height: calc(89vh);
+}
+
+:host ::ng-deep gridster-item {
+  height: 20em !important;
+  border: 1p solid seagreen;
+}
+
+
+.mat-expansion-panel-header-title 
+{
+        align-items: center;
+        p {
+            margin-top: 0.75em;    
+        }
 }

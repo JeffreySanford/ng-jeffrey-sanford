@@ -68,4 +68,13 @@ export class TableComponent implements AfterContentChecked {
   applyFilter(filterValue: HTMLInputElement) {
     this.dataSource.filter = filterValue.value;
   }
+
+  //TODO Used twice
+  navigateDesign(item?: string) {
+    if (!item) {
+      this.router.navigate(['landing']);
+    } else {
+      this.router.navigate([item]);
+    };
+  }
 }

@@ -1,3 +1,22 @@
 <section class="page">
-    
+    <gridster [options]="options">
+        <gridster-item [item]="item" *ngFor="let item of dashboard">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <p>{{ item.title }}</p>
+                        </mat-panel-title>
+                        <button style="width:3em; height: 3em; color: darkgreen;line-height: 0.5em;" mat-fab color="primary">
+                            <mat-icon style="margin-top: -1.7em;font-size: 1.25em;">art_track</mat-icon>
+                            <p style="font-size: 0.5em;margin-top: -4.5em;word-wrap: normal;">Material Table</p>
+                        </button>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <p>{{ item.description }}</p>
+                    </mat-panel-description>    
+                </mat-expansion-panel>
+            </mat-accordion>
+        </gridster-item>
+    </gridster>
 </section>
