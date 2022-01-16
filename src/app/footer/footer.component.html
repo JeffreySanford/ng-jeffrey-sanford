@@ -1,9 +1,17 @@
 <div class="footer-row">
     <div class="social-buttons-container">
-        <mat-label class="social-block" (click)="routeExternal('twitter', $event)"
+        <div *ngFor="let button in socialButtons" style="border: 1px solid red;">
+            <mat-label class="social-button" (click)="routeExternal(button.url, $event)">
+                <mat-icon>
+                    <span class="iconify" data-icon="button.icon"></span>
+                </mat-icon>
+                <p class="button-name">{{button.name}}</p>
+            </mat-label>
+        </div>
+        <!-- <mat-label class="social-block" (click)="routeExternal('twitter', $event)"
             style="display: flex;flex-direction: row;">
             <mat-icon class="twitter">
-                <span class="iconify" data-icon="mdi:twitter"></span>
+                <span class="iconify" data-icon="button.icon"></span>
             </mat-icon>
             <p style="margin-top: .25em;">Twitter</p>
         </mat-label>
@@ -24,15 +32,14 @@
             style="display: flex;flex-direction: row;">
             <mat-icon><span class="iconify" data-icon="mdi:linkedin"></span></mat-icon>
             <p style="margin-top: .25em;">LinkedIn</p>
-        </mat-label>
+        </mat-label> -->
     </div>
 
     <section class="development-statistics" (click)="displayDevelopmentPopup()">
         <mat-icon class="development-tag" (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
             loyalty
         </mat-icon>
-        <ng-template cdkConnectedOverlay
-            [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
+        <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
             <div class="overlay">
                 <p>Development Version: {{this.version}}</p>
                 <p>Angualr Version: {{this.angularVersion}}</p>
