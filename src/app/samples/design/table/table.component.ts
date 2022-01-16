@@ -37,7 +37,7 @@ export class TableComponent implements AfterContentChecked {
   currentNavigation: any;
   private portfolioAPI = 'http://localhost:3000/users';  
   
-  constructor(private cd: ChangeDetectorRef, private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngAfterContentChecked() {
     if (this.users && this.sort && this.paginator && !this.resolved) {

@@ -18,6 +18,10 @@ import { DevelopmentComponent } from './samples/development/development.componen
 import { ArchitectureComponent } from './samples/architecture/architecture.component';
 import { OverlayModule } from "@angular/cdk/overlay";
 import { GridsterModule } from 'angular-gridster2';
+import { KitchenTableComponent } from './samples/development/kitchen-table/kitchen-table.component';
+import { WeatherComponent } from './samples/development/weather/weather.component';
+import { DataVisualizationsComponent } from './samples/design/data-visualizations/data-visualizations.component';
+import { SpaceVideoComponent } from './samples/design/space-video/space-video.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { GridsterModule } from 'angular-gridster2';
     TableComponent,
     DesignComponent,
     DevelopmentComponent,
-    ArchitectureComponent
+    ArchitectureComponent,
+    KitchenTableComponent,
+    WeatherComponent,
+    DataVisualizationsComponent,
+    SpaceVideoComponent
   ],
   imports: [
     BrowserModule,
