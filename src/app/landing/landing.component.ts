@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { SocialButton } from '../footer/footer.component';
 
 @Component({
   selector: 'app-landing',
@@ -24,9 +25,32 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class LandingComponent implements OnInit {
   currentState = 'initial';
+  projectLove: SocialButton[] | undefined;
   constructor() { }
 
   ngOnInit(): void {
+    this.projectLove = [
+      {
+        name: 'Twitter',
+        url: 'http://localhost',
+        icon: 'home'
+      },
+      {
+        name: 'GitHub',
+        url: 'http://localhost',
+        icon: 'home'
+      },
+      {
+        name: 'Twitter',
+        url: 'http://localhost',
+        icon: 'Home'
+      },
+      {
+        name: 'Twitter',
+        url: 'http://localhost',
+        icon: 'Office'
+      },
+    ];
   }
 
   changeStarSize() {

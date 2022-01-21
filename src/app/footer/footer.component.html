@@ -1,17 +1,15 @@
 <div class="footer-row">
     <div class="social-buttons-container">
-        <div *ngFor="let button in socialButtons" style="border: 1px solid red;">
+        <div *ngFor="let button of projectLove">
             <mat-label class="social-button" (click)="routeExternal(button.url, $event)">
-                <mat-icon>
-                    <span class="iconify" data-icon="button.icon"></span>
-                </mat-icon>
+                <mat-icon>{{button.icon}}</mat-icon>
                 <p class="button-name">{{button.name}}</p>
             </mat-label>
         </div>
         <!-- <mat-label class="social-block" (click)="routeExternal('twitter', $event)"
             style="display: flex;flex-direction: row;">
             <mat-icon class="twitter">
-                <span class="iconify" data-icon="button.icon"></span>
+                <span class="iconify" data-icon="button.icon">{{button.icon}}</span>
             </mat-icon>
             <p style="margin-top: .25em;">Twitter</p>
         </mat-label>
