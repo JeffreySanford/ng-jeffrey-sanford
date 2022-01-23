@@ -22,6 +22,7 @@ import { KitchenTableComponent } from './samples/development/kitchen-table/kitch
 import { WeatherComponent } from './samples/development/weather/weather.component';
 import { DataVisualizationsComponent } from './samples/design/data-visualizations/data-visualizations.component';
 import { SpaceVideoComponent } from './samples/design/space-video/space-video.component';
+import { AppSocialIconsComponent } from './social-icon/social-icon.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SpaceVideoComponent } from './samples/design/space-video/space-video.co
     KitchenTableComponent,
     WeatherComponent,
     DataVisualizationsComponent,
-    SpaceVideoComponent
+    SpaceVideoComponent,
+    AppSocialIconsComponent
   ],
   imports: [
     BrowserModule,
