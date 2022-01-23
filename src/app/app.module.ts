@@ -51,7 +51,6 @@ import { SpaceVideoComponent } from './samples/design/space-video/space-video.co
     FormsModule,
     ReactiveFormsModule,
     OverlayModule
-
   ],
   exports: [
     MaterialModule
