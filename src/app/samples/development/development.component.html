@@ -1,1 +1,26 @@
-<p>development works!</p>
+<section class="page">
+    <gridster [options]="options">
+      <gridster-item [item]="item" *ngFor="let item of dashboard">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{item.title}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ item.description }}</p>
+          </mat-card-content>
+  
+          <mat-card-actions class="technology">
+            <button mat-raised-button color="accent">LIKE</button>
+            <button mat-raised-button color="primary">SHARE</button>
+          </mat-card-actions>
+          <div class="love-icons">
+            <img src="../../../assets/images/angular.png" />
+            <img src="../../../assets/images/nodejs-new-pantone-black.png" />
+            <img src="../../../assets/images/WebReady-Logo_RGB_Forest-Green.JPG" />
+          </div>
+          <app-footer [projectLove]="projectLove"></app-footer>
+        </mat-card>
+      </gridster-item>
+    </gridster>
+  </section>
+  <app-footer [projectLove]="pageLove"></app-footer>

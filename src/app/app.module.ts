@@ -22,10 +22,11 @@ import { KitchenTableComponent } from './samples/development/kitchen-table/kitch
 import { WeatherComponent } from './samples/development/weather/weather.component';
 import { DataVisualizationsComponent } from './samples/design/data-visualizations/data-visualizations.component';
 import { SpaceVideoComponent } from './samples/design/space-video/space-video.component';
-import {VgCoreModule} from '@videogular/ngx-videogular/core';
-import {VgControlsModule} from '@videogular/ngx-videogular/controls';
-import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
-import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
+import { VgCoreModule } from '@videogular/ngx-videogular/core';
+import { VgControlsModule } from '@videogular/ngx-videogular/controls';
+import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
+import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
     KitchenTableComponent,
     WeatherComponent,
     DataVisualizationsComponent,
-    SpaceVideoComponent
+    SpaceVideoComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,7 @@ import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
     MatToolbarModule,
     FormsModule,
     ReactiveFormsModule,
-    OverlayModule,    VgCoreModule,
+    OverlayModule, VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule
