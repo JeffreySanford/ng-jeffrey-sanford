@@ -1,4 +1,5 @@
-<video width="300" height="300" autoplay="autoplay">
-  		<source src="../media/haynes-astronaut.mp4" type="video/mp4"/>  		
-		Your Browser does not support the video element
-</video>
+<vg-player>
+	<video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" controls>
+		<source src="../../../../assets/video/haynes-astronauts.mp4" type="video/mp4">
+	</video>
+</vg-player>
