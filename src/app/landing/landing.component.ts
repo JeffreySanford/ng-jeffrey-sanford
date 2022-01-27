@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { SocialButton } from '../footer/footer.component';
+import { appIcons } from '../icons';
 
 @Component({
   selector: 'app-landing',
@@ -23,6 +24,7 @@ import { SocialButton } from '../footer/footer.component';
     ]),
   ]
 })
+
 export class LandingComponent implements OnInit {
   currentState = 'initial';
   projectLove: SocialButton[] | undefined;
@@ -31,24 +33,24 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
     this.projectLove = [
       {
-        name: 'Twitter',
+        name: 'Facebook',
         url: 'http://localhost',
-        icon: 'home'
+        icon: appIcons.facebook
       },
       {
         name: 'GitHub',
         url: 'http://localhost',
-        icon: 'home'
+        icon: appIcons.github
       },
       {
         name: 'Twitter',
         url: 'http://localhost',
-        icon: 'Home'
+        icon: appIcons.twitter
       },
       {
         name: 'Twitter',
         url: 'http://localhost',
-        icon: 'Office'
+        icon: appIcons.twitter
       },
     ];
   }

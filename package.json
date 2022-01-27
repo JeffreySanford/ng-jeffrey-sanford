@@ -24,6 +24,7 @@
     "@iconify/icons-fa-solid": "^1.1.1",
     "@visurel/iconify-angular": "^11.0.0",
     "angular-gridster2": "^13.1.1",
+    "iconify": "^1.4.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
