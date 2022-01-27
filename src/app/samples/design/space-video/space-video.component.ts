@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VgApiService } from '@videogular/ngx-videogular/core';
 
 @Component({
   selector: 'app-space-video',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./space-video.component.scss']
 })
 export class SpaceVideoComponent implements OnInit {
+  constructor() {
 
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
+  ngOnInit() {
+
+  }
 }
