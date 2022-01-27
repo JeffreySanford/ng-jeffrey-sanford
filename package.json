@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && cp -rf dist/*.* /usr/share/nginx",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -30,6 +30,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^13.2.0",
     "@angular/compiler-cli": "~13.2.0",
     "@iconify/icons-mdi": "^1.1.42",
     "@types/core-js": "^2.5.5",
