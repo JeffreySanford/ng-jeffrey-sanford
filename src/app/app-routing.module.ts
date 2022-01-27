@@ -9,6 +9,7 @@ import { SpaceVideoComponent } from './samples/design/space-video/space-video.co
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'landing'},
   { path: 'landing', component: LandingComponent },
   { path: 'samples/sample-table', component: TableComponent },
   { path: 'samples/space-video', component: SpaceVideoComponent },
