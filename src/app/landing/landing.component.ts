@@ -33,24 +33,24 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
     this.projectLove = [
       {
-        name: 'Facebook',
-        url: 'http://localhost',
-        icon: appIcons.facebook
-      },
-      {
         name: 'GitHub',
         url: 'http://localhost',
-        icon: appIcons.github
+        icon: 'github'
+      },
+      {
+        name: 'Facebook',
+        url: 'http://localhost',
+        icon: 'facebook'
       },
       {
         name: 'Twitter',
         url: 'http://localhost',
-        icon: appIcons.twitter
+        icon: 'twitter'
       },
       {
-        name: 'Twitter',
+        name: 'Linkedin',
         url: 'http://localhost',
-        icon: appIcons.twitter
+        icon: 'linkedin'
       },
     ];
   }

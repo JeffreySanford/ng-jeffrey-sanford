@@ -1,12 +1,8 @@
 <div class="footer-row">
     <div class="social-buttons-container">
-        <div *ngFor="let button of projectLove">
-            <mat-label class="social-button" (click)="routeExternal(button.url, $event)">
-                <div class="button-container">
-                    <span class="iconify" data-icon="logos:apple-app-store"></span>
-                    <p class="button-name">{{button.name}}</p>
-                </div>
-            </mat-label>
+        <div *ngFor="let button of projectLove" class="button-container">
+            <mat-icon class="iconify" [ngClass]="button.icon">{{button.icon}}</mat-icon>
+            <p class="button-name">{{button.name}}</p>
         </div>
     </div>
     <section class="development-statistics" (click)="displayDevelopmentPopup()">

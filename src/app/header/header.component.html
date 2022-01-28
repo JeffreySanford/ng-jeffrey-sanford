@@ -1,9 +1,9 @@
 <mat-action-row color="primary" class="top-banner">
     <mat-toolbar-row>
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu">
             <mat-icon class="vertical-more">more_vert</mat-icon>
         </button>
-        <mat-menu #menu="matMenu" class="nav-menu">
+        <mat-menu #menu="matMenu" class="nav-menu" style="z-index: 2;">
             <button (click)="navigateDesign('design-dashboard')" mat-menu-item>
                 <mat-icon>art_track</mat-icon>
                 <span>Design</span>

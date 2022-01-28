@@ -1,6 +1,6 @@
 .brand-heading {
   font-size: 3em;
-  color: #55185D;
+  color: orange;
   margin: 3em auto 1em;
 }
 
@@ -9,11 +9,12 @@
   flex-direction: row;
   font-size: 1.25em;
   justify-content: center;
+  color: orange;
 
   .star {
     padding: 0 0.25em;
     margin-top: -0.1em;
-    color: #55185D;
+    color: orangered;
   }
 }
 
@@ -24,10 +25,17 @@
   align-content: center;
   justify-content: flex-start;
   background-color: black;
-  background: url("../../assets//images//intro-bg.jpg") no-repeat bottom center
-  scroll;
+  overflow: hidden;
+  z-index: 2;
+  // background: url("../../assets//images//intro-bg.jpg") no-repeat bottom center scroll;
 }
 
-.background {
-  background-color: black;
+.background-flag {
+  position: absolute;
+  left: 29em;
+  top: 9em;
+  opacity: 0.1;
+  transform: scale(6.5);
+  z-index: 1;
+  ;
 }

@@ -16,6 +16,7 @@ export class DesignComponent implements OnInit {
   item: any;
   projectLove: SocialButton[] | undefined;
   pageLove: SocialButton[] | undefined;
+  loveIcons = ["../../../assets/images/angular.png", "../../../assets/images/nodejs-new-pantone-black.png", "../../../assets/images/WebReady-Logo_RGB_Forest-Green.JPG"];
 
   static itemChange(item: any, itemComponent: any) {
     console.info('itemChanged', item, itemComponent);
@@ -43,22 +44,22 @@ export class DesignComponent implements OnInit {
       {
         name: 'GitHub',
         url: 'http://localhost',
-        icon: 'home'
+        icon: 'github'
       },
       {
         name: 'Facebook',
         url: 'http://localhost',
-        icon: 'home'
-      },
-      {
-        name: 'Sample',
-        url: 'http://localhost',
-        icon: 'airplane'
+        icon: 'facebook'
       },
       {
         name: 'Twitter',
         url: 'http://localhost',
-        icon: 'ship'
+        icon: 'twitter'
+      },
+      {
+        name: 'Linkedin',
+        url: 'http://localhost',
+        icon: 'linkedin'
       },
     ];
 
