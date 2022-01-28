@@ -54,7 +54,7 @@ $ng-jeffrey-sanford-theme: mat.define-light-theme(
 @import '~@angular/cdk/overlay-prebuilt.css';
 
 $custom-typography: mat-typography-config(
-  $font-family: 'Raleway'
+  $font-family: 'PT Sans Pro'
 );
 @include angular-material-typography($custom-typography);
 

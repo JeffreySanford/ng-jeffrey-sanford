@@ -36,7 +36,7 @@ export class DesignComponent implements OnInit {
 
     this.dashboard = [
       {cols: 3, rows: 1, y: 0, x: 0, title: 'Material Sample Table', url: 'samples/sample-table', description: 'Angular 13 implimentation of Material Design Table concepts using Node to generate mocked users on the backend.  The table impliments searching users, sorting and pagination.'},
-      {cols: 3, rows: 1, y: 0, x: 3, title: 'Moon Landing', url: 'samples/design/moon-landing', description: 'HTML5 Video Samples'},
+      {cols: 3, rows: 1, y: 0, x: 3, title: 'Moon Landing', url: 'samples/space-video', description: 'HTML5 Video Samples'},
       {cols: 3, rows: 1, y: 0, x: 6, title: 'Space Video', url: 'samples/'}
     ];
 
@@ -108,6 +108,7 @@ export class DesignComponent implements OnInit {
   }
 
   launchPage(page: string){
+    debugger
     this.router.navigate([page])
   }
 
