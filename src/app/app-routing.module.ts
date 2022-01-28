@@ -7,20 +7,23 @@ import { DevelopmentComponent } from './samples/development/development.componen
 import { TableComponent } from './samples/design/table/table.component';
 import { SpaceVideoComponent } from './samples/design/space-video/space-video.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'landing'},
+  { path: '', pathMatch: 'full', redirectTo: 'landing' },
   { path: 'landing', component: LandingComponent },
   { path: 'samples/sample-table', component: TableComponent },
   { path: 'samples/space-video', component: SpaceVideoComponent },
   { path: 'design-dashboard', component: DesignComponent },
   { path: 'development-dashboard', component: DevelopmentComponent },
   { path: 'architecture-dashboard', component: ArchitectureComponent },
-  { path: '**', component:  PageNotFoundComponent}
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
+  exports: [RouterModule],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}]
 })
+
 export class AppRoutingModule { }
