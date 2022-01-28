@@ -35,7 +35,7 @@ export class TableComponent implements AfterContentChecked {
   dataSource!: MatTableDataSource<User>;
   resolved: boolean = false;
   currentNavigation: any;
-  private portfolioAPI = 'http://localhost:3000/users';  
+  private portfolioAPI = 'https://api-portfolio-l8cra.ondigitalocean.app/users';  
   
   constructor(private router: Router, private http: HttpClient) { }
 
