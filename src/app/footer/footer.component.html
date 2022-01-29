@@ -1,14 +1,14 @@
 <div class="footer-row">
     <div class="social-buttons-container">
-        <div *ngFor="let button of projectLove" class="button-container">
-            <mat-icon class="iconify" [ngClass]="button.icon">{{button.icon}}</mat-icon>
-            <p class="button-name">{{button.name}}</p>
+        <div *ngFor="let button of projectLove">
+            <span class="button-container">
+                <mat-icon [ngClass]="button.icon">{{button.icon}}</mat-icon>
+                <p class="button-name">{{button.name}}</p>    
+            </span>
         </div>
     </div>
     <section class="development-statistics" (click)="displayDevelopmentPopup()">
-        <mat-icon class="development-tag" (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
-            loyalty
-        </mat-icon>
+        <mat-icon class="development-tag" (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin">loyalty</mat-icon>
         <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
             <div class="overlay">
                 <p>Development Version: {{this.version}}</p>

@@ -108,7 +108,6 @@ export class DesignComponent implements OnInit {
   }
 
   launchPage(page: string){
-    debugger
     this.router.navigate([page])
   }
 
@@ -119,5 +118,4 @@ export class DesignComponent implements OnInit {
       this.router.navigate([item]);
     };
   }
-
 }
