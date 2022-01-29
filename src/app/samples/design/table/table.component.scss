@@ -1,6 +1,6 @@
 .page {
   color: blue;
-  background-color: #ecb602;
+  background-color: orange;
   height: calc(89vh);
 
   h2 {
@@ -15,6 +15,7 @@
     justify-content: right;
     max-height: 2em;
     margin-bottom: -2em;
+    font-size: 1.25em;
 
     mat-form-field {
       font-size: 1em;
@@ -23,16 +24,35 @@
   }
 
   .mat-table {
-    background-color: #ecb602;
-    font-size: 1.5em;
-  }
+    background-color: orange;
 
+    .mat-header-cell {
+      font-size: 1.3em;
+      color: lime;
+    }
+
+    .mat-cell {
+      font-size: 1.25em;
+      color: blue;
+      background-color: orange;
+    }
+  }
   .pagination {
-    margin-bottom: 20em;
+    border: 1px solid blue;
   }
 }
 
+
+
 :host ::ng-deep .mat-paginator-container {
-  background-color: #ecb602 !important;
-  font-size: 1em;
+  background-color: orange;
+  font-size: 2.25em;
+  color: purple;
+  position: absolute;
+  bottom: 0;
+}
+
+:host ::ng-deep .mat-select-value {
+  font-size: 2.25em;
+  color: blue;
 }

@@ -27,9 +27,8 @@
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>>
     </mat-table>
 
-    <div class="pagination">
-        <mat-paginator role="listbox" #paginator 
-        class="paginator mat-elevation-z8" aria-label="Select Page"
+    <div class="pagination mat-elevation-z8">
+        <mat-paginator role="listbox" #paginator class="paginator" aria-label="Select Page"
         [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
         ></mat-paginator>
     </div>
