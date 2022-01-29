@@ -7,7 +7,7 @@
             </span>
         </div>
     </div>
-    <section class="development-statistics" (click)="displayDevelopmentPopup()">
+    <div class="development-statistics" (click)="displayDevelopmentPopup()">
         <mat-icon class="development-tag" (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin">loyalty</mat-icon>
         <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
             <div class="overlay">
@@ -15,5 +15,5 @@
                 <p>Angular Version: {{this.angularVersion}}</p>
             </div>
         </ng-template>
-    </section>
+    </div>
 </div>

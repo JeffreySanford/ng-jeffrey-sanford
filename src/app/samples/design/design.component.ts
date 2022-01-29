@@ -110,12 +110,4 @@ export class DesignComponent implements OnInit {
   launchPage(page: string){
     this.router.navigate([page])
   }
-
-  navigateDesign(item?: string) {
-    if (!item) {
-      this.router.navigate(['landing']);
-    } else {
-      this.router.navigate([item]);
-    };
-  }
 }

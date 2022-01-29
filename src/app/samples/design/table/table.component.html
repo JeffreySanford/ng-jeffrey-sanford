@@ -1,12 +1,15 @@
-
 <div class="page">
     <h2>Mocked Material Table</h2>
+    <div class="notice">
+        <p>This is a mocked Material Design table that should sorting, pagination and filtering capabilities.  The users are faked for development purpose through a service in the API.</p>
+    </div>
+    
     <div class="filter">
-        <mat-form-field class="table-filtering" appearance="outline">
+        <mat-form-field class="table-filtering" appearance="legacy">
             <input #input matInput placeholder="Search by users name" (keyup)="applyFilter(input)">
         </mat-form-field>
     </div>
-    <mat-table class="table" #sort matSort [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table class="table" #sort matSort [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="name">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
             <mat-cell *matCellDef="let element">{{ element.name + ' ' + element.surname }}</mat-cell>
@@ -25,11 +28,9 @@
         </ng-container>
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>>
-    </mat-table>
+    </table>
 
-    <div class="pagination mat-elevation-z8">
-        <mat-paginator role="listbox" #paginator class="paginator" aria-label="Select Page"
-        [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-        ></mat-paginator>
-    </div>
+    <mat-paginator role="listbox" #paginator class="paginator mat-elevation-z8" aria-label="Select Page" [length]="length"
+        [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+
 </div>

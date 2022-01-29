@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-header',
@@ -12,21 +12,15 @@ export class AppHeaderComponent implements OnInit {
   displayedColumns = ['name', 'email'];
   length: any;
   dataSource: any;
+  navigation: NavigationService;
 
-  constructor(private router: Router) {
+  constructor(navigation: NavigationService) {
+    this.navigation = navigation;
   }
 
   ngOnInit(): void { }
 
   navigateHome() {
-    this.router.navigate(['landing']);
-  }
-
-  navigateDesign(item?: string) {
-    if (!item) {
-      this.router.navigate(['landing']);
-    } else {
-      this.router.navigate([item]);
-    };
+    this.navigation.navigateDesign('landing');
   }
 }

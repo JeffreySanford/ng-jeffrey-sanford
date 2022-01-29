@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { SocialButton } from '../footer/footer.component';
 import { appIcons } from '../icons';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-landing',
@@ -28,7 +29,10 @@ import { appIcons } from '../icons';
 export class LandingComponent implements OnInit {
   currentState = 'initial';
   projectLove: SocialButton[] | undefined;
-  constructor() { }
+  navigation: NavigationService;
+  constructor(navigation: NavigationService) {
+    this.navigation = navigation;
+   }
 
   ngOnInit(): void {
     this.projectLove = [
