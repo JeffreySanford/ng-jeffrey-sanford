@@ -7,13 +7,11 @@
   height: 2.6em;
   z-index: 5;
 
-  .mat-toolbar-row{
-    margin-left: 1em;
-
+  .mat-toolbar-row {
     button {
       z-index: 5;
     }
-  } 
+  }
 }
 
 .filler {
@@ -30,18 +28,14 @@
   position: absolute;
   right: 1.25em;
   top: 0.9em;
-  
 
   &:hover {
     border: 1px solid blue;
     border-radius: 1.5em;
-
   }
-  .mat-icon{
+  .mat-icon {
     margin: 0 0 0 0.1em;
   }
-
-
 }
 
 .mat-icon {
@@ -49,7 +43,6 @@
   font-weight: 100;
   color: orange;
 }
-
 
 .vertical-more {
   margin: 0 0 0 0;
