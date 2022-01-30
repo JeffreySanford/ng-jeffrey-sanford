@@ -19,7 +19,7 @@ const routes: Routes = [
   //the empty path will be redirected to the home component
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   //this path redirects to the home component
-  { path: '**', redirectTo: '/landing', pathMatch: 'full' }
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
