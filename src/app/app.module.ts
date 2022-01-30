@@ -27,6 +27,7 @@ import { VgControlsModule } from '@videogular/ngx-videogular/controls';
 import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
 import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   exports: [
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: (window as any) ['_app_base'] || '/' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

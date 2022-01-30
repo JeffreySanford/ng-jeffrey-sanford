@@ -3,20 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { ExtraOptions, Navigation, Router } from '@angular/router';
-import { Observable, Subscriber } from 'rxjs';
+import { Router } from '@angular/router';
+import { User } from './user';
 
-export interface User {
-  firstName: string;
-  lastName: string;
-  streetNumber: string;
-  address: string;
-  city: string;
-  phone: String;
-  email: String;
-  postalCode: String;
-  userId: String;
-}
 @Component({
   selector: 'sample-table',
   templateUrl: './table.component.html',
@@ -58,7 +47,6 @@ export class TableComponent implements AfterContentChecked {
   }
 
   ngOnInit(): void {
-
     this.http.get<User[]>(this.portfolioAPI).subscribe((data: any) => {
       this.displayedColumns = ['name', 'address', 'email'];
       this.users = data.users;
