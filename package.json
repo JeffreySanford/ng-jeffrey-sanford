@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && rm -rf /usr/share/nginx/html/*.* && cp -rf dist/*.* /usr/share/nginx/html",
+    "build": "ng build && cp -rf dist/*.* /usr/share/nginx/html && cp -rf dist/assets/*.* /usr/share/nginx/html/assets" ,
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
