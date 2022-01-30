@@ -17,13 +17,16 @@ const routes: Routes = [
   { path: 'design-dashboard', component: DesignComponent },
   { path: 'development-dashboard', component: DevelopmentComponent },
   { path: 'architecture-dashboard', component: ArchitectureComponent },
-  { path: '**', component: PageNotFoundComponent },
+  //the empty path will be redirected to the home component
+  { path: '', redirectTo: '/landing', pathMatch: 'full' },
+  //this path redirects to the home component
+  { path: '**', redirectTo: '/landing', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule],
-  providers: [{provide: APP_BASE_HREF, useValue: '/'}]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
 })
 
 export class AppRoutingModule { }

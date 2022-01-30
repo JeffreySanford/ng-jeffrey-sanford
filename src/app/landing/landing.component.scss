@@ -1,5 +1,5 @@
 .brand-heading {
-  font-size: 4em;
+  font-size: 3em;
   color: orange;
   margin: 3em auto 1em;
 }
@@ -7,7 +7,7 @@
 .intro-text {
   display: flex;
   flex-direction: row;
-  font-size: 2em;
+  font-size: 1.5em;
   justify-content: center;
   color: orange;
 
@@ -25,17 +25,14 @@
   align-content: center;
   justify-content: flex-start;
   background-color: black;
-  overflow: hidden;
   z-index: 2;
-  // background: url("../../assets//images//intro-bg.jpg") no-repeat bottom center scroll;
 }
 
-.background-flag {
+:host ::ng-deep .background-flag img {
+    z-index: 0;
+  opacity: .1;
+  transform: scale(5);
   position: absolute;
-  left: 29em;
-  top: 9em;
-  opacity: 0.1;
-  transform: scale(6.5);
-  z-index: 1;
-  overflow: hidden;
+  top: 10em;
+  left: 40em;
 }
