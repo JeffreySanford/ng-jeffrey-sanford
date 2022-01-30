@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
-import { SocialButton } from 'src/app/footer/footer.component';
+import { SocialButton } from '../../classes/social-button';
 
 @Component({
   selector: 'app-design',

@@ -1,15 +1,9 @@
 import { Component, Input, OnInit, VERSION } from '@angular/core';
 import { Router } from '@angular/router';
 import packageInformation from '../../../package.json'
-import { appIcons } from '../icons';
-import {Icon} from '@visurel/iconify-angular';
-
-export interface SocialButton {
-  name: string;
-  url: string;
-  description?: string;
-  icon: string | any;
-}
+import { appIcons } from '../classes/icons';
+import { Icon } from '@visurel/iconify-angular';
+import { SocialButton } from '../classes/social-button';
 
 @Component({
   selector: 'app-footer',
@@ -40,8 +34,6 @@ export class AppFooterComponent implements OnInit {
     if (label === 'twitter') {
       this.router.navigate(['https://twitter.com/jeffrey_sanford']);
     }
-
-
   }
 
   displayDevelopmentPopup() {

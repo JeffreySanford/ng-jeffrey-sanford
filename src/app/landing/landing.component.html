@@ -2,19 +2,19 @@
     <h1 class="brand-heading">Jeffrey Sanford</h1>
     <span class="intro-text">
         <div>
-            <p (click)="navigation.navigateDesign('deseign-dashboard')">design</p>
+            <p class="clickable" (click)="navigation.navigateDesign('design-dashboard')">design</p>
         </div>
         <mat-icon class="star" @changeStarSize>star_border</mat-icon>
         <div>
-                <p (click)="navigation.navigateDesign('development-dashboard')">development</p>
+            <p class="clickable" (click)="navigation.navigateDesign('development-dashboard')">development</p>
         </div>
         <mat-icon @changeStarSize class="star">star_border</mat-icon>
         <div>
             <p>architecture</p>
         </div>
     </span>
-    <article class="background-flag">
-        <img src="../../assets/video/usa-american-flag-waving-animated-gif-12.gif">
-    </article>
+    <img class="army-logo" src="../../assets/images/us-army-logo.png">
+    <span class="background-flag">
+    </span>
 </section>
 <app-footer [projectLove]="projectLove"></app-footer>

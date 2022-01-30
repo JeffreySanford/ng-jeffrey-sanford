@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IconService } from '@visurel/iconify-angular';
-import { appIcons } from './icons';
+import { appIcons } from './classes/icons';
 
 @Component({
   selector: 'app-root',

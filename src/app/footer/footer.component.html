@@ -11,8 +11,8 @@
         <mat-icon class="development-tag" (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin">loyalty</mat-icon>
         <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
             <div class="overlay">
-                <p>Development Version: {{this.version}}</p>
                 <p>Angular Version: {{this.angularVersion}}</p>
+                <p>version: {{this.version}}</p>
             </div>
         </ng-template>
     </div>
