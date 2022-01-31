@@ -56,6 +56,13 @@ $ng-jeffrey-sanford-theme: mat.define-light-theme(
 $custom-typography: mat-typography-config(
   $font-family: 'PT Sans Pro'
 );
+@font-face {
+  font-family: 'PT Sans Pro';
+  src: url('assets/fonts/PTSans-Regular.ttf') format('ttf'),
+    url('assets/fonts/PTSans-Regular.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+}
 @include angular-material-typography($custom-typography);
 
 .mat-menu-panel {
