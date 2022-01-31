@@ -8,15 +8,15 @@
   z-index: 2;
 
   .brand-heading {
-    font-size: 3em;
+    font-size: 10em;
+    margin: 1em auto;
     color: orange;
-    margin: 3em auto 1em;
   }
 
   .intro-text {
     display: flex;
     flex-direction: row;
-    font-size: 1.5em;
+    font-size: 3em;
     justify-content: center;
     color: orange;
 
@@ -47,5 +47,6 @@
   background-size: cover;
   position: absolute;
   top: -1em;
+  right: -4em;
   opacity: .2;
 }
