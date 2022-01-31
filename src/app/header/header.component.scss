@@ -11,15 +11,18 @@
     button {
       z-index: 5;
     }
+
+    .mat-icon {
+      font-size: 2.5em;
+      font-weight: 100;
+      color: orange;
+    }
+    
+    .vertical-more {
+      margin: 0 0 0 0;
+      color: orange;
+    }    
   }
-}
-
-.filler {
-  flex: 1 1 auto;
-}
-
-.gap {
-  margin-right: 10px;
 }
 
 .user {
@@ -36,15 +39,4 @@
   .mat-icon {
     margin: 0 0 0 0.1em;
   }
-}
-
-.mat-icon {
-  font-size: 2.5em;
-  font-weight: 100;
-  color: orange;
-}
-
-.vertical-more {
-  margin: 0 0 0 0;
-  color: orange;
 }

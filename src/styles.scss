@@ -51,16 +51,16 @@ $ng-jeffrey-sanford-theme: mat.define-light-theme(
 // import our custom theme                // ? changed
 @import "./theme.scss";
 @import "./colors.scss"; // ? changed
-@import '~@angular/cdk/overlay-prebuilt.css';
+@import "~@angular/cdk/overlay-prebuilt.css";
 
 $custom-typography: mat-typography-config(
-  $font-family: 'PT Sans Pro'
+  $font-family: "PT Sans Pro",
 );
 
 @font-face {
-  font-family: 'PT Sans Pro';
-  src: url('assets/fonts/PTSans-Regular.ttf') format('ttf'),
-    url('assets/fonts/PTSans-Regular.ttf') format('ttf');
+  font-family: "PT Sans Pro";
+  src: url("assets/fonts/PTSans-Regular.ttf") format("ttf"),
+    url("assets/fonts/PTSans-Regular.ttf") format("ttf");
   font-weight: 500;
   font-style: normal;
 }
@@ -68,8 +68,14 @@ $custom-typography: mat-typography-config(
 @include angular-material-typography($custom-typography);
 
 .mat-menu-panel {
-  background-color: burlywood;
+  background-color: purple;
   color: orange;
+  margin: -1.5em 0 0 3em;
+
+  button.mat-menu-item {
+    width: 100%;
+    font-size: 1.5em;
+  }
 }
 
 .overlay {
@@ -89,6 +95,10 @@ $custom-typography: mat-typography-config(
   }
 }
 
-
-html, body { height: 100%; }
-body { margin: 0; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
