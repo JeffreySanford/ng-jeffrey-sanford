@@ -3,6 +3,8 @@
   background-color: black;
   color: orange;
   margin-left: 2em;
+  display: flex;
+  flex-direction: row;
 
   .social-buttons-container {
     display: flex;
