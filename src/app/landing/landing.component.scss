@@ -37,8 +37,10 @@
 
   .clickable {
     cursor: pointer;
+    z-index: 2;
   }
 }
+
 
 :host ::ng-deep .background-flag {
   width: 100vw;
@@ -49,4 +51,5 @@
   top: -1em;
   right: -4em;
   opacity: .2;
+  z-index: 1
 }

@@ -5,6 +5,12 @@ import { appIcons } from '../classes/icons';
 import { Icon } from '@visurel/iconify-angular';
 import { SocialButton } from '../classes/social-button';
 
+export interface Item {
+  name?: string | undefined;
+  url?: string  | undefined;
+  icon?: string  | undefined;
+}
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -30,10 +36,8 @@ export class AppFooterComponent implements OnInit {
 
   }
 
-  routeExternal(label: string, event: Event) {
-    if (label === 'twitter') {
-      this.router.navigate(['https://twitter.com/jeffrey_sanford']);
-    }
+  routeExternal(item: Item, event: Event) {
+    this.router.navigate([item.url]);
   }
 
   displayDevelopmentPopup() {

@@ -37,23 +37,23 @@ export class LandingComponent implements OnInit {
     this.projectLove = [
       {
         name: 'GitHub',
-        url: 'http://localhost',
+        url: 'https://github.com/JeffreySanford',
         icon: 'github'
       },
       {
         name: 'Facebook',
-        url: 'http://localhost',
+        url: 'https://www.facebook.com/jeffrey.sanford.56/',
         icon: 'facebook'
       },
       {
         name: 'Twitter',
-        url: 'http://localhost',
-        icon: 'twitter'
+        url: 'https://www.twiter.com/jeffrey_sanford',
+        icon: 'twitter_circle'
       },
       {
         name: 'Linkedin',
-        url: 'http://localhost',
-        icon: 'linkedin'
+        url: 'https://www.linkedin.com/in/sanfordjeffrey/',
+        icon: 'linkedin_circle'
       },
     ];
   }

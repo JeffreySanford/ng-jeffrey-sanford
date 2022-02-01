@@ -1,14 +1,17 @@
 <div class="footer-row">
     <div class="social-buttons-container">
         <div *ngFor="let button of projectLove">
-            <span class="button-container">
+            <span class="button-container" #button (click)="routeExternal(button, $event)">
                 <mat-icon [ngClass]="button.icon">{{button.icon}}</mat-icon>
-                <p class="button-name">{{button.name}}</p>    
-            </span>
+                <p class="button-name">
+                    {{button.name}}
+                </p>
+            </span> 
         </div>
     </div>
     <div class="development-statistics" (click)="displayDevelopmentPopup()">
-        <mat-icon class="development-tag" (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin">loyalty</mat-icon>
+        <mat-icon class="development-tag" (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+            loyalty</mat-icon>
         <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen">
             <div class="overlay">
                 <p>Angular Version: {{this.angularVersion}}</p>
