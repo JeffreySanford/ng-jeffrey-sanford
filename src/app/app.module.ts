@@ -65,7 +65,7 @@ import { SocialButton } from './classes/social-button';
     MaterialModule
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: (window as any) ['_app_base'] || '/' },
+    { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]
 })
