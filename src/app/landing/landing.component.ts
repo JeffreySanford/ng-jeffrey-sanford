@@ -48,12 +48,12 @@ export class LandingComponent implements OnInit {
       {
         name: 'Twitter',
         url: 'https://www.twiter.com/jeffrey_sanford',
-        icon: 'twitter_circle'
+        icon: 'twitter'
       },
       {
         name: 'Linkedin',
         url: 'https://www.linkedin.com/in/sanfordjeffrey/',
-        icon: 'linkedin_circle'
+        icon: 'linkedin'
       },
     ];
   }
