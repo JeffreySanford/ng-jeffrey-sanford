@@ -9,7 +9,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MaterialModule } from './material/material.module';
 import { LandingComponent } from './landing/landing.component';
 import { MatToolbarModule } from '@angular/material/toolbar'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppFooterComponent } from './footer/footer.component';
 import { TableComponent } from './samples/design/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -56,9 +55,8 @@ import { SocialButton } from './classes/social-button';
     MatCheckboxModule,
     MaterialModule,
     MatToolbarModule,
-    FormsModule,
-    ReactiveFormsModule,
-    OverlayModule, VgCoreModule,
+    OverlayModule,
+    VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule

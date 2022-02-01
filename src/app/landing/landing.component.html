@@ -4,11 +4,11 @@
         <div>
             <p class="clickable" (click)="navigation.navigateDesign('design-dashboard')">design</p>
         </div>
-        <mat-icon class="star" @changeStarSize>star_border</mat-icon>
+        <mat-icon class="star" [@flyInFlyOut]>star_border</mat-icon>
         <div>
             <p class="clickable" (click)="navigation.navigateDesign('development-dashboard')">development</p>
         </div>
-        <mat-icon @changeStarSize class="star">star_border</mat-icon>
+        <mat-icon class="star" [@flyInFlyOut]>star_border</mat-icon>
         <div>
             <p>architecture</p>
         </div>
