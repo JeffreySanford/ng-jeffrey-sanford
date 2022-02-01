@@ -1,10 +1,11 @@
+
+
 .landing-page {
   display: flex;
   flex-direction: column;
   height: calc(84vh);
   align-content: center;
   justify-content: flex-start;
-  background-color: black;
   z-index: 2;
 
   .brand-heading {
@@ -31,8 +32,8 @@
     width: 10em;
     height: 7.5em;
     position: absolute;
-    bottom: 4em;
-    right: 1em;
+    bottom: 1em;
+    right: 0;
   }
 
   .clickable {
@@ -48,8 +49,8 @@
   background-image: url("../../assets/video/usa-american-flag-waving-animated-gif-12.gif");
   background-size: cover;
   position: absolute;
-  top: -1em;
+  top: 1em;
   right: -4em;
   opacity: .2;
-  z-index: 1
+  z-index: 1;
 }

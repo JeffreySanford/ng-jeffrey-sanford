@@ -7,3 +7,21 @@ $dark-orange: #ECB602;
     background-color: black;
     overflow: hidden;
 }
+
+@media screen and (max-width: 1025px) {
+    ::ng-deep body {
+      background-color: red !important;
+  
+      .page {
+        border: 5px solid orange;
+        height: calc(89vh);
+      }
+    }
+  }
+  
+  /* Mobile device styles */
+  @media screen and (max-width: 480px) {
+    ::ng-deep body {
+      background-color: purple !important;
+    }
+  }

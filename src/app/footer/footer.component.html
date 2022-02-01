@@ -1,12 +1,12 @@
 <div class="footer-row">
-    <div class="social-buttons-container">
-        <div *ngFor="let button of projectLove">
+    <div *ngFor="let button of projectLove">
+        <div class="social-buttons-container">
             <span class="button-container" #button (click)="routeExternal(button, $event)">
-                <mat-icon [ngClass]="button.icon">{{button.icon}}</mat-icon>
+                <mat-icon>{{button.icon}}</mat-icon>
                 <p class="button-name">
                     {{button.name}}
                 </p>
-            </span> 
+            </span>
         </div>
     </div>
     <div class="development-statistics" (click)="displayDevelopmentPopup()">

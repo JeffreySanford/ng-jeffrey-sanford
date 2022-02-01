@@ -68,7 +68,8 @@ $custom-typography: mat-typography-config(
 @include angular-material-typography($custom-typography);
 
 .mat-menu-panel {
-  background-color: purple;
+  background-color: lightblue;
+  opacity: .9;
   color: orange;
   margin: -1.5em 0 0 3em;
 
@@ -93,34 +94,4 @@ $custom-typography: mat-typography-config(
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
   }
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-}
-
-@media (max-width: 900px) {
-  .brand-heading {
-    font-size: 3em;
-    margin: 1em auto;
-    color: orange;
-  }
-
-  .intro-text {
-    display: flex;
-    flex-direction: row;
-    font-size: 1em;
-    justify-content: center;
-    color: orange;
-
-    .star {
-      padding: 0 0.25em;
-      margin-top: -0.1em;
-      color: purple;
-    }
-  }   
 }

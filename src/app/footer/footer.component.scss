@@ -1,15 +1,13 @@
 .footer-row {
   height: 1.75em;
-  background-color: black;
   color: orange;
   margin-left: 2em;
   display: flex;
   flex-direction: row;
-  width: 40vw;
 
   .social-buttons-container {
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
     height: 2em;
 
     .button-container {
@@ -24,9 +22,6 @@
       }
 
       .mat-icon {
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
       }
 
       .button-name {
@@ -42,7 +37,7 @@
     .development-tag {
       position: absolute;
       right: 0.25em;
-      margin: 0 0.25em 0 0;
+      bottom: 0.5em;
       color: orange;
     }
   }
