@@ -1,4 +1,14 @@
-
+:host ::ng-deep .background-flag {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url("../../assets/video/usa-american-flag-waving-animated-gif-12.gif");
+  background-size: cover;
+  position: absolute;
+  top: -1em;
+  right: 0.25em;;
+  opacity: 0.2;
+  z-index: 1;
+}
 
 .landing-page {
   display: flex;
@@ -6,13 +16,7 @@
   height: calc(84vh);
   align-content: center;
   justify-content: flex-start;
-  z-index: 2;
-
-  .brand-heading {
-    font-size: 10em;
-    margin: 1em auto;
-    color: orange;
-  }
+  z-index: 5 !important;
 
   .intro-text {
     display: flex;
@@ -38,19 +42,45 @@
 
   .clickable {
     cursor: pointer;
-    z-index: 2;
+    z-index: 2 !important;
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .brand-heading {
+    font-size: 7.75em;
+    color: orange;
+    width: 6em;
+    line-height: 0.7em;
+    margin: auto 0.25em;
+  }
 
-:host ::ng-deep .background-flag {
-  width: 100vw;
-  min-height: 100vh;
-  background-image: url("../../assets/video/usa-american-flag-waving-animated-gif-12.gif");
-  background-size: cover;
-  position: absolute;
-  top: 1em;
-  right: -4em;
-  opacity: .2;
-  z-index: 1;
+  .background-flag {
+    top: -5em;
+  }
+
+  .intro-text {
+    position: absolute;
+    bottom: 7em;
+    margin: 0 0.2em;
+
+    p {
+      font-size: .55em;
+      justify-content: center;
+      color: orange;
+    }
+
+    .star {
+      margin-top: -0.1em;
+      color: orangered;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .brand-heading {
+    font-size: 10em;
+    margin: 1em auto;
+    color: orange;
+  }
 }

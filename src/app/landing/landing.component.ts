@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialButton } from '../classes/social-button';
 import { NavigationService } from '../services/navigation.service';
-import { trigger, state, style, animate, transition, query, stagger } from '@angular/animations';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-landing',
@@ -58,9 +58,5 @@ export class LandingComponent implements OnInit {
   changeStarSize() {
     this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
   }
-}
-
-function scale(arg0: number): string | number {
-  throw new Error('Function not implemented.');
 }
 

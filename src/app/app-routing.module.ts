@@ -16,10 +16,11 @@ const routes: Routes = [
   { path: 'design-dashboard', component: DesignComponent },
   { path: 'development-dashboard', component: DevelopmentComponent },
   { path: 'architecture-dashboard', component: ArchitectureComponent },
+  { path: 'page-not-found', component: PageNotFoundComponent},
   // the empty path will be redirected to the home component
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   // this path redirects to the home component
-  { path: '**', redirectTo: '/landing', pathMatch: 'full' }
+  { path: '**', redirectTo: '/page-not-found', pathMatch: 'full' }
 ];
 
 @NgModule({
