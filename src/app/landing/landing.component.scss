@@ -36,8 +36,8 @@
     width: 10em;
     height: 7.5em;
     position: absolute;
-    bottom: 1em;
-    right: 0;
+    right: -2.5em;
+    bottom: 0;
   }
 
   .clickable {
@@ -48,7 +48,7 @@
 
 @media only screen and (max-width: 600px) {
   .brand-heading {
-    font-size: 7.75em;
+    font-size: 7em;
     color: orange;
     width: 6em;
     line-height: 0.7em;

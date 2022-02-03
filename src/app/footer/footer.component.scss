@@ -34,11 +34,10 @@
   }
 
   .development-statistics {
-    .development-tag {
-      position: absolute;
-      right: 0.25em;
-      bottom: 0.5em;
-      color: orange;
-    }
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      position: relative;
+      left: 37%;
   }
 }
