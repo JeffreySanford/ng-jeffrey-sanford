@@ -11,6 +11,7 @@
 }
 
 .landing-page {
+  height: 100%;
   display: flex;
   flex-direction: column;
   height: 44em;
@@ -78,12 +79,14 @@
 
 
 @media only screen and (max-width: 768px) {
+  
   .brand-heading {
-    font-size: 6em;
     color: purple;
     width: 6em;
     line-height: 0.8em;
     margin: 1em 0.25em 0;
+    height: 2em;
+    font-size: 6em;
   }
 
   .background-flag {
@@ -91,10 +94,11 @@
   }
 
   .intro-text {
-    position: absolute;
-    bottom: 27em;
-    margin: 0 auto;
-    font-size: 0.4em;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 0.5em;
     p {
       color: purple;
     }
