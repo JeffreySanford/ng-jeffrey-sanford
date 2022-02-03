@@ -6,7 +6,7 @@
     </div>
 
     <div *ngIf="!resolved">
-        <mat-spinner mode="indeterminate"></mat-spinner>
+        <mat-spinner class="spinner" mode="indeterminate"></mat-spinner>
     </div>
 
     <div [hidden]="!resolved">
@@ -15,7 +15,7 @@
                 <input #input matInput placeholder="Search by users name" (keyup)="applyFilter(input)">
             </mat-form-field>
         </div>
-        <table mat-table class="table" #sort matSort [dataSource]="dataSource" class="mat-elevation-z8">
+        <mat-table class="table" #sort matSort [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="name">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
                 <mat-cell *matCellDef="let element">{{ element.name + ' ' + element.surname }}</mat-cell>
@@ -34,7 +34,7 @@
             </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>>
-        </table>
+        </mat-table>
 
         <mat-paginator role="listbox" #paginator class="paginator mat-elevation-z8" aria-label="Select Page"
             [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"></mat-paginator>

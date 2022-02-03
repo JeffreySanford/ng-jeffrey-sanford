@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialButton } from '../classes/social-button';
 import { NavigationService } from '../services/navigation.service';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { trigger, state, style, animate, transition, query, stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-landing',
@@ -10,7 +10,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   animations: [
     trigger('flyInFlyOut', [
       transition(':enter', [
-        style({ transform: 'scale(4)', opacity: 1, color: 'gold' }),
+        style({ transform: 'scale(1)', opacity: 0, color: 'red' }),
+        animate('600ms', style({ transform: 'scale(4)', opacity: 1, color: 'gold' })),
         animate('600ms', style({ transform: 'scale(1)', opacity: 1, color: 'red' })),
       ])
     ])
@@ -23,7 +24,7 @@ export class LandingComponent implements OnInit {
   navigation: NavigationService;
   constructor(navigation: NavigationService) {
     this.navigation = navigation;
-   }
+  }
 
   ngOnInit(): void {
     this.projectLove = [
@@ -48,6 +49,10 @@ export class LandingComponent implements OnInit {
         icon: 'linkedin_box'
       },
     ];
+  }
+
+  logAnimation($event: any) {
+    console.log(`animation ${$event.phaseName}`)
   }
 
   changeStarSize() {

@@ -8,7 +8,10 @@
         <div>
             <p class="clickable" (click)="navigation.navigateDesign('development-dashboard')">development</p>
         </div>
-        <mat-icon class="star" [@flyInFlyOut]>star_border</mat-icon>
+        <mat-icon class="star" 
+        [@flyInFlyOut] 
+        (@flyInFlyOut.start)="logAnimation($event)"
+        (@flyInFlyOut.done)="logAnimation($event)">star_border</mat-icon>
         <div>
             <p>architecture</p>
         </div>

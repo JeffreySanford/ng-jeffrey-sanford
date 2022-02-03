@@ -1,3 +1,7 @@
+.spinner {
+  margin: auto auto;
+}
+
 .page {
   color: blue;
   background: rgba(230, 126, 34, 1);
@@ -48,11 +52,13 @@
       font-size: 1.25em;
       color: blue;
     }
-
-    tbody: {
-      overflow-y: auto;
-    }
   }
+}
+
+:host ::ng-deep .mat-table {
+  overflow-y: auto;
+  max-height: 22em;
+  background-color: pink;
 }
 
 :host ::ng-deep mat-paginator,
