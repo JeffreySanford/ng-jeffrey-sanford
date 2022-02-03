@@ -1,6 +1,6 @@
 :host ::ng-deep .background-flag {
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100%;
   background-image: url("../../assets/video/usa-american-flag-waving-animated-gif-12.gif");
   background-size: cover;
   position: absolute;
@@ -13,20 +13,24 @@
 .landing-page {
   display: flex;
   flex-direction: column;
-  height: calc(84vh);
+  height: 44em;
   align-content: center;
   justify-content: flex-start;
   z-index: 5 !important;
 
   .intro-text {
+    z-index: 1000;
     display: flex;
     flex-direction: row;
-    font-size: 3em;
     justify-content: center;
-    color: orange;
+    p {
+      font-size: 2em;
+      justify-content: center;
+      color: orange;
+      margin: 0 1em;
+    }
 
     .star {
-      padding: 0 0.25em;
       margin-top: -0.1em;
       color: orangered;
     }
@@ -46,28 +50,23 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 768px) {
   .brand-heading {
-    font-size: 7em;
+    font-size: 10em;
+    margin: 1em auto;
     color: orange;
-    width: 6em;
-    line-height: 0.7em;
-    margin: auto 0.25em;
-  }
-
-  .background-flag {
-    top: -5em;
   }
 
   .intro-text {
-    position: absolute;
-    bottom: 7em;
-    margin: 0 0.2em;
-
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     p {
-      font-size: .55em;
+      font-size: 2em;
       justify-content: center;
       color: orange;
+      margin: 0 1em;
     }
 
     .star {
@@ -77,10 +76,33 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+
+@media only screen and (max-width: 768px) {
   .brand-heading {
-    font-size: 10em;
-    margin: 1em auto;
-    color: orange;
+    font-size: 7em;
+    color: purple;
+    width: 6em;
+    line-height: 0.8em;
+    margin: 1em 0.25em 0;
+  }
+
+  .background-flag {
+    top: -5em;
+  }
+
+  .intro-text {
+    position: absolute;
+    bottom: 27em;
+    margin: 0 auto;
+    font-size: 0.6em;
+    p {
+      font-size: 1em;
+      color: purple;
+    }
+
+    .star {
+      color: magenta
+      ;
+    }
   }
 }
