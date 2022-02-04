@@ -22,6 +22,7 @@ export class LandingComponent implements OnInit {
   currentState = 'initial';
   projectLove: SocialButton[] | undefined;
   navigation: NavigationService;
+  color: string | undefined;
   constructor(navigation: NavigationService) {
     this.navigation = navigation;
   }
@@ -49,6 +50,8 @@ export class LandingComponent implements OnInit {
         icon: 'linkedin_box'
       },
     ];
+
+    this.color = 'black';
   }
 
   logAnimation($event: any) {

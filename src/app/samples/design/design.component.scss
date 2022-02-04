@@ -1,11 +1,14 @@
 .page {
- 
   gridster {
     color: darkmagenta;
     background-color: #ecb602;
-    height: calc(85vh);
-  
-    
+    height: calc(80vh);
+    margin-bottom: 1em;
+
+    .gridster-item {
+      background-color: orange;
+      height: 20em;
+    }
   }
 }
 
@@ -13,10 +16,23 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
-  height: 4em;
+  height: 5em;
 
   img {
-    transform: scale(.5);
+    max-height: 4em;
   }
+
+  .technology {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-between;
+
+    button {
+    background-color: purple;
+    }
+  }
+}
+
+.mat-card-actions {
+  width: 116%;
 }

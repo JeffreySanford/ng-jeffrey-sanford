@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
+import { NavigationService } from 'src/app/services/navigation.service';
 import { SocialButton } from '../../classes/social-button';
 
 @Component({
@@ -16,7 +17,9 @@ export class DesignComponent implements OnInit {
   item: any;
   projectLove: SocialButton[] | undefined;
   pageLove: SocialButton[] | undefined;
-  loveIcons = ["../../../assets/images/angular.png", "../../../assets/images/nodejs-new-pantone-black.png", "../../../assets/images/WebReady-Logo_RGB_Forest-Green.JPG"];
+  // loveIcons = ["../../../assets/images/angular.png", "../../../assets/images/nodejs-new-pantone-black.png", "../../../assets/images/WebReady-Logo_RGB_Forest-Green.JPG"];
+  loveIcons = ["../../../assets/images/angular.png", "../../../assets/images/nodejs-new-pantone-black.png"];
+  color: string | undefined;
 
   static itemChange(item: any, itemComponent: any) {
     console.info('itemChanged', item, itemComponent);
@@ -26,7 +29,7 @@ export class DesignComponent implements OnInit {
     console.info('itemResized', item, itemComponent);
   }
 
-  constructor(private router: Router) { }
+  constructor(private navigation: NavigationService) { }
 
   ngOnInit(): void {
     this.options = {
@@ -62,6 +65,8 @@ export class DesignComponent implements OnInit {
         icon: 'linkedin'
       },
     ];
+
+    this.color = 'white';
 
 
     this.pageLove = [
@@ -102,12 +107,12 @@ export class DesignComponent implements OnInit {
   addItem(item: any) {
     this.dashboard.push(item);
   }
+  
   handleError(error: Error) {
     debugger
     console.log(error)
   }
 
   launchPage(page: string){
-    this.router.navigate([page])
-  }
+    this.navigation.navigateDesign('landing');  }
 }

@@ -1,7 +1,6 @@
 .footer-row {
   height: 1.75em;
   color: orange;
-  margin-left: 2em;
   display: flex;
   flex-direction: row;
 
@@ -21,11 +20,8 @@
         height: 2em;
       }
 
-      .mat-icon {
-      }
-
       .button-name {
-        font-size: 1.5em;
+        font-size: 1em;
         margin-top: 0.1em;
         margin-right: 1em;
         margin-left: 0.1em;

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, VERSION } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, VERSION } from '@angular/core';
 import { Router } from '@angular/router';
 import packageInformation from '../../../package.json'
 import { appIcons } from '../classes/icons';
@@ -19,6 +19,7 @@ export interface Item {
 
 export class AppFooterComponent implements OnInit {
   @Input() projectLove: SocialButton[] | undefined;
+  @Input() color: string | undefined;
   public version: string = packageInformation.version;
   isOpen!: boolean;
   angularVersion: string;
@@ -27,13 +28,18 @@ export class AppFooterComponent implements OnInit {
   public Icon: Icon | undefined;
 
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private elementRef: ElementRef) {
     this.angularVersion = VERSION.full;
     this.appIcons = appIcons;
   }
 
-  ngOnInit(): void {
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.ownerDocument
+        .body.style.backgroundColor = this.color;
 
+}
+
+  ngOnInit(): void {
   }
 
   routeExternal(item: Item, event: Event) {

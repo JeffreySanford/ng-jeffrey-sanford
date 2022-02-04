@@ -1,18 +1,24 @@
 <section class="page">
   <gridster [options]="options">
-    <gridster-item [item]="item" *ngFor="let item of dashboard">
+    <gridster-item class="gridster-item" [item]="item" *ngFor="let item of dashboard">
       <mat-card>
         <mat-card-header>
-          <mat-card-title>{{item.title}}</mat-card-title>
+          <mat-card-title style="margin-left: -1em;">{{item.title}}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>{{ item.description }}</p>
+          <p style="font-size: 0.8em; line-height: 1.1em;;">{{ item.description }}</p>
         </mat-card-content>
 
         <mat-card-actions class="technology">
-          <button mat-raised-button color="orange" (click)="launchPage(item.url)">VISIT</button>
-          <button mat-raised-button color="accent">LIKE</button>
-          <button mat-raised-button color="primary">SHARE</button>
+          <button mat-raised-button color="orange" (click)="launchPage(item.url)">
+            <mat-label>Visit</mat-label>
+          </button>
+          <button mat-raised-button color="accent">
+            <mat-label>Like</mat-label>
+          </button>
+          <button mat-raised-button color="primary">
+            <mat-label>Share</mat-label>
+          </button>
         </mat-card-actions>
         <div class="love-icons">
           <span *ngFor="let image of loveIcons">

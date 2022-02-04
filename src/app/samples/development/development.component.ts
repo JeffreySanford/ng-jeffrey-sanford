@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-development',
@@ -11,7 +12,7 @@ export class DevelopmentComponent implements OnInit {
   options!: GridsterConfig;
   projectLove: { name: string; url: string; icon: string; }[] | undefined;
   pageLove: { name: string; url: string; icon: string; }[] | undefined;
-  constructor() { }
+  constructor(private navigation: NavigationService) { }
 
   static itemChange(item: any, itemComponent: any) {
     console.info('itemChanged', item, itemComponent);
@@ -20,7 +21,10 @@ export class DevelopmentComponent implements OnInit {
   static itemResize(item: any, itemComponent: any) {
     console.info('itemResized', item, itemComponent);
   }
-  
+
+  // loveIcons = ["../../../assets/images/angular.png", "../../../assets/images/nodejs-new-pantone-black.png", "../../../assets/images/WebReady-Logo_RGB_Forest-Green.JPG"];
+  loveIcons = ["../../../assets/images/angular.png", "../../../assets/images/nodejs-new-pantone-black.png"];
+
   ngOnInit(): void {
     this.options = {
       itemChangeCallback: DevelopmentComponent.itemChange,
@@ -28,9 +32,9 @@ export class DevelopmentComponent implements OnInit {
     };
 
     this.dashboard = [
-      {cols: 3, rows: 1, y: 0, x: 0, title: 'Material Sample Table', url: 'samples/sample-table', description: 'Angular 13 implimentation of Material Design Table concepts using Node to generate mocked users on the backend.  The table impliments searching users, sorting and pagination.'},
-      {cols: 3, rows: 1, y: 0, x: 3, title: 'Kitchen Table', url: 'samples/development/kitchen-table', description: 'Active Angular Recipe connection'},
-      {cols: 3, rows: 1, y: 0, x: 6, title: 'Space Video', url: 'samples/'}
+      { cols: 3, rows: 1, y: 0, x: 0, title: 'Material Sample Table', url: 'samples/sample-table', description: 'Angular 13 implimentation of Material Design Table concepts using Node to generate mocked users on the backend.  The table impliments searching users, sorting and pagination.' },
+      { cols: 3, rows: 1, y: 0, x: 3, title: 'Kitchen Table', url: 'samples/development/kitchen-table', description: 'Active Angular Recipe connection' },
+      { cols: 3, rows: 1, y: 0, x: 6, title: 'Space Video', url: 'samples/' }
     ];
 
     this.projectLove = [
@@ -56,7 +60,7 @@ export class DevelopmentComponent implements OnInit {
       },
     ];
 
-    
+
     this.pageLove = [
       {
         name: 'GitHub',
@@ -81,4 +85,7 @@ export class DevelopmentComponent implements OnInit {
     ];
   }
 
+  launchPage(page: string) {
+    this.navigation.navigateDesign('landing');
+  }
 }
