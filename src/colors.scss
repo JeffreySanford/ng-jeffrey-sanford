@@ -9,7 +9,7 @@ $dark-orange: #ECB602;
 }
 
 @media screen and (max-width: 1025px) {
-    ::ng-deep body {
+    :host ::ng-deep body {
       background-color: red !important;
   
       .page {
@@ -21,7 +21,9 @@ $dark-orange: #ECB602;
   
   /* Mobile device styles */
   @media screen and (max-width: 480px) {
-    ::ng-deep body {
+    :host ::ng-deep body {
+      height: calc(89vh);
+      min-width: 100vw;
       background-color: purple !important;
     }
   }
