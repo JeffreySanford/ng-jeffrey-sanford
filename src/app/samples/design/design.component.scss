@@ -1,13 +1,13 @@
 .page {
   gridster {
     color: darkmagenta;
-    background-color: #ecb602;
+    background-color: black;
     height: calc(80vh);
     margin-bottom: 1em;
 
     .gridster-item {
-      background-color: orange;
-      height: 20em;
+      background-color: black;
+      min-height: 20em !important;
     }
   }
 }
