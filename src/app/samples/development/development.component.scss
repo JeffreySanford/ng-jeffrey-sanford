@@ -1,0 +1,38 @@
+.page {
+    gridster {
+      color: darkmagenta;
+      background-color: black;
+      height: calc(80vh);
+      margin-bottom: 1em;
+  
+      .gridster-item {
+        background-color: black;
+        min-height: 20em !important;
+      }
+    }
+  }
+  
+  .love-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 5em;
+  
+    img {
+      max-height: 4em;
+    }
+  
+    .technology {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-between;
+  
+      button {
+        background-color: purple;
+      }
+    }
+  }
+  
+  .mat-card-actions {
+    width: 100%;
+  }

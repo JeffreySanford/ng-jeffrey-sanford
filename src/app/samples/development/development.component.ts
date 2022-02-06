@@ -28,13 +28,12 @@ export class DevelopmentComponent implements OnInit {
   ngOnInit(): void {
     this.options = {
       itemChangeCallback: DevelopmentComponent.itemChange,
-      itemResizeCallback: DevelopmentComponent.itemResize,
-    };
+      itemResizeCallback: DevelopmentComponent.itemResize
+    }
 
     this.dashboard = [
-      { cols: 3, rows: 1, y: 0, x: 0, title: 'Material Sample Table', url: 'samples/sample-table', description: 'Angular 13 implimentation of Material Design Table concepts using Node to generate mocked users on the backend.  The table impliments searching users, sorting and pagination.' },
-      { cols: 3, rows: 1, y: 0, x: 3, title: 'Kitchen Table', url: 'samples/development/kitchen-table', description: 'Active Angular Recipe connection' },
-      { cols: 3, rows: 1, y: 0, x: 6, title: 'Space Video', url: 'samples/' }
+      { cols: 3, rows: 1, y: 0, x: 0, title: 'Kitchen Table', url: 'samples/kitchen-table', description: 'Active Angular Recipe connection' },
+      { cols: 3, rows: 1, y: 0, x: 6, title: 'Local Weather', url: 'samples/weather', description: 'Weather frontend'  }
     ];
 
     this.projectLove = [
@@ -86,6 +85,6 @@ export class DevelopmentComponent implements OnInit {
   }
 
   launchPage(page: string) {
-    this.navigation.navigateDesign('landing');
+    this.navigation.navigateDesign(page);
   }
 }

@@ -1,12 +1,12 @@
 :host ::ng-deep .background-flag {
-  width: 200%;
-  min-height: 200%;
+  width: calc(100vw + 2em);
+  min-height: 95vh;
   background-image: url("../../assets/video/usa-american-flag-waving-animated-gif-12.gif");
   background-size: cover;
   position: absolute;
   top: -1em;
-  right: 5em;
-  opacity: 0.2;
+  right: 1em;
+  opacity: 0.15;
   z-index: 1;
   background-color: black;
 }

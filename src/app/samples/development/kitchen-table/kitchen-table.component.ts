@@ -11,15 +11,14 @@ export interface Recipe {
 })
 export class KitchenTableComponent implements OnInit {
   private portfolioAPI = 'https://api-portfolio-l8cra.ondigitalocean.app/recipes';
+  // private portfolioAPI = 'http://localhost:3000/recipes';
   recipes!: Recipe[];
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<Recipe[]>(this.portfolioAPI).subscribe((data: any) => {
-      debugger
-      this.recipes = data.recipes;
+    this.http.get<Recipe[]>(this.portfolioAPI).subscribe((recipes: any) => {
+      console.log(recipes);
+      this.recipes = recipes;
     });
   }
-
-  
 }

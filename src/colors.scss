@@ -1,29 +1,24 @@
-$dark-purple:#290849;
-$light-purple:#55185D;
-$light-orange: #FFD524;
-$dark-orange: #ECB602;
+$dark-purple: #290849;
+$light-purple: #55185d;
+$light-orange: #ffd524;
+$dark-orange: #ecb602;
 
 .background {
-    background-color: black;
-    overflow: hidden;
+  background-color: black;
+  overflow: hidden;
 }
+:host ::ng-deep body {
+  width: calc(100vw);
 
-@media screen and (max-width: 1025px) {
-    :host ::ng-deep body {
-      background-color: red !important;
-  
-      .page {
-        border: 5px solid orange;
-        height: calc(89vh);
-      }
+  @media screen and (max-width: 1025px) {
+    .page {
+      border: 5px solid orange;
+      height: calc(89vh);
     }
   }
-  
+
   /* Mobile device styles */
   @media screen and (max-width: 480px) {
-    :host ::ng-deep body {
-      height: calc(89vh);
-      min-width: 100vw;
-      background-color: purple !important;
-    }
+    height: calc(89vh);
   }
+}
