@@ -68,14 +68,15 @@ $custom-typography: mat-typography-config(
 @include angular-material-typography($custom-typography);
 
 .mat-menu-panel {
-  background-color: lightblue;
+  font-size: 0.75em;
+  background-color: orangered;
   opacity: .9;
-  color: orange;
   margin: -1.5em 0 0 3em;
 
   button.mat-menu-item {
     width: 100%;
     font-size: 1.5em;
+    height: 1.75em;
   }
 }
 

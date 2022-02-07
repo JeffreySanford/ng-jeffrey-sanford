@@ -28,8 +28,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class AppComponent {
   title = 'Portfolio for Jeffrey Sanford';
   showFiller = false;
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, iconService: IconService) {
-    iconService.registerAll(appIcons);
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private iconService: IconService) {
+    this.iconService.registerAll(appIcons);
     this.router.navigate(['landing'], {relativeTo: this.activatedRoute})
   }
 }

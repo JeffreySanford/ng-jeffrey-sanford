@@ -3,6 +3,7 @@
   color: orange;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 
   .social-buttons-container {
     display: flex;
@@ -30,10 +31,6 @@
   }
 
   .development-statistics {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      position: relative;
-      left: 37%;
+      
   }
 }
