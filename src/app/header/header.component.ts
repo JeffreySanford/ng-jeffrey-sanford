@@ -19,8 +19,4 @@ export class AppHeaderComponent implements OnInit {
   }
 
   ngOnInit(): void { }
-
-  navigateHome() {
-    this.navigation.navigateDesign('landing');
-  }
 }
