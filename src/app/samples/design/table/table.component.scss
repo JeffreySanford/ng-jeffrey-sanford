@@ -5,7 +5,7 @@
 .page {
   color: blue;
   background: rgba(230, 126, 34, 1);
-  height: calc(89vh);
+  height: calc(86vh);
 
   h2 {
     display: relative;
@@ -38,7 +38,7 @@
   }
 
   .mat-table {
-    width: 90%;
+    width: 95%;
     margin: 2em auto 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: rgba(230, 126, 34, .3);
@@ -74,9 +74,12 @@
 :host ::ng-deep .mat-paginator-container {
   background-color: orange;
   font-size: 2.25em;
+  height: 1em;
   color: purple;
   position: absolute;
-  bottom: 0;
+  bottom: 5em;
+  left: 0.5em;
+  width: 96%;
 }
 
 :host ::ng-deep .mat-select-value {

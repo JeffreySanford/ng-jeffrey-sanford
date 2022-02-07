@@ -24,8 +24,10 @@ export class TableComponent implements AfterContentChecked {
   dataSource!: MatTableDataSource<User>;
   resolved: boolean = false;
   currentNavigation: any;
-  private portfolioAPI = 'https://api-portfolio-l8cra.ondigitalocean.app/users';  
-  
+  color = 'black';
+  private portfolioAPI = 'https://api-portfolio-l8cra.ondigitalocean.app/users';
+  projectLove: { name: string; url: string; icon: string; }[] | undefined;
+
   constructor(private router: Router, private http: HttpClient) { }
 
   ngAfterContentChecked() {
@@ -51,6 +53,29 @@ export class TableComponent implements AfterContentChecked {
       this.displayedColumns = ['name', 'address', 'email'];
       this.users = data.users;
     });
+
+    this.projectLove = [
+      {
+        name: 'GitHub',
+        url: 'https://github.com/JeffreySanford',
+        icon: 'github'
+      },
+      {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/jeffrey.sanford.56/',
+        icon: 'facebook'
+      },
+      {
+        name: 'Twitter',
+        url: 'https://www.twiter.com/jeffrey_sanford',
+        icon: 'twitter_box'
+      },
+      {
+        name: 'Linkedin',
+        url: 'https://www.linkedin.com/in/sanfordjeffrey/',
+        icon: 'linkedin_box'
+      }
+    ];
   }
 
   applyFilter(filterValue: HTMLInputElement) {
