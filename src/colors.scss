@@ -7,18 +7,17 @@ $dark-orange: #ecb602;
   background-color: black;
   overflow: hidden;
 }
-:host ::ng-deep body {
-  width: calc(100vw);
 
+:host ::ng-deep body {
   @media screen and (max-width: 1025px) {
     .page {
-      border: 5px solid orange;
-      height: calc(89vh);
     }
   }
 
   /* Mobile device styles */
   @media screen and (max-width: 480px) {
-    height: calc(89vh);
+    body: {
+      width: 100%;
+    }
   }
 }

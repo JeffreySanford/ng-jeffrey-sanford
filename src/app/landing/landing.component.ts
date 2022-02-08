@@ -10,9 +10,9 @@ import { trigger, style, animate, transition } from '@angular/animations';
   animations: [
     trigger('flyInFlyOut', [
       transition(':enter', [
-        style({ transform: 'scale(1)', opacity: 0, color: 'red' }),
-        animate('600ms', style({ transform: 'scale(4)', opacity: 1, color: 'gold' })),
-        animate('600ms', style({ transform: 'scale(1)', opacity: 1, color: 'red' })),
+        style({ transform: 'scale(1)', opacity: .5, color: 'red' }),
+        animate('300ms', style({ transform: 'scale(4)', opacity: 1, color: 'gold' })),
+        animate('300ms', style({ transform: 'scale(1)', opacity: 1, color: 'red' })),
       ])
     ])
   ]
@@ -30,24 +30,19 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
     this.projectLove = [
       {
-        name: 'GitHub',
-        url: 'https://github.com/JeffreySanford',
-        icon: 'github'
-      },
-      {
         name: 'Facebook',
         url: 'https://www.facebook.com/jeffrey.sanford.56/',
         icon: 'facebook'
       },
       {
-        name: 'Twitter',
-        url: 'https://www.twiter.com/jeffrey_sanford',
-        icon: 'twitter_box'
-      },
-      {
         name: 'Linkedin',
         url: 'https://www.linkedin.com/in/sanfordjeffrey/',
-        icon: 'linkedin_box'
+        icon: 'linkedin'
+      },
+      {
+        name: 'GitHub',
+        url: 'https://github.com/JeffreySanford',
+        icon: 'github-box'
       },
     ];
 

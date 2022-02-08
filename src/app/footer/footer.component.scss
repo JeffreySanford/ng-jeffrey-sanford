@@ -1,9 +1,12 @@
 .footer-row {
-  height: 1.75em;
+  height: 2em;
   color: orange;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
 
   .social-buttons-container {
     display: flex;
@@ -19,18 +22,20 @@
       .iconify {
         width: 2em;
         height: 2em;
+        margin: 0;
+        padding: 0;
       }
 
       .button-name {
         font-size: 1em;
-        margin-top: 0.1em;
-        margin-right: 1em;
-        margin-left: 0.1em;
       }
     }
   }
 
   .development-statistics {
-      
+    position: fixed;
+    bottom: -0.5em;
+    right: 1em;
+    height: 3em;
   }
 }
