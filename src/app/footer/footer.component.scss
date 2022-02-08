@@ -39,3 +39,11 @@
     height: 3em;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .footer-row {
+    width: 75%;
+    color: purple;
+
+  }
+}

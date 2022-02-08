@@ -35,7 +35,6 @@
               "./src/styles.scss",
               "./src/colors.scss"            ],
             "scripts": [
-              "./node_modules/iconify/dist/iconify.js"
             ]
           },
           "configurations": {

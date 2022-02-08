@@ -28,6 +28,7 @@ import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { SocialButton } from './classes/social-button';
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { SocialButton } from './classes/social-button';
     VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
-    VgBufferingModule
+    VgBufferingModule,
+    MatIconModule
   ],
   exports: [
     MaterialModule

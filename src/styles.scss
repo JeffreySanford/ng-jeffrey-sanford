@@ -66,6 +66,7 @@ $custom-typography: mat-typography-config(
 }
 
 @include angular-material-typography($custom-typography);
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 .mat-menu-panel {
   font-size: 0.75em;

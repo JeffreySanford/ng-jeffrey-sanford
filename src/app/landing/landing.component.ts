@@ -42,7 +42,7 @@ export class LandingComponent implements OnInit {
       {
         name: 'GitHub',
         url: 'https://github.com/JeffreySanford',
-        icon: 'github-box'
+        icon: 'github'
       },
     ];
 
