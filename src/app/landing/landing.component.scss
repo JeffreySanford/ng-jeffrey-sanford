@@ -20,25 +20,6 @@
   justify-content: flex-start;
   z-index: 5 !important;
 
-  .intro-text {
-    z-index: 5;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-    p {
-      font-size: 2em;
-      justify-content: center;
-      color: orange;
-      margin: 0 1em;
-    }
-
-    .star {
-      margin-top: -0.1em;
-      color: orangered;
-    }
-  }
-
   .army-logo {
     width: 7.5em;
     height: 5em;
@@ -95,19 +76,36 @@
     font-size: 6em;
   }
 
+  .intro-text {
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    p {
+      font-size: 2em;
+      justify-content: center;
+      color: orange;
+      margin: 0 1em;
+    }
+
+    .star {
+      margin-top: -0.1em;
+      color: orangered;
+    }
+  }
+
+
   .background-flag {
     top: 5em;
     left: 5em;
   }
 
   .intro-text {
-    z-index: 1000;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 0.75em;
+    z-index: 5;
     p {
       color: purple;
+      font-size: 1em;
 
     }
 
