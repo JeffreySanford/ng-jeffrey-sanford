@@ -7,6 +7,7 @@
   position: fixed;
   bottom: 1em;
   left: 1em;
+  width: 100%;
 
   .social-buttons-container {
     display: flex;
@@ -44,5 +45,9 @@
   .footer-row {
     width: 75%;
     color: purple;
+    bottom: 2em;
+  }
+  .development-statistics {
+    margin-bottom: 1.5em;
   }
 }
