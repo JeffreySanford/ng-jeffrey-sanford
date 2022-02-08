@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IconService } from '@visurel/iconify-angular';
-import { appIcons } from './classes/icons';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 
 @Component({
@@ -28,8 +26,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class AppComponent {
   title = 'Portfolio for Jeffrey Sanford';
   showFiller = false;
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private iconService: IconService) {
-    this.iconService.registerAll(appIcons);
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.router.navigate(['landing'], {relativeTo: this.activatedRoute})
   }
 }
