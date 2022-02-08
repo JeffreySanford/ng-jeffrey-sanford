@@ -17,17 +17,17 @@
       display: flex;
       flex-direction: row;
       bottom: 5em;
-      margin-right: 1em;
 
-      .iconify {
-        width: 2em;
-        height: 2em;
-        margin: 0;
-        padding: 0;
-      }
 
       .button-name {
         font-size: 1em;
+      }
+      .mat-icon {
+        position: flex;
+        flex-direction: row;
+        justify-self: start;
+        left: 0;
+        margin-right: 0.25em;
       }
     }
   }
@@ -44,6 +44,5 @@
   .footer-row {
     width: 75%;
     color: purple;
-
   }
 }

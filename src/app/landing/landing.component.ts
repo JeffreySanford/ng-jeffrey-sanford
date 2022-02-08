@@ -30,6 +30,11 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
     this.projectLove = [
       {
+        name: 'GitHub',
+        url: 'https://github.com/JeffreySanford',
+        icon: 'code'
+      },
+      {
         name: 'Facebook',
         url: 'https://www.facebook.com/jeffrey.sanford.56/',
         icon: 'facebook'
@@ -38,13 +43,7 @@ export class LandingComponent implements OnInit {
         name: 'Linkedin',
         url: 'https://www.linkedin.com/in/sanfordjeffrey/',
         icon: 'linkedin'
-      },
-      {
-        name: 'GitHub',
-        url: 'https://github.com/JeffreySanford',
-        icon: 'github'
-      },
-    ];
+      }];
 
     this.color = 'black';
   }
