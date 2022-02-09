@@ -12,16 +12,16 @@ import { KitchenTableComponent } from './samples/development/kitchen-table/kitch
 
 const routes: Routes = [
   { path: 'landing', component: LandingComponent },
-  { path: 'samples/sample-table', component: TableComponent },
-  { path: 'samples/space-video', component: SpaceVideoComponent },
   { path: 'design-dashboard', component: DesignComponent },
   { path: 'development-dashboard', component: DevelopmentComponent },
-  { path: 'samples/kitchen-table', component: KitchenTableComponent },
   { path: 'architecture-dashboard', component: ArchitectureComponent },
-  { path: 'page-not-found', component: PageNotFoundComponent},
+  { path: 'samples/sample-table', component: TableComponent },
+  { path: 'samples/space-video', component: SpaceVideoComponent },
+  { path: 'samples/kitchen-table', component: KitchenTableComponent },
   // the empty path will be redirected to the home component
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   // this path redirects to the home component
+  { path: 'page-not-found', component: PageNotFoundComponent},
   { path: '**', redirectTo: '/page-not-found', pathMatch: 'full' }
 ];
 

@@ -28,7 +28,7 @@ export class TableComponent implements AfterContentChecked {
   private portfolioAPI = 'https://api-portfolio-l8cra.ondigitalocean.app/users';
   projectLove: { name: string; url: string; icon: string; }[] | undefined;
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   ngAfterContentChecked() {
     if (this.users && this.sort && this.paginator && !this.resolved) {
@@ -50,7 +50,11 @@ export class TableComponent implements AfterContentChecked {
 
   ngOnInit(): void {
     this.http.get<User[]>(this.portfolioAPI).subscribe((data: any) => {
-      this.displayedColumns = ['name', 'address', 'email'];
+      this.displayedColumns = ['name', 'constructedAddress', 'email'];
+      data.users.map((user: User)=>{
+        user.constructedAddress = user.number + ' ' + user.address; 
+      });
+
       this.users = data.users;
     });
 
