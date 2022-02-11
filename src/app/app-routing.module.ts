@@ -9,6 +9,7 @@ import { SpaceVideoComponent } from './samples/design/space-video/space-video.co
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { KitchenTableComponent } from './samples/development/kitchen-table/kitchen-table.component';
+import { RecipeComponent } from './samples/development/kitchen-table/recipe/recipe.component';
 
 const routes: Routes = [
   { path: 'landing', component: LandingComponent },
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'architecture-dashboard', component: ArchitectureComponent },
   { path: 'samples/sample-table', component: TableComponent },
   { path: 'samples/space-video', component: SpaceVideoComponent },
-  { path: 'samples/kitchen-table', component: KitchenTableComponent },
+  { path: 'samples/kitchen-table', component: KitchenTableComponent, children: [{path: 'detail', component: RecipeComponent}]},
   // the empty path will be redirected to the home component
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   // this path redirects to the home component

@@ -8,7 +8,8 @@ export class NavigationService {
 
   constructor(private router: Router) { }
 
-  navigateDesign(item: string) {
-      this.router.navigate([item]);
+  navigateDesign(item: string, payload?: any) {
+    debugger
+    (payload)? this.router.navigate([item], payload): this.router.navigate([item]);
   }
 }
