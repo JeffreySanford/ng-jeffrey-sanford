@@ -12,13 +12,13 @@ import { KitchenTableComponent } from './samples/development/kitchen-table/kitch
 import { RecipeComponent } from './samples/development/kitchen-table/recipe/recipe.component';
 
 const routes: Routes = [
-  { path: 'landing', component: LandingComponent, data: { breadCrumb: 'Home' } },
-  { path: 'design-dashboard', component: DesignComponent, data: { breadCrumb: 'Design' } },
-  { path: 'development-dashboard', component: DevelopmentComponent, data: { breadCrumb: 'Development' } },
-  { path: 'architecture-dashboard', component: ArchitectureComponent, data: { breadCrumb: 'Architecture' } },
-  { path: 'samples/sample-table', component: TableComponent, data: { breadCrumb: 'Table' } },
-  { path: 'samples/space-video', component: SpaceVideoComponent, data: { breadCrumb: 'SpaceVideo' } },
-  { path: 'samples/kitchen-table', component: KitchenTableComponent, data: { breadCrumb: 'Kitchen Table' }, children: [{ path: 'detail', component: RecipeComponent, data: { breadCrumb: 'Detailed Tile' } }] },
+  { path: 'landing', component: LandingComponent, data: { breadCrumb: 'home', title: 'Home' } },
+  { path: 'design-dashboard', component: DesignComponent, data: { breadCrumb: 'design', title: 'Design Dashboarrd' } },
+  { path: 'development-dashboard', component: DevelopmentComponent, data: { breadCrumb: 'development', title: 'Development Dashboard' } },
+  { path: 'architecture-dashboard', component: ArchitectureComponent, data: { breadCrumb: 'architecture', title: 'Architeture Dashbiard' } },
+  { path: 'samples/sample-table', component: TableComponent, data: { breadCrumb: 'table', title: 'Material Table' } },
+  { path: 'samples/space-video', component: SpaceVideoComponent, data: { breadCrumb: 'space-video', title: 'Space Video' } },
+  { path: 'samples/kitchen-table', component: KitchenTableComponent, data: { breadCrumb: 'kitchen-table', title: 'Kitchen Table' }, children: [{ path: 'detail', component: RecipeComponent, data: { breadCrumb: 'Detailed Tile' } }] },
   // the empty path will be redirected to the home component
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   // this path redirects to the home component

@@ -2,16 +2,9 @@
 import { OverlayOutsideClickDispatcher } from '@angular/cdk/overlay';
 import { AfterContentChecked, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NavigationService } from '../services/navigation.service';
-export interface Breadcrumb {
-  name: string | undefined;
-  route: string | undefined;
-  terminalOnly?: boolean | undefined;
-  afterBaseOnly?: boolean | undefined;
-  pathParamList?: Array<any> | undefined;
-  queryParams?: any | undefined;
-  fragment?: string | undefined;
-  key?: string | undefined;
-}
+import { BreadCrumb } from '../services/bread-crumb'
+import { BreadCrumbService } from '../services/bread-crumb.service';
+
 
 @Component({
   selector: 'app-header',
@@ -25,26 +18,26 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
   home = { icon: "pi pi-home" };
   breadcrumbs: any;
 
-  constructor(navigation: NavigationService) {
+  constructor(navigation: NavigationService, private breadCrumbService: BreadCrumbService) {
     this.navigation = navigation;
   }
 
-  bcInitItem: Breadcrumb = {
+  bcInitItem: BreadCrumb = {
     key: 'Home',
     name: 'Home',
     route: '/home'
   };
 
   ngAfterContentChecked() {
-    if(this.navigation.pruned) {
-      this.breadcrumbs = this.navigation.getBreadCrumbs();
+    if(this.breadCrumbService.pruned) {
+      this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
 
     }
   }
 
   ngOnInit(): void {
     this.navigation.navigate('landing', this.bcInitItem);
-      this.breadcrumbs = this.navigation.breadcrumbs;
+      this.breadcrumbs = this.breadCrumbService.breadcrumbs;
   }
 
   menuItemClicked() {
@@ -56,6 +49,4 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
     if (page)
       this.navigation.navigate(page);
   }
-
-
 }
