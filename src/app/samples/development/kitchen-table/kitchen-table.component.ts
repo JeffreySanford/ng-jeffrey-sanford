@@ -13,7 +13,7 @@ export class KitchenTableComponent implements OnInit {
   private portfolioAPI = 'https://api-portfolio-l8cra.ondigitalocean.app/recipes';
   // private portfolioAPI = 'http://localhost:3000/recipes';
   recipes!: Recipe[];
-  color = 'green';
+  color = 'white';
   projectLove = [
     {
       name: 'GitHub',
@@ -46,7 +46,6 @@ export class KitchenTableComponent implements OnInit {
 
   routeTo(recipe: Recipe, event: Event) {
     const path = '/samples/kitchen-table/' + recipe.name;
-    this.navigation.navigateDesign(path, recipe);
-    debugger
+    this.navigation.navigate(path, recipe);
   }
 }

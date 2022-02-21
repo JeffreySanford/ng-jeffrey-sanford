@@ -8,6 +8,8 @@
   background-color: black;
 
   .mat-toolbar-row {
+    display: flex;
+    flex-direction: row;
     button {
       z-index: 5;
     }
@@ -39,4 +41,36 @@
   .mat-icon {
     margin: 0 0 0 0.1em;
   }
+}
+
+/* Style the list */
+ul {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  font-size: 1.25em;
+  max-width: 15em;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+
+ul.breadcrumb li {
+  color: orange;
+  text-decoration: none;
+  z-index: 5;
+  margin-top: -0.5em;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li:hover {
+  color: orangered;
+  text-decoration: underline;
 }

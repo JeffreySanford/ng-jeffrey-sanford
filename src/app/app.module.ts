@@ -27,7 +27,6 @@ import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
 import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { APP_BASE_HREF } from '@angular/common';
-import { SocialButton } from './classes/social-button';
 import { MatIconModule } from "@angular/material/icon";
 import { RecipeComponent } from './samples/development/kitchen-table/recipe/recipe.component';
 

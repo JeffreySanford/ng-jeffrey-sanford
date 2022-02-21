@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { NavigationService } from './services/navigation.service';
 
 
 @Component({
@@ -26,8 +27,16 @@ import { trigger, style, animate, transition } from '@angular/animations';
 export class AppComponent {
   title = 'Portfolio for Jeffrey Sanford';
   showFiller = false;
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
-    this.router.navigate(['landing'], {relativeTo: this.activatedRoute})
+  isMenuAction: boolean = false;
+  constructor(navigation: NavigationService) {
+    navigation.navigate('landing');
+  }
+
+  onMenuItemVisited($event: any) {
+    if($event) {
+      debugger
+    } 
+    this.isMenuAction = true;
   }
 }
 

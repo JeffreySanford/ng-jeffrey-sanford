@@ -114,5 +114,6 @@ export class DesignComponent implements OnInit {
   }
 
   launchPage(page: string){
-    this.navigation.navigateDesign('landing');  }
+    this.navigation.navigate(page);  
+  }
 }

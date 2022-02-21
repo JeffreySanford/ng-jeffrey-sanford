@@ -85,6 +85,6 @@ export class DevelopmentComponent implements OnInit {
   }
 
   launchPage(page: string) {
-    this.navigation.navigateDesign(page);
+    this.navigation.navigate(page);
   }
 }

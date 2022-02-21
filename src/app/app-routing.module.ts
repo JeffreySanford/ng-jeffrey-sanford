@@ -12,17 +12,17 @@ import { KitchenTableComponent } from './samples/development/kitchen-table/kitch
 import { RecipeComponent } from './samples/development/kitchen-table/recipe/recipe.component';
 
 const routes: Routes = [
-  { path: 'landing', component: LandingComponent },
-  { path: 'design-dashboard', component: DesignComponent },
-  { path: 'development-dashboard', component: DevelopmentComponent },
-  { path: 'architecture-dashboard', component: ArchitectureComponent },
-  { path: 'samples/sample-table', component: TableComponent },
-  { path: 'samples/space-video', component: SpaceVideoComponent },
-  { path: 'samples/kitchen-table', component: KitchenTableComponent, children: [{path: 'detail', component: RecipeComponent}]},
+  { path: 'landing', component: LandingComponent, data: { breadCrumb: 'Home' } },
+  { path: 'design-dashboard', component: DesignComponent, data: { breadCrumb: 'Design' } },
+  { path: 'development-dashboard', component: DevelopmentComponent, data: { breadCrumb: 'Development' } },
+  { path: 'architecture-dashboard', component: ArchitectureComponent, data: { breadCrumb: 'Architecture' } },
+  { path: 'samples/sample-table', component: TableComponent, data: { breadCrumb: 'Table' } },
+  { path: 'samples/space-video', component: SpaceVideoComponent, data: { breadCrumb: 'SpaceVideo' } },
+  { path: 'samples/kitchen-table', component: KitchenTableComponent, data: { breadCrumb: 'Kitchen Table' }, children: [{ path: 'detail', component: RecipeComponent, data: { breadCrumb: 'Detailed Tile' } }] },
   // the empty path will be redirected to the home component
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   // this path redirects to the home component
-  { path: 'page-not-found', component: PageNotFoundComponent},
+  { path: 'page-not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/page-not-found', pathMatch: 'full' }
 ];
 

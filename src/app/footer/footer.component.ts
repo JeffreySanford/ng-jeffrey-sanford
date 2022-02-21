@@ -2,12 +2,9 @@ import { Component, ElementRef, Input, OnInit, VERSION } from '@angular/core';
 import { Router } from '@angular/router';
 import packageInformation from '../../../package.json'
 import { SocialButton } from '../classes/social-button';
+import { Item } from '../services/item';
 
-export interface Item {
-  name?: string | undefined;
-  url?: string  | undefined;
-  icon?: string  | undefined;
-}
+
 
 @Component({
   selector: 'app-footer',
