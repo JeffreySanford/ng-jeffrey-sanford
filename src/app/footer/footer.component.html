@@ -1,10 +1,10 @@
 <div class="footer-row">
     <span *ngFor="let button of projectLove">
-        <span class="social-buttons-container">
-            <span class="button-container"  ngClass="{{button.icon}}" #button (click)="routeExternal(button, $event)">
+        <span class="social-buttons-container" >
+            <button [disabled]="button.disabled" class="button-container"  ngClass="{{button.icon}}" #button (click)="routeExternal(button, $event)">
                 <mat-icon>{{button.icon}}</mat-icon>
                 <mat-label class="button-name">{{button.name}}</mat-label>
-            </span>
+            </button>
         </span>
     </span>
     <div class="development-statistics" (click)="displayDevelopmentPopup()">

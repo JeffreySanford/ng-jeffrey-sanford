@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { SocialButton } from '../classes/social-button';
 import { NavigationService } from '../services/navigation.service';
 import { trigger, style, animate, transition } from '@angular/animations';
@@ -23,8 +23,13 @@ export class LandingComponent implements OnInit {
   projectLove: SocialButton[] | undefined;
   navigation: NavigationService;
   color: string | undefined;
-  constructor(navigation: NavigationService) {
+  constructor(navigation: NavigationService, private elementRef: ElementRef) {
     this.navigation = navigation;
+  }
+  ngAfterViewInit() {
+    this.color = 'black';
+    this.elementRef.nativeElement.ownerDocument
+      .body.style.backgroundColor = this.color;
   }
 
   ngOnInit(): void {
@@ -32,20 +37,21 @@ export class LandingComponent implements OnInit {
       {
         name: 'GitHub',
         url: 'https://github.com/JeffreySanford',
-        icon: 'code'
+        icon: 'code',
+        disabled: false
       },
       {
         name: 'Facebook',
         url: 'https://www.facebook.com/jeffrey.sanford.56/',
-        icon: 'facebook'
+        icon: 'facebook',
+        disabled: true
       },
       {
         name: 'Linkedin',
         url: 'https://www.linkedin.com/in/sanfordjeffrey/',
-        icon: 'linkedin'
+        icon: 'linkedin',
+        disabled: false
       }];
-
-    this.color = 'black';
   }
 
   logAnimation($event: any) {

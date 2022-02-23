@@ -3,4 +3,5 @@ export class SocialButton {
     url?: string;
     description?: string;
     icon?: string | any;
+    disabled: boolean = false;
 }

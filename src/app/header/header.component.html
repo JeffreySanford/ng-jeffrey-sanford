@@ -29,7 +29,7 @@
             </button>
         </mat-menu>
         <ul class="breadcrumb">
-            <li *ngFor="let bcItem of breadcrumbs; 
+            <li *ngFor="let bcItem of breadCrumbs; 
              let $index = index; let $last = last" title="{{bcItem.name}}">
                 <a [ngClass]="{'active': $last}" class="cursor-pointer"
                     (click)="launchPage(bcItem.name)">{{bcItem.name}}</a>

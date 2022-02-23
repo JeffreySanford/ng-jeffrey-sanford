@@ -18,17 +18,20 @@ export class KitchenTableComponent implements OnInit {
     {
       name: 'GitHub',
       url: 'https://github.com/JeffreySanford',
-      icon: 'code'
+      icon: 'code',
+      disabled: false
     },
     {
       name: 'Facebook',
       url: 'https://www.facebook.com/jeffrey.sanford.56/',
-      icon: 'facebook'
+      icon: 'facebook',
+      disabled: true
     },
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/sanfordjeffrey/',
-      icon: 'linkedin'
+      icon: 'linkedin',
+      disabled: true
     }];
     siteSections = ['landing', 'recipes', 'history', 'contact'];
     active = 0;

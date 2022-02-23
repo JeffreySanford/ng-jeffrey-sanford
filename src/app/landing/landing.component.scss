@@ -1,6 +1,6 @@
 :host ::ng-deep .background-flag {
-  width: calc(100vw + 2em);
-  min-height: 95vh;
+  width: calc(100vw);
+  min-height: 90vh;
   background-image: url("../../assets/video/usa-american-flag-waving-animated-gif-12.gif");
   background-size: cover;
   position: absolute;
@@ -10,6 +10,7 @@
   z-index: 1;
   overflow: hidden;
   background-color: black;
+  overflow: hidden;
 }
 
 .landing-page {
@@ -17,33 +18,19 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: flex-start;
+  justify-content: center;
   z-index: 5 !important;
-
-  .army-logo {
-    width: 7.5em;
-    height: 5em;
-    position: fixed;
-    right: -1em;
-    bottom: 5em;
-  }
+  width: 100%;
+  overflow: hidden;
 
   .clickable {
     cursor: pointer;
     z-index: 2 !important;
   }
-}
-
-@media only screen and (max-width: 1110px) {
-  .landing-page {
-    width: 100vw;
-  }
-
   .brand-heading {
-    color: blue;
-    width: 6em;
+    color: orange;
     line-height: 0.8em;
-    margin: 1em 0.5em;
+    align-self: center;
     height: 2em;
     font-size: 6em;
   }
@@ -52,49 +39,28 @@
     z-index: 5;
     display: flex;
     flex-direction: row;
-    margin: 0 auto;
-
+    justify-content: center;
+    align-items: center;
+    
     p {
-      color: purple;
-      font-size: 1.25em;
+      color: orange;
+      font-size: 2em;
+    }
+    p:hover {
+      color: orangered;
     }
 
     .star {
-      color: magenta;
+      color: yellow;
       margin: 0 0.25em;
     }
   }
-
-  .army-logo {
-    margin-bottom: 3em;
-  }
 }
 
-@media only screen and (min-width: 1110px) {
-  .brand-heading {
-    width: 100%;
-    font-size: 10em;
-    margin: 1em 20%;
-    color: orange;
-    line-height: 0.75em;
-  }
-
-  .intro-text {
-    z-index: 5;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    p {
-      font-size: 2.5em;
-      justify-content: center;
-      color: orange;
-      margin: 0 1em;
-    }
-
-    .star {
-      margin-top: -0.1em;
-      color: orangered;
-    }
-  }
+.army-logo {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  width: 7.5em;
+  height: 5em;
 }

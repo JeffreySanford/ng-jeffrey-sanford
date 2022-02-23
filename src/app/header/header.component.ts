@@ -12,11 +12,11 @@ import { BreadCrumbService } from '../services/bread-crumb.service';
   styleUrls: ['./header.component.scss']
 })
 
-export class AppHeaderComponent implements OnInit, AfterContentChecked {
+export class AppHeaderComponent implements OnInit {
   @Output() menuItemVisited: EventEmitter<boolean> = new EventEmitter<boolean>();
   navigation: NavigationService;
   home = { icon: "pi pi-home" };
-  breadcrumbs: any;
+  breadCrumbs: Array<BreadCrumb> | undefined;
 
   constructor(navigation: NavigationService, private breadCrumbService: BreadCrumbService) {
     this.navigation = navigation;
@@ -28,16 +28,9 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
     route: '/home'
   };
 
-  ngAfterContentChecked() {
-    if(this.breadCrumbService.pruned) {
-      this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
-
-    }
-  }
-
   ngOnInit(): void {
     this.navigation.navigate('landing', this.bcInitItem);
-      this.breadcrumbs = this.breadCrumbService.breadcrumbs;
+    this.breadCrumbs  = this.breadCrumbService.getBreadCrumbs();
   }
 
   menuItemClicked() {
@@ -45,7 +38,6 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
   }
 
   launchPage(page?: string) {
-    debugger
     if (page)
       this.navigation.navigate(page);
   }

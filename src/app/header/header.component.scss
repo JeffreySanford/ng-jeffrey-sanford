@@ -5,7 +5,6 @@
   padding: 0.5em;
   height: 2.6em;
   z-index: 5;
-  background-color: black;
 
   .mat-toolbar-row {
     display: flex;
@@ -45,17 +44,16 @@
 
 /* Style the list */
 ul {
-  padding: 10px 16px;
   list-style: none;
-  background-color: black;
   display: flex;
   flex-direction: row;
+  border: 1px solid lightblue;
 }
 
 /* Display list items side by side */
 ul.breadcrumb li {
   font-size: 1.25em;
-  max-width: 15em;
+  width: 15em;
   text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
   cursor: pointer;

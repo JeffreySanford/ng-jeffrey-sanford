@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
+import { SocialButton } from 'src/app/classes/social-button';
 import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
@@ -10,8 +11,8 @@ import { NavigationService } from 'src/app/services/navigation.service';
 export class DevelopmentComponent implements OnInit {
   dashboard!: Array<GridsterItem>;
   options!: GridsterConfig;
-  projectLove: { name: string; url: string; icon: string; }[] | undefined;
-  pageLove: { name: string; url: string; icon: string; }[] | undefined;
+  projectLove: Array<SocialButton> | undefined;
+  pageLove: Array<SocialButton> | undefined;
   constructor(private navigation: NavigationService) { }
 
   static itemChange(item: any, itemComponent: any) {
@@ -40,22 +41,26 @@ export class DevelopmentComponent implements OnInit {
       {
         name: 'GitHub',
         url: 'http://localhost',
-        icon: 'home'
+        icon: 'home',
+        disabled: false
       },
       {
         name: 'Facebook',
         url: 'http://localhost',
-        icon: 'home'
+        icon: 'home',
+        disabled: true
       },
       {
         name: 'Sample',
         url: 'http://localhost',
-        icon: 'airplane'
+        icon: 'airplane',
+        disabled: true
       },
       {
         name: 'Twitter',
         url: 'http://localhost',
-        icon: 'ship'
+        icon: 'ship',
+        disabled: true
       },
     ];
 
@@ -64,23 +69,9 @@ export class DevelopmentComponent implements OnInit {
       {
         name: 'GitHub',
         url: 'http://localhost',
-        icon: 'github'
-      },
-      {
-        name: 'Facebook',
-        url: 'http://localhost',
-        icon: 'facebook'
-      },
-      {
-        name: 'Sample',
-        url: 'http://localhost',
-        icon: 'airplane'
-      },
-      {
-        name: 'Azure',
-        url: 'http://localhost',
-        icon: 'mdi:azure'
-      },
+        icon: 'github',
+        disabled: false
+      }
     ];
   }
 

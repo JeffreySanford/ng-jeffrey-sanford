@@ -1,13 +1,11 @@
 .footer-row {
-  height: 2em;
   color: orange;
   display: flex;
   flex-direction: row;
   justify-content: left;
-  position: fixed;
+  position: absolute;
   bottom: 1em;
   left: 1em;
-  width: 100%;
 
   .social-buttons-container {
     display: flex;
@@ -17,11 +15,16 @@
     .button-container {
       display: flex;
       flex-direction: row;
-      bottom: 5em;
+      padding: 0 0.25em;
+      margin: 0 1em;
+      background-color: orange;
+      border-radius: 1em;
+      opacity: 1;
+      z-index: 5;
 
       .button-name {
         font-size: 1em;
-        margin-right: 2em;
+        margin-top: 0.35em;
       }
 
       .mat-icon {
@@ -35,20 +38,9 @@
   }
 
   .development-statistics {
-    position: fixed;
-    bottom: 0;
-    right: 1em;
+    position: absolute;
+    bottom: -1em;
+    right: 2em;
     height: 3em;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .footer-row {
-    width: 75%;
-    color: purple;
-    bottom: 2em;
-  }
-  .development-statistics {
-    margin-bottom: 1.5em;
   }
 }
