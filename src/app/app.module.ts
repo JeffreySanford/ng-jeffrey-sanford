@@ -73,5 +73,3 @@ import { RecipeComponent } from './samples/development/kitchen-table/recipe/reci
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
