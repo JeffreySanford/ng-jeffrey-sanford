@@ -1,36 +1,43 @@
-
 <div class="page">
     <h2>Mocked Material Table</h2>
-    <div class="filter">
-        <mat-form-field class="table-filtering" appearance="outline">
-            <input #input matInput placeholder="Search by users name" (keyup)="applyFilter(input)">
-        </mat-form-field>
+    <div class="notice">
+        <p>This is a mocked Material Design table that should sorting, pagination and filtering capabilities. The users
+            are faked for development purposes through a service in the API.</p>
     </div>
-    <mat-table class="table" #sort matSort [dataSource]="dataSource" class="mat-elevation-z8">
-        <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-            <mat-cell *matCellDef="let element">{{ element.name + ' ' + element.surname }}</mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="address">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Address </mat-header-cell>
-            <mat-cell *matCellDef="let element">{{ element.address }}</mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="city">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> City </mat-header-cell>
-            <mat-cell *matCellDef="let element">{{ element.city }}</mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="email">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> E-Mail </mat-header-cell>
-            <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
-        </ng-container>
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>>
-    </mat-table>
 
-    <div class="pagination">
-        <mat-paginator role="listbox" #paginator 
-        class="paginator mat-elevation-z8" aria-label="Select Page"
-        [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-        ></mat-paginator>
+    <div *ngIf="!resolved">
+        <mat-spinner class="spinner" mode="indeterminate"></mat-spinner>
+    </div>
+
+    <div [hidden]="!resolved">
+        <div class="filter">
+            <mat-form-field class="table-filtering" appearance="legacy">
+                <input #input matInput placeholder="Search by users name" (keyup)="applyFilter(input)">
+            </mat-form-field>
+        </div>
+        <mat-table class="table" #sort matSort [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.name + ' ' + element.surname }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="constructedAddress">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Address </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.constructedAddress }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="city">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> City </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.city }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="email">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> E-Mail </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>>
+        </mat-table>
+
+        <mat-paginator role="listbox" #paginator class="paginator mat-elevation-z8" aria-label="Select Page"
+            [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
     </div>
 </div>
+<app-footer [projectLove]="projectLove" [color]="color"></app-footer>

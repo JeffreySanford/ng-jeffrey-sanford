@@ -1,27 +1,26 @@
 <section class="page">
   <gridster [options]="options">
-    <gridster-item [item]="item" *ngFor="let item of dashboard">
-      <mat-card>
+    <gridster-item class="gridster-item" [item]="item" *ngFor="let item of dashboard">
+      <mat-card class="card">
         <mat-card-header>
-          <mat-card-title>{{item.name}}</mat-card-title>
-          <mat-card-subtitle>{{item.name}}</mat-card-subtitle>
+          <mat-card-title class="title">{{item.title}}</mat-card-title>
+          <mat-card-actions class="technology">
+            <button mat-raised-button color="accent" (click)="launchPage(item.url)">
+              <mat-label>Visit</mat-label>
+            </button>
+          </mat-card-actions>    
         </mat-card-header>
         <mat-card-content>
-          <p>{{ item.description }}</p>
+          <p class="description">{{ item.description }}</p>
         </mat-card-content>
-
-        <mat-card-actions class="technology">
-          <button mat-raised-button color="accent">LIKE</button>
-          <button mat-raised-button color="primary">SHARE</button>
-        </mat-card-actions>
         <div class="love-icons">
-          <img src="../../../assets/images/angular.png" />
-          <img src="../../../assets/images/nodejs-new-pantone-black.png" />
-          <img src="../../../assets/images/WebReady-Logo_RGB_Forest-Green.JPG" />
+          <span *ngFor="let image of loveIcons">
+            <img src="{{image}}" />
+          </span>
         </div>
         <app-footer [projectLove]="projectLove"></app-footer>
       </mat-card>
     </gridster-item>
   </gridster>
 </section>
-<app-footer [projectLove]="pageLove"></app-footer>
+<app-footer class="footer" [projectLove]="pageLove"></app-footer>

@@ -1,1 +1,22 @@
-<p>kitchen-table works!</p>
+<div class="landing">
+    <div class="banner">
+        <img class="site-logo" src="../../../../assets/images/kitchen-table-site-logo.png" />
+        <div style="display: flex; flex-direction: column;">
+            <h1>Kitchen Table</h1>
+        </div>
+        <img class="grape-masthead" src="../../../../assets/images/grape-01.png" />
+    </div>
+    <mat-tab-group class="section-group" [selectedIndex]="active" (selectedIndexChange)="onTabChange($event)">
+        <mat-tab label="recipes">
+            <div *ngFor="let recipe of recipes">
+                <mat-card class="card" (click)="routeTo(recipe, $event)">
+                    <mat-card-title>{{recipe.name}}</mat-card-title>
+                </mat-card>
+            </div>
+
+        </mat-tab>
+        <mat-tab label="history"></mat-tab>
+        <mat-tab label="contact"></mat-tab>
+    </mat-tab-group>
+</div>
+<app-footer [projectLove]="projectLove" [color]="color"></app-footer>

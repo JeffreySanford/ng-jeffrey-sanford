@@ -1,18 +1,29 @@
 .top-banner {
   display: flex;
   flex-direction: row;
-  background-color: #55185d;
   opacity: 0.1em;
   padding: 0.5em;
   height: 2.6em;
-}
+  z-index: 5;
 
-.filler {
-  flex: 1 1 auto;
-}
+  .mat-toolbar-row {
+    display: flex;
+    flex-direction: row;
+    button {
+      z-index: 5;
+    }
 
-.gap {
-  margin-right: 10px;
+    .mat-icon {
+      font-size: 2.5em;
+      font-weight: 100;
+      color: orange;
+    }
+    
+    .vertical-more {
+      margin: 0 0 0 0;
+      color: orange;
+    }    
+  }
 }
 
 .user {
@@ -21,28 +32,43 @@
   position: absolute;
   right: 1.25em;
   top: 0.9em;
-  
 
   &:hover {
     border: 1px solid blue;
     border-radius: 1.5em;
-
   }
-  .mat-icon{
+  .mat-icon {
     margin: 0 0 0 0.1em;
   }
-
-
 }
 
-.mat-icon {
-  font-size: 2.5em;
-  font-weight: 100;
-  color: yellow;
+/* Style the list */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid lightblue;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  font-size: 1.25em;
+  width: 15em;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  cursor: pointer;
 }
 
 
-.vertical-more {
-  margin: 0 0 0 0;
-  color: yellow;
+ul.breadcrumb li {
+  color: orange;
+  text-decoration: none;
+  z-index: 5;
+  margin-top: -0.5em;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li:hover {
+  color: orangered;
+  text-decoration: underline;
 }

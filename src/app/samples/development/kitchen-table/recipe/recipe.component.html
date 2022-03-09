@@ -1,0 +1,8 @@
+<div *ngIf="recipe">
+    <p>recipe name: {{recipe.name}}</p>
+    <p>recipe description: {{recipe.description}}</p>
+    <p>recipe origin: {{recipe.countryOfOrigin}}</p>
+    <ul *ngFor="let ingredient of recipe.ingredients">
+        <li>{{ingredient}}</li>
+    </ul>
+</div>

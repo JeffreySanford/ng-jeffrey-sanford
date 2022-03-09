@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { ExtraOptions, Navigation, Router } from '@angular/router';
 import { User } from './user';
+import { SocialButton } from 'src/app/classes/social-button';
 
 @Component({
   selector: 'sample-table',
@@ -24,9 +24,11 @@ export class TableComponent implements AfterContentChecked {
   dataSource!: MatTableDataSource<User>;
   resolved: boolean = false;
   currentNavigation: any;
-  private portfolioAPI = 'http://localhost:3000/users';  
-  
-  constructor(private router: Router, private http: HttpClient) { }
+  color = 'black';
+  private portfolioAPI = 'https://api-portfolio-l8cra.ondigitalocean.app/users';
+  projectLove: Array<SocialButton> | undefined;
+
+  constructor(private http: HttpClient) { }
 
   ngAfterContentChecked() {
     if (this.users && this.sort && this.paginator && !this.resolved) {
@@ -47,23 +49,44 @@ export class TableComponent implements AfterContentChecked {
   }
 
   ngOnInit(): void {
-
     this.http.get<User[]>(this.portfolioAPI).subscribe((data: any) => {
-      this.displayedColumns = ['name', 'address', 'email'];
+      this.displayedColumns = ['name', 'constructedAddress', 'email'];
+      data.users.map((user: User)=>{
+        user.constructedAddress = user.number + ' ' + user.address; 
+      });
+
       this.users = data.users;
     });
+
+    this.projectLove = [
+      {
+        name: 'GitHub',
+        url: 'https://github.com/JeffreySanford',
+        icon: 'github',
+        disabled: false
+      },
+      {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/jeffrey.sanford.56/',
+        icon: 'facebook',
+        disabled: true
+      },
+      {
+        name: 'Twitter',
+        url: 'https://www.twiter.com/jeffrey_sanford',
+        icon: 'twitter_box',
+        disabled: true
+      },
+      {
+        name: 'Linkedin',
+        url: 'https://www.linkedin.com/in/sanfordjeffrey/',
+        icon: 'linkedin_box',
+        disabled: false
+      }
+    ];
   }
 
   applyFilter(filterValue: HTMLInputElement) {
     this.dataSource.filter = filterValue.value;
-  }
-
-  //TODO Used twice
-  navigateDesign(item?: string) {
-    if (!item) {
-      this.router.navigate(['landing']);
-    } else {
-      this.router.navigate([item]);
-    };
   }
 }

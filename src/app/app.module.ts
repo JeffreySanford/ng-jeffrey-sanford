@@ -9,7 +9,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MaterialModule } from './material/material.module';
 import { LandingComponent } from './landing/landing.component';
 import { MatToolbarModule } from '@angular/material/toolbar'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppFooterComponent } from './footer/footer.component';
 import { TableComponent } from './samples/design/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +21,14 @@ import { KitchenTableComponent } from './samples/development/kitchen-table/kitch
 import { WeatherComponent } from './samples/development/weather/weather.component';
 import { DataVisualizationsComponent } from './samples/design/data-visualizations/data-visualizations.component';
 import { SpaceVideoComponent } from './samples/design/space-video/space-video.component';
+import { VgCoreModule } from '@videogular/ngx-videogular/core';
+import { VgControlsModule } from '@videogular/ngx-videogular/controls';
+import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
+import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { MatIconModule } from "@angular/material/icon";
+import { RecipeComponent } from './samples/development/kitchen-table/recipe/recipe.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,9 @@ import { SpaceVideoComponent } from './samples/design/space-video/space-video.co
     KitchenTableComponent,
     WeatherComponent,
     DataVisualizationsComponent,
-    SpaceVideoComponent
+    SpaceVideoComponent,
+    PageNotFoundComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,
@@ -48,14 +57,19 @@ import { SpaceVideoComponent } from './samples/design/space-video/space-video.co
     MatCheckboxModule,
     MaterialModule,
     MatToolbarModule,
-    FormsModule,
-    ReactiveFormsModule,
-    OverlayModule
+    OverlayModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
+    MatIconModule
   ],
   exports: [
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

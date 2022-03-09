@@ -1,11 +1,24 @@
+.spinner {
+  margin: auto auto;
+}
+
 .page {
-  color: darkmagenta;
-  background-color: #ecb602;
-  height: calc(89vh);
+  color: blue;
+  background: rgba(230, 126, 34, 1);
+  height: calc(86vh);
 
   h2 {
     display: relative;
     margin-left: 1em;
+    font-size: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .notice {
+    margin-left: 2em;
+    width: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic
   }
 
   .filter {
@@ -13,25 +26,63 @@
     flex-direction: row;
     justify-content: right;
     max-height: 2em;
-    margin-bottom: -2em;
+    margin-right: 4.5em;
+    font-size: 1.25em;
 
     mat-form-field {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
       font-size: 1em;
-      color: purple;
+      color: blue;
+      width: 15em;
     }
   }
 
   .mat-table {
-    background-color: #ecb602;
-    font-size: 1.5em;
-  }
+    width: 95%;
+    margin: 2em auto 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: rgba(230, 126, 34, .3);
 
-  .pagination {
-    margin-bottom: 20em;
+    .mat-header-cell {
+      font-size: 1.3em;
+      color: lime;
+    }
+
+    .mat-cell {
+      font-size: 1em;
+      color: blue;
+    }
+  }
+}
+
+:host ::ng-deep .mat-table {
+  overflow-y: auto;
+  max-height: 22em;
+  background-color: pink;
+}
+
+:host ::ng-deep mat-paginator,
+.mat-paginator-page-size .mat-select-trigger {
+  font-size: 0.5em !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  .paginator {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 }
 
 :host ::ng-deep .mat-paginator-container {
-  background-color: #ecb602 !important;
-  font-size: 1em;
+  background-color: orange;
+  font-size: 2.25em;
+  height: 1em;
+  color: purple;
+  position: absolute;
+  bottom: 5em;
+  left: 0.5em;
+  width: 96%;
+}
+
+:host ::ng-deep .mat-select-value {
+  font-size: 2.25em;
+  color: blue;
 }

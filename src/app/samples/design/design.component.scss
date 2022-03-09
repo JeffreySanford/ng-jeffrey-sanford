@@ -1,24 +1,60 @@
+:host ::ng-deep .top-banner {
+  background-color: purple;
+}
+
 .page {
-  color: darkmagenta;
-  background-color: #ecb602;
-  height: calc(89vh);
-}
+  gridster {
+    background-color: white;
+    height: calc(80vh);
 
-:host ::ng-deep gridster-item {
-  height: 20em !important;
-  border: 1p solid seagreen;
-}
+    .gridster-item {
+      background-color: white;
 
+      .card {
+        background-color: lightblue;
+        max-height: 20em !important;
+        min-height: 12em !important;
+        border: 1px solid purple;
 
-.love-icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  height: 4em;
+        .title {
+          margin-left: -1.5em;
+        }
 
-  img {
-    transform: scale(.5);
-    border: 1px solid green;
+        .mat-card-actions {
+          position: absolute;
+          right: 1em;
+          top: 0em;
+          height: 1em;
+        }
+
+        .description {
+          font-size: 0.8em;
+          line-height: 1.1em;
+        }
+
+        .love-icons {
+          margin-top: -1em;
+          display: flex;
+          flex-direction: row;
+          justify-content: right;
+
+          img {
+            max-height: 3em;
+          }
+        }
+
+        .footer-row {
+          bottom: 3em;
+          left: 0em;
+          background-color: white;
+        }
+      }
+
+      .footer-row {
+        bottom: 3em;
+        left: 0em;
+        background-color: white;
+      }
+    }
   }
 }
