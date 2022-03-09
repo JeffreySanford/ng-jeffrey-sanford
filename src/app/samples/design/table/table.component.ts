@@ -1,22 +1,11 @@
-import { AfterContentChecked, AfterContentInit, ChangeDetectorRef, Component, Input, OnChanges, ViewChild } from '@angular/core';
+import { AfterContentChecked, Component, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ExtraOptions, Navigation, Router } from '@angular/router';
-import { Observable, Subscriber } from 'rxjs';
+import { User } from './user';
 
-export interface User {
-  firstName: string;
-  lastName: string;
-  streetNumber: string;
-  address: string;
-  city: string;
-  phone: String;
-  email: String;
-  postalCode: String;
-  userId: String;
-}
 @Component({
   selector: 'sample-table',
   templateUrl: './table.component.html',

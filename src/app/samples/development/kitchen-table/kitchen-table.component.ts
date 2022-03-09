@@ -18,7 +18,6 @@ export class KitchenTableComponent implements OnInit {
     this.http.get<Recipe[]>(this.portfolioAPI).subscribe((data: any) => {
       this.recipes = data.recipes;
     });
-  }
-
-  
+  } 
 }
+
