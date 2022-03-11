@@ -31,7 +31,7 @@ export class TableComponent implements AfterContentChecked {
   constructor(private http: HttpClient, private elementRef: ElementRef) { }
 
   ngAfterContentChecked() {
-    if(this.color !== 'white') {
+    if (this.color !== 'white') {
       this.color = 'white';
       this.elementRef.nativeElement.ownerDocument
         .body.style.backgroundColor = this.color;
@@ -56,8 +56,8 @@ export class TableComponent implements AfterContentChecked {
   ngOnInit(): void {
     this.http.get<User[]>(this.portfolioAPI).subscribe((data: any) => {
       this.displayedColumns = ['name', 'constructedAddress', 'email'];
-      data.users.map((user: User)=>{
-        user.constructedAddress = user.number + ' ' + user.address; 
+      data.users.map((user: User) => {
+        user.constructedAddress = user.number + ' ' + user.address;
       });
 
       this.users = data.users;
@@ -67,7 +67,7 @@ export class TableComponent implements AfterContentChecked {
       {
         name: 'GitHub',
         url: 'https://github.com/JeffreySanford',
-        icon: 'github',
+        icon: 'code',
         disabled: false
       },
       {
@@ -77,18 +77,11 @@ export class TableComponent implements AfterContentChecked {
         disabled: true
       },
       {
-        name: 'Twitter',
-        url: 'https://www.twiter.com/jeffrey_sanford',
-        icon: 'twitter_box',
-        disabled: true
-      },
-      {
         name: 'Linkedin',
         url: 'https://www.linkedin.com/in/sanfordjeffrey/',
-        icon: 'linkedin_box',
+        icon: 'linkedin',
         disabled: false
-      }
-    ];
+      }];
   }
 
   applyFilter(filterValue: HTMLInputElement) {
