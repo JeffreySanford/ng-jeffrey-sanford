@@ -2,6 +2,8 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { SocialButton } from '../classes/social-button';
 import { NavigationService } from '../services/navigation.service';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { AppHeaderComponent } from '../header/header.component'
+import { BreadCrumbService } from '../services/bread-crumb.service';
 
 @Component({
   selector: 'app-landing',
@@ -23,16 +25,17 @@ export class LandingComponent implements OnInit {
   projectLove: SocialButton[] | undefined;
   navigation: NavigationService;
   color: string | undefined;
-  constructor(navigation: NavigationService, private elementRef: ElementRef) {
+
+  constructor(navigation: NavigationService, private elementRef: ElementRef, private breadcrumbService: BreadCrumbService) {
     this.navigation = navigation;
   }
   ngAfterViewInit() {
-    this.color = 'black';
     this.elementRef.nativeElement.ownerDocument
       .body.style.backgroundColor = this.color;
   }
 
   ngOnInit(): void {
+    this.color = 'black';
     this.projectLove = [
       {
         name: 'GitHub',
@@ -60,6 +63,14 @@ export class LandingComponent implements OnInit {
 
   changeStarSize() {
     this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
+  }
+
+  launchPage(page?: string) {
+    
+    if (page) {
+      this.breadcrumbService.updateBreadcrumbs();
+      this.navigation.navigate(page);
+    }
   }
 }
 

@@ -1,6 +1,4 @@
-
-import { OverlayOutsideClickDispatcher } from '@angular/cdk/overlay';
-import { AfterContentChecked, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AfterContentInit, AfterViewChecked, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NavigationService } from '../services/navigation.service';
 import { BreadCrumb } from '../services/bread-crumb'
 import { BreadCrumbService } from '../services/bread-crumb.service';
@@ -12,25 +10,34 @@ import { BreadCrumbService } from '../services/bread-crumb.service';
   styleUrls: ['./header.component.scss']
 })
 
-export class AppHeaderComponent implements OnInit {
+export class AppHeaderComponent implements OnInit, AfterViewChecked {
   @Output() menuItemVisited: EventEmitter<boolean> = new EventEmitter<boolean>();
   navigation: NavigationService;
   home = { icon: "pi pi-home" };
-  breadCrumbs: Array<BreadCrumb> | undefined;
+  breadcrumbsUpdate = false;
 
   constructor(navigation: NavigationService, private breadCrumbService: BreadCrumbService) {
     this.navigation = navigation;
+    this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
   }
 
-  bcInitItem: BreadCrumb = {
+  breadcrumbs: Array<BreadCrumb> = [{
     key: 'Home',
     name: 'Home',
     route: '/home'
-  };
+  }];
+
+  ngAfterViewChecked(): void {
+      this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
+      console.log(this.breadcrumbs);
+      this.breadcrumbsUpdate = false;
+  }
 
   ngOnInit(): void {
-    this.navigation.navigate('landing', this.bcInitItem);
-    this.breadCrumbs  = this.breadCrumbService.getBreadCrumbs();
+    this.navigation.navigate('landing', '/landing');
+    this.breadCrumbService.updateBreadcrumbs();
+    this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
+    console.log(this.breadcrumbs);
   }
 
   menuItemClicked() {
@@ -39,6 +46,8 @@ export class AppHeaderComponent implements OnInit {
 
   launchPage(page?: string) {
     if (page)
-      this.navigation.navigate(page);
+    this.navigation.navigate(page);
+    this.breadCrumbService.updateBreadcrumbs();
+    this.breadcrumbsUpdate = true;
   }
 }

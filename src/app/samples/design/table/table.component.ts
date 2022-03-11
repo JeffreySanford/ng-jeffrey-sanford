@@ -1,4 +1,4 @@
-import { AfterContentChecked, Component, ViewChild } from '@angular/core';
+import { AfterContentChecked, Component, ElementRef, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
@@ -28,9 +28,14 @@ export class TableComponent implements AfterContentChecked {
   private portfolioAPI = 'https://api-portfolio-l8cra.ondigitalocean.app/users';
   projectLove: Array<SocialButton> | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private elementRef: ElementRef) { }
 
   ngAfterContentChecked() {
+    if(this.color !== 'white') {
+      this.color = 'white';
+      this.elementRef.nativeElement.ownerDocument
+        .body.style.backgroundColor = this.color;
+    }
     if (this.users && this.sort && this.paginator && !this.resolved) {
       this.length = this.users.length;
       this.dataSource = new MatTableDataSource<User>(this.users);

@@ -34,7 +34,7 @@ export class AppComponent {
 
   onMenuItemVisited($event: any) {
     if($event) {
-      debugger
+      
     } 
     this.isMenuAction = true;
   }

@@ -18,11 +18,11 @@
       font-weight: 100;
       color: orange;
     }
-    
+
     .vertical-more {
       margin: 0 0 0 0;
       color: orange;
-    }    
+    }
   }
 }
 
@@ -45,30 +45,33 @@
 /* Style the list */
 ul {
   list-style: none;
+  height: 1.5em;
   display: flex;
-  flex-direction: row;
-  border: 1px solid lightblue;
+  margin: 0.75em 0.25em 0;
 }
 
 /* Display list items side by side */
 ul.breadcrumb li {
   font-size: 1.25em;
-  width: 15em;
   text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
   cursor: pointer;
-}
-
-
-ul.breadcrumb li {
   color: orange;
   text-decoration: none;
   z-index: 5;
-  margin-top: -0.5em;
+  position: relative;
+  left: -2em;
+  border: 1px solid red;
+  padding: 0 0.25em 0 0;
 }
 
 /* Add a color on mouse-over */
 ul.breadcrumb li:hover {
   color: orangered;
   text-decoration: underline;
+}
+
+ul.breadcrumb li::after {
+  content: " / ";
+  color: orange;
 }

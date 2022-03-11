@@ -74,7 +74,7 @@ export class DesignComponent implements OnInit {
 
 
   changedOptions() {
-    debugger
+    
     // this.options.api.optionsChanged();
   }
 
@@ -87,7 +87,7 @@ export class DesignComponent implements OnInit {
   }
   
   handleError(error: Error) {
-    debugger
+    
     console.log(error)
   }
 

@@ -1,7 +1,7 @@
 <div class="page">
     <h2>Mocked Material Table</h2>
     <div class="notice">
-        <p>This is a mocked Material Design table that should sorting, pagination and filtering capabilities. The users
+        <p>NOTE: This is a mocked Material Design table that sorts, paginates, and filters a set of 100,000 random users. The users
             are faked for development purposes through a service in the API.</p>
     </div>
 
@@ -12,7 +12,7 @@
     <div [hidden]="!resolved">
         <div class="filter">
             <mat-form-field class="table-filtering" appearance="legacy">
-                <input #input matInput placeholder="Search by users name" (keyup)="applyFilter(input)">
+                <input #input matInput placeholder="Search by user's name" (keyup)="applyFilter(input)">
             </mat-form-field>
         </div>
         <mat-table class="table" #sort matSort [dataSource]="dataSource" class="mat-elevation-z8">

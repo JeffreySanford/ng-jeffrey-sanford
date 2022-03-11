@@ -3,7 +3,7 @@
         <span class="social-buttons-container" >
             <button [disabled]="button.disabled" class="button-container"  ngClass="{{button.icon}}" #button (click)="routeExternal(button, $event)">
                 <mat-icon>{{button.icon}}</mat-icon>
-                <mat-label class="button-name">{{button.name}}</mat-label>
+                <p class="button-name">{{button.name}}</p>
             </button>
         </span>
     </span>
