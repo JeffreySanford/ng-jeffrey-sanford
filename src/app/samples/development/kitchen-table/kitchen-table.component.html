@@ -10,10 +10,10 @@
         <mat-tab label="recipes">
             <div *ngFor="let recipe of recipes">
                 <mat-card class="card" (click)="routeTo(recipe, $event)">
+                    <mat-icon svgIcon="mdi:source"></mat-icon>
                     <mat-card-title>{{recipe.name}}</mat-card-title>
                 </mat-card>
             </div>
-
         </mat-tab>
         <mat-tab label="history"></mat-tab>
         <mat-tab label="contact"></mat-tab>

@@ -4,4 +4,5 @@ export class Recipe {
     countryOfOrigin!: string;
     ingredients!: string[];
     directions!: string[];
+    url: string = "";
   }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { NavigationService } from './services/navigation.service';
+import { Item } from './services/item';
 
 
 @Component({
@@ -29,7 +30,10 @@ export class AppComponent {
   showFiller = false;
   isMenuAction: boolean = false;
   constructor(navigation: NavigationService) {
-    navigation.navigate('landing');
+    const routeItem: Item = {
+      name: 'landing'
+    };
+    navigation.navigate(routeItem);
   }
 
   onMenuItemVisited($event: any) {

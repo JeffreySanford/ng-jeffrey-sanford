@@ -2,6 +2,7 @@ import { AfterContentInit, AfterViewChecked, Component, EventEmitter, OnInit, Ou
 import { NavigationService } from '../services/navigation.service';
 import { BreadCrumb } from '../services/bread-crumb'
 import { BreadCrumbService } from '../services/bread-crumb.service';
+import { Item } from '../services/item';
 
 
 @Component({
@@ -28,13 +29,16 @@ export class AppHeaderComponent implements OnInit, AfterViewChecked {
   }];
 
   ngAfterViewChecked(): void {
-      this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
-      console.log(this.breadcrumbs);
-      this.breadcrumbsUpdate = false;
+    this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
+    console.log(this.breadcrumbs);
+    this.breadcrumbsUpdate = false;
   }
 
   ngOnInit(): void {
-    this.navigation.navigate('landing', '/landing');
+    const routeItem: Item = {
+      name: 'landing'
+    };
+    this.navigation.navigate(routeItem);
     this.breadCrumbService.updateBreadcrumbs();
     this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
     console.log(this.breadcrumbs);
@@ -45,8 +49,10 @@ export class AppHeaderComponent implements OnInit, AfterViewChecked {
   }
 
   launchPage(page?: string) {
-    if (page)
-    this.navigation.navigate(page);
+    const routeItem: Item = {
+      name: page
+    };
+    this.navigation.navigate(routeItem);;
     this.breadCrumbService.updateBreadcrumbs();
     this.breadcrumbsUpdate = true;
   }

@@ -1,38 +1,60 @@
+:host ::ng-deep .top-banner {
+  background-color: purple;
+}
+
 .page {
-    gridster {
-      color: darkmagenta;
-      background-color: black;
-      height: calc(80vh);
-      margin-bottom: 1em;
-  
-      .gridster-item {
-        background-color: black;
-        min-height: 20em !important;
+  gridster {
+    background-color: white;
+    height: calc(80vh);
+
+    .gridster-item {
+      background-color: white;
+
+      .card {
+        background-color: lightblue;
+        max-height: 20em !important;
+        min-height: 12em !important;
+        border: 1px solid purple;
+
+        .title {
+          margin-left: -1.5em;
+        }
+
+        .mat-card-actions {
+          position: absolute;
+          right: 1em;
+          top: 0em;
+          height: 1em;
+        }
+
+        .description {
+          font-size: 0.8em;
+          line-height: 1.1em;
+        }
+
+        .love-icons {
+          margin-top: -1em;
+          display: flex;
+          flex-direction: row;
+          justify-content: right;
+
+          img {
+            max-height: 3em;
+          }
+        }
+
+        .footer-row {
+          bottom: 3em;
+          left: 0em;
+          background-color: white;
+        }
+      }
+
+      .footer-row {
+        bottom: 3em;
+        left: 0em;
+        background-color: white;
       }
     }
   }
-  
-  .love-icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 5em;
-  
-    img {
-      max-height: 4em;
-    }
-  
-    .technology {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-between;
-  
-      button {
-        background-color: purple;
-      }
-    }
-  }
-  
-  .mat-card-actions {
-    width: 100%;
-  }
+}

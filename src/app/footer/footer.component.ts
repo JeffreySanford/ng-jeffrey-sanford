@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import packageInformation from '../../../package.json'
 import { SocialButton } from '../classes/social-button';
 import { Item } from '../services/item';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-footer',
@@ -18,7 +19,7 @@ export class AppFooterComponent implements OnInit {
   angularVersion: string;
 
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private navigation: NavigationService) {
     this.angularVersion = VERSION.full;
   }
 
@@ -26,7 +27,7 @@ export class AppFooterComponent implements OnInit {
   }
 
   routeExternal(item: Item, event: Event) {
-    this.router.navigate([item.url]);
+      this.navigation.navigate(item, event);
   }
 
   displayDevelopmentPopup() {

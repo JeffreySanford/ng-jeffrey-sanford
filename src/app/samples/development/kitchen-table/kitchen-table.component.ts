@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Item } from 'src/app/services/item';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { Recipe } from './recipe.class';
 
@@ -33,14 +34,17 @@ export class KitchenTableComponent implements OnInit {
       icon: 'linkedin',
       disabled: true
     }];
-    siteSections = ['landing', 'recipes', 'history', 'contact'];
-    active = 0;
+  siteSections = ['landing', 'recipes', 'history', 'contact'];
+  active = 0;
 
 
   constructor(private http: HttpClient, private navigation: NavigationService) { }
 
   ngOnInit(): void {
-    this.http.get<Recipe[]>(this.portfolioAPI).subscribe((recipes: Recipe[]) => this.recipes = recipes);
+    this.http.get<Recipe[]>(this.portfolioAPI).subscribe((recipes: Recipe[]) => {
+      debugger
+      this.recipes = recipes;
+    });
   }
 
   onTabChange(tabIndex: Number) {
@@ -48,8 +52,13 @@ export class KitchenTableComponent implements OnInit {
   }
 
   routeTo(recipe: Recipe, event: Event) {
-    const path = '/samples/kitchen-table/' + recipe.name;
-    this.navigation.navigate(path, recipe);
+    const path = '/samples/kitchen-table/' + recipe.url;
+    const routeItem: Item = {
+      name: path,
+      url: recipe.url
+    }
+    debugger
+    this.navigation.navigate(routeItem, recipe);
   }
 }
 

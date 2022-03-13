@@ -4,6 +4,7 @@ import { NavigationService } from '../services/navigation.service';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { AppHeaderComponent } from '../header/header.component'
 import { BreadCrumbService } from '../services/bread-crumb.service';
+import { Item } from '../services/item';
 
 @Component({
   selector: 'app-landing',
@@ -69,7 +70,10 @@ export class LandingComponent implements OnInit {
     
     if (page) {
       this.breadcrumbService.updateBreadcrumbs();
-      this.navigation.navigate(page);
+          const routeItem: Item = {
+      name: 'landing'
+    };
+    this.navigation.navigate(routeItem);;
     }
   }
 }
