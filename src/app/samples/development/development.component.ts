@@ -23,8 +23,8 @@ export class DevelopmentComponent implements OnInit {
   projectLove: Array<SocialButton> = [
     {
       name: 'GitHub',
-      url: 'http://localhost',
-      icon: 'home',
+      url: 'https://github.com/JeffreySanford/ng-jeffrey-sanford',
+      icon: 'code',
       disabled: false
     }
   ];
@@ -32,8 +32,14 @@ export class DevelopmentComponent implements OnInit {
   pageLove: Array<SocialButton> = [
     {
       name: 'GitHub',
-      url: 'http://localhost',
-      icon: 'github',
+      url: 'https://github.com/JeffreySanford',
+      icon: 'code',
+      disabled: false
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/sanfordjeffrey/',
+      icon: 'linkedin',
       disabled: false
     }
   ];

@@ -34,7 +34,7 @@ export class DesignComponent implements OnInit {
   pageLove: SocialButton[] = [
     {
       name: 'GitHub',
-      url: 'https://github.com/JeffreySanford/ng-jeffrey-sanford',
+      url: 'https://github.com/JeffreySanford',
       icon: 'code',
       disabled: false
     },
