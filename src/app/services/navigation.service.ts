@@ -1,4 +1,4 @@
-import { Injectable, Renderer2 } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BreadCrumbService } from './bread-crumb.service';
 import { Item } from './item';
@@ -13,10 +13,12 @@ export class NavigationService {
   navigate(item: Item, payload?: any) {
     if (payload) {
       debugger
-      this.router.navigate([item.url, payload])
+      this.router.navigate([item.url, payload]);
     }
     else {
       (item.url) ? window.open(item.url, '_blank') : this.router.navigate([item.name]);
     }
+
+    this.breadcrumbService.getBreadCrumbs();
   }
 }

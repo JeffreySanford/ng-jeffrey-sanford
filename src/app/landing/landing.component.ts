@@ -67,14 +67,10 @@ export class LandingComponent implements OnInit {
   }
 
   launchPage(page?: string) {
-    
-    if (page) {
-      this.breadcrumbService.updateBreadcrumbs();
-          const routeItem: Item = {
-      name: 'landing'
-    };
-    this.navigation.navigate(routeItem);;
-    }
+      const routeItem: Item = {
+        name: page
+      };
+      this.navigation.navigate(routeItem);
   }
 }
 

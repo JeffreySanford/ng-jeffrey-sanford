@@ -42,7 +42,6 @@ export class KitchenTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get<Recipe[]>(this.portfolioAPI).subscribe((recipes: Recipe[]) => {
-      debugger
       this.recipes = recipes;
     });
   }

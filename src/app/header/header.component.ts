@@ -29,9 +29,12 @@ export class AppHeaderComponent implements OnInit, AfterViewChecked {
   }];
 
   ngAfterViewChecked(): void {
-    this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
-    console.log(this.breadcrumbs);
-    this.breadcrumbsUpdate = false;
+    if(this.breadcrumbsUpdate) {
+      this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
+      console.log(this.breadcrumbs);
+      debugger
+      this.breadcrumbsUpdate = false;
+    }
   }
 
   ngOnInit(): void {
@@ -39,9 +42,6 @@ export class AppHeaderComponent implements OnInit, AfterViewChecked {
       name: 'landing'
     };
     this.navigation.navigate(routeItem);
-    this.breadCrumbService.updateBreadcrumbs();
-    this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
-    console.log(this.breadcrumbs);
   }
 
   menuItemClicked() {
@@ -53,7 +53,7 @@ export class AppHeaderComponent implements OnInit, AfterViewChecked {
       name: page
     };
     this.navigation.navigate(routeItem);;
-    this.breadCrumbService.updateBreadcrumbs();
+this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
     this.breadcrumbsUpdate = true;
   }
 }
