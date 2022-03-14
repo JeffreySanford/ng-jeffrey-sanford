@@ -42,6 +42,7 @@ export class AppHeaderComponent implements OnInit, AfterViewChecked {
       name: 'landing'
     };
     this.navigation.navigate(routeItem);
+    this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
   }
 
   menuItemClicked() {
@@ -53,7 +54,6 @@ export class AppHeaderComponent implements OnInit, AfterViewChecked {
       name: page
     };
     this.navigation.navigate(routeItem);;
-this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
     this.breadcrumbsUpdate = true;
   }
 }

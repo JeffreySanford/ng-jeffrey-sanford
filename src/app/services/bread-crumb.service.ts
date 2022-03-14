@@ -71,16 +71,17 @@ export class BreadCrumbService {
   getBreadCrumbs(): Array<BreadCrumb> {
     this.location.onUrlChange((val) => {
       this.currentRoute = val.substring(1);
+      let present = false;
       this.validRoutes.map((route: BreadCrumb) => {
 
         if (this.currentRoute === route.route) {
-          const present = this.breadcrumbs.includes({
-            name: route.name,
-            route: route.route
+          this.breadcrumbs.forEach((crumb) => {
+            if (crumb.route === this.currentRoute) {
+              present = true;
+            }
           });
 
           if (!present) {
-            debugger
             this.breadcrumbs.push({
               name: route.name,
               route: route.route
