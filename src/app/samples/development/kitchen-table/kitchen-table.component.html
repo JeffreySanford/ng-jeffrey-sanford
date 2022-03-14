@@ -9,7 +9,7 @@
     <mat-tab-group class="section-group" [selectedIndex]="active" (selectedIndexChange)="onTabChange($event)">
         <mat-tab label="recipes">
             <div *ngFor="let recipe of recipes">
-                <mat-card class="card" (click)="routeTo(recipe, $event)">
+                <mat-card (click)="routeTo(recipe, $event)" class="card mat-elevation-z4">
                     <mat-icon svgIcon="mdi:source"></mat-icon>
                     <mat-card-title>{{recipe.name}}</mat-card-title>
                 </mat-card>

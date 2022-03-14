@@ -64,6 +64,16 @@ export class BreadCrumbService {
       })
     })
 
+    if (this.breadcrumbs.length > 2) {
+      if (this.breadcrumbs[2].name === 'development' || this.breadcrumbs[2].name === 'design') {
+        this.breadcrumbs.splice(1, 1);
+      }
+    } else if(this.currentRoute ==='landing') {
+      debugger
+      this.breadcrumbs = new Array<BreadCrumb>(this.breadcrumbs[0]);
+      debugger
+    }
+
     return this.breadcrumbs;
   }
 }
