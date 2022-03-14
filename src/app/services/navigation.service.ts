@@ -12,7 +12,6 @@ export class NavigationService {
 
   navigate(item: Item, payload?: any) {
     if (payload) {
-      debugger
       this.router.navigate([item.url, payload]);
     }
     else {

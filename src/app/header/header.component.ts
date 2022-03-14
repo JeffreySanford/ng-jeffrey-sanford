@@ -32,7 +32,6 @@ export class AppHeaderComponent implements OnInit, AfterViewChecked {
     if(this.breadcrumbsUpdate) {
       this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
       console.log(this.breadcrumbs);
-      debugger
       this.breadcrumbsUpdate = false;
     }
   }

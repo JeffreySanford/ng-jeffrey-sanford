@@ -56,7 +56,6 @@ export class KitchenTableComponent implements OnInit {
       name: path,
       url: recipe.url
     }
-    debugger
     this.navigation.navigate(routeItem, recipe);
   }
 }

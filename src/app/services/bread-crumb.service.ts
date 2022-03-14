@@ -31,33 +31,6 @@ export class BreadCrumbService {
                 name: menuItem.data.breadCrumb,
                 route: menuItem.path
               });
-
-              // if (this.breadcrumbs.length === 0) {
-
-              //   this.breadcrumbs.push({
-              //     name: menuItem.data.breadCrumb,
-              //     route: menuItem.path
-              //   });
-
-              //   routeSolved = true;
-              // } else {
-              //   this.breadcrumbs.forEach((crumb: BreadCrumb) => {
-              //     if (crumb.name === menuItem.data.breadCrumb) {
-              //       console.log(crumb.name, menuItem.data.breadCrumb)
-              //       debugger
-              //       routeSolved = true;
-              //     }
-              //   });
-
-              //   if (!routeSolved) {
-              //     this.breadcrumbs.push({
-              //       name: menuItem.data.breadCrumb,
-              //       route: menuItem.path
-              //     });
-
-              //     routeSolved = true;
-              //   }
-              // }
             }
           }
         });
