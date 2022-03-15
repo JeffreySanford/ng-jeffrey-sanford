@@ -29,11 +29,7 @@ export class AppHeaderComponent implements OnInit, AfterViewChecked {
   }];
 
   ngAfterViewChecked(): void {
-    if(this.breadcrumbsUpdate) {
-      this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
-      console.log(this.breadcrumbs);
-      this.breadcrumbsUpdate = false;
-    }
+    this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
   }
 
   ngOnInit(): void {

@@ -2,8 +2,6 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { SocialButton } from '../classes/social-button';
 import { NavigationService } from '../services/navigation.service';
 import { trigger, style, animate, transition } from '@angular/animations';
-import { AppHeaderComponent } from '../header/header.component'
-import { BreadCrumbService } from '../services/bread-crumb.service';
 import { Item } from '../services/item';
 
 @Component({
@@ -23,11 +21,23 @@ import { Item } from '../services/item';
 
 export class LandingComponent implements OnInit {
   currentState = 'initial';
-  projectLove: SocialButton[] | undefined;
+  projectLove: SocialButton[] = [
+    {
+      name: 'GitHub',
+      url: 'https://github.com/JeffreySanford',
+      icon: 'code',
+      disabled: false
+    },
+    {
+      name: 'Linkedin',
+      url: 'https://www.linkedin.com/in/sanfordjeffrey/',
+      icon: 'linkedin',
+      disabled: false
+    }];
   navigation: NavigationService;
   color: string | undefined;
 
-  constructor(navigation: NavigationService, private elementRef: ElementRef, private breadcrumbService: BreadCrumbService) {
+  constructor(navigation: NavigationService, private elementRef: ElementRef) {
     this.navigation = navigation;
   }
   ngAfterViewInit() {
@@ -37,25 +47,6 @@ export class LandingComponent implements OnInit {
 
   ngOnInit(): void {
     this.color = 'black';
-    this.projectLove = [
-      {
-        name: 'GitHub',
-        url: 'https://github.com/JeffreySanford',
-        icon: 'code',
-        disabled: false
-      },
-      {
-        name: 'Facebook',
-        url: 'https://www.facebook.com/jeffrey.sanford.56/',
-        icon: 'facebook',
-        disabled: true
-      },
-      {
-        name: 'Linkedin',
-        url: 'https://www.linkedin.com/in/sanfordjeffrey/',
-        icon: 'linkedin',
-        disabled: false
-      }];
   }
 
   logAnimation($event: any) {

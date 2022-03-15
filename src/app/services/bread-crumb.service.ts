@@ -21,6 +21,9 @@ export class BreadCrumbService {
         this.router.config.map((menuItem: any) => {
           if (!routeSolved || this.breadcrumbs.length === 0) {
             const filter = !menuItem.path.includes('*') || !menuItem.path.includes('page-not-found') || !menuItem.path.includes('');
+            if(!menuItem.data.breadCrumb) {
+              debugger
+            }
             const present = this.validRoutes && this.validRoutes.indexOf({
               name: menuItem.data.breadCrumb,
               route: menuItem.path
@@ -69,9 +72,7 @@ export class BreadCrumbService {
         this.breadcrumbs.splice(1, 1);
       }
     } else if(this.currentRoute ==='landing') {
-      debugger
       this.breadcrumbs = new Array<BreadCrumb>(this.breadcrumbs[0]);
-      debugger
     }
 
     return this.breadcrumbs;
