@@ -20,20 +20,19 @@ export class BreadCrumbService {
       if (value.url) {
         this.router.config.map((menuItem: any) => {
           if (!routeSolved || this.breadcrumbs.length === 0) {
-            const filter = !menuItem.path.includes('*') || !menuItem.path.includes('page-not-found') || !menuItem.path.includes('');
-            if(!menuItem.data.breadCrumb) {
-              debugger
-            }
-            const present = this.validRoutes && this.validRoutes.indexOf({
-              name: menuItem.data.breadCrumb,
-              route: menuItem.path
-            });
-
-            if (filter && present === -1) {
-              this.validRoutes.push({
+            if(menuItem.data) {
+              const filter = !menuItem.path.includes('*') || !menuItem.path.includes('page-not-found') || !menuItem.path.includes('');
+              const present = this.validRoutes && this.validRoutes.indexOf({
                 name: menuItem.data.breadCrumb,
                 route: menuItem.path
               });
+  
+              if (filter && present === -1) {
+                this.validRoutes.push({
+                  name: menuItem.data.breadCrumb,
+                  route: menuItem.path
+                });
+              }  
             }
           }
         });

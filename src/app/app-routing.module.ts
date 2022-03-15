@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { APP_BASE_HREF } from '@angular/common';
 import { KitchenTableComponent } from './samples/development/kitchen-table/kitchen-table.component';
 import { RecipeComponent } from './samples/development/kitchen-table/recipe/recipe.component';
+import { WeatherComponent } from './samples/development/weather/weather.component';
 
 const routes: Routes = [
   { path: 'landing', component: LandingComponent, data: { breadCrumb: 'home', title: 'Home' } },
@@ -18,10 +19,13 @@ const routes: Routes = [
   { path: 'architecture-dashboard', component: ArchitectureComponent, data: { breadCrumb: 'architecture', title: 'Architeture Dashbiard' } },
   { path: 'samples/sample-table', component: TableComponent, data: { breadCrumb: 'table', title: 'Material Table' } },
   { path: 'samples/space-video', component: SpaceVideoComponent, data: { breadCrumb: 'space-video', title: 'Space Video' } },
-  { path: 'samples/kitchen-table', 
-    component: KitchenTableComponent, 
-    data: { breadCrumb: 'kitchen-table', title: 'Kitchen Table' }, 
-    children: [{ path: 'detail', component: RecipeComponent, data: { breadCrumb: 'Detailed Tile' } }] },
+  {
+    path: 'samples/kitchen-table',
+    component: KitchenTableComponent,
+    data: { breadCrumb: 'kitchen-table', title: 'Kitchen Table' },
+    children: [{ path: 'detail', component: RecipeComponent, data: { breadCrumb: 'Detailed Tile' } }]
+  },
+  { path: 'samples/weather', component: WeatherComponent, data: { breadCrumb: 'weather', title: 'Weather' } },
   // the empty path will be redirected to the home component
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   // this path redirects to the home component

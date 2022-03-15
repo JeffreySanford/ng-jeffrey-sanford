@@ -1,1 +1,61 @@
-<p>weather works!</p>
+<div class="current-weather">
+    <h1>Current Conditions</h1>
+    <div class="location-button-container">
+        <div *ngFor="let city of cities">
+            <button mat-button-stroked>{{city}}</button>
+        </div>
+    </div>
+    <div class="current-row">
+        <div class="local-section">
+            <div class="two-column">
+                <span class="material-icons">
+                    light_mode
+                </span>
+                <div class="information">
+                    <p class="location">{{location}}</p>
+                    <div class="visual">
+                        <p class="description">{{description}}</p>
+                        <img class="status-icon" [src]="weatherIcon" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="temperature-section">
+            <div class="two-column">
+                <span class="material-icons">
+                    thermostat
+                </span>
+                <div style="display: flex; flex-direction: column;">
+                    <p>Temperature</p>
+                    <div class="visual">
+                        <span class="status">{{current.main}}</span>
+                        <p class="temperature">{{ currentTemperature}} &#176;F</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="wind-section">
+            <span class="material-icons" style="justify-content: flex-end;">
+                wind_power
+            </span>
+            <div class="visual" style="display: flex; flex-direction: column; justify-content: center;">
+                <span style="display: flex; flex-direction: row;border: 1px solid green;">
+                    <mat-icon class="wind-icon" #wind id="wind">arrow_upward</mat-icon>
+                    <p>{{current.wind.deg}} &#176;</p>
+                </span>
+                
+                <div style="padding: 0; margin: 0; line-height: 1em;">
+                    <p>{{current.wind.speed}} MPH</p>
+                    <div style="border: 1px solid purple;">
+                        <p>{{feelsLike}} &#176;F</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>

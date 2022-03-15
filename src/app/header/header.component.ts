@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewChecked, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AfterContentInit, AfterViewChecked, ChangeDetectorRef, Component, EventEmitter, OnInit, Output, Renderer2 } from '@angular/core';
 import { NavigationService } from '../services/navigation.service';
 import { BreadCrumb } from '../services/bread-crumb'
 import { BreadCrumbService } from '../services/bread-crumb.service';
@@ -17,7 +17,7 @@ export class AppHeaderComponent implements OnInit, AfterViewChecked {
   home = { icon: "pi pi-home" };
   breadcrumbsUpdate = false;
 
-  constructor(navigation: NavigationService, private breadCrumbService: BreadCrumbService) {
+  constructor(navigation: NavigationService, private breadCrumbService: BreadCrumbService, private change: ChangeDetectorRef) {
     this.navigation = navigation;
     this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
   }
@@ -38,6 +38,7 @@ export class AppHeaderComponent implements OnInit, AfterViewChecked {
     };
     this.navigation.navigate(routeItem);
     this.breadcrumbs = this.breadCrumbService.getBreadCrumbs();
+    this.change.detectChanges();
   }
 
   menuItemClicked() {

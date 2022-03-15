@@ -70,6 +70,6 @@ export class DevelopmentComponent implements OnInit {
     const routeItem: Item = {
       name: page
     };
-    this.navigation.navigate(routeItem);;
+    this.navigation.navigate(routeItem);
   }
 }

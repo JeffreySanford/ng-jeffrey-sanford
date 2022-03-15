@@ -1,0 +1,104 @@
+.current-weather {
+  .location-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2em;
+  }
+  .current-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    max-height: 5em;
+
+    .material-icons {
+      font-size: 3em;
+    }
+
+    .local-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 1.5em;
+
+      .two-column {
+        display: flex;
+        flex-direction: row;
+
+        .information {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .visual {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .description {
+          font-size: 1em;
+          color: blue;
+        }
+
+        .status-icon {
+          height: 2em;
+          width: 2em;
+          font-size: 1.5em;
+          margin-top: -0.5em;
+        }
+      }
+    }
+
+    .temperature-section {
+      display: flex;
+      flex-direction: column;
+      width: 10em;
+      font-size: 1.5em;
+
+      .two-column {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .visual {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 7em;
+      .temperature {
+        font-size: 1em;
+        color: blueviolet;
+      }
+
+      .status {
+        color: blue;
+      }
+    }
+  }
+
+  .wind-section {
+    display: flex;
+    flex-direction: row;
+    width: 15em;
+
+    p {
+      margin: 0;
+      text-align: right;
+    }
+
+    .two-column {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .wind-icon {
+        color: aqua;
+        position: absolute;
+        right: 0;
+      }
+
+  }
+}
