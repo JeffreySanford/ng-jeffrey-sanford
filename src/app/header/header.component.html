@@ -1,9 +1,9 @@
 <mat-action-row color="primary" class="top-banner">
     <mat-toolbar-row>
-        <button (click)="launchPage('landing')" mat-icon-button aria-label="icon-button with a menu">
+        <button (click)="launchPage('landing')" mat-icon-button aria-label="icon-button with a menu" mat-elevation-z4>
             <mat-icon class="vertical-more">home</mat-icon>
         </button>
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu" mat-elevation-z4>
             <mat-icon class="vertical-more">more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu" class="nav-menu">
@@ -35,7 +35,6 @@
                     (click)="launchPage(bcItem.name)">{{bcItem.name}}</a>
             </li>
         </ul>
-
 
         <div class="user">
             <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">person_outline</mat-icon>

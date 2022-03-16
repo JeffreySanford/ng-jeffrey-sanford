@@ -6,16 +6,18 @@
   gridster {
     background-color: white;
     height: calc(80vh);
+    overflow: hidden;
 
     .gridster-item {
       background-color: white;
       min-height: 11em !important;
+      height: 20em !important;
 
       .card {
-        background-color: lightblue;
-        max-height: 20em !important;
-        min-height: 12em !important;
-
+        background-color: lavender;
+        height: 17em;
+        border-radius: 0.5em;
+        
         .title {
           margin-left: -1em;
         }
@@ -27,8 +29,15 @@
           height: 1em;
         }
 
+        .visit-button {
+          border-radius: 2em;
+          background-color: fuchsia;
+          width: 5em;
+          padding-top: .25em;
+        }
+
         .description {
-          font-size: 0.8em;
+          font-size: 1em;
           line-height: 1.1em;
         }
 
@@ -37,9 +46,13 @@
           display: flex;
           flex-direction: row;
           justify-content: right;
+          position: absolute;
+          right: 0.25em;
+          bottom: 0.25em;
 
           img {
-            max-height: 3em;
+            max-height: 5em;
+            margin-top: 3em;
           }
         }
 

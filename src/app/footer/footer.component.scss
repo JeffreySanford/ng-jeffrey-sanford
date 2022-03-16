@@ -18,9 +18,12 @@
       padding: 0 0.25em;
       margin: 0 1em;
       background-color: orange;
-      border-radius: 1em;
+      border-radius: 2em;
       opacity: 1;
       z-index: 5;
+      text-decoration: none;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
 
       .button-name {
         font-size: 1em;
@@ -36,12 +39,5 @@
         margin-right: 0.25em;
       }
     }
-  }
-
-  .development-statistics {
-    position: absolute;
-    bottom: -1em;
-    right: 2em;
-    height: 3em;
   }
 }

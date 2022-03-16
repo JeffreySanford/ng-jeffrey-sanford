@@ -77,29 +77,12 @@ $custom-typography: mat-typography-config(
 
   button.mat-menu-item {
     font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
     line-height: 0.75em;
     height: 2.5em;
     &.sub-menu {
       margin-left: 1em;
       font-size: 0.75em;
     }
-  }
-}
-
-.overlay {
-  cursor: pointer;
-  background-color: orange;
-  color: #55185d;
-  padding: 0.25em;
-
-  .overlay:before {
-    content: "";
-    position: absolute;
-    top: 25%;
-    left: 12px;
-    border-top: 12px solid #999;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
   }
 }

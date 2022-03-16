@@ -68,7 +68,7 @@
 
 :host ::ng-deep .intro-text {
   /* Mobile device styles */
-  @media screen and (max-width: 480px) {
-    font-size: 0.75em;
+  @media all and (max-width: 480px) {
+    font-size: 0.5em;
   }
 }
