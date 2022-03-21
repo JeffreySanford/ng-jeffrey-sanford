@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
-import { ArchitectureComponent } from './samples/architecture/architecture.component';
 import { DesignComponent } from './samples/design/design.component';
 import { DevelopmentComponent } from './samples/development/development.component';
 import { TableComponent } from './samples/design/table/table.component';
@@ -16,7 +15,6 @@ const routes: Routes = [
   { path: 'landing', component: LandingComponent, data: { breadCrumb: 'home', title: 'Home' } },
   { path: 'design-dashboard', component: DesignComponent, data: { breadCrumb: 'design', title: 'Design Dashboarrd' } },
   { path: 'development-dashboard', component: DevelopmentComponent, data: { breadCrumb: 'development', title: 'Development Dashboard' } },
-  { path: 'architecture-dashboard', component: ArchitectureComponent, data: { breadCrumb: 'architecture', title: 'Architeture Dashbiard' } },
   { path: 'samples/sample-table', component: TableComponent, data: { breadCrumb: 'table', title: 'Material Table' } },
   { path: 'samples/space-video', component: SpaceVideoComponent, data: { breadCrumb: 'space-video', title: 'Space Video' } },
   {

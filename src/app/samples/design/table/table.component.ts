@@ -71,12 +71,6 @@ export class TableComponent implements AfterContentChecked {
         disabled: false
       },
       {
-        name: 'Facebook',
-        url: 'https://www.facebook.com/jeffrey.sanford.56/',
-        icon: 'facebook',
-        disabled: true
-      },
-      {
         name: 'Linkedin',
         url: 'https://www.linkedin.com/in/sanfordjeffrey/',
         icon: 'linkedin',

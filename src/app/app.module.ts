@@ -14,7 +14,6 @@ import { TableComponent } from './samples/design/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DesignComponent } from './samples/design/design.component';
 import { DevelopmentComponent } from './samples/development/development.component';
-import { ArchitectureComponent } from './samples/architecture/architecture.component';
 import { OverlayModule } from "@angular/cdk/overlay";
 import { GridsterModule } from 'angular-gridster2';
 import { KitchenTableComponent } from './samples/development/kitchen-table/kitchen-table.component';
@@ -40,7 +39,6 @@ import { SidebarComponent } from './header/sidebar/sidebar.component';
     TableComponent,
     DesignComponent,
     DevelopmentComponent,
-    ArchitectureComponent,
     KitchenTableComponent,
     WeatherComponent,
     DataVisualizationsComponent,

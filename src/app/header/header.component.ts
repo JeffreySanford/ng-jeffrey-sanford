@@ -75,7 +75,6 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
   setBackgroundColorSideBar(color: string) {
     this.color = color;
     this.breadcrumb = this.breadcrumbervice.getbreadcrumb();
-    debugger
     this.renderer.setStyle(this.breadcrumbRow._elementRef.nativeElement, 'background-color', this.color);
     this.isSidebarClosed = true;
     this.change.detectChanges();
