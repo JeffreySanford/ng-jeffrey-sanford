@@ -20,19 +20,19 @@ export class breadcrumbervice {
       if (value.url) {
         this.router.config.map((menuItem: any) => {
           if (!routeSolved || this.breadcrumb.length === 0) {
-            if(menuItem.data) {
+            if (menuItem.data) {
               const filter = !menuItem.path.includes('*') || !menuItem.path.includes('page-not-found') || !menuItem.path.includes('');
               const present = this.validRoutes && this.validRoutes.indexOf({
                 name: menuItem.data.breadCrumb,
                 route: menuItem.path
               });
-  
+
               if (filter && present === -1) {
                 this.validRoutes.push({
                   name: menuItem.data.breadCrumb,
                   route: menuItem.path
                 });
-              }  
+              }
             }
           }
         });
@@ -48,31 +48,40 @@ export class breadcrumbervice {
       this.currentRoute = val.substring(1);
       let present = false;
       this.validRoutes.map((route: BreadCrumb) => {
-
-        if (this.currentRoute === route.route) {
-          this.breadcrumb.forEach((crumb) => {
-            if (crumb.route === this.currentRoute) {
-              present = true;
-            }
-          });
-
-          if (!present) {
-            this.breadcrumb.push({
-              name: route.name,
-              route: route.route
+        if (route.route !== '') {
+          if (this.currentRoute === route.route) {
+            this.breadcrumb.forEach((crumb) => {
+              if (crumb.route === this.currentRoute) {
+                present = true;
+              }
             });
+
+            if (!present && route.route !== '') {
+              const isSecondLevel = route.name === 'design' || route.name === 'development';
+
+              if (isSecondLevel) {
+                if (isSecondLevel) {
+                  this.breadcrumb[1] = {
+                    name: route.name,
+                    route: route.route
+                  };
+                }
+              }
+
+              else {
+                this.breadcrumb.push({
+                  name: route.name,
+                  route: route.route
+                });
+              }
+            }
+            else if (this.currentRoute === 'landing') {
+              this.breadcrumb = new Array<BreadCrumb>(this.breadcrumb[0]);
+            }
           }
         }
-      })
-    })
-
-    if (this.breadcrumb.length > 2) {
-      if (this.breadcrumb[2].name === 'development' || this.breadcrumb[2].name === 'design') {
-        this.breadcrumb.splice(1, 1);
-      }
-    } else if(this.currentRoute ==='landing') {
-      this.breadcrumb = new Array<BreadCrumb>(this.breadcrumb[0]);
-    }
+      });
+    });
 
     return this.breadcrumb;
   }

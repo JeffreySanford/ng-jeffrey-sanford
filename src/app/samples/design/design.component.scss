@@ -7,10 +7,10 @@
     background-color: white;
     height: calc(80vh);
     width: 90%;
-    margin-left: 5em;
+    margin: 1em 2em 0 auto;
     margin-top: 1em;
     overflow: hidden;
-
+    position: relative;
 
     .gridster-item {
       background-color: white;

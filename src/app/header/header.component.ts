@@ -5,6 +5,7 @@ import { breadcrumbervice } from '../services/bread-crumb.service';
 import { Item } from '../services/item';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatToolbar } from '@angular/material/toolbar';
+import { GridsterComponent } from 'angular-gridster2';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
   @Input() public color!: string;
   @ViewChild(SidebarComponent) sidebar!: SidebarComponent;
   @ViewChild('breadcrumbRow') breadcrumbRow!: MatToolbar;
+  @ViewChild('gridster') gridster!: ElementRef;
   @Output() menuItemVisited: EventEmitter<boolean> = new EventEmitter<boolean>();
   navigation: NavigationService;
   home = { icon: "pi pi-home" };
@@ -40,7 +42,6 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
       this.breadcrumb = this.breadcrumbervice.getbreadcrumb();
       this.renderer.setStyle(this.breadcrumbRow._elementRef.nativeElement, 'background-color', this.color);
       this.setBackgroundColorSideBar(this.color);
-      this.isSidebarClosed = true;
       this.change.detectChanges();
       this.breadcrumbUpdate = false;
     }
@@ -76,12 +77,13 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
     this.color = color;
     this.breadcrumb = this.breadcrumbervice.getbreadcrumb();
     this.renderer.setStyle(this.breadcrumbRow._elementRef.nativeElement, 'background-color', this.color);
-    this.isSidebarClosed = true;
     this.change.detectChanges();
 
   }
 
   toggleSidebar() {
     this.isSidebarClosed = !this.isSidebarClosed;
+    debugger
+    this.breadcrumbUpdate = true;
   }
 }
