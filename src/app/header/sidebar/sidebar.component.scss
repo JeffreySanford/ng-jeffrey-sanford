@@ -1,0 +1,60 @@
+//sidebar
+mat-sidenav-container {
+  height: calc(100vh - 11em);
+  border-radius: 1em;
+
+  p {
+    border: 1px solid purple;
+  }
+
+  mat-sidenav-content {
+    background-color: black;
+    color: white;
+    border-radius: 1em;
+    padding: 1em;
+    text-align: left;
+
+    &[class*='white'] {
+      background-color: white;
+    }
+    .toggle-sidebar {
+      font-size: 1em;
+
+      .arrow {
+        color: fuchsia;
+        font-size: 2em;
+        text-align: left;
+      }
+
+      .navigation {
+        color: fuchsia;
+        font-size: 1em;
+        margin-top: -2em;
+        margin-left: 2em;
+        text-align: left;
+
+      }
+    }
+
+    .content {
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-content: left;
+      align-items: left;
+      font-size: 2em;
+
+      button.mat-menu-item {
+        width: 15em;
+        color: fuchsia;
+        font-family: "Roboto", sans-serif;
+
+        .mat-icon {
+          color: fuchsia;
+        }
+      }
+    }
+  }
+}
+
