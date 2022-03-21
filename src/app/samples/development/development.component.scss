@@ -6,6 +6,9 @@
   gridster {
     background-color: white;
     height: calc(80vh);
+    width: 90%;
+    margin-left: 5em;
+    margin-top: 1em;
     overflow: hidden;
 
     .gridster-item {

@@ -1,43 +1,46 @@
-<mat-action-row color="primary" class="top-banner">
+<mat-action-row class="top-banner">
     <mat-toolbar-row>
-        <button (click)="launchPage('landing')" mat-icon-button aria-label="icon-button with a menu" mat-elevation-z4>
-            <mat-icon class="vertical-more">home</mat-icon>
-        </button>
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu" mat-elevation-z4>
-            <mat-icon class="vertical-more">more_vert</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu" class="nav-menu">
-            <button (click)="launchPage('design-dashboard')" mat-menu-item>
-                <mat-icon>art_track</mat-icon>
-                <span>Design</span>
-            </button>
-            <button class="sub-menu" mat-menu-item (click)="launchPage('samples/sample-table')">
-                <mat-icon>table_chart</mat-icon>
-                <span>Material Design Table</span>
-            </button>
-            <button class="sub-menu" mat-menu-item (click)="launchPage('samples/space-video')">
-                <mat-icon>rocket</mat-icon>
-                <span>Space Video</span>
-            </button>
-            <button (click)="launchPage('development-dashboard')" mat-menu-item>
-                <mat-icon>whatshot</mat-icon>
-                <span>Development</span>
-            </button>
-            <button mat-menu-item (click)="launchPage('architecture-dashboard')">
-                <mat-icon>transfer_within_a_station</mat-icon>
-                <span>Architecture</span>
-            </button>
-        </mat-menu>
-        <ul class="breadcrumb">
-            <li *ngFor="let bcItem of breadcrumbs; 
-             let $index = index; let $last = last" title="{{bcItem.name}}">
-                <a [ngClass]="{'active': $last}" class="cursor-pointer"
-                    (click)="launchPage(bcItem.name)">{{bcItem.name}}</a>
-            </li>
-        </ul>
-
-        <div class="user">
-            <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">person_outline</mat-icon>
+        <div class="responsive" (click)="toggleSidebar()" [ngClass]="{'sidebar-opened': isSidebarClosed}">
+            <div class="sidebar">
+                <app-sidebar [isSidebarClosed]="isSidebarClosed" [color]="color"></app-sidebar>
+            </div>
+            <div>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu"
+                    mat-elevation-z4>
+                    <mat-icon class="vertical-more">more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" class="nav-menu">
+                    <button (click)="launchPage('design-dashboard')" mat-menu-item>
+                        <mat-icon>art_track</mat-icon>
+                        <span>Design</span>
+                    </button>
+                    <button class="sub-menu" mat-menu-item (click)="launchPage('samples/sample-table')">
+                        <mat-icon>table_chart</mat-icon>
+                        <span>Material Design Table</span>
+                    </button>
+                    <button class="sub-menu" mat-menu-item (click)="launchPage('samples/space-video')">
+                        <mat-icon>rocket</mat-icon>
+                        <span>Space Video</span>
+                    </button>
+                    <button (click)="launchPage('development-dashboard')" mat-menu-item>
+                        <mat-icon>whatshot</mat-icon>
+                        <span>Development</span>
+                    </button>
+                    <button mat-menu-item (click)="launchPage('architecture-dashboard')">
+                        <mat-icon>transfer_within_a_station</mat-icon>
+                        <span>Architecture</span>
+                    </button>
+                </mat-menu>
+            </div>
         </div>
+        <mat-toolbar #breadcrumbRow>
+            <ul class="breadcrumb">
+                <li *ngFor="let bcItem of breadcrumb; 
+                 let $index = index; let $last = last" title="{{bcItem.name}}">
+                    <a [ngClass]="{'active': $last}" class="cursor-pointer"
+                        (click)="launchPage(bcItem.name)">&nbsp;{{bcItem.name}}</a>
+                </li>
+            </ul>
+        </mat-toolbar>
     </mat-toolbar-row>
 </mat-action-row>

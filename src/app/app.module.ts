@@ -29,6 +29,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { APP_BASE_HREF } from '@angular/common';
 import { MatIconModule } from "@angular/material/icon";
 import { RecipeComponent } from './samples/development/kitchen-table/recipe/recipe.component';
+import { SidebarComponent } from './header/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { RecipeComponent } from './samples/development/kitchen-table/recipe/reci
     DataVisualizationsComponent,
     SpaceVideoComponent,
     PageNotFoundComponent,
-    RecipeComponent
+    RecipeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

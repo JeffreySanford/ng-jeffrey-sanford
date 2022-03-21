@@ -8,8 +8,8 @@ import { BreadCrumb } from './bread-crumb';
   providedIn: 'root'
 })
 
-export class BreadCrumbService {
-  public breadcrumbs: Array<BreadCrumb> = [];
+export class breadcrumbervice {
+  public breadcrumb: Array<BreadCrumb> = [];
   pruned: boolean = false;
   currentRoute: any;
   validRoutes: Array<BreadCrumb> = [];
@@ -19,7 +19,7 @@ export class BreadCrumbService {
     this.router.events.subscribe((value: any) => {
       if (value.url) {
         this.router.config.map((menuItem: any) => {
-          if (!routeSolved || this.breadcrumbs.length === 0) {
+          if (!routeSolved || this.breadcrumb.length === 0) {
             if(menuItem.data) {
               const filter = !menuItem.path.includes('*') || !menuItem.path.includes('page-not-found') || !menuItem.path.includes('');
               const present = this.validRoutes && this.validRoutes.indexOf({
@@ -43,21 +43,21 @@ export class BreadCrumbService {
   ngOnInit() {
   }
 
-  getBreadCrumbs(): Array<BreadCrumb> {
+  getbreadcrumb(): Array<BreadCrumb> {
     this.location.onUrlChange((val) => {
       this.currentRoute = val.substring(1);
       let present = false;
       this.validRoutes.map((route: BreadCrumb) => {
 
         if (this.currentRoute === route.route) {
-          this.breadcrumbs.forEach((crumb) => {
+          this.breadcrumb.forEach((crumb) => {
             if (crumb.route === this.currentRoute) {
               present = true;
             }
           });
 
           if (!present) {
-            this.breadcrumbs.push({
+            this.breadcrumb.push({
               name: route.name,
               route: route.route
             });
@@ -66,14 +66,14 @@ export class BreadCrumbService {
       })
     })
 
-    if (this.breadcrumbs.length > 2) {
-      if (this.breadcrumbs[2].name === 'development' || this.breadcrumbs[2].name === 'design') {
-        this.breadcrumbs.splice(1, 1);
+    if (this.breadcrumb.length > 2) {
+      if (this.breadcrumb[2].name === 'development' || this.breadcrumb[2].name === 'design') {
+        this.breadcrumb.splice(1, 1);
       }
     } else if(this.currentRoute ==='landing') {
-      this.breadcrumbs = new Array<BreadCrumb>(this.breadcrumbs[0]);
+      this.breadcrumb = new Array<BreadCrumb>(this.breadcrumb[0]);
     }
 
-    return this.breadcrumbs;
+    return this.breadcrumb;
   }
 }
