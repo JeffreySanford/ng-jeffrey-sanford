@@ -80,10 +80,4 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
     this.change.detectChanges();
 
   }
-
-  toggleSidebar() {
-    this.isSidebarClosed = !this.isSidebarClosed;
-    debugger
-    this.breadcrumbUpdate = true;
-  }
 }

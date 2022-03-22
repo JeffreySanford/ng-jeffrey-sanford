@@ -2,7 +2,7 @@
     <span #breadcrumbs></span>
     <mat-sidenav-content #sidebar [ngClass]="color">
         <div class="toggle-sidebar">
-            <mat-icon class="arrow">{{sidebarDirection}}</mat-icon>
+            <mat-icon (click)="toggleSidebar()" class="arrow">{{sidebarDirection}}</mat-icon>
         </div>
 
         <div class="content mat-elevation-z8">

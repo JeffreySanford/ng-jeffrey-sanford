@@ -47,4 +47,10 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     this.header.setBackgroundColorSideBar(this.color);
     this.navigation.navigate(routeItem);
   }
+
+  toggleSidebar() {
+    this.isSidebarClosed = !this.isSidebarClosed;
+    debugger
+    this.breadcrumbUpdate = true;
+  }
 }
