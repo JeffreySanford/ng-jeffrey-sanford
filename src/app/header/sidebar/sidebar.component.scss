@@ -2,19 +2,20 @@
 mat-sidenav-container {
   height: calc(100vh - 11em);
   border-radius: 1em;
+  background: rgba(0, 0, 0, 0);
 
   p {
     border: 1px solid purple;
   }
 
   mat-sidenav-content {
-    background-color: black;
+    background: rgba(0, 0, 0, 0);
     color: white;
     border-radius: 1em;
     padding: 1em;
     text-align: left;
 
-    &[class*='white'] {
+    &[class*="white"] {
       background-color: white;
     }
     .toggle-sidebar {
@@ -32,7 +33,6 @@ mat-sidenav-container {
         margin-top: -2em;
         margin-left: 2em;
         text-align: left;
-
       }
     }
 
@@ -57,4 +57,3 @@ mat-sidenav-container {
     }
   }
 }
-

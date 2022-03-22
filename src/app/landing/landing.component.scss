@@ -22,11 +22,13 @@
   z-index: 5 !important;
   width: 100%;
   overflow: hidden;
+  background-color: black;
 
   .clickable {
     cursor: pointer;
     z-index: 2 !important;
   }
+
   .brand-heading {
     color: orange;
     line-height: 0.8em;
@@ -66,9 +68,15 @@
   height: 5em;
 }
 
-:host ::ng-deep .intro-text {
+:host ::ng-deep .brand-heading {
   /* Mobile device styles */
-  @media all and (max-width: 480px) {
+  @media all and (max-width: 700px) {
+    font-size: 3em !important;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .intro-text {
     font-size: 0.5em;
   }
 }
