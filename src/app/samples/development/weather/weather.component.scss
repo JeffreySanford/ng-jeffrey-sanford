@@ -1,4 +1,8 @@
 .current-weather {
+  width: 75%;
+  border: 1px solid blue;
+  margin: 5em auto;
+
   .location-button-container {
     display: flex;
     flex-direction: row;
@@ -76,6 +80,24 @@
       .status {
         color: blue;
       }
+
+      .visual {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .wind {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+
+        .milesperhour {
+          padding: 0;
+          margin: 0;
+          line-height: 1em;
+        }
+      }
     }
   }
 
@@ -95,10 +117,8 @@
     }
 
     .wind-icon {
-        color: aqua;
-        position: absolute;
-        right: 0;
-      }
-
+      color: aqua;
+      position: relative;
+    }
   }
 }

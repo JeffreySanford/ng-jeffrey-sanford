@@ -41,7 +41,15 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
       name: page
     };
 
-    this.color = 'white';
+    if (page !== 'landing') {
+      this.color = 'white';
+    }
+    else {
+      this.color = 'black';
+    }
+
+    debugger
+
     this.isSidebarClosed = true;
     this.breadcrumbUpdate = true;
     this.header.setBackgroundColorSideBar(this.color);
