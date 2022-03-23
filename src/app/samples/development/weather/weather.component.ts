@@ -46,6 +46,7 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
 
     this.forecastService.LoadForecastWeather(this.zipcode).subscribe((data: any) => {
       this.forecastData = new ForecastDetails;//Instance to store the Data of ForecastModel
+      this.forecastData.details = [];
       this.forecastData.name = data.city.name;
       for (var i = 7; i < data.list.length; i = i + 8)//Since we want for 5 days. it Jumps 8 times to get to next day.(A day had 8 details in API.)
       {
