@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Event as NavigationEvent } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable, Subscription } from 'rxjs';
@@ -38,9 +38,6 @@ export class breadcrumbervice {
         });
       }
     });
-  }
-
-  ngOnInit() {
   }
 
   getbreadcrumb(): Array<BreadCrumb> {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
 import { Item } from 'src/app/services/item';
 import { NavigationService } from 'src/app/services/navigation.service';
@@ -9,7 +9,8 @@ import { SocialButton } from '../../classes/social-button';
   templateUrl: './design.component.html',
   styleUrls: ['./design.component.scss']
 })
-export class DesignComponent implements OnInit {
+
+export class DesignComponent implements AfterViewInit {
   color = 'white';
   options: GridsterConfig = {
     itemChangeCallback: DesignComponent.itemChange,
@@ -61,9 +62,6 @@ export class DesignComponent implements OnInit {
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument
       .body.style.backgroundColor = this.color;
-  }
-
-  ngOnInit(): void {
   }
 
   changedOptions() {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
 import { SocialButton } from 'src/app/classes/social-button';
 import { Item } from 'src/app/services/item';
@@ -9,7 +9,7 @@ import { NavigationService } from 'src/app/services/navigation.service';
   templateUrl: './development.component.html',
   styleUrls: ['./development.component.scss']
 })
-export class DevelopmentComponent implements OnInit {
+export class DevelopmentComponent implements AfterViewInit {
   options: GridsterConfig = {
     itemChangeCallback: DevelopmentComponent.itemChange,
     itemResizeCallback: DevelopmentComponent.itemResize
@@ -62,8 +62,6 @@ export class DevelopmentComponent implements OnInit {
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument
       .body.style.backgroundColor = this.color;
-  }
-  ngOnInit(): void {
   }
 
   launchPage(page: string) {

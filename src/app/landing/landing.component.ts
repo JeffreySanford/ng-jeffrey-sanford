@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { SocialButton } from '../classes/social-button';
 import { NavigationService } from '../services/navigation.service';
 import { trigger, style, animate, transition } from '@angular/animations';
@@ -19,7 +19,7 @@ import { Item } from '../services/item';
   ]
 })
 
-export class LandingComponent implements OnInit {
+export class LandingComponent implements OnInit, AfterViewInit {
   currentState = 'initial';
   projectLove: SocialButton[] = [
     {

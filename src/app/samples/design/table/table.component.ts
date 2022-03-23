@@ -1,4 +1,4 @@
-import { AfterContentChecked, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterContentChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
@@ -12,7 +12,7 @@ import { SocialButton } from 'src/app/classes/social-button';
   styleUrls: ['./table.component.scss']
 })
 
-export class TableComponent implements AfterContentChecked {
+export class TableComponent implements OnInit, AfterContentChecked {
   @ViewChild(MatSort, { static: false }) sort: MatSort | undefined;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(HTMLInputElement) input: HTMLInputElement | undefined;

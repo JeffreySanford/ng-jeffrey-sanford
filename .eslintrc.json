@@ -44,7 +44,9 @@
       "extends": [
         "plugin:@angular-eslint/template/recommended"
       ],
-      "rules": {}
+      "rules": {
+        "rxjs-angular/prefer-async-pipe": "error"
+      }
     }
   ]
 }

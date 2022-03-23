@@ -11,7 +11,7 @@ import { NavigationService } from '../services/navigation.service';
   styleUrls: ['./footer.component.scss']
 })
 
-export class AppFooterComponent implements OnInit {
+export class AppFooterComponent {
   @Input() projectLove: SocialButton[] | undefined;
   @Input() color: string | undefined;
   public version: string = packageInformation.version;
@@ -21,9 +21,6 @@ export class AppFooterComponent implements OnInit {
 
   constructor(private router: Router, private navigation: NavigationService) {
     this.angularVersion = VERSION.full;
-  }
-
-  ngOnInit(): void {
   }
 
   routeExternal(item: Item, event: Event) {

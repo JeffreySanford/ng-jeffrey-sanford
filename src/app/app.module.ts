@@ -18,7 +18,6 @@ import { OverlayModule } from "@angular/cdk/overlay";
 import { GridsterModule } from 'angular-gridster2';
 import { KitchenTableComponent } from './samples/development/kitchen-table/kitchen-table.component';
 import { WeatherComponent } from './samples/development/weather/weather.component';
-import { DataVisualizationsComponent } from './samples/design/data-visualizations/data-visualizations.component';
 import { SpaceVideoComponent } from './samples/design/space-video/space-video.component';
 import { VgCoreModule } from '@videogular/ngx-videogular/core';
 import { VgControlsModule } from '@videogular/ngx-videogular/controls';
@@ -41,7 +40,6 @@ import { SidebarComponent } from './header/sidebar/sidebar.component';
     DevelopmentComponent,
     KitchenTableComponent,
     WeatherComponent,
-    DataVisualizationsComponent,
     SpaceVideoComponent,
     PageNotFoundComponent,
     RecipeComponent,
