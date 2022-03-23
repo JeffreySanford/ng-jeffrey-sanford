@@ -112,9 +112,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "ng-jeffrey-sanford"
+  "defaultProject": "ng-jeffrey-sanford",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

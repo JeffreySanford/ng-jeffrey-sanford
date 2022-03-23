@@ -1,7 +1,7 @@
-import { AfterContentChecked, AfterContentInit, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { ForecastService } from './forecast.service';
 import { StateService } from './state.service';
-import { ForecastDetails } from './weather-data';
+import { ForecastDetails, Weather } from './weather.class';
 
 @Component({
   selector: 'app-weather',
@@ -9,16 +9,18 @@ import { ForecastDetails } from './weather-data';
   styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent implements OnInit, AfterContentChecked {
-  forecastData: ForecastDetails | undefined;
+  forecastData:any;
+
   showCurrent: boolean = true;
   showForecast: boolean = false;
-  zipcode: string = '58401'
+  zipcode: string = '58401' // inital
   forecastService: ForecastService;
-  location: any;
-  currentTemperature: any;
-  feelsLike: any;
+  location: string = '';
+  currentTemperature: string = '';
+  feelsLike: string = '';
   weatherIcon: string = '';
-  description: any;
+  description: string = '';
+  resolved: boolean = false;
   current = {
     main: '',
     icon: '',
@@ -33,11 +35,31 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
     "Jamestown, ND",
     "Los Angeles, CA",
     "Atlanta, GA",
-    "Denver, CO"
+    "Denver, CO",
+    "Vancouver, WA"
   ];
+  details: any;
 
-  constructor(forecastService: ForecastService, private stateService: StateService, private renderer: Renderer2, private el: ElementRef) {
+
+  constructor(forecastService: ForecastService, private stateService: StateService, private renderer: Renderer2, private el: ElementRef, private cd: ChangeDetectorRef) {
     this.forecastService = forecastService;
+
+    this.forecastService.LoadForecastWeather(this.zipcode).subscribe((data: any) => {
+      this.forecastData = new ForecastDetails;//Instance to store the Data of ForecastModel
+      this.forecastData.name = data.city.name;
+      for (var i = 7; i < data.list.length; i = i + 8)//Since we want for 5 days. it Jumps 8 times to get to next day.(A day had 8 details in API.)
+      {
+        //Instance of type ForecastDetails and stores the data in it.
+        var details = new ForecastDetails();
+        details.date = data.list[i].dt_txt;
+        details.maxTemperature = data.list[i].main.temp_max;
+        details.minTemperature = data.list[i].main.temp_min;
+        details.description = data.list[i].weather[0].description;
+        http://openweathermap.org/img/wn/10d@2x.png
+        details.icon = 'http://openweathermap.org/img/wn/' + data.list[i].weather[0].icon + '.png';
+        this.forecastData.details.push(details);//Pushing the data to the to created object
+      }
+    });
   }
 
   ngAfterContentChecked() {
@@ -45,10 +67,16 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
       const icon = this.el.nativeElement.querySelector('.wind-icon');
       this.renderer.setStyle(icon, 'transform', 'rotate(' + this.current.wind.deg + 'deg)');
     }
+
+    if (this.forecastData && this.forecastData.details) {
+      console.log(this.forecastData);
+      this.details = this.forecastData.details;
+      
+    }
   }
 
   ngOnInit(): void {
-
+    this.resolved = false;
     this.forecastService.LoadCurrentWeather(this.zipcode).subscribe(
       data => {
         this.location = data.name + ', ' + this.stateService.getState(this.zipcode);
@@ -69,25 +97,6 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
           }
         }
       });
-
-      this.forecastService.LoadForecastWeather(this.zipcode).subscribe((data: any)=>{
-        
-          debugger
-          this.forecastData = new ForecastDetails;//Instance to store the Data of ForecastModel
-          this.forecastData.name = data.city.name;
-          for (var i = 7; i < data.list.length; i = i + 8)//Since we want for 5 days. it Jumps 8 times to get to next day.(A day had 8 details in API.)
-          {
-            //Instance of type ForecastDetails and stores the data in it.
-            var details = new ForecastDetails();
-            details.date = data.list[i].dt_txt;
-            details.maxTemperature = data.list[i].main.temp_max;
-            details.minTemperature = data.list[i].main.temp_min;
-            details.description = data.list[i].weather[0].description;
-            details.icon = data.list[i].weather[0].icon;
-            this.forecastData.details.push(details);//Pushing the data to the to created object
-  
-          }
-        });
   }
 }
 

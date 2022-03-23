@@ -1,5 +1,5 @@
 //For Current weather   
-export class WeatherData {
+export class Weather {
     public cityName: string = '';
     public description: string = '';
     public currentTemperature: number = -40;
@@ -7,8 +7,8 @@ export class WeatherData {
     public maxTemperature: number = 100
     public icon: string = '';
 }
-export class ForecastDetails extends WeatherData {
+export class ForecastDetails extends Weather {
     name: string = '';
-    details: any;
+    details: Array<Weather> = [];
     public date: string = Date.now().toString();
 }

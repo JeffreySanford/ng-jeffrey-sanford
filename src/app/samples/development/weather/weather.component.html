@@ -1,18 +1,18 @@
-<div class="current-weather">
+<div class="current-weather mat-elevation-z8">
     <h1>Current Conditions</h1>
+    <p class="location">{{location}}</p>
     <div class="location-button-container">
         <div *ngFor="let city of cities">
             <button mat-button-stroked>{{city}}</button>
         </div>
     </div>
-    <div class="current-row">
+    <div class="current-row mat-elevation-z8">
         <div class="local-section">
             <div class="two-column">
                 <span class="material-icons">
                     light_mode
                 </span>
                 <div class="information">
-                    <p class="location">{{location}}</p>
                     <div class="visual">
                         <p class="description">{{description}}</p>
                         <img class="status-icon" [src]="weatherIcon" />
@@ -46,7 +46,7 @@
                     <mat-icon class="wind-icon" #wind id="wind">arrow_upward</mat-icon>
                     <p>{{current.wind.deg}} &#176;</p>
                 </span>
-                
+
                 <div class="milesperhour">
                     <p>{{current.wind.speed}} MPH</p>
                     <div>
@@ -55,11 +55,17 @@
                 </div>
             </div>
         </div>
-
-
-        <div style="border: 1px solid red;" *ngFor="let dayForecast in forecastData">
-            <div style="border: 1px solid orange;">{{dayForecast}}</div>
-        </div>
-
-
+    </div>
+    <p> 5-day Forecast</p>
+    <div *ngIf="details" style="display: flex; flex-direction: row; justify-content: space-between;">
+        <div *ngFor="let dayForecast of details">
+            <mat-card  class="weather-card mat-elevation-z8">
+                <mat-card-title>
+                    <p class="date">{{ dayForecast.date | date}}</p>
+                 </mat-card-title>
+                 <img class="forecast-icon" [src]="dayForecast.icon" />
+                 <p>{{dayForecast.description}}</p>
+                {{dayForecast.minTemperature}}&#176;F to {{dayForecast.maxTemperature}}&#176;F
+            </mat-card>
+        </div>    
     </div>

@@ -122,3 +122,17 @@
     }
   }
 }
+
+.weather-card {
+  border: 1px solid blue;
+  .forecast-icon {
+    border: 1px solid yellow;
+    width: 5em;
+    height: 5em;
+  }
+  .date {
+    font-size: .5em;
+    text-align: right;
+    color: green;
+  }
+}

@@ -41,14 +41,12 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
       name: page
     };
 
-    if (page !== 'landing') {
-      this.color = 'white';
-    }
-    else {
+    if (page === 'landing' || page ==='samples/space-video') {
       this.color = 'black';
     }
-
-    debugger
+    else {
+      this.color = 'white';
+    }
 
     this.isSidebarClosed = true;
     this.breadcrumbUpdate = true;
@@ -58,7 +56,6 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
 
   toggleSidebar() {
     this.isSidebarClosed = !this.isSidebarClosed;
-    debugger
     this.breadcrumbUpdate = true;
   }
 }

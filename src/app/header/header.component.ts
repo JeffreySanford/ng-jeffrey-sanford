@@ -68,7 +68,6 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
       name: page
     };
     
-    debugger
     this.isSidebarClosed = true;
     this.breadcrumbUpdate = true;
     this.navigation.navigate(routeItem);
