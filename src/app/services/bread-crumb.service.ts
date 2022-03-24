@@ -40,7 +40,7 @@ export class breadcrumbervice {
     });
   }
 
-  getbreadcrumb(): Array<BreadCrumb> {
+  getBreadcrumbs(): Array<BreadCrumb> {
     this.location.onUrlChange((val) => {
       this.currentRoute = val.substring(1);
       let present = false;

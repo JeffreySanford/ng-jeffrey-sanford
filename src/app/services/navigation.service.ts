@@ -19,6 +19,6 @@ export class NavigationService {
       (item.url) ? window.open(item.url, '_blank') : this.router.navigate([item.name]);
     }
 
-    this.breadcrumbervice.getbreadcrumb();
+    this.breadcrumbervice.getBreadcrumbs();
   }
 }

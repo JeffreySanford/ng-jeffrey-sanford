@@ -28,7 +28,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
 
   constructor(navigation: NavigationService, private breadcrumbervice: breadcrumbervice, private change: ChangeDetectorRef, private elementRef: ElementRef, private renderer: Renderer2) {
     this.navigation = navigation;
-    this.breadcrumb = this.breadcrumbervice.getbreadcrumb();
+    this.breadcrumb = this.breadcrumbervice.getBreadcrumbs();
   }
 
   breadcrumb: Array<BreadCrumb> = [{
@@ -39,7 +39,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
 
   ngAfterContentChecked(): void {
     if (this.sidebar && this.breadcrumbUpdate && this.breadcrumbRow && this.color) {
-      this.breadcrumb = this.breadcrumbervice.getbreadcrumb();
+      this.breadcrumb = this.breadcrumbervice.getBreadcrumbs();
       this.renderer.setStyle(this.breadcrumbRow._elementRef.nativeElement, 'background-color', this.color);
       this.setBackgroundColorSideBar(this.color);
       this.change.detectChanges();
@@ -54,7 +54,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
     this.navigation.navigate(routeItem);
     this.color = 'black';
     this.breadcrumbUpdate = true;
-    this.breadcrumb = this.breadcrumbervice.getbreadcrumb();
+    this.breadcrumb = this.breadcrumbervice.getBreadcrumbs();
     this.change.detectChanges();
   }
 
@@ -73,7 +73,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
 
   setBackgroundColorSideBar(color: string) {
     this.color = color;
-    this.breadcrumb = this.breadcrumbervice.getbreadcrumb();
+    this.breadcrumb = this.breadcrumbervice.getBreadcrumbs();
     this.renderer.setStyle(this.breadcrumbRow._elementRef.nativeElement, 'background-color', this.color);
     this.change.detectChanges();
   }

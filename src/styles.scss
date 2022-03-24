@@ -68,6 +68,19 @@ $custom-typography: mat-typography-config(
 @include angular-material-typography($custom-typography);
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
+body::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 255, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkblue;
+  outline: 1px solid lightcyan;
+}
+
 .mat-menu-panel {
   font-size: 0.75em;
   background-color: yellow;

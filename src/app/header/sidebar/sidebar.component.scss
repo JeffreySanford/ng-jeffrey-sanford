@@ -19,7 +19,7 @@ mat-sidenav-container {
 
       .navigation {
         color: fuchsia;
-        font-size: 1em;
+        font-size: 1.5em;
         margin-top: -2em;
         margin-left: 2em;
         text-align: left;
@@ -44,12 +44,13 @@ mat-sidenav-container {
         align-content: center;
 
         p {
-          margin: 0.25em 0 0 0.25em;
-          font-size: 1em;
+          margin: 0 0 0 0.25em;
+          font-size: 1.5em;
         }
 
         .mat-icon {
           color: fuchsia;
+          font-size: 1.5em;
         }
       }
     }

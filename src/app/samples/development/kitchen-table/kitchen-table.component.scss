@@ -1,3 +1,43 @@
+:host ::ng-deep app-footer {
+  position: fixed;
+  bottom: 0em;
+}
+
+:host ::ng-deep .mat-tab-body.mat-tab-body-active {
+  height: 51vh;
+  width: 86vw;
+}
+
+:host ::ng-deep .mat-tab-body-content {
+  display: flex;
+  justify-content: left;
+  width: 92%;
+  margin: 0 auto;
+  height: 48vh;
+  flex-wrap: wrap;
+}
+
+:host ::ng-deep .mat-tab-label .mat-tab-label-content {
+  font-size: 1.25em;
+  color: forestgreen;
+  font-weight: 500;
+}
+
+:host ::ng-deep .mat-tab-body-content, .description {
+  &::-webkit-scrollbar {
+    width: 1em;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 255, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darkblue;
+    outline: 1px solid blue;
+  }
+}
+
 .landing {
   background-color: white;
   height: calc(86vh);
@@ -9,51 +49,74 @@
     margin-right: 5em;
 
     h1 {
-      font-size: 7em;
-      margin-top: 1em;
-      margin-right: 1em;
+      font-size: 7vw;
+      margin-top: 0.25em;
+      margin-right: 4em;
       color: darkgreen;
-      line-height: 0.75em;
+      line-height: 0.8em;
+      width: 6em;
     }
 
     .site-logo {
       margin-top: 0.1em;
-      margin-left: 0.1em;
+      margin-left: 0.5em;
       font-size: 7em;
-      width: 2em;
-      height: 2.75em;
+      height: 12vw;
+      width: 10vw;
     }
 
     .grape-masthead {
-      height: 25em;
-      width: 25em;
+      height: 40vw;
+      width: 40vw;
       position: absolute;
       right: 0.25em;
       top: 2em;
-    }
-
-    .section-group {
-      margin-top: 1em;
-      margin-left: 5em;
+      z-index: 10;
     }
   }
-}
-:host ::ng-deep .mat-tab-body-content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-items: center;
 
-  .mat-card {
-    height: 2em;
-    width: 15em;
-    margin: 0.25em;
-    justify-content: center;
+  .section-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: center;
+    width: 95%;
+    margin: 0 auto;
+    overflow: auto;
 
-    .mat-card-title {
-      color: blue;
-      display: flex;
+    .mat-card {
+      height: 20em;
+      width: 20em;
+      margin: 0.5em;
+      justify-content: center;
+      background: rgba(0, 100, 0, 0.7);
 
+      .recipe-icon {
+        position: absolute;
+        left: 0.5em;
+        font-size: 3em;
+      }
+
+      .mat-card-title {
+        color: blue;
+        position: absolute;
+        right: 0.25em;
+        font-size: 3em;
+        line-height: 0.75em;
+        text-align: right;
+        width: 6em;
+      }
+
+      .description {
+        margin-top: 5em;
+        padding: 0.25em;
+        font-size: 1.25em;
+        overflow: auto;
+        text-overflow: ellipsis;
+        height: 10em;
+        border: 1px solid blue;
+        z-index: 15;
+      }
     }
   }
 }

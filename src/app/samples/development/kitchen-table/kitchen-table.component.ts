@@ -53,10 +53,10 @@ export class KitchenTableComponent implements OnInit {
   routeTo(recipe: Recipe, event: Event) {
     const path = '/samples/kitchen-table/' + recipe.url;
     const routeItem: Item = {
-      name: path,
-      url: recipe.url
+      name: recipe.name,
+      url: path
     }
-    this.navigation.navigate(routeItem, recipe);
+    this.navigation.navigate(routeItem);
   }
 }
 

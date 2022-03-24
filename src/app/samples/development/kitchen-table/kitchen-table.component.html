@@ -1,7 +1,7 @@
 <div class="landing">
     <div class="banner">
         <img class="site-logo" src="../../../../assets/images/kitchen-table-site-logo.png" />
-        <div style="display: flex; flex-direction: column;">
+        <div>
             <h1>Kitchen Table</h1>
         </div>
         <img class="grape-masthead" src="../../../../assets/images/grape-01.png" />
@@ -10,8 +10,13 @@
         <mat-tab label="recipes">
             <div *ngFor="let recipe of recipes">
                 <mat-card (click)="routeTo(recipe, $event)" class="card mat-elevation-z4">
-                    <mat-icon svgIcon="mdi:source"></mat-icon>
-                    <mat-card-title>{{recipe.name}}</mat-card-title>
+                    <mat-card-title-group>
+                        <mat-icon class="recipe-icon">local_restaurant</mat-icon>
+                        <mat-card-title>{{recipe.name}}</mat-card-title>
+                    </mat-card-title-group>
+                    <mat-card-content>
+                        <div class="description">{{recipe.description}}</div>
+                    </mat-card-content>
                 </mat-card>
             </div>
         </mat-tab>
