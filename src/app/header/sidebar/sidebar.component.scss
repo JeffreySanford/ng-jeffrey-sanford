@@ -7,10 +7,7 @@ mat-sidenav-container {
     background: rgba(0, 0, 0, 0);
     padding: 1em;
     text-align: left;
-
-    &[class*="white"] {
-      background-color: white;
-    }
+    
     .toggle-sidebar {
       font-size: 1em;
 

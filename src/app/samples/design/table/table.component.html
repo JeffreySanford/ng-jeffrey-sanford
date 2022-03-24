@@ -1,8 +1,9 @@
 <div class="page">
     <h2>Mocked Material Table</h2>
     <div class="notice">
-        <p>NOTE: This is a mocked Material Design table that sorts, paginates, and filters a set of 100,000 random users. The users
-            are faked for development purposes through a service in the API.</p>
+        <p>This is an example of a Material Design table in Angular that sorts, paginates, and filters a set of 100,000
+            random users. The users are created using a mocking service in a service on the API for development
+            purposes.</p>
     </div>
 
     <div *ngIf="!resolved">
@@ -36,8 +37,8 @@
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>>
         </mat-table>
 
-        <mat-paginator role="listbox" #paginator class="paginator" aria-label="Select Page"
-            [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+        <mat-paginator role="listbox" #paginator class="paginator" aria-label="Select Page" [length]="length"
+            [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
     </div>
 </div>
 <app-footer [projectLove]="projectLove" [color]="color"></app-footer>
