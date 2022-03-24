@@ -1,6 +1,6 @@
 <mat-action-row class="top-banner">
     <mat-toolbar-row>
-        <div class="responsive"  [ngClass]="{'sidebar-opened': isSidebarClosed}">
+        <div class="responsive"  [ngClass]="{'sidebar-opened': !isSidebarClosed}">
             <div class="sidebar">
                 <app-sidebar [isSidebarClosed]="isSidebarClosed" [color]="color"></app-sidebar>
             </div>

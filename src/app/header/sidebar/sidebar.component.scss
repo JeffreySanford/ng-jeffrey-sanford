@@ -43,14 +43,14 @@ mat-sidenav-container {
         margin: 0.5em 0;
         color: fuchsia;
         font-family: "Roboto", sans-serif;
-        background: rgba(0,0,0,0);
+        background: rgba(0, 0, 0, 0);
         border: none;
         display: flex;
         align-content: center;
 
         p {
-          margin: 0 0 0 0.25em;
-          font-size: 1.5em;
+          margin: 0.25em 0 0 0.25em;
+          font-size: 1.25em;
         }
 
         .mat-icon {
@@ -58,26 +58,5 @@ mat-sidenav-container {
         }
       }
     }
-  }
-}
-
-:host ::ng-deep .responsive {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  width: 6em;
-  margin: -1em 0 0 -2em;
-  overflow: hidden;
-  height: 50vh;
-  z-index: 5;
-  border-radius: 1em;
-  font-family: "Roboto", sans-serif;
-
-  &[class*="sidebar-opened"] {
-    width: 6em;
-  }
-
-  &:not([class*="sidebar-opened"]) {
-    width: 15em;
   }
 }
