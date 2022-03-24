@@ -34,7 +34,7 @@
     align-self: center;
     height: 2em;
     font-size: 6em;
-    margin-top: 7em;
+    margin-top: 1em;
   }
 
   .intro-text {
@@ -68,15 +68,22 @@
   height: 5em;
 }
 
-:host ::ng-deep .brand-heading {
-  /* Mobile device styles */
-  @media all and (max-width: 700px) {
-    font-size: 3em !important;
+/* Mobile device styles */
+@media all and (max-width: 950px) {
+  .brand-heading {
+    position: absolute;
+    right: 50px;
+    bottom: 125px;
+    font-size: 10vw !important;
+  }
+
+  .intro-text {
+    position: absolute;
+    right: 50px;
+    bottom: 150px;
+    font-size: 1.5vw !important;
   }
 }
 
 @media all and (max-width: 700px) {
-  .intro-text {
-    font-size: 0.5em;
-  }
 }

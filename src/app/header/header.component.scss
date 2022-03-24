@@ -33,7 +33,7 @@ ul {
 
 /* Display list items side by side */
 ul.breadcrumb li {
-  font-size: 1.25em;
+  font-size: 1em;
   text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
   cursor: pointer;
@@ -66,7 +66,7 @@ ul.breadcrumb li::after {
   font-family: "Roboto", sans-serif;
 
   &[class*="sidebar-opened"] {
-    width: 22em;
+    width: 20em;
   }
 
   &:not([class*="sidebar-opened"]) {
