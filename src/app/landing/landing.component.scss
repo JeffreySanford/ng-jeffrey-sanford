@@ -14,7 +14,6 @@
 }
 
 .landing-page {
-  height: 36em;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -35,6 +34,7 @@
     align-self: center;
     height: 2em;
     font-size: 6em;
+    margin-top: 7em;
   }
 
   .intro-text {
@@ -46,7 +46,7 @@
 
     p {
       color: orange;
-      font-size: 2em;
+      font-size: 2.5em;
     }
 
     p:hover {

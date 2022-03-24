@@ -33,7 +33,7 @@ ul {
 
 /* Display list items side by side */
 ul.breadcrumb li {
-  font-size: 1.5em;
+  font-size: 1.25em;
   text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
   cursor: pointer;
@@ -60,7 +60,7 @@ ul.breadcrumb li::after {
   width: 6em;
   margin: -1em 0 0 -2em;
   overflow: hidden;
-  height: 50vh;
+  height: 61vh;
   z-index: 5;
   border-radius: 1em;
   font-family: "Roboto", sans-serif;
