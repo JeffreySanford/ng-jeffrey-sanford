@@ -33,7 +33,8 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
 
   ngOnInit(): void {
     this.breadcrumbUpdate = true;
-    this.isSidebarClosed = true;
+    this.isSidebarClosed = false;
+    this.sidebarDirection = (this.isSidebarClosed) ? 'east' : 'west';
   }
 
   launchPage(page?: string) {
@@ -49,13 +50,30 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     }
 
     this.isSidebarClosed = true;
+    this.header.isSidebarClosed =this.isSidebarClosed;
     this.breadcrumbUpdate = true;
     this.header.setBackgroundColorSideBar(this.color);
     this.navigation.navigate(routeItem);
   }
 
+  openSidebar() {
+    this.isSidebarClosed = false;
+    this.header.isSidebarClosed =this.isSidebarClosed;
+    this.sidebarDirection = (this.isSidebarClosed) ? 'west' : 'east';
+    this.cd.detectChanges();
+  }
+
+  closeSidebar () {
+    this.isSidebarClosed = true;
+    this.header.isSidebarClosed =this.isSidebarClosed;
+    this.sidebarDirection = (this.isSidebarClosed) ? 'west' : 'east';
+    this.cd.detectChanges();
+  }
+
   toggleSidebar() {
     this.isSidebarClosed = !this.isSidebarClosed;
-    this.breadcrumbUpdate = true;
+    this.header.isSidebarClosed =this.isSidebarClosed;
+    this.sidebarDirection = (this.isSidebarClosed) ? 'west' : 'east';
+    this.cd.detectChanges();
   }
 }

@@ -52,7 +52,6 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
       name: 'landing'
     };
     this.navigation.navigate(routeItem);
-    this.isSidebarClosed = true;
     this.color = 'black';
     this.breadcrumbUpdate = true;
     this.breadcrumb = this.breadcrumbervice.getbreadcrumb();
@@ -67,17 +66,15 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
     const routeItem: Item = {
       name: page
     };
-    
-    this.isSidebarClosed = true;
+
     this.breadcrumbUpdate = true;
     this.navigation.navigate(routeItem);
-}
+  }
 
-setBackgroundColorSideBar(color: string) {
-  this.color = color;
-  this.breadcrumb = this.breadcrumbervice.getbreadcrumb();
-  this.renderer.setStyle(this.breadcrumbRow._elementRef.nativeElement, 'background-color', this.color);
-  this.change.detectChanges();
-
-}
+  setBackgroundColorSideBar(color: string) {
+    this.color = color;
+    this.breadcrumb = this.breadcrumbervice.getbreadcrumb();
+    this.renderer.setStyle(this.breadcrumbRow._elementRef.nativeElement, 'background-color', this.color);
+    this.change.detectChanges();
+  }
 }

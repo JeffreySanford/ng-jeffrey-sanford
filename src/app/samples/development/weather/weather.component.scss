@@ -1,14 +1,28 @@
+.location-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  left: 6em;
+  top: 3em;
+  padding: 0.25em 0;
+  border: 1px solid green;
+
+  .city {
+    margin-bottom: 0.25em;
+  }
+}
+.forecast-weather {
+  width: 75%;
+  margin: 10em 1em 0 auto;
+  padding: 1em;
+}
+
 .current-weather {
   width: 75%;
-  border: 1px solid blue;
-  margin: 5em auto;
+  margin: 5em 1em 0 auto;
+  padding: 1em;
 
-  .location-button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 2em;
-  }
   .current-row {
     display: flex;
     flex-direction: row;
@@ -131,8 +145,22 @@
     height: 5em;
   }
   .date {
-    font-size: .5em;
+    font-size: 0.5em;
     text-align: right;
     color: green;
   }
+}
+
+@media all and (max-width: 700px) {
+  .current-weather, .forecast-weather {
+    background-color: blue;
+    color: white;
+    margin: 3em 1em 0 auto;
+
+  }
+  .current-weather {
+    margin-top:20em;
+  }
+
+
 }

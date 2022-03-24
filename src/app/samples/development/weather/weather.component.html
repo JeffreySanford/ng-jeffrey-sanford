@@ -1,11 +1,12 @@
-<div class="current-weather mat-elevation-z8">
-    <h1>Current Conditions</h1>
-    <p class="location">{{location}}</p>
-    <div class="location-button-container">
-        <div *ngFor="let city of cities">
-            <button mat-button-stroked>{{city}}</button>
-        </div>
+<div class="location-button-container">
+    <div class="city" *ngFor="let city of cities">
+        <button  mat-button (click)="selectCity(city)">{{city.name}}</button>
     </div>
+</div>
+
+<div class="current-weather mat-elevation-z8">
+    <h1>{{location}}</h1>
+    <h3>Current Conditions</h3>
     <div class="current-row mat-elevation-z8">
         <div class="local-section">
             <div class="two-column">
@@ -56,7 +57,10 @@
             </div>
         </div>
     </div>
-    <p> 5-day Forecast</p>
+</div>
+
+<div class="forecast-weather mat-elevation-z8">
+    <h3>5-day Forecast</h3>
     <div *ngIf="details" style="display: flex; flex-direction: row; justify-content: space-between;">
         <div *ngFor="let dayForecast of details">
             <mat-card  class="weather-card mat-elevation-z8">
@@ -69,3 +73,4 @@
             </mat-card>
         </div>    
     </div>
+</div>

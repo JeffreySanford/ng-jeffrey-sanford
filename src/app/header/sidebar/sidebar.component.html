@@ -5,27 +5,26 @@
             <mat-icon (click)="toggleSidebar()" class="arrow">{{sidebarDirection}}</mat-icon>
         </div>
 
-        <div class="content mat-elevation-z8">
-            <button class="sub-menu" mat-menu-item (click)="launchPage('landing')" aria-label="icon-button with a menu"
-                mat-elevation-z4>
+        <div class="content">
+            <button  (click)="launchPage('landing')" aria-label="icon-button with a menu">
                 <mat-icon>home</mat-icon>
-                <span>Home</span>
+                <p *ngIf="!isSidebarClosed">Home</p>
             </button>
-            <button class="sub-menu" mat-menu-item (click)="launchPage('design-dashboard')">
+            <button  (click)="launchPage('design-dashboard')">
                 <mat-icon>art_track</mat-icon>
-                <span>Design</span>
+                <p *ngIf="!isSidebarClosed">Design</p>
             </button>
-            <button class="sub-menu" mat-menu-item (click)="launchPage('samples/sample-table')">
+            <button  (click)="launchPage('samples/sample-table')">
                 <mat-icon>table_chart</mat-icon>
-                <span>Material Design Table</span>
+                <p *ngIf="!isSidebarClosed">Material Design Table</p>
             </button>
-            <button class="sub-menu" mat-menu-item (click)="launchPage('samples/space-video')">
+            <button  (click)="launchPage('samples/space-video')">
                 <mat-icon>rocket</mat-icon>
-                <span>Space Video</span>
+                <p *ngIf="!isSidebarClosed">Space Video</p>
             </button>
-            <button (click)="launchPage('development-dashboard')" mat-menu-item>
+            <button  (click)="launchPage('development-dashboard')" >
                 <mat-icon>whatshot</mat-icon>
-                <span>Development</span>
+                <p *ngIf="!isSidebarClosed">Development</p>
             </button>
         </div>
     </mat-sidenav-content>

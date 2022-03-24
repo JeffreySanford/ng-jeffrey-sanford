@@ -4,30 +4,6 @@
             <div class="sidebar">
                 <app-sidebar [isSidebarClosed]="isSidebarClosed" [color]="color"></app-sidebar>
             </div>
-            <div>
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu"
-                    mat-elevation-z4>
-                    <mat-icon class="vertical-more">more_vert</mat-icon>
-                </button>
-                <mat-menu #menu="matMenu" class="nav-menu">
-                    <button (click)="launchPage('design-dashboard')" mat-menu-item>
-                        <mat-icon>art_track</mat-icon>
-                        <span>Design</span>
-                    </button>
-                    <button class="sub-menu" mat-menu-item (click)="launchPage('samples/sample-table')">
-                        <mat-icon>table_chart</mat-icon>
-                        <span>Material Design Table</span>
-                    </button>
-                    <button class="sub-menu" mat-menu-item (click)="launchPage('samples/space-video')">
-                        <mat-icon>rocket</mat-icon>
-                        <span>Space Video</span>
-                    </button>
-                    <button (click)="launchPage('development-dashboard')" mat-menu-item>
-                        <mat-icon>whatshot</mat-icon>
-                        <span>Development</span>
-                    </button>
-                </mat-menu>
-            </div>
         </div>
         <mat-toolbar #breadcrumbRow>
             <ul class="breadcrumb">

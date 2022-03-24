@@ -32,12 +32,28 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
   }
 
   cities = [
-    "Jamestown, ND",
-    "Los Angeles, CA",
-    "Atlanta, GA",
-    "Denver, CO",
-    "Vancouver, WA"
+    {
+      name:'Jamestown, ND',
+      zipcode: '58401'
+    },
+    {
+      name:'Vancouver, WA',
+      zipcode: '98607'
+    },
+    {
+      name:'Los Angeles, CA',
+      zipcode: '90035'
+    },
+    {
+      name:'Atlanta, GA',
+      zipcode: '30223'
+    },
+    {
+      name:'Denver, CO',
+      zipcode: '80218'
+    }
   ];
+
   details: any;
 
 
@@ -78,6 +94,30 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
 
   ngOnInit(): void {
     this.resolved = false;
+    this.forecastService.LoadCurrentWeather(this.zipcode).subscribe(
+      data => {
+        this.location = data.name + ', ' + this.stateService.getState(this.zipcode);
+        this.currentTemperature = data.main.temp;
+        this.feelsLike = data.main.feels_like;
+        this.description = data.weather[0].description;
+        this.weatherIcon = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+        this.showCurrent = true;
+        this.showForecast = false;
+
+        this.current = {
+          main: data.weather[0].main,
+          icon: data.weather[0].icon,
+          wind: {
+            deg: data.wind.deg,
+            speed: data.wind.speed,
+            gust: data.wind.gust
+          }
+        }
+      });
+  }
+
+  selectCity(city: any) {
+    this.zipcode = city.zipcode;
     this.forecastService.LoadCurrentWeather(this.zipcode).subscribe(
       data => {
         this.location = data.name + ', ' + this.stateService.getState(this.zipcode);
