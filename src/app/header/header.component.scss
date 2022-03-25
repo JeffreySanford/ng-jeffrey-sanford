@@ -66,7 +66,7 @@ ul.breadcrumb li::after {
   font-family: "Roboto", sans-serif;
 
   &[class*="sidebar-opened"] {
-    width: 20em;
+    width: 22em;
   }
 
   &:not([class*="sidebar-opened"]) {

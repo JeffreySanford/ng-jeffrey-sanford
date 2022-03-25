@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppHeaderComponent } from '../header/header.component';
 import { breadcrumbervice } from './bread-crumb.service';
 import { Item } from './item';
 
