@@ -17,6 +17,39 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
   sidebarDirection: string = 'east';
   breadcrumbUpdate = false;
 
+  projects = [
+    {
+        name: 'Home',
+        route: 'landing',
+        description: 'Return to the landing page',
+        icon: 'home',
+    },
+    {
+        name: 'Design',
+        route: 'design-dashboard',
+        description: 'Projects related to core design concepts',
+        icon: 'art_track',
+    },
+    {
+        name: 'Material Table',
+        route: 'samples/sample-table',
+        description: 'A basic angular material design table that paginates, sorts and filters',
+        icon: 'table_chart',
+    },
+    {
+        name: 'Space Video',
+        route: 'samples/space-video',
+        description: 'HTML5 implimentation of video in Angular',
+        icon: 'rocket',
+    },
+    {
+        name: 'Development',
+        route: 'development-dashboard',
+        description: 'Projects related to Web Development and external APIs',
+        icon: 'whatshot',
+    }
+    ];
+
   constructor(private navigation: NavigationService, private cd: ChangeDetectorRef, private renderer: Renderer2, private ref: ElementRef, private header: AppHeaderComponent) { }
 
   ngAfterContentChecked() {

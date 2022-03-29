@@ -1,3 +1,7 @@
+:host ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: blue;
+}
+
 .spinner {
   margin: 15em auto;
 }
@@ -15,7 +19,7 @@
   }
 
   .notice {
-    margin-left: 5em;
+    margin: 0 3em 0 5em;
     font-size: 1.1em;
   }
 
@@ -24,7 +28,7 @@
     flex-direction: row;
     justify-content: right;
     max-height: 2em;
-    margin-right: 1em;
+    margin-right: 4em;
     font-size: 1.25vw;
     color:orange;
 
@@ -33,12 +37,13 @@
       font-size: 1vw;
       color: orange;
       width: 15em;
+      margin-top: -2em;
     }
   }
 
   .mat-table {
     width: 90%;
-    margin: 2em auto 0;
+    margin: 0 auto;
     overflow-y: auto;
     max-height: 22em;  
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -57,7 +62,7 @@
 
 :host ::ng-deep mat-paginator,
 .mat-paginator-page-size .mat-select-trigger {
-  font-size: 2vw !important;
+  font-size: 1.75vw !important;
   margin-top: 0.5em;;
   width: 95.3%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -69,14 +74,20 @@
 
 :host ::ng-deep .mat-paginator-container {
   background-color: rgba(0,0,0,0);
-  font-size: 2.25vw;
+  font-size: 1.25vw;
   color: blue;
   height: 3em;
   margin-top: 1em;
+
+  .mat-paginator-range-actions {
+    display: flex;
+    align-items: center;
+    margin-right: -1em;
+  }
 }
 
 :host ::ng-deep .mat-select-value {
-  font-size: 2.25vw;
+  font-size: 2vw;
   text-align: center;
   color: orange;
   background-color: white;

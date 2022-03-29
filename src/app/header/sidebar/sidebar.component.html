@@ -1,28 +1,13 @@
 <mat-sidenav-container>
     <span #breadcrumbs></span>
     <mat-sidenav-content #sidebar [ngClass]="color">
-        <div class="content">
-            <button (click)="launchPage('landing')" aria-label="icon-button with a menu" matTooltip="Info about the action">
-                <mat-icon>home</mat-icon>
-                <p *ngIf="!isSidebarClosed">Home</p>
-            </button>
-            <button  (click)="launchPage('design-dashboard')" matTooltip="Info about the action">
-                <mat-icon>art_track</mat-icon>
-                <p *ngIf="!isSidebarClosed">Design</p>
-            </button>
-            <button  (click)="launchPage('samples/sample-table')" matTooltip="Info about the action">
-                <mat-icon>table_chart</mat-icon>
-                <p *ngIf="!isSidebarClosed">Material Design Table</p>
-            </button>
-            <button  (click)="launchPage('samples/space-video')" matTooltip="Info about the action">
-                <mat-icon>rocket</mat-icon>
-                <p *ngIf="!isSidebarClosed">Space Video</p>
-            </button>
-            <button  (click)="launchPage('development-dashboard')" matTooltip="Info about the action" >
-                <mat-icon>whatshot</mat-icon>
-                <p *ngIf="!isSidebarClosed">Development</p>
+        <div class="content" *ngFor="let project of projects">
+            <button (click)="launchPage(project.route)" matTooltip="{{project.description}}">
+                <mat-icon>{{project.icon}}</mat-icon>
+                <p *ngIf="!isSidebarClosed">{{project.name}}</p>
             </button>
         </div>
+
         <div class="toggle-sidebar">
             <mat-slide-toggle (click)="toggleSidebar()"></mat-slide-toggle>
         </div>
