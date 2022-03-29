@@ -22,8 +22,8 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
   ngAfterContentChecked() {
     if (this.container !== undefined && this.breadcrumbUpdate && this.color) {
       this.sidebarDirection = (this.isSidebarClosed) ? 'west' : 'east';
-      this.renderer.setStyle(this.container.nativeElement , 'background-color', this.color);
-      this.renderer.setStyle(this.container.nativeElement , 'opacity', 0.9);
+      this.renderer.setStyle(this.container.nativeElement, 'background-color', this.color);
+      this.renderer.setStyle(this.container.nativeElement, 'opacity', 0.9);
       this.isSidebarClosed = true;
       this.breadcrumbUpdate = false;
       this.header.breadcrumbUpdate = true;
@@ -34,7 +34,6 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
   ngOnInit(): void {
     this.breadcrumbUpdate = true;
     this.isSidebarClosed = false;
-    this.sidebarDirection = (this.isSidebarClosed) ? 'east' : 'west';
   }
 
   launchPage(page?: string) {
@@ -42,7 +41,7 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
       name: page
     };
 
-    if (page === 'landing' || page ==='samples/space-video') {
+    if (page === 'landing' || page === 'samples/space-video') {
       this.color = 'black';
     }
     else {
@@ -50,30 +49,24 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     }
 
     this.isSidebarClosed = true;
-    this.header.isSidebarClosed =this.isSidebarClosed;
+    this.header.isSidebarClosed = this.isSidebarClosed;
     this.breadcrumbUpdate = true;
     this.header.setBackgroundColorSideBar(this.color);
     this.navigation.navigate(routeItem);
   }
 
   openSidebar() {
-    this.isSidebarClosed = false;
-    this.header.isSidebarClosed =this.isSidebarClosed;
-    this.sidebarDirection = (this.isSidebarClosed) ? 'west' : 'east';
-    this.cd.detectChanges();
+    this.isSidebarClosed = true;
+    this.header.isSidebarClosed = this.isSidebarClosed;
   }
 
-  closeSidebar () {
-    this.isSidebarClosed = true;
-    this.header.isSidebarClosed =this.isSidebarClosed;
-    this.sidebarDirection = (this.isSidebarClosed) ? 'west' : 'east';
-    this.cd.detectChanges();
+  closeSidebar() {
+    this.isSidebarClosed = false;
+    this.header.isSidebarClosed = this.isSidebarClosed;
   }
 
   toggleSidebar() {
     this.isSidebarClosed = !this.isSidebarClosed;
-    this.header.isSidebarClosed =this.isSidebarClosed;
-    this.sidebarDirection = (this.isSidebarClosed) ? 'west' : 'east';
-    this.cd.detectChanges();
+    this.header.isSidebarClosed = this.isSidebarClosed;
   }
 }

@@ -1,4 +1,23 @@
-//sidebar
+:host ::ng-deep .mat-slide-toggle {
+  transform: scale(0.6);
+
+  .mat-slide-toggle-thumb {
+    background-color: gold;
+  }
+
+  .mat-slide-toggle-bar {
+    background-color: goldenrod;
+  }
+
+  &.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: fuchsia;
+  }
+
+  &.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: purple;
+  }
+}
+
 mat-sidenav-container {
   border-radius: 1em;
   background: rgba(0, 0, 0, 0);
@@ -6,24 +25,11 @@ mat-sidenav-container {
   mat-sidenav-content {
     background: rgba(0, 0, 0, 0);
     padding: 1em;
+    margin-top: 3em;
     text-align: left;
-    
+
     .toggle-sidebar {
-      font-size: 1em;
-
-      .arrow {
-        color: fuchsia;
-        font-size: 2em;
-        text-align: left;
-      }
-
-      .navigation {
-        color: fuchsia;
-        font-size: 1.5em;
-        margin-top: -2em;
-        margin-left: 2em;
-        text-align: left;
-      }
+      margin-left: 0.25em;
     }
 
     .content {
