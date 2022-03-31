@@ -10,11 +10,15 @@
 
   .city {
     margin-bottom: 0.25em;
+    button {
+      width: 10em;
+      border: 1px solid blue;
+    }
   }
 }
 .forecast-weather {
   width: 75%;
-  margin: 10em 1em 0 auto;
+  margin: 1em 1em 0 auto;
   padding: 1em;
 }
 
@@ -22,6 +26,23 @@
   width: 75%;
   margin: 5em 1em 0 auto;
   padding: 1em;
+
+  .alerts {
+    mat-accordion {
+      max-height: 10em;
+      overflow-y: auto;  
+    }
+
+    &.mat-expansion-panel-header {
+      margin: 1em 0;
+    }
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid turquoise;
+      margin: 0 1em 0 auto;
+    }
+  }
 
   .current-row {
     display: flex;
@@ -61,10 +82,10 @@
         }
 
         .status-icon {
-          height: 2em;
-          width: 2em;
+          height: 10em;
+          width: 10em;
           font-size: 1.5em;
-          margin-top: -0.5em;
+          border: 1px solid purple;
         }
       }
     }
@@ -152,15 +173,13 @@
 }
 
 @media all and (max-width: 700px) {
-  .current-weather, .forecast-weather {
+  .current-weather,
+  .forecast-weather {
     background-color: blue;
     color: white;
     margin: 3em 1em 0 auto;
-
   }
   .current-weather {
-    margin-top:20em;
+    margin-top: 20em;
   }
-
-
 }

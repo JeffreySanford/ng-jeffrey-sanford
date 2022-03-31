@@ -8,18 +8,18 @@ export class StateService {
   constructor() {
    }
 
-   getState(zipString: string) {
+   getState(zipString: string): string {
 
     /* Ensure param is a string to prevent unpredictable parsing results */
     if (typeof zipString !== 'string') {
         console.log('Must pass the zipcode as a string.');
-        return;
+        return '';
     }
   
     /* Ensure we have exactly 5 characters to parse */
     if (zipString.length !== 5) {
         console.log('Must pass a 5-digit zipcode.');
-        return;
+        return '';
     }
   
     /* Ensure we don't parse strings starting with 0 as octal values */

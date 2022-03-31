@@ -39,7 +39,7 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     {
         name: 'Space Video',
         route: 'samples/space-video',
-        description: 'HTML5 implimentation of video in Angular',
+        description: 'HTML5 implementation of video in Angular',
         icon: 'rocket',
     },
     {
@@ -66,7 +66,7 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
 
   ngOnInit(): void {
     this.breadcrumbUpdate = true;
-    this.isSidebarClosed = false;
+    this.isSidebarClosed = true;
   }
 
   launchPage(page?: string) {

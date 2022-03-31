@@ -7,25 +7,23 @@
     background-color: white;
     height: calc(80vh);
     width: 90%;
-    margin: 1em 2em 0 auto;
-    margin-top: 1em;
+    margin-top: 2em;
     overflow: hidden;
     position: relative;
 
     .gridster-item {
       background-color: white;
-      min-height: 11em !important;
-      height: 20em !important;
+      min-height: 14em;
 
       .card {
         background-color: lightskyblue;
-        height: 17em;
         border-radius: 0.5em;
-        width: 17em;
         margin-left: 3.5em;
+        min-height: 10em;
 
         .title {
           margin-left: -1em;
+          font-size: 1em;
         }
 
         .mat-card-actions {
@@ -44,7 +42,7 @@
         }
 
         .description {
-          font-size: 1em;
+          font-size: .9em;
           line-height: 1.1em;
         }
 

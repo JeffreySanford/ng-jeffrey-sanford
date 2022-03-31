@@ -2,6 +2,10 @@
   color: blue;
 }
 
+:host ::ng-deep mat-sidenav-container .mat-sidenav-content {
+  background-color: white;
+}
+
 .spinner {
   margin: 15em auto;
 }
@@ -49,7 +53,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     .mat-header-cell {
-      font-size: 2.5vw;
+      font-size: 2vw;
       color: violet;
     }
 

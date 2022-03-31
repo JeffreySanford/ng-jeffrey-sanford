@@ -90,6 +90,7 @@
       margin: 0.5em;
       justify-content: center;
       background: rgba(0, 100, 0, 0.7);
+      z-index: 10;
 
       .mat-card-actions, .mat-card-subtitle, .mat-card-content {
         margin-top: 6em;
@@ -120,9 +121,8 @@
         padding: 0.25em;
         font-size: 1.25em;
         overflow: auto;
-        text-overflow: ellipsis;
-        height: 10em;
-        border: 1px solid blue;
+        height: 8em;
+        margin-top: 6em;
         z-index: 15;
       }
     }

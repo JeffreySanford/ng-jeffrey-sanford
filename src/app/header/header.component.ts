@@ -23,8 +23,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
   navigation: NavigationService;
   home = { icon: "pi pi-home" };
   breadcrumbUpdate = false;
-  mobileView = false;
-  isSidebarClosed: boolean | undefined;
+  isSidebarClosed = true;
 
   constructor(navigation: NavigationService, private breadcrumbervice: breadcrumbervice, private change: ChangeDetectorRef, private elementRef: ElementRef, private renderer: Renderer2) {
     this.navigation = navigation;
@@ -56,10 +55,6 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
     this.breadcrumbUpdate = true;
     this.breadcrumb = this.breadcrumbervice.getBreadcrumbs();
     this.change.detectChanges();
-  }
-
-  menuItemClicked() {
-    this.menuItemVisited.emit(true);
   }
 
   launchPage(page?: string) {

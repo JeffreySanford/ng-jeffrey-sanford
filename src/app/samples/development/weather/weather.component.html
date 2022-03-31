@@ -5,57 +5,80 @@
 </div>
 
 <div class="current-weather mat-elevation-z8">
+    <img class="status-icon" [src]="weatherIcon" />
     <h1>{{location}}</h1>
-    <h3>Current Conditions</h3>
-    <div class="current-row mat-elevation-z8">
-        <div class="local-section">
-            <div class="two-column">
-                <span class="material-icons">
-                    light_mode
-                </span>
-                <div class="information">
+
+    <div style="display: flex;flex-direction:row;justify-content: space-between;">
+        <div class="current">
+            <h3>Current Conditions</h3>
+            <div class="current-row mat-elevation-z8">
+                <div class="local-section">
+                    <div class="two-column">
+                        <span class="material-icons">
+                            light_mode
+                        </span>
+                        <div class="information">
+                            <div class="visual">
+                                <p class="description">{{description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temperature-section">
+                    <div class="two-column">
+                        <span class="material-icons">
+                            thermostat
+                        </span>
+                        <div style="display: flex; flex-direction: column;">
+                            <p>Temperature</p>
+                            <div class="visual">
+                                <span class="status">{{current.main}}</span>
+                                <p class="temperature">{{ currentTemperature}} &#176;F</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="wind-section">
+                    <span class="material-icons" style="justify-content: flex-end;">
+                        wind_power
+                    </span>
                     <div class="visual">
-                        <p class="description">{{description}}</p>
-                        <img class="status-icon" [src]="weatherIcon" />
+                        <span class="wind">
+                            <mat-icon class="wind-icon" #wind id="wind">arrow_upward</mat-icon>
+                            <p>{{current.wind.deg}} &#176;</p>
+                        </span>
+
+                        <div class="milesperhour">
+                            <p>{{current.wind.speed}} MPH</p>
+                            <div>
+                                <p>{{feelsLike}} &#176;F</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="temperature-section">
-            <div class="two-column">
-                <span class="material-icons">
-                    thermostat
-                </span>
-                <div style="display: flex; flex-direction: column;">
-                    <p>Temperature</p>
-                    <div class="visual">
-                        <span class="status">{{current.main}}</span>
-                        <p class="temperature">{{ currentTemperature}} &#176;F</p>
-                    </div>
-                </div>
+        <div class="alerts">
+            <h3>National Weather Service Alerts</h3>
+            <div *ngIf="alerts.length === 0">
+                <p style="color: green">No alerts</p>
             </div>
-
+            <mat-accordion *ngFor="let alert of alerts" class="accordion">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        {{alert.headline}}
+                    </mat-expansion-panel-header>
+                    <p>{{alert.description}}</p>
+                    <p>Certainty:&nbsp;{{alert.certainty}}</p>
+                    <p>{{alert.response}}</p>
+                    <p>Starts {{alert.effective | date }} until {{alert.ends | date}}</p>
+                </mat-expansion-panel>
+            </mat-accordion>
         </div>
 
-        <div class="wind-section">
-            <span class="material-icons" style="justify-content: flex-end;">
-                wind_power
-            </span>
-            <div class="visual">
-                <span class="wind">
-                    <mat-icon class="wind-icon" #wind id="wind">arrow_upward</mat-icon>
-                    <p>{{current.wind.deg}} &#176;</p>
-                </span>
-
-                <div class="milesperhour">
-                    <p>{{current.wind.speed}} MPH</p>
-                    <div>
-                        <p>{{feelsLike}} &#176;F</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -63,14 +86,14 @@
     <h3>5-day Forecast</h3>
     <div *ngIf="details" style="display: flex; flex-direction: row; justify-content: space-between;">
         <div *ngFor="let dayForecast of details">
-            <mat-card  class="weather-card mat-elevation-z8">
+            <mat-card class="weather-card mat-elevation-z8">
                 <mat-card-title>
                     <p class="date">{{ dayForecast.date | date}}</p>
-                 </mat-card-title>
-                 <img class="forecast-icon" [src]="dayForecast.icon" />
-                 <p>{{dayForecast.description}}</p>
+                </mat-card-title>
+                <img class="forecast-icon" [src]="dayForecast.icon" />
+                <p>{{dayForecast.description}}</p>
                 {{dayForecast.minTemperature}}&#176;F to {{dayForecast.maxTemperature}}&#176;F
             </mat-card>
-        </div>    
+        </div>
     </div>
 </div>

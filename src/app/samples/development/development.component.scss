@@ -7,21 +7,21 @@
     background-color: white;
     height: calc(80vh);
     width: 90%;
-    margin: 1em 2em 0 auto;
+    margin: 2em 2em 0 auto;
     overflow: hidden;
 
     .gridster-item {
       background-color: white;
-      min-height: 11em !important;
-      height: 20em !important;
+      min-height: 14em;
 
       .card {
         background-color: lightskyblue;
-        height: 17em;
         border-radius: 0.5em;
-        width: 17em;
         margin-left: 3.5em;
-        
+        min-height: 10em;
+        border-radius: 0.5em;
+        margin-left: 3.5em;
+
         .title {
           margin-left: -1em;
         }
@@ -38,7 +38,7 @@
           border: none;
           background-color: fuchsia;
           width: 5em;
-          padding-top: .25em;
+          padding-top: 0.25em;
         }
 
         .description {
