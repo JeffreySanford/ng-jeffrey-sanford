@@ -23,7 +23,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
   navigation: NavigationService;
   home = { icon: "pi pi-home" };
   breadcrumbUpdate = false;
-  isSidebarClosed = true;
+  isSidebarClosed = false;
 
   constructor(navigation: NavigationService, private breadcrumbervice: breadcrumbervice, private change: ChangeDetectorRef, private elementRef: ElementRef, private renderer: Renderer2) {
     this.navigation = navigation;

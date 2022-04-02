@@ -1,5 +1,7 @@
-import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
+import { AppHeaderComponent } from 'src/app/header/header.component';
+import { HeaderService } from 'src/app/header/header.service';
 import { Item } from 'src/app/services/item';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { SocialButton } from '../../classes/social-button';
@@ -10,7 +12,7 @@ import { SocialButton } from '../../classes/social-button';
   styleUrls: ['./design.component.scss']
 })
 
-export class DesignComponent implements AfterViewInit {
+export class DesignComponent implements AfterViewInit, AfterContentChecked {
   color = 'white';
   options: GridsterConfig = {
     itemChangeCallback: DesignComponent.itemChange,
@@ -48,6 +50,7 @@ export class DesignComponent implements AfterViewInit {
   ];
 
   loveIcons = ["../../../assets/images/angular.png", "../../../assets/images/nodejs-new-pantone-black.png"];
+  isSidebarClosed = true;
 
   static itemChange(item: any, itemComponent: any) {
     console.info('itemChanged', item, itemComponent);
@@ -57,11 +60,19 @@ export class DesignComponent implements AfterViewInit {
     console.info('itemResized', item, itemComponent);
   }
 
-  constructor(private navigation: NavigationService, private elementRef: ElementRef) { }
+  constructor(private navigation: NavigationService, private elementRef: ElementRef, private headerState: HeaderService) { }
+
+  ngAfterContentChecked() {
+    this.isSidebarClosed = this.headerState.getSidebarState();
+  }
 
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument
       .body.style.backgroundColor = this.color;
+
+    
+    
+
   }
 
   changedOptions() {

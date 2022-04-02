@@ -1,16 +1,16 @@
-:host ::ng-deep .top-banner {
-  background-color: purple;
-}
-
 .page {
   gridster {
     background-color: white;
     height: calc(80vh);
     width: 90%;
-    margin-top: 2em;
+    margin: 2em auto 0 8em;
     overflow: hidden;
     position: relative;
 
+    &.navigation-closed {
+        margin: 2em 0 0 0;
+    }
+    
     .gridster-item {
       background-color: white;
       min-height: 14em;
@@ -22,8 +22,7 @@
         min-height: 10em;
 
         .title {
-          margin-left: -1em;
-          font-size: 1em;
+          font-size: 2em;
         }
 
         .mat-card-actions {
@@ -37,12 +36,13 @@
           border-radius: 2em;
           border: none;
           background-color: fuchsia;
+          font-size: 1.5em;
           width: 5em;
-          padding-top: .25em;
         }
 
         .description {
-          font-size: .9em;
+          margin-left: 1em;
+          font-size: 1.25em;
           line-height: 1.1em;
         }
 

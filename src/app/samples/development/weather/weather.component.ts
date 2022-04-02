@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterContentChecked, AfterContentInit, ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { HeaderService } from 'src/app/header/header.service';
 import { Alert } from './alert.class';
+import { City } from './city.class';
 import { ForecastService } from './forecast.service';
 import { StateService } from './state.service';
 import { ForecastDetails, Weather } from './weather.class';
@@ -33,26 +35,36 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
     }
   }
 
-  cities = [
+  cities: City[] = [
     {
       name: 'Jamestown, ND',
-      zipcode: '58401'
+      zipcode: '58401',
+      long: '46.908436',
+      lat: '98.705482',
     },
     {
       name: 'Vancouver, WA',
-      zipcode: '98607'
+      zipcode: '98607',
+      long: '45.6280',
+      lat: '122.6739'
     },
     {
       name: 'Los Angeles, CA',
-      zipcode: '90035'
+      zipcode: '90035',
+      long: '34.0736',
+      lat: '118.4004'
     },
     {
       name: 'Atlanta, GA',
-      zipcode: '30223'
+      zipcode: '30223',
+      long: '33.2468',
+      lat: '84.2641'
     },
     {
       name: 'Denver, CO',
-      zipcode: '80218'
+      zipcode: '80218',
+      long: '39.7392',
+      lat: '104.9903'
     }
   ];
 
@@ -60,9 +72,10 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
   state: string = 'ND';
   alert: any;
   alerts: Alert[] = [];
+  city = 'Jamestown, ND';
+  isSidebarClosed = true;
 
-
-  constructor(forecastService: ForecastService, private stateService: StateService, private renderer: Renderer2, private el: ElementRef, private cd: ChangeDetectorRef, private http: HttpClient) {
+  constructor(private headerState: HeaderService, forecastService: ForecastService, private stateService: StateService, private renderer: Renderer2, private el: ElementRef, private cd: ChangeDetectorRef, private http: HttpClient) {
     this.forecastService = forecastService;
 
     this.forecastService.LoadForecastWeather(this.zipcode).subscribe((data: any) => {
@@ -93,38 +106,45 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
       console.log(this.forecastData);
       this.details = this.forecastData.details;
 
-    }
-  }
-
-  getAlert(state: string) {
-    this.alerts = [];
-    const alertObs = this.http.get('https://api.weather.gov/alerts/active?area=' + state.toUpperCase());
-
-    alertObs.subscribe((alert: any) => {
-      alert.features.map((feature: any) => {
-        this.alerts.push({
-          certainty: feature.properties.certainty,
-          description: feature.properties.description,
-          effective: feature.properties.effective,
-          ends: feature.properties.ends,
-          event: feature.properties.event,
-          expires: feature.properties.expires,
-          headline: feature.properties.headline,
-          messageType: feature.properties.messageType,
-          onset: feature.properties.onset,
-          response: feature.properties.response,
-          severity: feature.properties.severity,
-          status: feature.properties.status,
-          urgency: feature.properties.urgency
-        });
-        console.log(feature.properties.headline)
+      this.cities.map((city: City) => {
+        if (city.name === this.city) {
+          this.getAlert(this.city)
+        }
       });
-    })
+    }
+
+    this.isSidebarClosed = this.headerState.getSidebarState()
   }
+
+  getAlert(city: string) {
+    this.http.get('https://api.weather.gov/alerts/active?area=' + this.state).subscribe((alert: any) => {
+      alert.features.map((feature: any) => {
+        if(feature.properties.headline.includes(city)) {
+          this.alerts.push({
+            certainty: feature.properties.certainty,
+            description: feature.properties.description,
+            effective: feature.properties.effective,
+            ends: feature.properties.ends,
+            event: feature.properties.event,
+            expires: feature.properties.expires,
+            headline: feature.properties.headline,
+            messageType: feature.properties.messageType,
+            onset: feature.properties.onset,
+            response: feature.properties.response,
+            severity: feature.properties.severity,
+            status: feature.properties.status,
+            urgency: feature.properties.urgency
+          });  
+        }
+      });
+    });
+  }
+
   ngOnInit(): void {
     this.resolved = false;
     this.forecastService.LoadCurrentWeather(this.zipcode).subscribe(
       data => {
+        this.city = data.name;
         this.state = this.stateService.getState(this.zipcode);
         this.location = data.name + ', ' + this.state;
         this.currentTemperature = data.main.temp;
@@ -144,7 +164,7 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
           }
         }
 
-        this.getAlert(this.state);
+        this.getAlert(data.name);
       });
   }
 
@@ -171,7 +191,7 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
           }
         }
         this.state = this.stateService.getState(this.zipcode);
-        this.getAlert(this.state);
+        this.getAlert(data.name);
       });
   }
 }

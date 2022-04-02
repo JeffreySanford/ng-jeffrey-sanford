@@ -14,7 +14,11 @@
   color: blue;
   background: white;
   height: calc(86vh);
-  margin: 1em 0 0 0;
+  margin: 1em auto 0 8em;
+
+  &.sidebar-closed {
+    margin: 1em auto 0 1em;
+  }
 
   h2 {
     display: relative;

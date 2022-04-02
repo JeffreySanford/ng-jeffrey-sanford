@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
 import { SocialButton } from 'src/app/classes/social-button';
+import { HeaderService } from 'src/app/header/header.service';
 import { Item } from 'src/app/services/item';
 import { NavigationService } from 'src/app/services/navigation.service';
 
@@ -45,8 +46,9 @@ export class DevelopmentComponent implements AfterViewInit {
   ];
 
   color = 'white';
+  isSidebarClosed = false;
 
-  constructor(private navigation: NavigationService, private elementRef: ElementRef) { }
+  constructor(private navigation: NavigationService, private elementRef: ElementRef, private headerState: HeaderService) { }
 
   static itemChange(item: any, itemComponent: any) {
     console.info('itemChanged', item, itemComponent);
@@ -58,6 +60,10 @@ export class DevelopmentComponent implements AfterViewInit {
 
   // loveIcons = ["../../../assets/images/angular.png", "../../../assets/images/nodejs-new-pantone-black.png", "../../../assets/images/WebReady-Logo_RGB_Forest-Green.JPG"];
   loveIcons = ["../../../assets/images/angular.png", "../../../assets/images/nodejs-new-pantone-black.png"];
+
+  ngAfterContentChecked() {
+    this.isSidebarClosed = this.headerState.getSidebarState();
+  }
 
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument

@@ -6,26 +6,40 @@
   left: 6em;
   top: 3em;
   padding: 0.25em 0;
-  border: 1px solid green;
+
+  &.sidebar-closed {
+    position: absolute;
+    top: 20em;
+    left: 1em;
+    width: 10em;
+  }
 
   .city {
     margin-bottom: 0.25em;
     button {
       width: 10em;
-      border: 1px solid blue;
     }
   }
 }
+
 .forecast-weather {
   width: 75%;
   margin: 1em 1em 0 auto;
   padding: 1em;
+
+  &.sidebar-closed {
+    margin: 1em auto 0 13em;
+  }
 }
 
 .current-weather {
   width: 75%;
-  margin: 5em 1em 0 auto;
+  margin: 3em 1em 0 auto;
   padding: 1em;
+
+  &.sidebar-closed {
+    margin: 2em auto 0 13em;
+  }
 
   .alerts {
     mat-accordion {

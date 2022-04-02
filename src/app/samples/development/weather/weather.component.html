@@ -1,10 +1,10 @@
-<div class="location-button-container">
+<div class="location-button-container" [ngClass]="{'sidebar-closed':!isSidebarClosed}">
     <div class="city" *ngFor="let city of cities">
         <button class="mat-elevation-z4" mat-button (click)="selectCity(city)">{{city.name}}</button>
     </div>
 </div>
 
-<div class="current-weather mat-elevation-z8">
+<div class="current-weather mat-elevation-z8" [ngClass]="{'sidebar-closed':!isSidebarClosed}">
     <img class="status-icon" [src]="weatherIcon" />
     <h1>{{location}}</h1>
 
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="alerts">
-            <h3>National Weather Service Alerts</h3>
+            <h3>National Weather Service Alerts for {{city}}</h3>
             <div *ngIf="alerts.length === 0">
                 <p style="color: green">No alerts</p>
             </div>
@@ -82,7 +82,7 @@
     </div>
 </div>
 
-<div class="forecast-weather mat-elevation-z8">
+<div class="forecast-weather mat-elevation-z8" [ngClass]="{'sidebar-closed':!isSidebarClosed}">
     <h3>5-day Forecast</h3>
     <div *ngIf="details" style="display: flex; flex-direction: row; justify-content: space-between;">
         <div *ngFor="let dayForecast of details">

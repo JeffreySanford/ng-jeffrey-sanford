@@ -3,6 +3,7 @@ import { MatToolbar } from '@angular/material/toolbar';
 import { Item } from '../../services/item';
 import { NavigationService } from '../../services/navigation.service';
 import { AppHeaderComponent } from '../header.component';
+import { HeaderService } from '../header.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -50,7 +51,7 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     }
     ];
 
-  constructor(private navigation: NavigationService, private cd: ChangeDetectorRef, private renderer: Renderer2, private ref: ElementRef, private header: AppHeaderComponent) { }
+  constructor(private headerState: HeaderService, private navigation: NavigationService, private cd: ChangeDetectorRef, private renderer: Renderer2, private ref: ElementRef, private header: AppHeaderComponent) { }
 
   ngAfterContentChecked() {
     if (this.container !== undefined && this.breadcrumbUpdate && this.color) {
@@ -66,7 +67,7 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
 
   ngOnInit(): void {
     this.breadcrumbUpdate = true;
-    this.isSidebarClosed = true;
+    this.isSidebarClosed = false;
   }
 
   launchPage(page?: string) {
@@ -82,6 +83,7 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     }
 
     this.isSidebarClosed = true;
+    this.headerState.setSidebarState(true);
     this.header.isSidebarClosed = this.isSidebarClosed;
     this.breadcrumbUpdate = true;
     this.header.setBackgroundColorSideBar(this.color);
@@ -90,16 +92,20 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
 
   openSidebar() {
     this.isSidebarClosed = true;
+    this.headerState.setSidebarState(true);
     this.header.isSidebarClosed = this.isSidebarClosed;
   }
 
   closeSidebar() {
     this.isSidebarClosed = false;
+    this.headerState.setSidebarState(false);
     this.header.isSidebarClosed = this.isSidebarClosed;
   }
 
   toggleSidebar() {
     this.isSidebarClosed = !this.isSidebarClosed;
     this.header.isSidebarClosed = this.isSidebarClosed;
+    this.headerState.setSidebarState(this.isSidebarClosed);
+
   }
 }

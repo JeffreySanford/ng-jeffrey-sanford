@@ -1,10 +1,11 @@
-import { AfterContentChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterContentChecked, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from './user';
 import { SocialButton } from 'src/app/classes/social-button';
+import { HeaderService } from 'src/app/header/header.service';
 
 @Component({
   selector: 'sample-table',
@@ -27,8 +28,9 @@ export class TableComponent implements OnInit, AfterContentChecked {
   color = 'black';
   private portfolioAPI = 'https://api-portfolio-l8cra.ondigitalocean.app/users';
   projectLove: Array<SocialButton> | undefined;
+  isSidebarOpened = false;
 
-  constructor(private http: HttpClient, private elementRef: ElementRef) { }
+  constructor(private http: HttpClient, private elementRef: ElementRef, private headerState: HeaderService, private cd: ChangeDetectorRef) { }
 
   ngAfterContentChecked() {
     if (this.color !== 'white') {
@@ -51,6 +53,12 @@ export class TableComponent implements OnInit, AfterContentChecked {
       this.paginator.length = this.length;
       this.resolved = true;
     }
+
+    if(this.headerState.getSidebarState() !== this.isSidebarOpened) {
+      this.isSidebarOpened = this.headerState.getSidebarState();
+      this.cd.detectChanges();
+    }
+    
   }
 
   ngOnInit(): void {
