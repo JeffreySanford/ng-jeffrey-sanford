@@ -23,8 +23,8 @@
 }
 
 .forecast-weather {
-  width: 75%;
-  margin: 1em 1em 0 auto;
+  width: 95.5vw;
+  margin-top: 1.5em;
   padding: 1em;
 
   &.sidebar-closed {
@@ -33,28 +33,44 @@
 }
 
 .current-weather {
-  width: 75%;
-  margin: 3em 1em 0 auto;
+  width: 73vw;
+  margin: 1em 0em 0 auto;
   padding: 1em;
 
   &.sidebar-closed {
     margin: 2em auto 0 13em;
   }
 
-  .alerts {
-    mat-accordion {
-      max-height: 10em;
-      overflow-y: auto;  
+  .top-row {
+    display: flex;
+    flex-direction: row;
+
+    .status-icon {
+      height: 3em;
+      width: 3em;
+      font-size: 1.5em;
     }
 
-    &.mat-expansion-panel-header {
-      margin: 1em 0;
-    }
-    .accordion {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid turquoise;
-      margin: 0 1em 0 auto;
+    .alerts {
+      margin: 0 0 0 auto;
+      text-align: right;
+      line-height: 1em;
+
+      mat-accordion {
+        max-height: 10em;
+        overflow-y: auto;
+        margin: 0 0 0 auto;
+      }
+  
+      &.mat-expansion-panel-header {
+        margin: 1em 0;
+      }
+      .accordion {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid turquoise;
+        margin: 0 1em 0 auto;
+      }
     }
   }
 
@@ -64,6 +80,7 @@
     justify-content: space-between;
     align-content: center;
     max-height: 5em;
+    width: 74vw;
 
     .material-icons {
       font-size: 3em;
@@ -96,8 +113,8 @@
         }
 
         .status-icon {
-          height: 10em;
-          width: 10em;
+          height: 3em;
+          width: 3em;
           font-size: 1.5em;
           border: 1px solid purple;
         }

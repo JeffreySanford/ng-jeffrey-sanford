@@ -5,14 +5,12 @@
 
 :host ::ng-deep .mat-tab-body.mat-tab-body-active {
   height: 51vh;
-  width: 86vw;
 }
 
 :host ::ng-deep .mat-tab-body-content {
   display: flex;
   justify-content: left;
-  width: 92%;
-  margin: 0 auto;
+  width: 77%;
   height: 48vh;
   flex-wrap: wrap;
 }
@@ -41,6 +39,7 @@
 .landing {
   background-color: white;
   height: calc(86vh);
+  margin-top: 5em;
 
   .banner {
     display: flex;
@@ -50,7 +49,7 @@
 
     h1 {
       font-size: 7vw;
-      margin-top: 0.25em;
+      margin-top: 0.75em;
       margin-right: 4em;
       color: darkgreen;
       line-height: 0.8em;
@@ -58,11 +57,10 @@
     }
 
     .site-logo {
-      margin-top: 0.1em;
-      margin-left: 0.5em;
-      font-size: 7em;
-      height: 12vw;
-      width: 10vw;
+      margin-top: -2.5em;
+      margin-left: 4.5em;
+      height: 14vw;
+      width: 12vw;
     }
 
     .grape-masthead {
@@ -81,12 +79,12 @@
     flex-wrap: wrap;
     justify-items: center;
     width: 95%;
-    margin: 0 auto;
+    margin-left: 5em;
     overflow: auto;
 
     .mat-card {
       height: 20em;
-      width: 20em;
+      width: 18vw;
       margin: 0.5em;
       justify-content: center;
       background: rgba(0, 100, 0, 0.7);
@@ -106,10 +104,10 @@
         color: blue;
         position: absolute;
         right: 0.25em;
-        font-size: 3em;
+        font-size: 2.5em;
         line-height: 0.75em;
         text-align: right;
-        width: 6em;
+        width: 5em;
       }
 
       .card-description {

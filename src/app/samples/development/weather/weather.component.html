@@ -4,10 +4,30 @@
     </div>
 </div>
 
-<div class="current-weather mat-elevation-z8" [ngClass]="{'sidebar-closed':!isSidebarClosed}">
-    <img class="status-icon" [src]="weatherIcon" />
-    <h1>{{location}}</h1>
+<div class="current-weather" [ngClass]="{'sidebar-closed':!isSidebarClosed}">
+    <div class="top-row">
+        <img class="status-icon" [src]="weatherIcon" />
+        <h1>{{location}}</h1>
+        <div class="alerts">
+            <p>National Weather Service Alerts for {{city}}</p>
+            <p>Get State Alerts</p>
+            <div *ngIf="alerts.length === 0">
+                <p style="color: green">No alerts</p>
+            </div>
+            <mat-accordion *ngFor="let alert of alerts" class="accordion">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        {{alert.headline}}
+                    </mat-expansion-panel-header>
+                    <p>{{alert.description}}</p>
+                    <p>Certainty:&nbsp;{{alert.certainty}}</p>
+                    <p>{{alert.response}}</p>
+                    <p>Starts {{alert.effective | date }} until {{alert.ends | date}}</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
 
+    </div>
     <div style="display: flex;flex-direction:row;justify-content: space-between;">
         <div class="current">
             <h3>Current Conditions</h3>
@@ -61,24 +81,6 @@
                 </div>
             </div>
         </div>
-        <div class="alerts">
-            <h3>National Weather Service Alerts for {{city}}</h3>
-            <div *ngIf="alerts.length === 0">
-                <p style="color: green">No alerts</p>
-            </div>
-            <mat-accordion *ngFor="let alert of alerts" class="accordion">
-                <mat-expansion-panel>
-                    <mat-expansion-panel-header>
-                        {{alert.headline}}
-                    </mat-expansion-panel-header>
-                    <p>{{alert.description}}</p>
-                    <p>Certainty:&nbsp;{{alert.certainty}}</p>
-                    <p>{{alert.response}}</p>
-                    <p>Starts {{alert.effective | date }} until {{alert.ends | date}}</p>
-                </mat-expansion-panel>
-            </mat-accordion>
-        </div>
-
     </div>
 </div>
 
