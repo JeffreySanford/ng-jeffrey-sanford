@@ -19,10 +19,11 @@
         background-color: lightskyblue;
         border-radius: 0.5em;
         margin-left: 3.5em;
-        min-height: 10em;
+        height: 17em;
 
         .title {
           font-size: 2em;
+          line-height: 1em;
         }
 
         .mat-card-actions {
@@ -37,7 +38,7 @@
           border: none;
           background-color: fuchsia;
           font-size: 1.5em;
-          width: 5em;
+          width: 3em;
         }
 
         .description {
