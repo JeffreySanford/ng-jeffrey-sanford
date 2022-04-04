@@ -170,6 +170,8 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
 
   selectCity(city: any) {
     this.zipcode = city.zipcode;
+    this.alerts = [];
+    this.details = [];
 
     this.forecastService.LoadCurrentWeather(this.zipcode).subscribe(
       data => {
@@ -190,8 +192,27 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
             gust: data.wind.gust
           }
         }
+        
+        this.forecastService.LoadForecastWeather(this.zipcode).subscribe((data: any) => {
+          this.forecastData = new ForecastDetails;//Instance to store the Data of ForecastModel
+          this.forecastData.details = [];
+          this.forecastData.name = data.city.name;
+          for (var i = 7; i < data.list.length; i = i + 8)//Since we want for 5 days. it Jumps 8 times to get to next day.(A day had 8 details in API.)
+          {
+            //Instance of type ForecastDetails and stores the data in it.
+            var details = new ForecastDetails();
+            details.date = data.list[i].dt_txt;
+            details.maxTemperature = data.list[i].main.temp_max;
+            details.minTemperature = data.list[i].main.temp_min;
+            details.description = data.list[i].weather[0].description;
+            details.icon = 'http://openweathermap.org/img/wn/' + data.list[i].weather[0].icon + '.png';
+            this.forecastData.details.push(details);//Pushing the data to the to created object
+            this.details = this.forecastData.details;
+          }
+        });
         this.state = this.stateService.getState(this.zipcode);
         this.getAlert(data.name);
+
       });
   }
 }
