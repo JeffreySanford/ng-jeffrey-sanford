@@ -26,7 +26,7 @@ export class TableComponent implements OnInit, AfterContentChecked {
   resolved: boolean = false;
   currentNavigation: any;
   color = 'black';
-  private portfolioAPI = 'https://api-portfolio-l8cra.ondigitalocean.app/users';
+  private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/users';
   projectLove: Array<SocialButton> | undefined;
   isSidebarOpened = false;
 

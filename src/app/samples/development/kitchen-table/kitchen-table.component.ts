@@ -11,7 +11,7 @@ import { Recipe } from './recipe.class';
 })
 
 export class KitchenTableComponent implements OnInit {
-  private portfolioAPI = 'https://api-portfolio-l8cra.ondigitalocean.app/recipes';
+  private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/recipes';
   // private portfolioAPI = 'http://localhost:3000/recipes';
   recipes!: Recipe[];
   color = 'white';

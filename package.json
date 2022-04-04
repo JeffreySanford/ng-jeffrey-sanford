@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "nodemon ./server/api-portfolio/index.js && ng build && rm -rf /usr/share/nginx/html/* && cp -rf ~/repos/portfolio/dist/* /usr/share/nginx/html",
+    "build": "ng build && rm -rf /usr/share/nginx/html/* && cp -rf ~/repos/portfolio/dist/* /usr/share/nginx/html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
