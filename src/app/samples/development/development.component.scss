@@ -42,7 +42,7 @@
           border-radius: 2em;
           border: none;
           background-color: fuchsia;
-          font-size: 1.5em;
+          font-size: 1.25em;
           width: 3em;
         }
 
@@ -79,6 +79,33 @@
         left: 0em;
         background-color: white;
       }
+    }
+  }
+}
+
+@media all and (max-width: 700px) {
+  .mat-card {
+    height: 11em !important;
+    .title {
+      font-size: 1.5em !important;
+      color: blue;
+      margin-left: -0.5em;
+    }
+    .description {
+      font-size: 0.8em !important;
+      color: blue;
+    }
+  
+    .love-icons {
+      bottom: 0 !important;
+
+      img {
+        max-height: 15vw !important;
+      }
+    }
+  
+    .footer-row {
+      bottom: 6em !important;
     }
   }
 }
