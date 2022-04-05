@@ -1,14 +1,18 @@
-:host ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
-  color: blue;
-  font-size: 1.5vw;
-}
-
 :host ::ng-deep mat-sidenav-container .mat-sidenav-content {
   background-color: white;
 }
 
 .spinner {
   margin: 15em auto;
+  stroke-width: 0.1em;
+}
+
+:host
+  ::ng-deep
+  .mat-progress-spinner.mat-progress-spinner-indeterminate-animation[mode="indeterminate"]
+  circle {
+  color: orange;
+  stroke-width: 1% !important;
 }
 
 .page {
@@ -18,20 +22,19 @@
   margin: 2.25em auto 0 8em;
 
   &.sidebar-closed {
-    margin: 2.25em auto 0 0;
+    margin: 2.25em auto 0 3em;
   }
 
   h2 {
     display: relative;
-    font-size: 5vw;
-    margin-left: 1em;
+    font-size: 2em;
     margin-top: 0.5em;
   }
 
   .notice {
-    font-size: 3vw;
+    font-size: 1.5em;
     line-height: 1em;
-    margin-left: 1.75em;
+    margin-top: 1em;
   }
 
   .filter {
@@ -39,44 +42,61 @@
     flex-direction: row;
     justify-content: right;
     max-height: 2em;
-    margin-right: 4em;
-    font-size: 1.75vw;
+    margin-right: 1.6em;
+    font-size: 1.5em;
+    color: blue;
 
     mat-form-field {
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       color: blue;
       width: 15em;
-      margin-top: -1em;
     }
   }
 
   .mat-table {
-    width: 88%;
-    margin-left: 4em;
-    overflow-y: auto;
+    width: 97%;
+    overflow: auto;
+    margin-top: 2em;
     max-height: 22em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+    &.sidebar-closed {
+      margin: 2.25em auto 0 3em;
+    }
+
     .mat-header-cell {
-      font-size: 2.75vw;
-      color: violet;
+      font-size: 1.25em;
+      color: orange;
     }
 
     .mat-cell {
-      font-size: 1.5vw;
+      font-size: 1em;
       color: blue;
+    }
+
+    .mat-row:nth-child(even) {
+      background-color: #e4f0ec;
+    }
+
+    .mat-row:nth-child(odd) {
+      background-color: #ffffff;
     }
   }
 
   .paginator {
-    font-size: 2vw;
+    font-size: 2em;
+    margin-right: 0.5em;
     color: blue;
-    margin-right: 2em;
   }
 }
 
+:host ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+  transform: perspective(100px);
+  color: orange;
+}
+
 :host ::ng-deep .mat-select-value {
-  font-size: 2vw;
+  font-size: 2em;
   text-align: center;
   color: orange;
   background-color: white;
@@ -85,5 +105,37 @@
 
   .mat-select-arrow {
     color: blue;
+  }
+}
+
+@media all and (max-width: 700px) {
+  :host ::ng-deep {
+    .filter {
+      margin-right: 1.1em;
+      font-size: 0.75em !important;
+    }
+
+    .paginator {
+      font-size: 1em !important;
+      margin-right: 0;
+
+      .mat-paginator-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+    }
+
+    .notice {
+      font-size: 1em !important;
+    }
+
+    .mat-header-cell {
+      font-size: 0.75em !important;
+    }
+
+    .mat-cell {
+      font-size: 0.5em !important;
+    }
   }
 }
