@@ -18,12 +18,12 @@ const routes: Routes = [
     path: 'samples/kitchen-table',
     component: KitchenTableComponent,
     data: { breadCrumb: 'kitchen-table', title: 'Kitchen Table' },
-    children: [{ path: 'detail', component: RecipeComponent, data: { breadCrumb: 'Detailed Tile' } }]
+    children: [{ path: 'recipe', component: RecipeComponent, data: { breadCrumb: 'Detailed Tile' } }]
   },
   { path: 'samples/weather', component: WeatherComponent, data: { breadCrumb: 'weather', title: 'Weather' }, pathMatch: 'full' },
   // the empty path will be redirected to the home component
   { path: 'landing', component: LandingComponent, data: { breadCrumb: 'home', title: 'Home' } },
-  { path: 'design-dashboard', component: DesignComponent, data: { breadCrumb: 'design', title: 'Design Dashboarrd' } },
+  { path: 'design-dashboard', component: DesignComponent, data: { breadCrumb: 'design', title: 'Design Dashboard' } },
   { path: 'development-dashboard', component: DevelopmentComponent, data: { breadCrumb: 'development', title: 'Development Dashboard' } },
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   // this path redirects to the home component

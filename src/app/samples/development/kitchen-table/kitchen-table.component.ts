@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from 'src/app/services/item';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { Recipe } from './recipe.class';
@@ -38,7 +39,7 @@ export class KitchenTableComponent implements OnInit {
   active = 0;
 
 
-  constructor(private http: HttpClient, private navigation: NavigationService) { }
+  constructor(private http: HttpClient, private navigation: NavigationService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.http.get<Recipe[]>(this.portfolioAPI).subscribe((recipes: Recipe[]) => {
@@ -51,12 +52,7 @@ export class KitchenTableComponent implements OnInit {
   }
 
   routeTo(recipe: Recipe, event: Event) {
-    const path = '/samples/kitchen-table/' + recipe.url;
-    const routeItem: Item = {
-      name: recipe.name,
-      url: path
-    }
-    this.navigation.navigate(routeItem);
+    this.navigation.navigate(recipe, recipe);
   }
 }
 

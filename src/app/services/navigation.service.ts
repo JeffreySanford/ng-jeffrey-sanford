@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { breadcrumbervice } from './bread-crumb.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { breadcrumbService } from './bread-crumb.service';
 import { Item } from './item';
 
 @Injectable({
@@ -8,16 +8,17 @@ import { Item } from './item';
 })
 export class NavigationService {
 
-  constructor(private router: Router, private breadcrumbervice: breadcrumbervice) { }
+  constructor(private router: Router, private route: ActivatedRoute, private breadcrumbService: breadcrumbService) { }
 
   navigate(item: Item, payload?: any) {
     if (payload) {
-      this.router.navigate([item.url, payload]);
+      debugger
+      this.router.navigate(["recipe"], {relativeTo:this.route});
     }
     else {
       (item.url) ? window.open(item.url, '_blank') : this.router.navigate([item.name]);
     }
 
-    this.breadcrumbervice.getBreadcrumbs();
+    this.breadcrumbService.getBreadcrumbs();
   }
 }

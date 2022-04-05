@@ -8,7 +8,7 @@ import { BreadCrumb } from './bread-crumb';
   providedIn: 'root'
 })
 
-export class breadcrumbervice {
+export class breadcrumbService {
   public breadcrumb: Array<BreadCrumb> = [];
   pruned: boolean = false;
   currentRoute: any;

@@ -1,7 +1,7 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { NavigationService } from '../services/navigation.service';
 import { BreadCrumb } from '../services/bread-crumb'
-import { breadcrumbervice } from '../services/bread-crumb.service';
+import { breadcrumbService } from '../services/bread-crumb.service';
 import { Item } from '../services/item';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatToolbar } from '@angular/material/toolbar';
@@ -25,9 +25,9 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
   breadcrumbUpdate = false;
   isSidebarClosed = false;
 
-  constructor(navigation: NavigationService, private breadcrumbervice: breadcrumbervice, private change: ChangeDetectorRef, private elementRef: ElementRef, private renderer: Renderer2) {
+  constructor(navigation: NavigationService, private breadcrumbService: breadcrumbService, private change: ChangeDetectorRef, private elementRef: ElementRef, private renderer: Renderer2) {
     this.navigation = navigation;
-    this.breadcrumb = this.breadcrumbervice.getBreadcrumbs();
+    this.breadcrumb = this.breadcrumbService.getBreadcrumbs();
   }
 
   breadcrumb: Array<BreadCrumb> = [{
@@ -38,7 +38,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
 
   ngAfterContentChecked(): void {
     if (this.sidebar && this.breadcrumbUpdate && this.breadcrumbRow && this.color) {
-      this.breadcrumb = this.breadcrumbervice.getBreadcrumbs();
+      this.breadcrumb = this.breadcrumbService.getBreadcrumbs();
       this.renderer.setStyle(this.breadcrumbRow._elementRef.nativeElement, 'background-color', this.color);
       this.setBackgroundColorSideBar(this.color);
       this.change.detectChanges();
@@ -53,7 +53,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
     this.navigation.navigate(routeItem);
     this.color = 'black';
     this.breadcrumbUpdate = true;
-    this.breadcrumb = this.breadcrumbervice.getBreadcrumbs();
+    this.breadcrumb = this.breadcrumbService.getBreadcrumbs();
     this.change.detectChanges();
   }
 
@@ -68,7 +68,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
 
   setBackgroundColorSideBar(color: string) {
     this.color = color;
-    this.breadcrumb = this.breadcrumbervice.getBreadcrumbs();
+    this.breadcrumb = this.breadcrumbService.getBreadcrumbs();
     this.renderer.setStyle(this.breadcrumbRow._elementRef.nativeElement, 'background-color', this.color);
     this.change.detectChanges();
   }
