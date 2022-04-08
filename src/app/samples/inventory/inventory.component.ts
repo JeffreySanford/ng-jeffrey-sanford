@@ -14,8 +14,8 @@ import { InventoryService } from './inventory.service';
 })
 export class InventoryComponent implements OnInit {
 
-  // private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/items';
-  private portfolioAPI = 'http://localhost:3000/items';
+  private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/items';
+  // private portfolioAPI = 'http://localhost:3000/items';
   inventory: Array<Inventory> = [];
   dataSource = new MatTableDataSource<Inventory>();
   displayedColumns = ['id', 'name', 'quantity'];
