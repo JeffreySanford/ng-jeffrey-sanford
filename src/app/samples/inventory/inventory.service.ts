@@ -10,8 +10,8 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class InventoryService {
-  // private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/inventory';
-  private portfolioAPI = 'http://localhost:3000/items';
+  private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/items';
+  // private portfolioAPI = 'http://localhost:3000/items';
 
 
   constructor(private http: HttpClient) { }
