@@ -28,6 +28,8 @@ import { APP_BASE_HREF } from '@angular/common';
 import { MatIconModule } from "@angular/material/icon";
 import { RecipeComponent } from './samples/development/kitchen-table/recipe/recipe.component';
 import { SidebarComponent } from './header/sidebar/sidebar.component';
+import { InventoryComponent } from './samples/inventory/inventory.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,13 +45,15 @@ import { SidebarComponent } from './header/sidebar/sidebar.component';
     SpaceVideoComponent,
     PageNotFoundComponent,
     RecipeComponent,
-    SidebarComponent
+    SidebarComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     GridsterModule,
     MatSidenavModule,
     MatCheckboxModule,

@@ -18,7 +18,9 @@ export class DevelopmentComponent implements AfterViewInit {
 
   dashboard: Array<GridsterItem> = [
     { cols: 3, rows: 1, y: 0, x: 0, title: 'Kitchen Table', url: 'samples/kitchen-table', description: 'Active Angular Recipe connection' },
-    { cols: 3, rows: 1, y: 0, x: 3, title: 'Local Weather', url: 'samples/weather', description: 'Weather frontend' }
+    { cols: 3, rows: 1, y: 0, x: 2, title: 'Local Weather', url: 'samples/weather', description: 'Weather frontend' },
+    { cols: 3, rows: 1, y: 0, x: 4, title: 'Inventory List', url: 'samples/inventory', description: 'Sample inventory control basics' },
+   
   ];
 
   projectLove: Array<SocialButton> = [
