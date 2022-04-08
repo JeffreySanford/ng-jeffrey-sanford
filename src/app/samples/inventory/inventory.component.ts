@@ -61,7 +61,7 @@ export class InventoryComponent implements OnInit {
   }
 
   toggleNewItem() {
-    this.addNewItemContainer = true;
+    this.addNewItemContainer = !this.addNewItemContainer
   }
 
   submit(newItem: Inventory) {
