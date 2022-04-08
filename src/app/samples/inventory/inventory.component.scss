@@ -32,9 +32,13 @@
       }
 
       .mat-column-name {
+        display: flex;
         justify-content: center;
+        flex: 0 0 74vw !important;
+        border: 1px solid orange;
 
         .action {
+          border: 1px solid blue;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
@@ -43,8 +47,13 @@
       }
 
       .mat-column-quantity {
-        flex: 0 15vw !important;
         justify-content: center;
+        flex: 0 0 5em !important;
+      }
+
+      .quantity-input {
+        width: 4em;
+        border: 1px solid green;
       }
     }
   }
@@ -52,47 +61,58 @@
   .actions {
     display: flex;
     justify-content: space-between;
-    font-size: 3vw;
+    font-size: 2em;
     margin-top: 1em;
 
     input {
-        margin-left: 2vw;
-        font-size: 1.25vw;
-        width: 5vw;
+      margin-left: 2vw;
+      font-size: 1.25em;
+      width: 5vw;
     }
 
     .new-item-container {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      width: 87vw;
+      width: 100vw;
+      border: 1px solid red;
       margin-right: 0.5vw;
     }
   }
 }
 
 @media screen and (max-width: 700px) {
-    .mat-table {
-        .mat-header-cell {
-            font-size: 4vw !important;
-            &.mat-column-name  {
-                width: 10vw !important;
+  .mat-table {
+    .mat-header-cell {
+      font-size: 4vw !important;
+      &.mat-column-name {
+        width: 10vw !important;
 
-                .action {
-                    right: 30vw;
-                }
-            }
-
-            .mat-column-name {
-                margin-left: 1em !important;
-            }
-
-            .mar-column-quantity {
-
-            }
+        .action {
+          right: 30vw;
         }
+      }
+      .mat-column-quantity {
+      }
+    }
 
-        
+    .mat-column-name {
+        border: 1px solid purple;
+        margin-left: 1em !important;
+        .action {
+          flex: 0 0 57vw !important;
+        }
+      }
+
+  }
+
+  .actions {
+    font-size: 2vw !important;
+    color: blue;
+
+    input {
+      font-size: 2vw !important;
+      color: green;
     }
   }
-  
+}

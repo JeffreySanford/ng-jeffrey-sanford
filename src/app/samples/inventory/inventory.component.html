@@ -10,15 +10,14 @@
             <mat-cell *matCellDef="let item">{{ item.name }}
 
                 <div class="action">
-                    <mat-icon name="fieldName" ngDefaultControl [ngModel]="item.quantity" (click)="updateItemQuantity(item, item.quantity +1)">add</mat-icon>
-                    <mat-icon name="fieldName" ngDefaultControl [ngModel]="item.quantity" (click)="updateItemQuantity(item, item.quantity -1)">remove</mat-icon>
-                    
-                    <span style="display: flex; justify-content: space-between;">
-                        <input type="text" name="fieldName" ngDefaultControl [ngModel]="item.quantity" (ngModelChange)="updateItemQuantity(item, $event)" style="width: 3em;font-style: italic;" />
-                        <mat-icon>edit</mat-icon>
-                    </span>
-                </div>
+                    <mat-icon name="fieldName" ngDefaultControl [ngModel]="item.quantity"
+                        (click)="updateItemQuantity(item, item.quantity +1)">add</mat-icon>
+                    <mat-icon name="fieldName" ngDefaultControl [ngModel]="item.quantity"
+                        (click)="updateItemQuantity(item, item.quantity -1)">remove</mat-icon>
 
+                    <input type="text" class="quantity-input" name="fieldName" ngDefaultControl [ngModel]="item.quantity"
+                        (ngModelChange)="updateItemQuantity(item, $event)" />
+                </div>
             </mat-cell>
         </ng-container>
 
@@ -30,7 +29,7 @@
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </table>
     <div class="actions">
-        <mat-icon class="mat-elevation-z4" (click)="toggleNewItem()">add</mat-icon>
+        <button mat-fab mat-fab class="mat-elevation-z4" (click)="toggleNewItem()">add</button>
         <div *ngIf="addNewItemContainer" class="new-item-container">
             <span>Item Name:<input mat-input [(ngModel)]="newItem.name" /></span>
             <span>Quantity:<input mat-input [(ngModel)]="newItem.quantity" /></span>
