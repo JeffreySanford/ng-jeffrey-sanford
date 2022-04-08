@@ -13,7 +13,6 @@ export class InventoryService {
   private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/items';
   // private portfolioAPI = 'http://localhost:3000/items';
 
-
   constructor(private http: HttpClient) { }
 
   addItem(item: Inventory): Observable<any> {
@@ -30,7 +29,7 @@ export class InventoryService {
   }
 
   updateItem(item: Inventory): Observable<any> {
-    return this.http.post<any>(this.portfolioAPI, item);
+    return this.http.patch<any>(this.portfolioAPI, item);
   }
 
   private handleError(error: HttpErrorResponse) {

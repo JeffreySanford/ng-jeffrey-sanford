@@ -21,12 +21,12 @@ export class InventoryComponent implements OnInit {
   displayedColumns = ['id', 'name', 'quantity'];
   addNewItemContainer = false;
   newItem: Inventory = {
-    id: this.dataSource.data.length +1,
+    id: this.dataSource.data.length + 1,
     name: '',
     quantity: 0
   };
 
-  constructor(http: HttpClient, private inventoryService: InventoryService) {
+  constructor(private http: HttpClient, private inventoryService: InventoryService) {
     http.get<Inventory[]>(this.portfolioAPI).subscribe((items: Inventory[]) => {
       this.dataSource = new MatTableDataSource<Inventory>(items);
     });
@@ -35,44 +35,40 @@ export class InventoryComponent implements OnInit {
   ngOnInit() {
 
   }
-
-  addItem(newItem: Inventory): Array<Inventory> {
-      this.inventoryService.addItem(newItem).subscribe((response)=>{
-        this.dataSource.data = response;
-        debugger
-        return this.dataSource.data;
-      },(error)=>{
-        debugger
-        console.log('error during post is ', error)
-        return this.dataSource.data;
-      });
-      debugger
-      return this.dataSource.data;
-
+  
+  toggleNewItem() {
+    this.addNewItemContainer = !this.addNewItemContainer;
   }
-
 
   updateItemQuantity(item: Inventory, newValue: number) {
     this.dataSource.data.map((dataItem: Inventory) => {
       if (item.id === dataItem.id) {
         dataItem.quantity = newValue;
+
+        this.inventoryService.updateItem(dataItem).subscribe((dataSet) => {
+          this.dataSource.data = dataSet;
+        })
+
       }
-    })
+    });
   }
 
-  toggleNewItem() {
-    this.addNewItemContainer = !this.addNewItemContainer;
+  addItem(newItem: Inventory): void {
+    this.inventoryService.addItem(newItem).subscribe((response) => {
+      this.dataSource.data = response;
+    }, (error) => {
+      console.log('error during post is ', error)
+      return this.dataSource.data;
+    });
   }
 
   submit(newItem: Inventory) {
-    debugger
     newItem.id = this.dataSource.data.length + 1;
-    this.dataSource.data = this.addItem(newItem);
-    newItem = {
-      id: this.dataSource.data.length + 1,
-      name: '',
-      quantity: 0
-    };
-    this.addNewItemContainer = false;
+    this.addItem(newItem);
+    
+    this.http.get<Inventory[]>(this.portfolioAPI).subscribe((items: Inventory[]) => {
+      this.dataSource.data = items;
+      this.addNewItemContainer = false;
+    });
   }
 }
