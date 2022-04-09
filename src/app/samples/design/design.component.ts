@@ -20,8 +20,8 @@ export class DesignComponent implements AfterViewInit, AfterContentChecked {
   };
 
   dashboard: Array<GridsterItem> = [
-    { cols: 3, rows: 1, y: 0, x: 0, title: 'Material Sample Table', url: 'samples/sample-table', description: 'Angular 13 implimentation of Material Design Table concepts using Node to generate mocked users on the backend.  The table impliments searching users, sorting and pagination.' },
-    { cols: 3, rows: 1, y: 0, x: 3, title: 'Moon Landing', url: 'samples/space-video', description: 'This is a sample of a HTML5 intergrated into Angular.  If this is not safe for your workplace, we probably won\'t work out but thanks for watching.' },
+    { cols: 3, rows: 1, y: 0, x: 0, title: 'Material Sample Table', url: 'samples/sample-table', description: 'Angular 13 implementation of Material Design Table concepts using Node to generate mocked users on the backend.  The table implements searching users, sorting and pagination.' },
+    { cols: 3, rows: 1, y: 0, x: 3, title: 'Moon Landing', url: 'samples/space-video', description: 'This is a sample of a HTML5 video in Angular.' },
   ];
 
   item: any;
@@ -67,12 +67,7 @@ export class DesignComponent implements AfterViewInit, AfterContentChecked {
   }
 
   ngAfterViewInit() {
-    this.elementRef.nativeElement.ownerDocument
-      .body.style.backgroundColor = this.color;
-
-    
-    
-
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = this.color;
   }
 
   changedOptions() {

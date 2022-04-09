@@ -32,18 +32,6 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
         icon: 'art_track',
     },
     {
-        name: 'Material Table',
-        route: 'samples/sample-table',
-        description: 'A basic angular material design table that paginates, sorts and filters',
-        icon: 'table_chart',
-    },
-    {
-        name: 'Space Video',
-        route: 'samples/space-video',
-        description: 'HTML5 implementation of video in Angular',
-        icon: 'rocket',
-    },
-    {
         name: 'Development',
         route: 'development-dashboard',
         description: 'Projects related to Web Development and external APIs',
@@ -75,7 +63,7 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
       name: page
     };
 
-    if (page === 'landing' || page === 'samples/space-video') {
+    if (page === 'landing') {
       this.color = 'black';
     }
     else {

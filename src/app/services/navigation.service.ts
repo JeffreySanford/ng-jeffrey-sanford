@@ -13,7 +13,6 @@ export class NavigationService {
 
   navigate(item: Item, payload?: any) {
     if (payload) {
-      debugger
       this.router.navigate(["recipe/" + payload.url], {relativeTo:this.route});
     }
     else {
