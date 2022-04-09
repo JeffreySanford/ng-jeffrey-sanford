@@ -52,7 +52,6 @@ export class KitchenTableComponent implements OnInit {
   }
 
   routeTo(recipe: Recipe, event: Event) {
-    debugger
     this.navigation.navigate(recipe, recipe);
   }
 }
