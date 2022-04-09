@@ -16,6 +16,7 @@ export class NavigationService {
       this.router.navigate(["recipe/" + payload.url], {relativeTo:this.route});
     }
     else {
+      debugger
       (item.url) ? window.open(item.url, '_blank') : this.router.navigate([item.name]);
     }
 

@@ -24,7 +24,8 @@ export class AppFooterComponent {
   }
 
   routeExternal(item: Item, event: Event) {
-      this.navigation.navigate(item, event);
+    debugger
+      this.navigation.navigate(item);
   }
 
   displayDevelopmentPopup() {
