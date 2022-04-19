@@ -3,4 +3,5 @@ export class City {
     zipcode = '';
     long = '';
     lat = '';
+    county = '';
 }

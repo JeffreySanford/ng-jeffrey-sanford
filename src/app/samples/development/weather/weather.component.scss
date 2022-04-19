@@ -4,7 +4,7 @@
   justify-content: space-between;
   position: absolute;
   left: 6em;
-  top: 3em;
+  top: 5em;
   padding: 0.25em 0;
 
   &.sidebar-closed {
@@ -56,20 +56,10 @@
       text-align: right;
       line-height: 1em;
 
-      mat-accordion {
-        max-height: 10em;
-        overflow-y: auto;
-        margin: 0 0 0 auto;
-      }
-  
-      &.mat-expansion-panel-header {
-        margin: 1em 0;
-      }
-      .accordion {
+      .information {
+        border: 1px solid blue;
         display: flex;
-        flex-direction: column;
-        border: 1px solid turquoise;
-        margin: 0 1em 0 auto;
+        justify-content: space-between;
       }
     }
   }
@@ -79,8 +69,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
-    max-height: 5em;
-    width: 72.75vw;
 
     .material-icons {
       font-size: 3em;
@@ -190,7 +178,6 @@
 }
 
 .weather-card {
-
   .forecast-icon {
     border: 1px solid yellow;
     width: 5em;
@@ -212,5 +199,28 @@
   }
   .current-weather {
     margin-top: 20em;
+  }
+}
+
+:host ::ng-deep .report {
+  border: 1px solid turquoise;
+  overflow-y: auto;
+  max-height: 12em;
+
+  &.mat-expansion-panel-header {
+    margin: 1em 0;
+
+    &::-webkit-scrollbar {
+      width: 1em;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 255, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: darkblue;
+      outline: 1px solid blue;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from 'src/app/services/item';
 import { NavigationService } from 'src/app/services/navigation.service';
@@ -11,7 +11,7 @@ import { Recipe } from './recipe.class';
   styleUrls: ['./kitchen-table.component.scss']
 })
 
-export class KitchenTableComponent implements OnInit {
+export class KitchenTableComponent implements OnInit, OnDestroy {
   private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/recipes';
   // private portfolioAPI = 'http://localhost:3000/recipes';
   recipes!: Recipe[];
@@ -37,12 +37,18 @@ export class KitchenTableComponent implements OnInit {
     }];
   siteSections = ['landing', 'recipes', 'history', 'contact'];
   active = 0;
+  recipeSubscription: any;
 
 
   constructor(private http: HttpClient, private navigation: NavigationService, private route: ActivatedRoute, private router: Router) { }
 
+  ngOnDestroy() {
+    if(this.recipeSubscription) {
+      this.recipeSubscription.unsubscribe();
+    }
+  }
   ngOnInit(): void {
-    this.http.get<Recipe[]>(this.portfolioAPI).subscribe((recipes: Recipe[]) => {
+    this.recipeSubscription = this.http.get<Recipe[]>(this.portfolioAPI).subscribe((recipes: Recipe[]) => {
       this.recipes = recipes;
     });
   }

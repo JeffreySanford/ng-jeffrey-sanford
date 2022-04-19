@@ -22,8 +22,8 @@ const routes: Routes = [
   { path: 'samples/inventory', component: InventoryComponent, data: { breadCrumb: 'inventory', title: 'Inventory' }, pathMatch: 'full' },
   // the empty path will be redirected to the home component
   { path: 'landing', component: LandingComponent, data: { breadCrumb: 'home', title: 'Home' } },
-  { path: 'design-dashboard', component: DesignComponent, data: { breadCrumb: 'design-dashboard', title: 'Design Dashboard' } },
-  { path: 'development-dashboard', component: DevelopmentComponent, data: { breadCrumb: 'development-dashboard', title: 'Development Dashboard' } },
+  { path: 'design-dashboard', component: DesignComponent, data: { breadCrumb: 'design', title: 'Design Dashboard' } },
+  { path: 'development-dashboard', component: DevelopmentComponent, data: { breadCrumb: 'development', title: 'Development Dashboard' } },
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   // this path redirects to the home component
   { path: 'page-not-found', component: PageNotFoundComponent },

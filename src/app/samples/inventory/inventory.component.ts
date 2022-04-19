@@ -25,11 +25,19 @@ export class InventoryComponent implements OnInit {
     name: '',
     quantity: 0
   };
+  inventorySubscriptiuon: any;
+  inventorySubscription: any;
 
   constructor(private http: HttpClient, private inventoryService: InventoryService) {
-    http.get<Inventory[]>(this.portfolioAPI).subscribe((items: Inventory[]) => {
+    this.inventorySubscription = http.get<Inventory[]>(this.portfolioAPI).subscribe((items: Inventory[]) => {
       this.dataSource = new MatTableDataSource<Inventory>(items);
     });
+  }
+
+  ngOnDestroy() {
+    if(this.inventorySubscription) {
+      this.inventorySubscription.unsubscribe();
+    }
   }
 
   ngOnInit() {

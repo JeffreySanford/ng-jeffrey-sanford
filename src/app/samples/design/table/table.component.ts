@@ -1,4 +1,4 @@
-import { AfterContentChecked, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterContentChecked, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
@@ -13,7 +13,7 @@ import { HeaderService } from 'src/app/header/header.service';
   styleUrls: ['./table.component.scss']
 })
 
-export class TableComponent implements OnInit, AfterContentChecked {
+export class TableComponent implements OnInit, AfterContentChecked, OnDestroy {
   @ViewChild(MatSort, { static: false }) sort: MatSort | undefined;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(HTMLInputElement) input: HTMLInputElement | undefined;
@@ -29,6 +29,7 @@ export class TableComponent implements OnInit, AfterContentChecked {
   private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/users';
   projectLove: Array<SocialButton> | undefined;
   isSidebarOpened = false;
+  userSubscription: any;
 
   constructor(private http: HttpClient, private elementRef: ElementRef, private headerState: HeaderService, private cd: ChangeDetectorRef) { }
 
@@ -61,8 +62,14 @@ export class TableComponent implements OnInit, AfterContentChecked {
     
   }
 
+  ngOnDestroy() {
+    if(this.userSubscription) {
+      this.userSubscription.unsubscribe();
+    }
+  }
+
   ngOnInit(): void {
-    this.http.get<User[]>(this.portfolioAPI).subscribe((data: any) => {
+    this.userSubscription = this.http.get<User[]>(this.portfolioAPI).subscribe((data: any) => {
       this.displayedColumns = ['name', 'constructedAddress', 'email'];
       data.users.map((user: User) => {
         user.constructedAddress = user.number + ' ' + user.address;

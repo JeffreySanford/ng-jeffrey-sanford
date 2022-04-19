@@ -1,22 +1,23 @@
-import { Injectable, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, Event as NavigationEvent } from '@angular/router';
+import { Injectable, OnDestroy } from '@angular/core';
+import { Router, Event as NavigationEvent } from '@angular/router';
 import { Location } from '@angular/common';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { BreadCrumb } from './bread-crumb';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class breadcrumbService {
+export class breadcrumbService implements OnDestroy {
   public breadcrumb: Array<BreadCrumb> = [];
   pruned: boolean = false;
   currentRoute: any;
   validRoutes: Array<BreadCrumb> = [];
+  breadcrumbSubscription: Subscription;
 
-  constructor(private router: Router, private route: ActivatedRoute, private location: Location) {
+  constructor(private router: Router, private location: Location) {
     let routeSolved = false;
-    this.router.events.subscribe((value: any) => {
+    this. breadcrumbSubscription = this.router.events.subscribe((value: any) => {
       if (value.url) {
         this.router.config.map((menuItem: any) => {
           if (!routeSolved || this.breadcrumb.length === 0) {
@@ -40,6 +41,12 @@ export class breadcrumbService {
     });
   }
 
+  ngOnDestroy() {
+    if (this.breadcrumbSubscription) {
+      this.breadcrumbSubscription.unsubscribe();
+    }
+  }
+
   getBreadcrumbs(): Array<BreadCrumb> {
     this.location.onUrlChange((val) => {
       this.currentRoute = val.substring(1);
@@ -54,15 +61,15 @@ export class breadcrumbService {
             });
 
             if (!present && route.route !== '') {
-              const isSecondLevel = route.name === 'design' || route.name === 'development';
+              const isSecondLevel = route.route === 'design-dashboard' || route.route === 'development-dashboard';
 
               if (isSecondLevel) {
-                if (isSecondLevel) {
-                  this.breadcrumb[1] = {
-                    name: route.name,
-                    route: route.route
-                  };
-                }
+                this.breadcrumb[1] = {
+                  name: route.name,
+                  route: route.route
+                };
+
+                this.breadcrumb = this.breadcrumb.slice(0, 2);
               }
 
               else {

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterContentChecked, AfterContentInit, ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { HeaderService } from 'src/app/header/header.service';
 import { Alert } from './alert.class';
 import { City } from './city.class';
@@ -12,9 +12,9 @@ import { ForecastDetails, Weather } from './weather.class';
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.scss']
 })
-export class WeatherComponent implements OnInit, AfterContentChecked {
-  forecastData: any;
 
+export class WeatherComponent implements OnInit, AfterContentChecked, OnDestroy {
+  forecastData: any;
   showCurrent: boolean = true;
   showForecast: boolean = false;
   zipcode: string = '58401' // initial
@@ -34,6 +34,7 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
       gust: 0
     }
   }
+  isStateReport = false;
 
   cities: City[] = [
     {
@@ -41,39 +42,53 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
       zipcode: '58401',
       long: '46.908436',
       lat: '98.705482',
+      county: 'Stutsman'
     },
     {
       name: 'Vancouver, WA',
       zipcode: '98607',
       long: '45.6280',
-      lat: '122.6739'
+      lat: '122.6739',
+      county: 'Clark'
     },
     {
       name: 'Los Angeles, CA',
       zipcode: '90035',
       long: '34.0736',
-      lat: '118.4004'
+      lat: '118.4004',
+      county: 'Alameda'
     },
     {
       name: 'Atlanta, GA',
       zipcode: '30223',
       long: '33.2468',
-      lat: '84.2641'
+      lat: '84.2641',
+      county: 'Spalding'
     },
     {
       name: 'Denver, CO',
       zipcode: '80218',
       long: '39.7392',
-      lat: '104.9903'
+      lat: '104.9903',
+      county: 'Denver'
     }
   ];
 
   details: any;
   state: string = 'ND';
-  alert: any;
+  stateAlert: any;
   alerts: Alert[] = [];
-  city = 'Jamestown, ND';
+  city = {
+    name: 'Jamestown, ND',
+    zipcode: '58401',
+    long: '46.908436',
+    lat: '98.705482',
+    county: 'stutsman'
+  };
   isSidebarClosed = true;
+  county: any;
+  stateAlerts: number = 0;
+  weatherSub: any;
 
   constructor(private headerState: HeaderService, forecastService: ForecastService, private stateService: StateService, private renderer: Renderer2, private el: ElementRef, private cd: ChangeDetectorRef, private http: HttpClient) {
     this.forecastService = forecastService;
@@ -96,6 +111,12 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
     });
   }
 
+  ngOnDestroy() {
+    if (this.weatherSub) {
+      debugger
+      this.weatherSub.unsubscribe();
+    }
+  }
   ngAfterContentChecked() {
     if (this.current.icon !== '') {
       const icon = this.el.nativeElement.querySelector('.wind-icon');
@@ -105,46 +126,68 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
     if (this.forecastData && this.forecastData.details) {
       console.log(this.forecastData);
       this.details = this.forecastData.details;
-
-      this.cities.map((city: City) => {
-        if (city.name === this.city) {
-          this.getAlert(this.city)
-        }
-      });
     }
 
     this.isSidebarClosed = this.headerState.getSidebarState()
   }
 
-  getAlert(city: string) {
-    this.http.get('https://api.weather.gov/alerts/active?area=' + this.state).subscribe((alert: any) => {
-      alert.features.map((feature: any) => {
-        if(feature.properties.headline.includes(city)) {
-          this.alerts.push({
-            certainty: feature.properties.certainty,
-            description: feature.properties.description,
-            effective: feature.properties.effective,
-            ends: feature.properties.ends,
-            event: feature.properties.event,
-            expires: feature.properties.expires,
-            headline: feature.properties.headline,
-            messageType: feature.properties.messageType,
-            onset: feature.properties.onset,
-            response: feature.properties.response,
-            severity: feature.properties.severity,
-            status: feature.properties.status,
-            urgency: feature.properties.urgency
-          });  
-        }
-      });
+  getCityReport(city: City) {
+    this.isStateReport = false;
+    this.alerts = [];
+    this.getAlert(city, false);
+  }
+
+  getStateReport(city: City) {
+    this.isStateReport = true;
+    this.alerts = [];
+    this.getAlert(city, true);
+  }
+
+  updateAlerts(feature: any) {
+    this.alerts.push({
+      certainty: feature.properties.certainty,
+      description: feature.properties.description,
+      effective: feature.properties.effective,
+      ends: feature.properties.ends,
+      event: feature.properties.event,
+      expires: feature.properties.expires,
+      headline: feature.properties.headline,
+      messageType: feature.properties.messageType,
+      onset: feature.properties.onset,
+      response: feature.properties.response,
+      severity: feature.properties.severity,
+      status: feature.properties.status,
+      urgency: feature.properties.urgency
     });
+
+  }
+
+  getAlert(city: City, isStateReport?: boolean) {
+    this.stateAlert.features.map((feature: any) => {
+
+      const alertForCity = feature.properties.areaDesc.indexOf(city.name) > -1;
+      const alertForCounty = feature.properties.areaDesc.indexOf(city.county) > -1;
+
+      if (isStateReport) {
+        this.updateAlerts(feature);
+
+      } else {
+        if (alertForCity || alertForCounty) {
+          this.updateAlerts(feature);
+        } else if (alertForCity && alertForCounty) {
+          debugger
+        }
+
+      }
+    });
+
+    this.stateAlerts = this.alerts.length;
   }
 
   ngOnInit(): void {
     this.resolved = false;
-    this.forecastService.LoadCurrentWeather(this.zipcode).subscribe(
+    this.weatherSub = this.forecastService.LoadCurrentWeather(this.zipcode).subscribe(
       data => {
-        this.city = data.name;
         this.state = this.stateService.getState(this.zipcode);
         this.location = data.name + ', ' + this.state;
         this.currentTemperature = data.main.temp;
@@ -164,17 +207,30 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
           }
         }
 
-        this.getAlert(data.name);
+        this.http.get('https://api.weather.gov/alerts/active?area=' + this.state).subscribe((stateAlert: any) => {
+          this.stateAlert = stateAlert;
+          this.cities.map((city: City) => {
+            if (city.name === this.city.name) {
+              this.getAlert(city);
+            }
+          });
+        });
       });
   }
 
-  selectCity(city: any) {
+  selectCity(city: City) {
     this.zipcode = city.zipcode;
     this.alerts = [];
     this.details = [];
 
     this.forecastService.LoadCurrentWeather(this.zipcode).subscribe(
       data => {
+        this.cities.map((city: City) => {
+          if (city.name === data.name) {
+            this.city = city;
+          }
+        })
+
         this.location = data.name + ', ' + this.stateService.getState(this.zipcode);
         this.currentTemperature = data.main.temp;
         this.feelsLike = data.main.feels_like;
@@ -192,8 +248,9 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
             gust: data.wind.gust
           }
         }
-        
+
         this.forecastService.LoadForecastWeather(this.zipcode).subscribe((data: any) => {
+          debugger
           this.forecastData = new ForecastDetails;//Instance to store the Data of ForecastModel
           this.forecastData.details = [];
           this.forecastData.name = data.city.name;
@@ -211,8 +268,14 @@ export class WeatherComponent implements OnInit, AfterContentChecked {
           }
         });
         this.state = this.stateService.getState(this.zipcode);
-        this.getAlert(data.name);
-
+        this.http.get('https://api.weather.gov/alerts/active?area=' + this.state).subscribe((stateAlert: any) => {
+          this.stateAlert = stateAlert;
+          this.cities.map((city: City) => {
+            if (city.name === this.city.name) {
+              this.getAlert(city);
+            }
+          });
+        });
       });
   }
 }
