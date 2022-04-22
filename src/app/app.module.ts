@@ -30,6 +30,7 @@ import { RecipeComponent } from './samples/development/kitchen-table/recipe/reci
 import { SidebarComponent } from './header/sidebar/sidebar.component';
 import { InventoryComponent } from './samples/inventory/inventory.component';
 import { FormsModule } from '@angular/forms';
+import { RecipesComponent } from './samples/development/kitchen-table/recipes/recipes.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FormsModule } from '@angular/forms';
     PageNotFoundComponent,
     RecipeComponent,
     SidebarComponent,
-    InventoryComponent
+    InventoryComponent,
+    RecipesComponent
   ],
   imports: [
     BrowserModule,

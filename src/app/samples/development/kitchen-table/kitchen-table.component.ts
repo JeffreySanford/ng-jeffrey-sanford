@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from 'src/app/services/item';
 import { NavigationService } from 'src/app/services/navigation.service';
@@ -38,9 +38,11 @@ export class KitchenTableComponent implements OnInit, OnDestroy {
   siteSections = ['landing', 'recipes', 'history', 'contact'];
   active = 0;
   recipeSubscription: any;
+  recipe!: Recipe;
+  allRecipes = true;
 
 
-  constructor(private http: HttpClient, private navigation: NavigationService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private http: HttpClient, private navigation: NavigationService, private route: ActivatedRoute, private router: Router, private cd: ChangeDetectorRef) { }
 
   ngOnDestroy() {
     if(this.recipeSubscription) {
@@ -57,8 +59,9 @@ export class KitchenTableComponent implements OnInit, OnDestroy {
     console.log(tabIndex)
   }
 
-  routeTo(recipe: Recipe, event: Event) {
-    this.navigation.navigate(recipe, recipe);
+  showRecipe(recipe: Recipe) {
+    this.allRecipes = false;
+    this.recipe = recipe;
   }
 }
 
