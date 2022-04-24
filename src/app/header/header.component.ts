@@ -1,8 +1,5 @@
 import {
   AfterContentChecked,
-  AfterContentInit,
-  AfterViewChecked,
-  AfterViewInit,
   ChangeDetectorRef,
   Component,
   ElementRef,
@@ -19,7 +16,6 @@ import { breadcrumbService } from '../services/bread-crumb.service';
 import { Item } from '../services/item';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatToolbar } from '@angular/material/toolbar';
-import { GridsterComponent } from 'angular-gridster2';
 
 @Component({
   selector: 'app-header',

@@ -1,9 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { data } from 'jquery';
-import { Item } from 'src/app/services/item';
-import { NavigationService } from 'src/app/services/navigation.service';
+import { Component, OnDestroy } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { Inventory } from './inventory';
 import { InventoryService } from './inventory.service';
 
@@ -12,7 +9,7 @@ import { InventoryService } from './inventory.service';
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.scss'],
 })
-export class InventoryComponent implements OnInit {
+export class InventoryComponent implements OnDestroy {
   private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/items';
   // private portfolioAPI = 'http://localhost:3000/items';
   inventory: Array<Inventory> = [];
@@ -44,7 +41,6 @@ export class InventoryComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
 
   toggleNewItem() {
     this.addNewItemContainer = !this.addNewItemContainer;

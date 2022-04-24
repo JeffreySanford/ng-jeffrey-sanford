@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import {
   AfterContentChecked,
-  AfterContentInit,
   ChangeDetectorRef,
   Component,
   ElementRef,
@@ -14,7 +13,7 @@ import { Alert } from './alert.class';
 import { City } from './city.class';
 import { ForecastService } from './forecast.service';
 import { StateService } from './state.service';
-import { ForecastDetails, Weather } from './weather.class';
+import { ForecastDetails } from './weather.class';
 
 @Component({
   selector: 'app-weather',
@@ -139,7 +138,6 @@ export class WeatherComponent
 
   ngOnDestroy() {
     if (this.weatherSub) {
-      debugger;
       this.weatherSub.unsubscribe();
     }
   }
@@ -154,7 +152,6 @@ export class WeatherComponent
     }
 
     if (this.forecastData && this.forecastData.details) {
-      console.log(this.forecastData);
       this.details = this.forecastData.details;
     }
 
@@ -202,8 +199,6 @@ export class WeatherComponent
       } else {
         if (alertForCity || alertForCounty) {
           this.updateAlerts(feature);
-        } else if (alertForCity && alertForCounty) {
-          debugger;
         }
       }
     });
@@ -284,7 +279,6 @@ export class WeatherComponent
       this.forecastService
         .LoadForecastWeather(this.zipcode)
         .subscribe((data: any) => {
-          debugger;
           this.forecastData = new ForecastDetails(); //Instance to store the Data of ForecastModel
           this.forecastData.details = [];
           this.forecastData.name = data.city.name;
