@@ -7,7 +7,8 @@
     "build": "ng build && rm -rf /usr/share/nginx/html/* && cp -rf ~/repos/portfolio/dist/* /usr/share/nginx/html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "npx eslint 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --quiet --fix",
+    "format": "npx prettier 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --write"
   },
   "private": true,
   "dependencies": {
@@ -27,28 +28,29 @@
     "@videogular/ngx-videogular": "^5.0.1",
     "angular-gridster2": "^13.1.1",
     "jquery": "^3.6.0",
-    "prettier": "^2.6.0",
     "rxjs": "^6.5.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-eslint/builder": "13.2.0",
-    "@angular-eslint/eslint-plugin": "13.2.0",
-    "@angular-eslint/eslint-plugin-template": "13.2.0",
-    "@angular-eslint/schematics": "13.2.0",
-    "@angular-eslint/template-parser": "13.2.0",
+    "@angular-eslint/builder": "13.1.0",
+    "@angular-eslint/eslint-plugin": "13.1.0",
+    "@angular-eslint/eslint-plugin-template": "13.1.0",
+    "@angular-eslint/schematics": "13.1.0",
+    "@angular-eslint/template-parser": "13.1.0",
     "@angular/compiler-cli": "~13.3.2",
     "@types/core-js": "^2.5.5",
     "@types/jasmine": "~3.8.0",
     "@types/jquery": "^3.5.13",
     "@types/mocha": "^9.0.0",
     "@types/node": "^12.20.40",
-    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/eslint-plugin": "5.11.0",
     "@typescript-eslint/eslint-plugin-tslint": "^5.16.0",
-    "@typescript-eslint/parser": "^5.11.0",
+    "@typescript-eslint/parser": "5.11.0",
     "codelyzer": "^6.0.2",
-    "eslint": "^8.11.0",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -56,6 +58,7 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "material-design-icons": "^3.0.1",
+    "prettier": "^2.6.2",
     "typescript": "~4.4.4"
   }
 }

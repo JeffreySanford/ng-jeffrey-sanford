@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HeaderService {
   isSidebarClosed = false;
 
-  constructor() { }
+  constructor() {}
 
   setSidebarState(sidebarState: boolean) {
     this.isSidebarClosed = sidebarState;
   }
-  
+
   getSidebarState() {
     return this.isSidebarClosed;
   }

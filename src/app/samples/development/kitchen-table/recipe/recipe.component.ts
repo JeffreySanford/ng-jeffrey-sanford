@@ -4,13 +4,11 @@ import { Recipe } from '../recipe.class';
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
-  styleUrls: ['./recipe.component.scss']
+  styleUrls: ['./recipe.component.scss'],
 })
-
 export class RecipeComponent implements OnInit {
   @Input() public recipe!: Recipe;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

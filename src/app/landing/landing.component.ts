@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { SocialButton } from '../classes/social-button';
 import { NavigationService } from '../services/navigation.service';
-import { trigger, style, animate, transition } from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Item } from '../services/item';
 
 @Component({
@@ -11,14 +11,19 @@ import { Item } from '../services/item';
   animations: [
     trigger('flyInFlyOut', [
       transition(':enter', [
-        style({ transform: 'scale(1)', opacity: .5, color: 'red' }),
-        animate('300ms', style({ transform: 'scale(4)', opacity: 1, color: 'gold' })),
-        animate('300ms', style({ transform: 'scale(1)', opacity: 1, color: 'red' })),
-      ])
-    ])
-  ]
+        style({ transform: 'scale(1)', opacity: 0.5, color: 'red' }),
+        animate(
+          '300ms',
+          style({ transform: 'scale(4)', opacity: 1, color: 'gold' })
+        ),
+        animate(
+          '300ms',
+          style({ transform: 'scale(1)', opacity: 1, color: 'red' })
+        ),
+      ]),
+    ]),
+  ],
 })
-
 export class LandingComponent implements OnInit, AfterViewInit {
   currentState = 'initial';
   projectLove: SocialButton[] = [
@@ -26,14 +31,15 @@ export class LandingComponent implements OnInit, AfterViewInit {
       name: 'GitHub',
       url: 'https://github.com/JeffreySanford',
       icon: 'code',
-      disabled: false
+      disabled: false,
     },
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/sanfordjeffrey/',
       icon: 'linkedin',
-      disabled: false
-    }];
+      disabled: false,
+    },
+  ];
   navigation: NavigationService;
   color: string | undefined;
 
@@ -41,8 +47,8 @@ export class LandingComponent implements OnInit, AfterViewInit {
     this.navigation = navigation;
   }
   ngAfterViewInit() {
-    this.elementRef.nativeElement.ownerDocument
-      .body.style.backgroundColor = this.color;
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
+      this.color;
   }
 
   ngOnInit(): void {
@@ -50,7 +56,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
   }
 
   logAnimation($event: any) {
-    console.log(`animation ${$event.phaseName}`)
+    console.log(`animation ${$event.phaseName}`);
   }
 
   changeStarSize() {
@@ -58,10 +64,9 @@ export class LandingComponent implements OnInit, AfterViewInit {
   }
 
   launchPage(page?: string) {
-      const routeItem: Item = {
-        name: page
-      };
-      this.navigation.navigate(routeItem);
+    const routeItem: Item = {
+      name: page,
+    };
+    this.navigation.navigate(routeItem);
   }
 }
-

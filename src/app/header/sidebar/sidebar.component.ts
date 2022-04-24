@@ -1,4 +1,13 @@
-import { AfterContentChecked, ChangeDetectorRef, Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import {
+  AfterContentChecked,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { MatToolbar } from '@angular/material/toolbar';
 import { Item } from '../../services/item';
 import { NavigationService } from '../../services/navigation.service';
@@ -8,7 +17,7 @@ import { HeaderService } from '../header.service';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit, AfterContentChecked {
   @Input() isSidebarClosed: boolean | undefined;
@@ -20,31 +29,42 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
 
   projects = [
     {
-        name: 'Home',
-        route: 'landing',
-        description: 'Return to the landing page',
-        icon: 'home',
+      name: 'Home',
+      route: 'landing',
+      description: 'Return to the landing page',
+      icon: 'home',
     },
     {
-        name: 'Design',
-        route: 'design-dashboard',
-        description: 'Projects related to core design concepts',
-        icon: 'art_track',
+      name: 'Design',
+      route: 'design-dashboard',
+      description: 'Projects related to core design concepts',
+      icon: 'art_track',
     },
     {
-        name: 'Development',
-        route: 'development-dashboard',
-        description: 'Projects related to Web Development and external APIs',
-        icon: 'whatshot',
-    }
-    ];
+      name: 'Development',
+      route: 'development-dashboard',
+      description: 'Projects related to Web Development and external APIs',
+      icon: 'whatshot',
+    },
+  ];
 
-  constructor(private headerState: HeaderService, private navigation: NavigationService, private cd: ChangeDetectorRef, private renderer: Renderer2, private ref: ElementRef, private header: AppHeaderComponent) { }
+  constructor(
+    private headerState: HeaderService,
+    private navigation: NavigationService,
+    private cd: ChangeDetectorRef,
+    private renderer: Renderer2,
+    private ref: ElementRef,
+    private header: AppHeaderComponent
+  ) {}
 
   ngAfterContentChecked() {
     if (this.container !== undefined && this.breadcrumbUpdate && this.color) {
-      this.sidebarDirection = (this.isSidebarClosed) ? 'west' : 'east';
-      this.renderer.setStyle(this.container.nativeElement, 'background-color', this.color);
+      this.sidebarDirection = this.isSidebarClosed ? 'west' : 'east';
+      this.renderer.setStyle(
+        this.container.nativeElement,
+        'background-color',
+        this.color
+      );
       this.renderer.setStyle(this.container.nativeElement, 'opacity', 0.9);
       this.isSidebarClosed = true;
       this.breadcrumbUpdate = false;
@@ -60,13 +80,12 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
 
   launchPage(page?: string) {
     const routeItem: Item = {
-      name: page
+      name: page,
     };
 
     if (page === 'landing') {
       this.color = 'black';
-    }
-    else {
+    } else {
       this.color = 'white';
     }
 
@@ -94,6 +113,5 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     this.isSidebarClosed = !this.isSidebarClosed;
     this.header.isSidebarClosed = this.isSidebarClosed;
     this.headerState.setSidebarState(this.isSidebarClosed);
-
   }
 }

@@ -1,4 +1,10 @@
-import { AfterContentChecked, AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+} from '@angular/core';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
 import { AppHeaderComponent } from 'src/app/header/header.component';
 import { HeaderService } from 'src/app/header/header.service';
@@ -9,9 +15,8 @@ import { SocialButton } from '../../classes/social-button';
 @Component({
   selector: 'app-design',
   templateUrl: './design.component.html',
-  styleUrls: ['./design.component.scss']
+  styleUrls: ['./design.component.scss'],
 })
-
 export class DesignComponent implements AfterViewInit, AfterContentChecked {
   color = 'white';
   options: GridsterConfig = {
@@ -20,8 +25,25 @@ export class DesignComponent implements AfterViewInit, AfterContentChecked {
   };
 
   dashboard: Array<GridsterItem> = [
-    { cols: 3, rows: 1, y: 0, x: 0, title: 'Material Sample Table', url: 'samples/sample-table', description: 'Angular 13 implementation of Material Design Table concepts using Node to generate mocked users on the backend.  The table implements searching users, sorting and pagination.' },
-    { cols: 3, rows: 1, y: 0, x: 3, title: 'Moon Landing', url: 'samples/space-video', description: 'This is a sample of a HTML5 video in Angular.' },
+    {
+      cols: 3,
+      rows: 1,
+      y: 0,
+      x: 0,
+      title: 'Material Sample Table',
+      url: 'samples/sample-table',
+      description:
+        'Angular 13 implementation of Material Design Table concepts using Node to generate mocked users on the backend.  The table implements searching users, sorting and pagination.',
+    },
+    {
+      cols: 3,
+      rows: 1,
+      y: 0,
+      x: 3,
+      title: 'Moon Landing',
+      url: 'samples/space-video',
+      description: 'This is a sample of a HTML5 video in Angular.',
+    },
   ];
 
   item: any;
@@ -30,8 +52,8 @@ export class DesignComponent implements AfterViewInit, AfterContentChecked {
       name: 'GitHub',
       url: 'https://github.com/JeffreySanford/ng-jeffrey-sanford',
       icon: 'code',
-      disabled: false
-    }
+      disabled: false,
+    },
   ];
 
   pageLove: SocialButton[] = [
@@ -39,17 +61,20 @@ export class DesignComponent implements AfterViewInit, AfterContentChecked {
       name: 'GitHub',
       url: 'https://github.com/JeffreySanford',
       icon: 'code',
-      disabled: false
+      disabled: false,
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/sanfordjeffrey/',
       icon: 'linkedin',
-      disabled: false
-    }
+      disabled: false,
+    },
   ];
 
-  loveIcons = ["../../../assets/images/angular.png", "../../../assets/images/nodejs-new-pantone-black.png"];
+  loveIcons = [
+    '../../../assets/images/angular.png',
+    '../../../assets/images/nodejs-new-pantone-black.png',
+  ];
   isSidebarClosed = true;
 
   static itemChange(item: any, itemComponent: any) {
@@ -60,18 +85,22 @@ export class DesignComponent implements AfterViewInit, AfterContentChecked {
     console.info('itemResized', item, itemComponent);
   }
 
-  constructor(private navigation: NavigationService, private elementRef: ElementRef, private headerState: HeaderService) { }
+  constructor(
+    private navigation: NavigationService,
+    private elementRef: ElementRef,
+    private headerState: HeaderService
+  ) {}
 
   ngAfterContentChecked() {
     this.isSidebarClosed = this.headerState.getSidebarState();
   }
 
   ngAfterViewInit() {
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = this.color;
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
+      this.color;
   }
 
   changedOptions() {
-
     // this.options.api.optionsChanged();
   }
 
@@ -84,14 +113,13 @@ export class DesignComponent implements AfterViewInit, AfterContentChecked {
   }
 
   handleError(error: Error) {
-
-    console.log(error)
+    console.log(error);
   }
 
   launchPage(page: string) {
     const routeItem: Item = {
-      name: page
+      name: page,
     };
-    this.navigation.navigate(routeItem);;
+    this.navigation.navigate(routeItem);
   }
 }

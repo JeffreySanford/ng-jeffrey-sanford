@@ -17,4 +17,3 @@ describe('NavigationService', () => {
 function expect(service: NavigationService) {
   throw new Error('Function not implemented.');
 }
-

@@ -8,11 +8,11 @@ import { Recipe } from './recipe.class';
 @Component({
   selector: 'kitchen-table',
   templateUrl: './kitchen-table.component.html',
-  styleUrls: ['./kitchen-table.component.scss']
+  styleUrls: ['./kitchen-table.component.scss'],
 })
-
 export class KitchenTableComponent implements OnInit, OnDestroy {
-  private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/recipes';
+  private portfolioAPI =
+    'https://api-portfolio-65p75.ondigitalocean.app/recipes';
   // private portfolioAPI = 'http://localhost:3000/recipes';
   recipes!: Recipe[];
   color = 'white';
@@ -21,42 +21,50 @@ export class KitchenTableComponent implements OnInit, OnDestroy {
       name: 'GitHub',
       url: 'https://github.com/JeffreySanford',
       icon: 'code',
-      disabled: false
+      disabled: false,
     },
     {
       name: 'Facebook',
       url: 'https://www.facebook.com/jeffrey.sanford.56/',
       icon: 'facebook',
-      disabled: true
+      disabled: true,
     },
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/sanfordjeffrey/',
       icon: 'linkedin',
-      disabled: true
-    }];
+      disabled: true,
+    },
+  ];
   siteSections = ['landing', 'recipes', 'history', 'contact'];
   active = 0;
   recipeSubscription: any;
   recipe!: Recipe;
   allRecipes = true;
 
-
-  constructor(private http: HttpClient, private navigation: NavigationService, private route: ActivatedRoute, private router: Router, private cd: ChangeDetectorRef) { }
+  constructor(
+    private http: HttpClient,
+    private navigation: NavigationService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngOnDestroy() {
-    if(this.recipeSubscription) {
+    if (this.recipeSubscription) {
       this.recipeSubscription.unsubscribe();
     }
   }
   ngOnInit(): void {
-    this.recipeSubscription = this.http.get<Recipe[]>(this.portfolioAPI).subscribe((recipes: Recipe[]) => {
-      this.recipes = recipes;
-    });
+    this.recipeSubscription = this.http
+      .get<Recipe[]>(this.portfolioAPI)
+      .subscribe((recipes: Recipe[]) => {
+        this.recipes = recipes;
+      });
   }
 
   onTabChange(tabIndex: Number) {
-    console.log(tabIndex)
+    console.log(tabIndex);
   }
 
   showRecipe(recipe: Recipe) {
@@ -64,4 +72,3 @@ export class KitchenTableComponent implements OnInit, OnDestroy {
     this.recipe = recipe;
   }
 }
-

@@ -8,9 +8,8 @@ describe('SpaceVideoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpaceVideoComponent ]
-    })
-    .compileComponents();
+      declarations: [SpaceVideoComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

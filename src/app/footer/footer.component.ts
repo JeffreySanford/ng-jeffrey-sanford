@@ -1,6 +1,4 @@
-import { Component, ElementRef, Input, OnInit, VERSION } from '@angular/core';
-import { Router } from '@angular/router';
-import packageInformation from '../../../package.json'
+import { Component, Input } from '@angular/core';
 import { SocialButton } from '../classes/social-button';
 import { Item } from '../services/item';
 import { NavigationService } from '../services/navigation.service';
@@ -8,27 +6,19 @@ import { NavigationService } from '../services/navigation.service';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
-
 export class AppFooterComponent {
   @Input() projectLove: SocialButton[] | undefined;
   @Input() color: string | undefined;
-  public version: string = packageInformation.version;
   isOpen!: boolean;
-  angularVersion: string;
+  navigation: NavigationService;
 
-
-  constructor(private router: Router, private navigation: NavigationService) {
-    this.angularVersion = VERSION.full;
+  constructor(navigation: NavigationService) {
+    this.navigation = navigation;
   }
 
-  routeExternal(item: Item, event: Event) {
-    debugger
-      this.navigation.navigate(item);
-  }
-
-  displayDevelopmentPopup() {
-    console.log(packageInformation);
+  routeExternal(item: Item) {
+    this.navigation.navigate(item);
   }
 }

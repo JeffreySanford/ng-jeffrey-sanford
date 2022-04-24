@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { trigger, style, animate, transition } from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
 import { NavigationService } from './services/navigation.service';
 import { Item } from './services/item';
-
 
 @Component({
   selector: 'app-root',
@@ -12,7 +10,7 @@ import { Item } from './services/item';
   animations: [
     trigger('flyInFlyOut', [
       transition(':enter', [
-        // the element receives this style immediately and then animates to the 
+        // the element receives this style immediately and then animates to the
         // next style which is the `style({ transform: 'translateX(0)', opacity: 1 })`
         style({ transform: 'translateX(-100%)', opacity: 0 }),
         animate('300ms', style({ transform: 'translateX(0)', opacity: 1 })),
@@ -21,26 +19,23 @@ import { Item } from './services/item';
         style({ transform: 'translateX(0)', opacity: 1 }),
         animate('200ms', style({ transform: 'translateX(100%)', opacity: 0 })),
       ]),
-    ])
-  ]
+    ]),
+  ],
 })
-
 export class AppComponent {
   title = 'Portfolio for Jeffrey Sanford';
   showFiller = false;
   isMenuAction: boolean = false;
   constructor(navigation: NavigationService) {
     const routeItem: Item = {
-      name: 'landing'
+      name: 'landing',
     };
     navigation.navigate(routeItem);
   }
 
-  onMenuItemVisited($event: any) {
-    if($event) {
-      
-    } 
-    this.isMenuAction = true;
-  }
+  // onMenuItemVisited($event: Event) {
+  //   // eslint-disable-next-line no-undef
+  //   console.log($event)
+  //   this.isMenuAction = true;
+  // }
 }
-

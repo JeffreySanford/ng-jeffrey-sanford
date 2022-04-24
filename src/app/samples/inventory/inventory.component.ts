@@ -10,10 +10,9 @@ import { InventoryService } from './inventory.service';
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
-  styleUrls: ['./inventory.component.scss']
+  styleUrls: ['./inventory.component.scss'],
 })
 export class InventoryComponent implements OnInit {
-
   private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/items';
   // private portfolioAPI = 'http://localhost:3000/items';
   inventory: Array<Inventory> = [];
@@ -23,27 +22,30 @@ export class InventoryComponent implements OnInit {
   newItem: Inventory = {
     id: this.dataSource.data.length + 1,
     name: '',
-    quantity: 0
+    quantity: 0,
   };
   inventorySubscriptiuon: any;
   inventorySubscription: any;
 
-  constructor(private http: HttpClient, private inventoryService: InventoryService) {
-    this.inventorySubscription = http.get<Inventory[]>(this.portfolioAPI).subscribe((items: Inventory[]) => {
-      this.dataSource = new MatTableDataSource<Inventory>(items);
-    });
+  constructor(
+    private http: HttpClient,
+    private inventoryService: InventoryService
+  ) {
+    this.inventorySubscription = http
+      .get<Inventory[]>(this.portfolioAPI)
+      .subscribe((items: Inventory[]) => {
+        this.dataSource = new MatTableDataSource<Inventory>(items);
+      });
   }
 
   ngOnDestroy() {
-    if(this.inventorySubscription) {
+    if (this.inventorySubscription) {
       this.inventorySubscription.unsubscribe();
     }
   }
 
-  ngOnInit() {
+  ngOnInit() {}
 
-  }
-  
   toggleNewItem() {
     this.addNewItemContainer = !this.addNewItemContainer;
   }
@@ -55,28 +57,32 @@ export class InventoryComponent implements OnInit {
 
         this.inventoryService.updateItem(dataItem).subscribe((dataSet) => {
           this.dataSource.data = dataSet;
-        })
-
+        });
       }
     });
   }
 
   addItem(newItem: Inventory): void {
-    this.inventoryService.addItem(newItem).subscribe((response) => {
-      this.dataSource.data = response;
-    }, (error) => {
-      console.log('error during post is ', error)
-      return this.dataSource.data;
-    });
+    this.inventoryService.addItem(newItem).subscribe(
+      (response) => {
+        this.dataSource.data = response;
+      },
+      (error) => {
+        console.log('error during post is ', error);
+        return this.dataSource.data;
+      }
+    );
   }
 
   submit(newItem: Inventory) {
     newItem.id = this.dataSource.data.length + 1;
     this.addItem(newItem);
-    
-    this.http.get<Inventory[]>(this.portfolioAPI).subscribe((items: Inventory[]) => {
-      this.dataSource.data = items;
-      this.addNewItemContainer = false;
-    });
+
+    this.http
+      .get<Inventory[]>(this.portfolioAPI)
+      .subscribe((items: Inventory[]) => {
+        this.dataSource.data = items;
+        this.addNewItemContainer = false;
+      });
   }
 }

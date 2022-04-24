@@ -1,3 +1,4 @@
+/* eslint-disable sort-imports */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,13 +9,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MaterialModule } from './material/material.module';
 import { LandingComponent } from './landing/landing.component';
-import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppFooterComponent } from './footer/footer.component';
 import { TableComponent } from './samples/design/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DesignComponent } from './samples/design/design.component';
 import { DevelopmentComponent } from './samples/development/development.component';
-import { OverlayModule } from "@angular/cdk/overlay";
+import { OverlayModule } from '@angular/cdk/overlay';
 import { GridsterModule } from 'angular-gridster2';
 import { KitchenTableComponent } from './samples/development/kitchen-table/kitchen-table.component';
 import { WeatherComponent } from './samples/development/weather/weather.component';
@@ -25,7 +26,7 @@ import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
 import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { APP_BASE_HREF } from '@angular/common';
-import { MatIconModule } from "@angular/material/icon";
+import { MatIconModule } from '@angular/material/icon';
 import { RecipeComponent } from './samples/development/kitchen-table/recipe/recipe.component';
 import { SidebarComponent } from './header/sidebar/sidebar.component';
 import { InventoryComponent } from './samples/inventory/inventory.component';
@@ -48,7 +49,7 @@ import { RecipesComponent } from './samples/development/kitchen-table/recipes/re
     RecipeComponent,
     SidebarComponent,
     InventoryComponent,
-    RecipesComponent
+    RecipesComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,14 +67,10 @@ import { RecipesComponent } from './samples/development/kitchen-table/recipes/re
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    MatIconModule
+    MatIconModule,
   ],
-  exports: [
-    MaterialModule
-  ],
-  providers: [
-    { provide: APP_BASE_HREF, useValue: '/' }
-  ],
-  bootstrap: [AppComponent]
+  exports: [MaterialModule],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

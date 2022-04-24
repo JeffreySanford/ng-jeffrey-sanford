@@ -1,7 +1,7 @@
 export class SocialButton {
-    name?: string;
-    url?: string;
-    description?: string;
-    icon?: string | any;
-    disabled: boolean = false;
+  name?: string;
+  url?: string;
+  description?: string;
+  icon?: string | any;
+  disabled: boolean = false;
 }

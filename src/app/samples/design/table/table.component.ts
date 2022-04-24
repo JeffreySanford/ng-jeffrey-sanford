@@ -1,4 +1,12 @@
-import { AfterContentChecked, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterContentChecked,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
@@ -10,9 +18,8 @@ import { HeaderService } from 'src/app/header/header.service';
 @Component({
   selector: 'sample-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
 })
-
 export class TableComponent implements OnInit, AfterContentChecked, OnDestroy {
   @ViewChild(MatSort, { static: false }) sort: MatSort | undefined;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
@@ -31,20 +38,25 @@ export class TableComponent implements OnInit, AfterContentChecked, OnDestroy {
   isSidebarOpened = false;
   userSubscription: any;
 
-  constructor(private http: HttpClient, private elementRef: ElementRef, private headerState: HeaderService, private cd: ChangeDetectorRef) { }
+  constructor(
+    private http: HttpClient,
+    private elementRef: ElementRef,
+    private headerState: HeaderService,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngAfterContentChecked() {
     if (this.color !== 'white') {
       this.color = 'white';
-      this.elementRef.nativeElement.ownerDocument
-        .body.style.backgroundColor = this.color;
+      this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
+        this.color;
     }
     if (this.users && this.sort && this.paginator && !this.resolved) {
       this.length = this.users.length;
       this.dataSource = new MatTableDataSource<User>(this.users);
       this.dataSource.filterPredicate = (data: any, filter: string) => {
         return !filter || data.name.includes(filter);
-      }
+      };
 
       this.sort.active = 'name';
       this.sort.direction = 'asc';
@@ -55,42 +67,44 @@ export class TableComponent implements OnInit, AfterContentChecked, OnDestroy {
       this.resolved = true;
     }
 
-    if(this.headerState.getSidebarState() !== this.isSidebarOpened) {
+    if (this.headerState.getSidebarState() !== this.isSidebarOpened) {
       this.isSidebarOpened = this.headerState.getSidebarState();
       this.cd.detectChanges();
     }
-    
   }
 
   ngOnDestroy() {
-    if(this.userSubscription) {
+    if (this.userSubscription) {
       this.userSubscription.unsubscribe();
     }
   }
 
   ngOnInit(): void {
-    this.userSubscription = this.http.get<User[]>(this.portfolioAPI).subscribe((data: any) => {
-      this.displayedColumns = ['name', 'constructedAddress', 'email'];
-      data.users.map((user: User) => {
-        user.constructedAddress = user.number + ' ' + user.address;
-      });
+    this.userSubscription = this.http
+      .get<User[]>(this.portfolioAPI)
+      .subscribe((data: any) => {
+        this.displayedColumns = ['name', 'constructedAddress', 'email'];
+        data.users.map((user: User) => {
+          user.constructedAddress = user.number + ' ' + user.address;
+        });
 
-      this.users = data.users;
-    });
+        this.users = data.users;
+      });
 
     this.projectLove = [
       {
         name: 'GitHub',
         url: 'https://github.com/JeffreySanford',
         icon: 'code',
-        disabled: false
+        disabled: false,
       },
       {
         name: 'Linkedin',
         url: 'https://www.linkedin.com/in/sanfordjeffrey/',
         icon: 'linkedin',
-        disabled: false
-      }];
+        disabled: false,
+      },
+    ];
   }
 
   applyFilter(filterValue: HTMLInputElement) {

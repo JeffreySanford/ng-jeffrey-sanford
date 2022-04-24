@@ -1,13 +1,12 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { Router, Event as NavigationEvent } from '@angular/router';
+import { Event as NavigationEvent, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { BreadCrumb } from './bread-crumb';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class breadcrumbService implements OnDestroy {
   public breadcrumb: Array<BreadCrumb> = [];
   pruned: boolean = false;
@@ -17,21 +16,26 @@ export class breadcrumbService implements OnDestroy {
 
   constructor(private router: Router, private location: Location) {
     let routeSolved = false;
-    this. breadcrumbSubscription = this.router.events.subscribe((value: any) => {
+    this.breadcrumbSubscription = this.router.events.subscribe((value: any) => {
       if (value.url) {
         this.router.config.map((menuItem: any) => {
           if (!routeSolved || this.breadcrumb.length === 0) {
             if (menuItem.data) {
-              const filter = !menuItem.path.includes('*') || !menuItem.path.includes('page-not-found') || !menuItem.path.includes('');
-              const present = this.validRoutes && this.validRoutes.indexOf({
-                name: menuItem.data.breadCrumb,
-                route: menuItem.path
-              });
+              const filter =
+                !menuItem.path.includes('*') ||
+                !menuItem.path.includes('page-not-found') ||
+                !menuItem.path.includes('');
+              const present =
+                this.validRoutes &&
+                this.validRoutes.indexOf({
+                  name: menuItem.data.breadCrumb,
+                  route: menuItem.path,
+                });
 
               if (filter && present === -1) {
                 this.validRoutes.push({
                   name: menuItem.data.breadCrumb,
-                  route: menuItem.path
+                  route: menuItem.path,
                 });
               }
             }
@@ -61,25 +65,24 @@ export class breadcrumbService implements OnDestroy {
             });
 
             if (!present && route.route !== '') {
-              const isSecondLevel = route.route === 'design-dashboard' || route.route === 'development-dashboard';
+              const isSecondLevel =
+                route.route === 'design-dashboard' ||
+                route.route === 'development-dashboard';
 
               if (isSecondLevel) {
                 this.breadcrumb[1] = {
                   name: route.name,
-                  route: route.route
+                  route: route.route,
                 };
 
                 this.breadcrumb = this.breadcrumb.slice(0, 2);
-              }
-
-              else {
+              } else {
                 this.breadcrumb.push({
                   name: route.name,
-                  route: route.route
+                  route: route.route,
                 });
               }
-            }
-            else if (this.currentRoute === 'landing') {
+            } else if (this.currentRoute === 'landing') {
               this.breadcrumb = new Array<BreadCrumb>(this.breadcrumb[0]);
             }
           }
