@@ -41,7 +41,6 @@ export class InventoryComponent implements OnDestroy {
     }
   }
 
-
   toggleNewItem() {
     this.addNewItemContainer = !this.addNewItemContainer;
   }
