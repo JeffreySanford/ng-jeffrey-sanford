@@ -11,6 +11,5 @@ export class PageNotFoundComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.route, this.router);
-    debugger;
   }
 }

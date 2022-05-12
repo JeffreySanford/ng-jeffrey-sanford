@@ -58,10 +58,8 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
       );
       this.setBackgroundColorSideBar(this.color);
       this.breadcrumbService.getBreadcrumbs().subscribe((next) => {
-        debugger
         if (next !== undefined) {
           this.breadcrumbs = next;
-          debugger
           this.change.detectChanges();
         }
       },

@@ -48,9 +48,8 @@ export class breadcrumbService implements OnDestroy {
             this.breadcrumbs.map((crumb: BreadCrumb) => {
               const isSecondLevel = (appRoute.route === "design-dashboard" || appRoute.route === "development-dashboard");
               this.present = (crumb.route === location) ? true : false;
-              debugger
+
               if (!this.present || isSecondLevel) {
-                debugger
                 if (appRoute.route === location && isSecondLevel) {
                   this.breadcrumbs[1] = {
                     name: appRoute.name,
@@ -59,8 +58,6 @@ export class breadcrumbService implements OnDestroy {
                   this.breadcrumbs.splice(2,this.breadcrumbs.length);
                 }
                 else {
-                  debugger
-
                   if (location === 'landing') {
                     this.breadcrumbs = [
                       {
@@ -78,7 +75,6 @@ export class breadcrumbService implements OnDestroy {
                     })
 
                     if (!isUpdated) {
-                      debugger
                       this.breadcrumbs.push(appRoute);
                       this.empty = false;
                       this.present = true;
@@ -87,7 +83,6 @@ export class breadcrumbService implements OnDestroy {
                 }
               }
               else {
-                debugger
                 if (location === 'landing') {
                   this.breadcrumbs = [
                     {
@@ -101,8 +96,7 @@ export class breadcrumbService implements OnDestroy {
 
               return this.breadcrumbs;
             });
-
-            debugger
+            
             return this.breadcrumbs;
           }
           return this.breadcrumbs;
