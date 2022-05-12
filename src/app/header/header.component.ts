@@ -33,25 +33,16 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
   home = { icon: 'pi pi-home' };
   breadcrumbUpdate = false;
   isSidebarClosed = false;
+  breadcrumbs: BreadCrumb[] = [];
 
   constructor(
     navigation: NavigationService,
     private breadcrumbService: breadcrumbService,
     private change: ChangeDetectorRef,
-    private elementRef: ElementRef,
     private renderer: Renderer2
   ) {
     this.navigation = navigation;
-    this.breadcrumb = this.breadcrumbService.getBreadcrumbs();
   }
-
-  breadcrumb: Array<BreadCrumb> = [
-    {
-      key: 'Home',
-      name: 'Home',
-      route: '/home',
-    },
-  ];
 
   ngAfterContentChecked(): void {
     if (
@@ -60,13 +51,23 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
       this.breadcrumbRow &&
       this.color
     ) {
-      this.breadcrumb = this.breadcrumbService.getBreadcrumbs();
       this.renderer.setStyle(
         this.breadcrumbRow._elementRef.nativeElement,
         'background-color',
         this.color
       );
       this.setBackgroundColorSideBar(this.color);
+      this.breadcrumbService.getBreadcrumbs().subscribe((next) => {
+        debugger
+        if (next !== undefined) {
+          this.breadcrumbs = next;
+          debugger
+          this.change.detectChanges();
+        }
+      },
+        (error) => { debugger },
+        () => { });
+
       this.change.detectChanges();
       this.breadcrumbUpdate = false;
     }
@@ -79,7 +80,6 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
     this.navigation.navigate(routeItem);
     this.color = 'black';
     this.breadcrumbUpdate = true;
-    this.breadcrumb = this.breadcrumbService.getBreadcrumbs();
     this.change.detectChanges();
   }
 
@@ -94,12 +94,12 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
 
   setBackgroundColorSideBar(color: string) {
     this.color = color;
-    this.breadcrumb = this.breadcrumbService.getBreadcrumbs();
     this.renderer.setStyle(
       this.breadcrumbRow._elementRef.nativeElement,
       'background-color',
       this.color
     );
+    this.breadcrumbUpdate = true;
     this.change.detectChanges();
   }
 }

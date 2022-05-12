@@ -7,7 +7,7 @@
         </div>
         <mat-toolbar #breadcrumbRow>
             <ul class="breadcrumb">
-                <li *ngFor="let bcItem of breadcrumb; 
+                <li *ngFor="let bcItem of breadcrumbs; 
                  let $index = index; let $last = last" title="{{bcItem.name}}">
                     <a [ngClass]="{'active': $last}" class="cursor-pointer"
                         (click)="launchPage(bcItem.name)">&nbsp;{{bcItem.name}}</a>
