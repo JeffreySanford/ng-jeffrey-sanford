@@ -11,9 +11,9 @@
 
                 <div class="action">
                     <mat-icon name="fieldName" ngDefaultControl [ngModel]="item.quantity"
-                        (click)="updateItemQuantity(item, item.quantity +1)">add</mat-icon>
+                        (click)="updateItemQuantity(item, +1)">add</mat-icon>
                     <mat-icon name="fieldName" ngDefaultControl [ngModel]="item.quantity"
-                        (click)="updateItemQuantity(item, item.quantity -1)">remove</mat-icon>
+                        (click)="updateItemQuantity(item, -1)">remove</mat-icon>
 
                     <input type="text" class="quantity-input" name="fieldName" ngDefaultControl [ngModel]="item.quantity"
                         (ngModelChange)="updateItemQuantity(item, $event)" />

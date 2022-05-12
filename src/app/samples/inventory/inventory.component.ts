@@ -48,7 +48,8 @@ export class InventoryComponent implements OnDestroy {
   updateItemQuantity(item: Inventory, newValue: number) {
     this.dataSource.data.map((dataItem: Inventory) => {
       if (item.id === dataItem.id) {
-        dataItem.quantity = newValue;
+        debugger
+        dataItem.quantity += newValue;
 
         this.inventoryService.updateItem(dataItem).subscribe((dataSet) => {
           this.dataSource.data = dataSet;
