@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Subscription } from 'rxjs';
 import { Inventory } from './inventory';
 import { InventoryService } from './inventory.service';
 
@@ -10,8 +11,8 @@ import { InventoryService } from './inventory.service';
   styleUrls: ['./inventory.component.scss'],
 })
 export class InventoryComponent implements OnDestroy {
-  private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/items';
-  // private portfolioAPI = 'http://localhost:3000/items';
+  // private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/items';
+  private portfolioAPI = 'http://localhost:3000/inventory';
   inventory: Array<Inventory> = [];
   dataSource = new MatTableDataSource<Inventory>();
   displayedColumns = ['id', 'name', 'quantity'];
@@ -21,8 +22,7 @@ export class InventoryComponent implements OnDestroy {
     name: '',
     quantity: 0,
   };
-  inventorySubscriptiuon: any;
-  inventorySubscription: any;
+  inventorySubscription: Subscription;
 
   constructor(
     private http: HttpClient,
@@ -48,7 +48,6 @@ export class InventoryComponent implements OnDestroy {
   updateItemQuantity(item: Inventory, newValue: number) {
     this.dataSource.data.map((dataItem: Inventory) => {
       if (item.id === dataItem.id) {
-        debugger
         dataItem.quantity += newValue;
 
         this.inventoryService.updateItem(dataItem).subscribe((dataSet) => {

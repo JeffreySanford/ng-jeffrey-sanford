@@ -11,9 +11,9 @@ import { Recipe } from './recipe.class';
   styleUrls: ['./kitchen-table.component.scss'],
 })
 export class KitchenTableComponent implements OnInit, OnDestroy {
-  private portfolioAPI =
-    'https://api-portfolio-65p75.ondigitalocean.app/recipes';
-  // private portfolioAPI = 'http://localhost:3000/recipes';
+  // private portfolioAPI =
+    // 'https://api-portfolio-65p75.ondigitalocean.app/recipes';
+  private portfolioAPI = 'http://localhost:3000/recipes';
   recipes!: Recipe[];
   color = 'white';
   projectLove = [

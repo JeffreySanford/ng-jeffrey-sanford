@@ -18,10 +18,12 @@ export class breadcrumbService implements OnDestroy {
     this.breadcrumbSubscription = this.router.events.subscribe((value: any) => {
       if (value.url) {
         this.router.config.map((menuItem: any) => {
-          this.applicationRoutes.push({
-            name: menuItem.data.title,
-            route: menuItem.path
-          });
+          if(menuItem.data) {
+            this.applicationRoutes.push({
+              name: menuItem.data.title,
+              route: menuItem.path
+            });  
+          }
         });
       }
     });

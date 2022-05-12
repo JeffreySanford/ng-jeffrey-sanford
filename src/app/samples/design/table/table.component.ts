@@ -33,7 +33,8 @@ export class TableComponent implements OnInit, AfterContentChecked, OnDestroy {
   resolved: boolean = false;
   currentNavigation: any;
   color = 'black';
-  private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/users';
+  // private portfolioAPI = 'https://api-portfolio-65p75.ondigitalocean.app/users';
+  private portfolioAPI = 'http://localhost:3000/users';
   projectLove: Array<SocialButton> | undefined;
   isSidebarOpened = false;
   userSubscription: any;
@@ -84,11 +85,10 @@ export class TableComponent implements OnInit, AfterContentChecked, OnDestroy {
       .get<User[]>(this.portfolioAPI)
       .subscribe((data: any) => {
         this.displayedColumns = ['name', 'constructedAddress', 'email'];
-        data.users.map((user: User) => {
+        data.map((user: User) => {
           user.constructedAddress = user.number + ' ' + user.address;
         });
-
-        this.users = data.users;
+        this.users = data;
       });
 
     this.projectLove = [
