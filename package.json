@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && rm -rf /usr/share/nginx/html/* && cp -rf ~/repos/portfolio/dist/* /usr/share/nginx/html",
+    "build": "ng build && rm -rf /usr/share/nginx/html/* && cp -rf ~/repos/portfolio/dist/* /usr/share/nginx/html && ./server/nest start",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "npx eslint 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --quiet --fix",
