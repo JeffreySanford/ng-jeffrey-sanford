@@ -55,7 +55,8 @@ export class breadcrumbService implements OnDestroy {
                   this.breadcrumbs[1] = {
                     name: appRoute.name,
                     route: appRoute.route
-                  }
+                  };
+                  this.breadcrumbs.splice(2,this.breadcrumbs.length);
                 }
                 else {
                   debugger
