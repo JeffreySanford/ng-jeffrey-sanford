@@ -1,0 +1,23 @@
+<section class="landing-page background">
+    <div class="masthead">
+
+        <h1 class="brand-heading">Jeffrey Sanford</h1>
+        <div class="intro-text">
+            <div>
+                <p class="clickable" (click)="launchPage('design-dashboard')">design</p>
+            </div>
+            <mat-icon class="star" [@flyInFlyOut]>star_border</mat-icon>
+            <div>
+                <p class="clickable" (click)="launchPage('development-dashboard')">development</p>
+            </div>
+            <mat-icon class="star" [@flyInFlyOut] (@flyInFlyOut.start)="logAnimation($event)"
+                (@flyInFlyOut.done)="logAnimation($event)">star_border</mat-icon>
+            <div>
+                <p>architecture</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<img class="army-logo" src="../../assets/images/us-army-logo.png">
+<app-footer [projectLove]="projectLove" [color]="color"></app-footer>

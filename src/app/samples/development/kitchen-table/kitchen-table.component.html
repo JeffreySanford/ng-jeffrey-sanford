@@ -1,0 +1,24 @@
+<span  rel="prefetch" [hidden]="!loaded">
+    <div class="landing">
+        <div class="banner">
+            <img rel="prefetch" as="image"  class="site-logo" src="../../../../assets/images/kitchen-table-site-logo.png" />
+            <div>
+                <h1>Kitchen Table</h1>
+            </div>
+            <img rel="prefetch" as="image" class="grape-masthead" src="../../../../assets/images/grape-01.png" />
+        </div>
+        <mat-tab-group class="section-group" [selectedIndex]="active" (selectedIndexChange)="onTabChange($event)">
+            <mat-tab label="recipes">
+                <div [hidden]="!allRecipes" *ngFor="let recipe of recipes">
+                    <app-recipes (click)="showRecipe(recipe)" [recipe]="recipe"></app-recipes>
+                </div>
+                <div *ngIf="recipe">
+                    <app-recipe (click)="showRecipe(recipe)" [recipe]="recipe"></app-recipe>
+                </div>
+            </mat-tab>
+            <mat-tab label="history"></mat-tab>
+            <mat-tab label="contact"></mat-tab>
+        </mat-tab-group>
+    </div>
+    <app-footer [projectLove]="projectLove" [color]="color"></app-footer>
+</span>

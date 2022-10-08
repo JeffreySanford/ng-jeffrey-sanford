@@ -1,0 +1,46 @@
+<div [hidden]="!dataSource" class="page">
+    <!-- <span class="recipes">
+        <div *ngFor="let recipe of recipes">
+            
+        </div>
+    </span>
+    <span class="picker"></span> -->
+    <span class="inventory"  mat-elevation-z4>
+        <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+                <mat-cell *matCellDef="let item">{{ item.id }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let item">{{ item.name }}
+                    <div class="action">
+                        <mat-icon name="increase" ngDefaultControl [ngModel]="item.quantity"
+                            (click)="updateItemQuantity(item, true)">add</mat-icon>
+                        <mat-icon name="decrease" ngDefaultControl [ngModel]="item.quantity"
+                            (click)="updateItemQuantity(item)">remove</mat-icon>
+
+                        <input type="text" class="quantity-input" name="fieldName" ngDefaultControl
+                            [ngModel]="item.quantity" (ngModelChange)="updateItemQuantity(item)" />
+                    </div>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="quantity">
+                <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
+                <mat-cell *matCellDef="let item">{{ item.quantity }}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </table>
+        <div class="add-item-inventory">
+            <button mat-fab mat-fab class="mat-elevation-z4" (click)="toggleNewItem()">add</button>
+            <div *ngIf="addNewItemContainer" class="new-item-container">
+                <span>Item Name:<input mat-input [(ngModel)]="newItem.name" /></span>
+                <span>Quantity:<input mat-input [(ngModel)]="newItem.quantity" /></span>
+                <button mat-button class="mat-elevation-z4" (click)="submit(newItem)">Submit</button>
+            </div>
+        </div>
+    </span>
+</div>

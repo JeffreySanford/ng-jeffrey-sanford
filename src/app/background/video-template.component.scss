@@ -1,0 +1,33 @@
+.background-video {
+  position: absolute;
+  top: -7%;
+  left: 43%;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  transform: scale(2.25);
+  overflow: hidden !important;
+  opacity: 0.3;
+}
+
+.background-audio {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: 10;
+  color: white;
+}
+
+@media all and (max-width: 800px) {
+  .background-video {
+    position: absolute;
+    top: -18em;
+    left: -27em;
+    height: 89%;
+    width: 182vw;
+    z-index: 1;
+    transform: scale(1);
+    overflow: hidden !important;
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,120 @@
+.page {
+  margin-top: 2.5em;
+  width: 80vw;
+  margin-left: 10vw;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .recipes {
+    border: 1px solid purple;
+    width: 20%;
+    height: 10em;
+  }
+
+  .picker {
+    border: 1px solid green;
+    width: 20%;
+    height: 10em;
+
+  }
+
+  .inventory {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    min-width: 44em;
+
+    .mat-table {
+      font-family: "Roboto", sans-serif;
+      font-size: 1.5vw;
+      width: 100%;
+
+  
+      .mat-row:nth-child(even) {
+        background-color: #e4f0ec;
+      }
+  
+      .mat-row:nth-child(odd) {
+        background-color: #ffffff;
+      }
+  
+      .mat-header-cell {
+        font-size: 1.25vw;
+      }
+  
+      mat-header-row,
+      mat-row {
+        display: flex;
+        flex: 100px 1 1;
+  
+        .mat-column-id {
+          justify-content: center;
+          margin-right: 0.5em;
+        }
+  
+        .mat-column-name {
+          display: flex;
+          justify-content: left;
+  
+          .action {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 1em 0 auto;
+          }
+        }
+  
+        .mat-column-quantity {
+          justify-content: center;
+        }
+  
+        .quantity-input {
+          width: 4em;
+          border: 1px solid green;
+        }
+      }
+    }  
+  }
+
+  .add-item-inventory {
+    align-self: flex-end;
+    width: 8em;
+    margin-top: 1em;
+    
+    input {
+      margin-left: 2vw;
+      font-size: 1.25em;
+      width: 5vw;
+    }
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+  .mat-table {
+    .mat-header-cell {
+      font-size: 4vw !important;
+      &.mat-column-name {
+        width: 10vw !important;
+
+        .action {
+          right: 30vw;
+        }
+      }
+      .mat-column-quantity {
+      }
+    }
+
+    .mat-column-name {
+        border: 1px solid purple;
+        margin-left: 1em !important;
+        .action {
+          flex: 0 0 57vw !important;
+        }
+      }
+
+  }
+}

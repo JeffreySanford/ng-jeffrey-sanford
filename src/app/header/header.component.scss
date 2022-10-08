@@ -1,0 +1,76 @@
+.top-banner {
+  display: flex;
+  flex-direction: row;
+  z-index: 5;
+  background: rgba(0,0,0,0)
+
+  mat-toolbar {
+    height: 1em;
+  }
+
+  .mat-toolbar-row {
+    height: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    button {
+      z-index: 5;
+    }
+  }
+}
+/* Style the list */
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75em;
+  height: 1em;
+  position: fixed;
+  left: -1.5em;
+  top: 0.75em;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  font-size: 0.75em;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  cursor: pointer;
+  color: lightseagreen;
+  text-decoration: none;
+  z-index: 5;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li:hover {
+  color: lightblue;
+  font-size: 1em;
+}
+
+ul.breadcrumb li::after {
+  content: " / ";
+  color: lightseagreen;
+}
+
+.responsive {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: 6em;
+  margin: -1em 0 0 -2em;
+  overflow: hidden;
+  height: 61vh;
+  z-index: 5;
+  border-radius: 1em;
+  font-family: "Roboto", sans-serif;
+
+  &[class*="sidebar-opened"] {
+    width: 22em;
+  }
+
+  &:not([class*="sidebar-opened"]) {
+    width: 6em;
+  }
+}

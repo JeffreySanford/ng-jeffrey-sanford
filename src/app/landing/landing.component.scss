@@ -1,0 +1,122 @@
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  z-index: 5 !important;
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+
+  .sparkler-light {
+    position: absolute;
+    width: 9rem;
+    height: 9rem;
+    margin-left: -4.4rem;
+    margin-top: -1.4rem;
+    animation: sparkler-light-anim 20s infinite;
+  }
+
+  .sparkler-light::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    width: 9rem;
+    height: 9rem;
+    background-color: rgba(255, 255, 230, 0.05);
+    animation: sparkler-light-pulsating 2s infinite linear;
+  }
+
+  .clickable {
+    cursor: pointer;
+    z-index: 2 !important;
+  }
+
+  .masthead {
+    z-index: 5 !important;
+    width: 64%;
+    overflow: hidden;
+    background-color: black;
+    top: 40%;
+    right: 3em;
+    position: absolute;
+    opacity: 0.7;
+    padding-top: 1em;
+    padding-left: 1em;
+
+
+    .brand-heading {
+      color: gold;
+      line-height: 0.8em;
+      align-self: center;
+      font-size: 6em;
+      z-index: 5;
+      opacity: 1;
+    }
+  }
+
+  .intro-text {
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 5em;
+    opacity: 1;
+
+    p {
+      color: orange;
+      font-size: 2.5em;
+    }
+
+    p:hover {
+      color: orangered;
+    }
+
+    .star {
+      color: yellow;
+      margin: -0.5em 0.25em 0;
+    }
+  }
+}
+
+.army-logo {
+  position: absolute;
+  right: 0;
+  bottom: 3em;
+  width: 7.5em;
+  height: 5em;
+  z-index: 5;
+}
+
+
+/* Mobile device styles */
+@media all and (max-width: 800px) {
+
+  .masthead {
+    top: 25% !important;
+    height: 21%;
+    width: 75% !important;
+    right: 0.5em !important;
+
+    .brand-heading {
+      color: aqua !important;
+      font-size: 5em !important;
+      position: absolute;
+      top: 0.05em;
+    }
+
+    .intro-text {
+      margin: 7em auto 0;
+
+      p {
+        color: aquamarine;
+        font-size: 1.25em;
+      }
+
+      .star {
+        color: skyblue;
+      }
+    }
+  }
+}

@@ -1,0 +1,226 @@
+.location-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  left: 6em;
+  top: 5em;
+  padding: 0.25em 0;
+
+  &.sidebar-closed {
+    position: absolute;
+    top: 20em;
+    left: 1em;
+    width: 10em;
+  }
+
+  .city {
+    margin-bottom: 0.25em;
+    button {
+      width: 10em;
+    }
+  }
+}
+
+.forecast-weather {
+  width: 94.5vw;
+  margin-top: 1.5em;
+  padding: 1em;
+
+  &.sidebar-closed {
+    margin: 1em auto 0 13em;
+  }
+}
+
+.current-weather {
+  width: 73vw;
+  margin: 1em 0em 0 auto;
+  padding: 1em;
+
+  &.sidebar-closed {
+    margin: 2em auto 0 13em;
+  }
+
+  .top-row {
+    display: flex;
+    flex-direction: row;
+
+    .status-icon {
+      height: 3em;
+      width: 3em;
+      font-size: 1.5em;
+    }
+
+    .alerts {
+      margin: 0 0 0 auto;
+      text-align: right;
+      line-height: 1em;
+
+      .information {
+        border: 1px solid blue;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .current-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+
+    .material-icons {
+      font-size: 3em;
+    }
+
+    .local-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 1.5em;
+
+      .two-column {
+        display: flex;
+        flex-direction: row;
+
+        .information {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .visual {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .description {
+          font-size: 1em;
+          color: blue;
+        }
+
+        .status-icon {
+          height: 3em;
+          width: 3em;
+          font-size: 1.5em;
+          border: 1px solid purple;
+        }
+      }
+    }
+
+    .temperature-section {
+      display: flex;
+      flex-direction: column;
+      width: 10em;
+      font-size: 1.5em;
+
+      .two-column {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .visual {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 7em;
+      .temperature {
+        font-size: 1em;
+        color: blueviolet;
+      }
+
+      .status {
+        color: blue;
+      }
+
+      .visual {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .wind {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+
+        .milesperhour {
+          padding: 0;
+          margin: 0;
+          line-height: 1em;
+        }
+      }
+    }
+  }
+
+  .wind-section {
+    display: flex;
+    flex-direction: row;
+    width: 15em;
+
+    p {
+      margin: 0;
+      text-align: right;
+    }
+
+    .two-column {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .wind-icon {
+      color: aqua;
+      position: relative;
+    }
+  }
+}
+
+.weather-card {
+  .forecast-icon {
+    border: 1px solid yellow;
+    width: 5em;
+    height: 5em;
+  }
+  .date {
+    font-size: 0.5em;
+    text-align: right;
+    color: green;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .current-weather,
+  .forecast-weather {
+    background-color: blue;
+    color: white;
+    margin: 3em 1em 0 auto;
+  }
+  .current-weather {
+    margin-top: 20em;
+  }
+}
+
+:host ::ng-deep .report {
+  border: 1px solid turquoise;
+  overflow-y: auto;
+  max-height: 12em;
+
+  &.mat-expansion-panel-header {
+    margin: 1em 0;
+
+    &::-webkit-scrollbar {
+      width: 1em;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 255, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: darkblue;
+      outline: 1px solid blue;
+    }
+  }
+}

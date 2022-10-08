@@ -1,0 +1,46 @@
+<div *ngIf="users.length === 0">
+    <mat-spinner class="spinner" mode="indeterminate"></mat-spinner>
+</div>
+<div [hidden]="users.length === 0" class="page" [ngClass]="{'sidebar-closed':isSidebarOpened}">
+    <h2>Mocked Material Table</h2>
+    <div class="notice">
+        <p>This is an example of a Material Design table in Angular that sorts, paginates, and filters a set of
+            {{ length }} random users. The users are created using a mocking service in a service on the API for
+            development purposes.</p>
+
+        <div style="display: flex; flex-direction: row;justify-content: right;">
+            <!-- <mat-slider min="5000" max="5000000" step="5000" value="length" (change)="updateUserbase($event)"> -->
+            <!-- </mat-slider> -->
+            <div class="filter">
+                <mat-form-field class="table-filtering" appearance="legacy">
+                    <input #input matInput placeholder="Search by user's name" (keyup)="applyFilter(input)">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <mat-table class="table" #sort matSort [dataSource]="dataSource">
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.name + ' ' + element.surname }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="constructedAddress">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Address </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.constructedAddress }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="city">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> City </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.city }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="email">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> E-Mail </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>>
+        </mat-table>
+
+        <mat-paginator role="listbox" #paginator class="paginator" aria-label="Select Page" [length]="length"
+            [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+    </div>
+</div>
+<app-footer [projectLove]="projectLove" [color]="color"></app-footer>

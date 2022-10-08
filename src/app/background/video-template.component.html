@@ -1,0 +1,10 @@
+<div class="background-audio">
+	<mat-icon (click)="toggleAudio(ref)">{{audioLevel}}</mat-icon>
+</div>
+
+<div class="background-video">
+	<video [width]='1080' [height]='1200' #ref autoplay muted preload="auto">
+		<source src="{{videoSource}}" type="video/mp4" />
+		Browser not supported
+	</video>
+</div>

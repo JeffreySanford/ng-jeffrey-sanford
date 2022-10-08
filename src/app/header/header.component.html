@@ -1,0 +1,18 @@
+<mat-action-row class="top-banner">
+    <mat-toolbar-row>
+        <div class="responsive"  [ngClass]="{'sidebar-opened': !isSidebarClosed}">
+            <div class="sidebar">
+                <app-sidebar [isSidebarClosed]="isSidebarClosed" [color]="color"></app-sidebar>
+            </div>
+        </div>
+        <mat-toolbar #breadcrumbRow>
+            <ul class="breadcrumb">
+                <li *ngFor="let bcItem of breadcrumbs;
+                 let $index = index; let $last = last" title="{{bcItem.name}}">
+                    <a [ngClass]="{'active': $last}" class="cursor-pointer"
+                        (click)="launchPage(bcItem)">&nbsp;{{bcItem.name}}</a>
+                </li>
+            </ul>
+        </mat-toolbar>
+    </mat-toolbar-row>
+</mat-action-row>

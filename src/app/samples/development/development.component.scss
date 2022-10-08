@@ -1,0 +1,111 @@
+:host ::ng-deep .top-banner {
+  background-color: purple;
+}
+
+.page {
+  gridster {
+    background-color: white;
+    height: calc(80vh);
+    width: 90%;
+    margin: 2em auto 0 8em;
+    overflow: hidden;
+    position: relative;
+
+    &.navigation-closed {
+      margin: 2em 0 0 0;
+    }
+
+    .gridster-item {
+      background-color: white;
+      min-height: 14em;
+
+      .card {
+        background-color: lightskyblue;
+        border-radius: 0.5em;
+        margin-left: 3.5em;
+        min-height: 10em;
+        border-radius: 0.5em;
+        margin-left: 3.5em;
+
+        .title {
+          font-size: 2em;
+        }
+
+        .mat-card-actions {
+          position: absolute;
+          right: 1em;
+          top: 0em;
+          height: 1em;
+        }
+
+        .visit-button {
+          border-radius: 2em;
+          border: none;
+          background-color: fuchsia;
+          font-size: 1.25em;
+          width: 3em;
+        }
+
+        .description {
+          font-size: 1.25em;
+          margin-left: 1em;
+          line-height: 1.1em;
+        }
+
+        .love-icons {
+          margin-top: -1em;
+          display: flex;
+          flex-direction: row;
+          justify-content: right;
+          position: absolute;
+          right: 0.25em;
+          bottom: 0.25em;
+
+          img {
+            max-height: 5em;
+            margin-top: 3em;
+          }
+        }
+
+        .footer-row {
+          bottom: 3em;
+          left: 0em;
+          background-color: white;
+        }
+      }
+
+      .footer-row {
+        bottom: 3em;
+        left: 0em;
+        background-color: white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .mat-card {
+    height: 11em !important;
+    .title {
+      font-size: 1.5em !important;
+      color: blue;
+      margin-left: -0.5em;
+    }
+    .description {
+      font-size: 0.8em !important;
+      color: blue;
+    }
+  
+    .love-icons {
+      bottom: 0 !important;
+
+      img {
+        max-height: 15vw !important;
+      }
+    }
+  
+    .footer-row {
+      bottom: 6em !important;
+    }
+  }
+}
