@@ -1,13 +1,13 @@
 .background-video {
-  position: absolute;
-  top: -7%;
-  left: 43%;
+  position: fixed;
+  top: -8%;
+  right: 9em;
   height: 100%;
   width: 100%;
   z-index: 1;
   transform: scale(2.25);
   overflow: hidden !important;
-  opacity: 0.3;
+  opacity: 0.9;
 }
 
 .background-audio {
@@ -27,6 +27,20 @@
     width: 182vw;
     z-index: 1;
     transform: scale(1);
+    overflow: hidden !important;
+    opacity: 0.8;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .background-video {
+    position: absolute;
+    top: 0em;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transform: scale(3);
     overflow: hidden !important;
     opacity: 0.8;
   }
