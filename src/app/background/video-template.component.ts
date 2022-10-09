@@ -9,7 +9,7 @@ export class VideoTemplateComponent implements AfterContentChecked {
   @Input() background: boolean = false;
   @ViewChild('ref', { static: false }) ref!: ElementRef;
 
-  videoSource = '../../assets/video/smaller-ocean-storm-sea-10hours.mp4';
+  videoSource = '../../assets/video/ocean-storm.mp4';
   audioLevel: any;
 
   constructor() {}
