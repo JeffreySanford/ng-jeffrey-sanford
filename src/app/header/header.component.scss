@@ -30,6 +30,8 @@ ul {
   position: fixed;
   left: -1.5em;
   top: 0.75em;
+  opacity: 0.9;
+  z-index: 10;
 }
 
 /* Display list items side by side */
@@ -38,9 +40,10 @@ ul.breadcrumb li {
   text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
   cursor: pointer;
-  color: lightseagreen;
+  color: azure;
   text-decoration: none;
   z-index: 5;
+  opacity: 1;
 }
 
 /* Add a color on mouse-over */
