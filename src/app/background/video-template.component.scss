@@ -21,14 +21,14 @@
 @media all and (max-width: 800px) {
   .background-video {
     position: absolute;
-    top: -18em;
-    left: -27em;
-    height: 89%;
-    width: 182vw;
+    top: -21em;
+    left: -16em;
+    height: 123vh;
+    width: 177vw;
     z-index: 1;
     transform: scale(1);
     overflow: hidden !important;
-    opacity: 0.8;
+    opacity: 0.9;
   }
 }
 

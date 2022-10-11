@@ -96,8 +96,8 @@
   .masthead {
     top: 25% !important;
     height: 21%;
-    width: 75% !important;
-    right: 0.5em !important;
+    width: 89% !important;
+    right: -3.5em !important;
 
     .brand-heading {
       color: aqua !important;
@@ -112,11 +112,21 @@
       p {
         color: aquamarine;
         font-size: 1.25em;
+        margin-left: 1em;
       }
 
       .star {
         color: skyblue;
       }
     }
+  }
+
+  .army-logo {
+    position: absolute;
+    right: -5em;
+    bottom: -7em;
+    width: 7.5em;
+    height: 5em;
+    z-index: 5;
   }
 }
