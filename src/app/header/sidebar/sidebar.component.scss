@@ -1,32 +1,13 @@
-:host ::ng-deep .mat-slide-toggle {
-  transform: scale(0.6);
-
-  .mat-slide-toggle-thumb {
-    background-color: orange;
-  }
-
-  .mat-slide-toggle-bar {
-    background-color: goldenrod;
-  }
-
-  &.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
-    background-color: fuchsia;
-  }
-
-  &.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
-    background-color: purple;
-  }
-}
-
-mat-sidenav-container {
+.mat-sidenav-container {
   border-radius: 1em;
   background: rgba(0, 0, 0, 0);
 
-  mat-sidenav-content {
+  .mat-sidenav-content {
     background: rgba(0, 0, 0, 0);
     padding: 1em;
     margin-top: 5em;
     text-align: left;
+    min-width: 15em;
 
     .toggle-sidebar {
       margin-left: 0.25em;

@@ -20,15 +20,15 @@
 
 @media all and (max-width: 800px) {
   .background-video {
-    position: absolute;
-    top: -21em;
-    left: -16em;
-    height: 123vh;
-    width: 177vw;
+    position: fixed;
+    top: -13em;
+    left: -21em;
     z-index: 1;
-    transform: scale(1);
+    transform: scale(1.5);
     overflow: hidden !important;
     opacity: 0.9;
+    width: 130%;
+    height: 85%;
   }
 }
 

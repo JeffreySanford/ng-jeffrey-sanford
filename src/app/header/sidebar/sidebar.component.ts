@@ -1,13 +1,6 @@
 import {
-  AfterContentChecked,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  HostListener,
-  Input,
-  OnInit,
-  Renderer2,
-  ViewChild,
+  AfterContentChecked, ChangeDetectorRef, Component, ElementRef,
+  Input, OnInit, Renderer2, ViewChild
 } from '@angular/core';
 import { MatToolbar } from '@angular/material/toolbar';
 import { Item } from '../../services/item';
@@ -58,17 +51,7 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     private renderer: Renderer2,
     private ref: ElementRef,
     private header: AppHeaderComponent
-  ) {}
-
-  // onResize(): void {
-  //   this.screenWidth = window.innerWidth;
-  // }
-
-  // getScreenSize(): number {
-  //   this.screenWidth = window.innerWidth;
-
-  //   return window.innerWidth;
-  // }
+  ) { }
 
   ngAfterContentChecked() {
     if (this.container !== undefined && this.breadcrumbUpdate && this.color) {
@@ -83,6 +66,7 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
       this.isSidebarClosed = true;
       this.breadcrumbUpdate = false;
       this.header.breadcrumbUpdate = true;
+
       this.cd.detectChanges();
     }
   }
@@ -115,22 +99,4 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     this.header.setBackgroundColorSideBar(this.color);
     this.navigation.navigate(routeItem);
   }
-
-  // openSidebar() {
-  //   this.isSidebarClosed = true;
-  //   this.headerState.setSidebarState(true);
-  //   this.header.isSidebarClosed = this.isSidebarClosed;
-  // }
-
-  // closeSidebar() {
-  //   this.isSidebarClosed = false;
-  //   this.headerState.setSidebarState(false);
-  //   this.header.isSidebarClosed = this.isSidebarClosed;
-  // }
-
-  // toggleSidebar() {
-  //   this.isSidebarClosed = !this.isSidebarClosed;
-  //   this.header.isSidebarClosed = this.isSidebarClosed;
-  //   this.headerState.setSidebarState(this.isSidebarClosed);
-  // }
 }
