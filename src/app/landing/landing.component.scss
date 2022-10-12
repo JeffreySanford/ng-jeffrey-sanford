@@ -74,20 +74,21 @@
 @media all and (max-width: 800px) {
 
   .masthead {
-    top: 25% !important;
-    height: 12%;
-    width: 89% !important;
-    right: 1.5em !important;
+    top: 40% !important;
+    height: 10%;
+    width: 91% !important;
+    right: 0.5em !important;
 
     .brand-heading {
       color: aqua !important;
-      font-size: 5em !important;
+      font-size: 3em !important;
       position: absolute;
       top: 0.05em;
+      margin-top: 0.25em;
     }
 
     .intro-text {
-      margin: 4em auto 0;
+      margin: 2em 0 0 -2.5em;
 
       p {
         color: aquamarine;
