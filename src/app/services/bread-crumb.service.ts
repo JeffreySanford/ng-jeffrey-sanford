@@ -38,6 +38,7 @@ export class breadcrumbService implements OnDestroy {
   parseBreadcrumbs(): BreadCrumb[] {
     this.location.onUrlChange((val) => {
       const location = val.substring(1);
+      
       this.applicationRoutes.forEach((appRoute) => {
         if (appRoute.route === location && !this.present) {
           if (this.empty) {
@@ -97,17 +98,14 @@ export class breadcrumbService implements OnDestroy {
                   this.empty = false;
                 }
               }
-
-              return this.breadcrumbs;
             });
-
-            return this.breadcrumbs;
           }
-          return this.breadcrumbs;
         }
+
         return this.breadcrumbs;
       });
     });
+
     return this.breadcrumbs;
   }
 

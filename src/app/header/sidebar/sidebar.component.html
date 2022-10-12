@@ -3,8 +3,7 @@
     <mat-sidenav-content #sidebar [ngClass]="color">
         <div class="content" *ngFor="let project of projects">
             <mat-icon (click)="launchPage(project.route)" matTooltip="{{project.description}}">{{project.icon}}</mat-icon>
-            <button (click)="launchPage(project.route)" matTooltip="{{project.description}}">
-                
+            <button (click)="launchPage(project.route)" matTooltip="{{project.description}}">   
                 <p [hidden]="isSidebarClosed">{{project.name}}</p>
             </button>
         </div>

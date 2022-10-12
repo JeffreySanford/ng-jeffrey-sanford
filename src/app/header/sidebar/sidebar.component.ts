@@ -78,6 +78,7 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
         'background-color',
         this.color
       );
+
       this.renderer.setStyle(this.container.nativeElement, 'opacity', 0.9);
       this.isSidebarClosed = true;
       this.breadcrumbUpdate = false;
@@ -87,7 +88,12 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
   }
 
   ngOnInit(): void {
-    this.breadcrumbUpdate = true;
+    this.navigation.getPageStatus().subscribe(() => {
+      this.breadcrumbUpdate = true;
+      this.header.breadcrumbUpdate = true;
+      this.cd.detectChanges();
+    });
+
     this.isSidebarClosed = false;
   }
 

@@ -4,6 +4,7 @@ import { NavigationService } from '../services/navigation.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Item } from '../services/item';
 import { HeaderService } from '../header/header.service';
+import { breadcrumbService } from '../services/bread-crumb.service';
 
 @Component({
   selector: 'app-landing',
@@ -54,7 +55,6 @@ export class LandingComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    debugger
     this.color = 'black';
   }
 

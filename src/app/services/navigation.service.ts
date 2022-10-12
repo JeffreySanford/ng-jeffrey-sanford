@@ -45,7 +45,8 @@ export class NavigationService {
       }
     }
 
-    this.breadcrumbService.getBreadcrumbs();
+    this.getPageStatus().subscribe((isLandingPage: boolean) => {
+      this.isLandingPage = isLandingPage;
+    })
   }
-
 }

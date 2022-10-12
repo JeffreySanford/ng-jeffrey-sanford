@@ -120,6 +120,7 @@ export class DesignComponent implements AfterViewInit, AfterContentChecked {
     const routeItem: Item = {
       name: page,
     };
+    this.headerState.setSidebarState(true);
     this.navigation.navigate(routeItem);
   }
 }

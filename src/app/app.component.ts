@@ -54,6 +54,4 @@ export class AppComponent {
       this.cd.detectChanges();
     })
   }
-
-
 }

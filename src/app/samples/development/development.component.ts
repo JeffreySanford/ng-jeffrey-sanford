@@ -106,6 +106,7 @@ export class DevelopmentComponent implements AfterViewInit {
     const routeItem: Item = {
       name: page,
     };
+    this.headerState.setSidebarState(true);
     this.navigation.navigate(routeItem);
   }
 }

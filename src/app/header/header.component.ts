@@ -63,8 +63,10 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
             const isLandingPage = this.navigation.isLandingPage;
             if (isLandingPage) {
               this.color = 'black';
+              this.breadcrumbs = [{route: 'landing', name: 'Home'}];
             } else {
               this.color = 'white';
+              this.breadcrumbs = next;
             }
 
             this.renderer.setStyle(
@@ -72,7 +74,6 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
               'background-color',
               this.color
             );
-            this.breadcrumbs = next;
             this.change.detectChanges();
           }
         },
