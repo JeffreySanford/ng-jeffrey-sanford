@@ -6,26 +6,6 @@
   z-index: 5 !important;
   width: 100%;
   overflow: hidden;
-  background-color: black;
-
-  .sparkler-light {
-    position: absolute;
-    width: 9rem;
-    height: 9rem;
-    margin-left: -4.4rem;
-    margin-top: -1.4rem;
-    animation: sparkler-light-anim 20s infinite;
-  }
-
-  .sparkler-light::after {
-    content: "";
-    display: block;
-    border-radius: 50%;
-    width: 9rem;
-    height: 9rem;
-    background-color: rgba(255, 255, 230, 0.05);
-    animation: sparkler-light-pulsating 2s infinite linear;
-  }
 
   .clickable {
     cursor: pointer;

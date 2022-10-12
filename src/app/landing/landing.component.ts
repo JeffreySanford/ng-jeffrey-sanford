@@ -3,6 +3,7 @@ import { SocialButton } from '../classes/social-button';
 import { NavigationService } from '../services/navigation.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Item } from '../services/item';
+import { HeaderService } from '../header/header.service';
 
 @Component({
   selector: 'app-landing',
@@ -43,15 +44,17 @@ export class LandingComponent implements OnInit, AfterViewInit {
   navigation: NavigationService;
   color: string | undefined;
 
-  constructor(navigation: NavigationService, private elementRef: ElementRef) {
+  constructor(navigation: NavigationService, private elementRef: ElementRef, private headerState: HeaderService) {
     this.navigation = navigation;
   }
+
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
       this.color;
   }
 
   ngOnInit(): void {
+    debugger
     this.color = 'black';
   }
 
@@ -67,6 +70,8 @@ export class LandingComponent implements OnInit, AfterViewInit {
     const routeItem: Item = {
       name: page,
     };
+
+    this.headerState.setSidebarState(true);
     this.navigation.navigate(routeItem);
   }
 }

@@ -44,6 +44,7 @@ export class breadcrumbService implements OnDestroy {
             this.breadcrumbs.push(appRoute);
             this.empty = false;
             this.present = true;
+
             return this.breadcrumbs;
           } else {
             this.breadcrumbs.map((crumb: BreadCrumb) => {
@@ -61,6 +62,7 @@ export class breadcrumbService implements OnDestroy {
                   this.breadcrumbs.splice(2, this.breadcrumbs.length);
                 } else {
                   if (location === 'landing') {
+
                     this.breadcrumbs = [
                       {
                         name: appRoute.name,

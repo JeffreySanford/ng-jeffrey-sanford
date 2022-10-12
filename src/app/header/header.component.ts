@@ -16,6 +16,7 @@ import { breadcrumbService } from '../services/bread-crumb.service';
 import { Item } from '../services/item';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatToolbar } from '@angular/material/toolbar';
+import { HeaderService } from './header.service';
 
 @Component({
   selector: 'app-header',
@@ -34,12 +35,14 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
   breadcrumbUpdate = false;
   isSidebarClosed = false;
   breadcrumbs: BreadCrumb[] = [];
+  page: string | undefined;
 
   constructor(
     navigation: NavigationService,
     private breadcrumbService: breadcrumbService,
     private change: ChangeDetectorRef,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private headerState: HeaderService
   ) {
     this.navigation = navigation;
   }
@@ -51,15 +54,24 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
       this.breadcrumbRow &&
       this.color
     ) {
-      this.renderer.setStyle(
-        this.breadcrumbRow._elementRef.nativeElement,
-        'background-color',
-        this.color
-      );
       this.setBackgroundColorSideBar(this.color);
+
+      this.isSidebarClosed = this.headerState.getSidebarState();
       this.breadcrumbService.getBreadcrumbs().subscribe(
         (next) => {
           if (next !== undefined) {
+            const isLandingPage = this.navigation.isLandingPage;
+            if (isLandingPage) {
+              this.color = 'black';
+            } else {
+              this.color = 'white';
+            }
+
+            this.renderer.setStyle(
+              this.breadcrumbRow._elementRef.nativeElement,
+              'background-color',
+              this.color
+            );
             this.breadcrumbs = next;
             this.change.detectChanges();
           }
@@ -67,7 +79,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
         (error) => {
           debugger;
         },
-        () => {}
+        () => { }
       );
 
       this.change.detectChanges();
@@ -81,6 +93,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
       route: 'landing',
     };
 
+    this.page = routeItem.name;
     this.navigation.navigate(routeItem);
     this.color = 'black';
     this.breadcrumbUpdate = true;
@@ -100,7 +113,7 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
         url: page.url,
       };
     }
-
+    this.isSidebarClosed = this.headerState.getSidebarState();
     this.breadcrumbUpdate = true;
     this.navigation.navigate(routeItem);
   }
@@ -114,5 +127,11 @@ export class AppHeaderComponent implements OnInit, AfterContentChecked {
     );
     this.breadcrumbUpdate = true;
     this.change.detectChanges();
+  }
+
+  setUpdate(isUpdate: boolean) {
+    if(isUpdate) {
+      this.breadcrumbUpdate = true;
+    }
   }
 }

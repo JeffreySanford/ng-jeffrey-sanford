@@ -9,10 +9,12 @@ export class HeaderService {
   constructor() {}
 
   setSidebarState(sidebarState: boolean) {
+
     this.isSidebarClosed = sidebarState;
   }
 
   getSidebarState() {
+
     return this.isSidebarClosed;
   }
 }

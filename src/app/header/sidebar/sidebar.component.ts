@@ -3,6 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  HostListener,
   Input,
   OnInit,
   Renderer2,
@@ -48,6 +49,7 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     },
   ];
   smallScreenSize: boolean = false;
+  screenWidth: number = 0;
 
   constructor(
     private headerState: HeaderService,
@@ -58,20 +60,17 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     private header: AppHeaderComponent
   ) {}
 
-  ngAfterContentChecked() {
-    // if (window.innerWidth < 800) {
-    //   console.log('trigger screen size');
-    //   this.isSidebarClosed = true;
-    //   this.header.breadcrumbUpdate = true;
-    //   this.smallScreenSize = true;
-    //   this.cd.detectChanges();
-    // } else {
-    //   this.isSidebarClosed = true;
-    //   this.header.breadcrumbUpdate = true;
-    //   this.smallScreenSize = false;
-    //   this.cd.detectChanges();
-    // }
+  // onResize(): void {
+  //   this.screenWidth = window.innerWidth;
+  // }
 
+  // getScreenSize(): number {
+  //   this.screenWidth = window.innerWidth;
+
+  //   return window.innerWidth;
+  // }
+
+  ngAfterContentChecked() {
     if (this.container !== undefined && this.breadcrumbUpdate && this.color) {
       this.sidebarDirection = this.isSidebarClosed ? 'west' : 'east';
       this.renderer.setStyle(
@@ -100,32 +99,32 @@ export class SidebarComponent implements OnInit, AfterContentChecked {
     if (page === 'landing') {
       this.color = 'black';
     } else {
-      this.color = 'white';
+      this.color = 'azure';
     }
 
-    this.isSidebarClosed = true;
-    this.headerState.setSidebarState(true);
+    this.isSidebarClosed = false;
+    this.headerState.setSidebarState(false);
     this.header.isSidebarClosed = this.isSidebarClosed;
     this.breadcrumbUpdate = true;
     this.header.setBackgroundColorSideBar(this.color);
     this.navigation.navigate(routeItem);
   }
 
-  openSidebar() {
-    this.isSidebarClosed = true;
-    this.headerState.setSidebarState(true);
-    this.header.isSidebarClosed = this.isSidebarClosed;
-  }
+  // openSidebar() {
+  //   this.isSidebarClosed = true;
+  //   this.headerState.setSidebarState(true);
+  //   this.header.isSidebarClosed = this.isSidebarClosed;
+  // }
 
-  closeSidebar() {
-    this.isSidebarClosed = false;
-    this.headerState.setSidebarState(false);
-    this.header.isSidebarClosed = this.isSidebarClosed;
-  }
+  // closeSidebar() {
+  //   this.isSidebarClosed = false;
+  //   this.headerState.setSidebarState(false);
+  //   this.header.isSidebarClosed = this.isSidebarClosed;
+  // }
 
-  toggleSidebar() {
-    this.isSidebarClosed = !this.isSidebarClosed;
-    this.header.isSidebarClosed = this.isSidebarClosed;
-    this.headerState.setSidebarState(this.isSidebarClosed);
-  }
+  // toggleSidebar() {
+  //   this.isSidebarClosed = !this.isSidebarClosed;
+  //   this.header.isSidebarClosed = this.isSidebarClosed;
+  //   this.headerState.setSidebarState(this.isSidebarClosed);
+  // }
 }

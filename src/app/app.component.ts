@@ -1,9 +1,8 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, AfterContentChecked } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { NavigationService } from './services/navigation.service';
 import { Item } from './services/item';
 import { HeaderService } from './header/header.service';
-import { ChangeDetectionStrategy } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -31,16 +30,17 @@ export class AppComponent {
   isLandingPage?: boolean;
   headerState: HeaderService;
   navigation: NavigationService;
+  screenWidth: number = 0;
 
   constructor(
     navigation: NavigationService,
     headerState: HeaderService,
     private cd: ChangeDetectorRef
 
-    ) {
+  ) {
 
-      this.navigation = navigation;
-      this.headerState= headerState;
+    this.navigation = navigation;
+    this.headerState = headerState;
     const routeItem: Item = {
       name: 'landing',
     };
@@ -49,11 +49,11 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.navigation.getPageStatus().subscribe((isLandingPage: boolean)=>{
+    this.navigation.getPageStatus().subscribe((isLandingPage: boolean) => {
       this.isLandingPage = isLandingPage;
       this.cd.detectChanges();
     })
   }
 
-  
+
 }
