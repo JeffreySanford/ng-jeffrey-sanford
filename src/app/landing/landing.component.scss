@@ -88,7 +88,7 @@
     }
 
     .intro-text {
-      margin: 2em 0 0 -2.5em;
+      margin: 2em 1em 0 0;
 
       p {
         color: aquamarine;
@@ -98,6 +98,7 @@
 
       .star {
         color: skyblue;
+        min-width: 1em;
       }
     }
   }
