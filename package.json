@@ -25,7 +25,7 @@
     "@angular/platform-browser-dynamic": "^14.2.4",
     "@angular/router": "^14.2.4",
     "@mdi/font": "^6.5.95",
-    "@nrwl/angular": "14.8.3",
+    "@nrwl/angular": "15.4.2",
     "@videogular/ngx-videogular": "^5.0.1",
     "angular-gridster2": "^14.0.1",
     "jquery": "^3.6.0",
